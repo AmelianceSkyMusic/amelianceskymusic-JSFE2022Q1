@@ -1,0 +1,44 @@
+{
+	"files": [
+		{
+			"path": "shelter/pages/main/index.html",
+			"bookmarks": [
+				{
+					"line": 28,
+					"column": 18,
+					"label": "!--HEADER"
+				},
+				{
+					"line": 39,
+					"column": 28,
+					"label": "!--MAIN"
+				},
+				{
+					"line": 50,
+					"column": 27,
+					"label": "!--FOOTER"
+				}
+			]
+		},
+		{
+			"path": "shelter/pages/main/scss/style.scss",
+			"bookmarks": [
+				{
+					"line": 88,
+					"column": 27,
+					"label": "!--HEADER"
+				},
+				{
+					"line": 104,
+					"column": 26,
+					"label": "!--MAIN"
+				},
+				{
+					"line": 120,
+					"column": 25,
+					"label": "!--FOOTER"
+				}
+			]
+		}
+	]
+}

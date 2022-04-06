@@ -1,0 +1,23 @@
+.scroll {
+    &::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+        border-radius: 1000px;
+        background-color: var(--color-0-0);
+        @media (max-width: 480px) { & {
+            width: 4px;
+            height: 4px;
+        } }
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1000px;
+        background-color: var(--color-0-3);
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 1000px;
+        background-color: var(--color-0-0);
+    }
+}

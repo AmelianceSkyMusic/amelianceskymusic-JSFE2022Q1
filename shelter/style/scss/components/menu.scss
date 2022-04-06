@@ -1,0 +1,83 @@
+:root {
+
+    --menu-list--padding__outer: var(--spacing-5);
+    --menu-list--padding__inner: var(--spacing-3);
+    --menu-list--gap: var(--spacing-3);
+    // --menu-list--border-radius: var(--radius-3);
+
+    --menu-list--color__bg: var(--color-0-2);
+
+    --menu-list--color: var(--color-2-0);
+    --menu-list--color_hover: var(--color-2-2);
+
+    --menu-list--animation__duration: var(--time-3);
+    --menu-list--animation__time-type: var(--animation-3);
+    --menu-list--animation__delay: var(--time-1);
+
+    --menu-list--z-index: var(--z-index-4);
+}
+
+.menu-list {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: -100%;
+    z-index: var(--menu-list--z-index);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100vw;
+    height: 100vh;
+    padding: var(--menu-list--padding__outer);
+    background-color: var(--menu-list--color__bg);
+    opacity: 0%;
+    transition: right var(--menu-list--animation__duration) var(--menu-list--animation__time-type),
+                opacity var(--menu-list--animation__duration) var(--menu-list--animation__delay);
+    // justify-content: center;
+    // border-radius: var(--menu-list--border-radius);
+    // transform: scale(0.0);
+    &.show {
+        // transform: scale(1);
+        right: 0%;
+        opacity: 100%;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 10%;
+        margin-right: calc(10% - var(--spacing-2));
+
+    }
+
+    &__title {
+        padding-bottom: 18px;
+    }
+
+    &__items-container {
+        padding-right: var(--spacing-5);
+        height: calc(100vh - 200px);
+        // padding-bottom: var(--spacing-4);
+        display: flex;
+        flex-direction: column;
+        gap: var(--menu-list--gap);
+        overflow: auto;
+    }
+
+    &__item {
+        // padding-bottom: 24px;
+        // cursor: pointer;
+        // word-wrap: break-word;
+        // max-width: calc(100% - (var(--menu-list--padding__inner) * 2));
+
+        color: var(--menu-list--color);
+        cursor: pointer;
+        @media (hover: hover) {
+            &:hover {
+                transition: all var(--menu-list--animation__duration) var(--menu-list--animation__time-type);
+                color: var(--menu-list--color_hover);
+
+            }
+        }
+    }
+}
