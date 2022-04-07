@@ -9,12 +9,37 @@
 					"label": "!--HEADER"
 				},
 				{
-					"line": 45,
+					"line": 55,
 					"column": 27,
 					"label": "!--MAIN"
 				},
 				{
-					"line": 58,
+					"line": 60,
+					"column": 30,
+					"label": "    Fold"
+				},
+				{
+					"line": 73,
+					"column": 35,
+					"label": "    About"
+				},
+				{
+					"line": 86,
+					"column": 34,
+					"label": "    Pets"
+				},
+				{
+					"line": 118,
+					"column": 30,
+					"label": "    Help"
+				},
+				{
+					"line": 162,
+					"column": 38,
+					"label": "    Donation"
+				},
+				{
+					"line": 184,
 					"column": 22,
 					"label": "!--FOOTER"
 				}
@@ -24,19 +49,34 @@
 			"path": "shelter/pages/main/scss/style.scss",
 			"bookmarks": [
 				{
-					"line": 81,
+					"line": 82,
 					"column": 27,
 					"label": "!--HEADER"
 				},
 				{
-					"line": 96,
-					"column": 13,
-					"label": "!--MAIN"
+					"line": 130,
+					"column": 1,
+					"label": ""
 				},
 				{
-					"line": 112,
+					"line": 141,
+					"column": 3,
+					"label": "    Fold"
+				},
+				{
+					"line": 158,
 					"column": 4,
-					"label": "!--FOOTER"
+					"label": "    About"
+				},
+				{
+					"line": 162,
+					"column": 7,
+					"label": "    Our Friends"
+				},
+				{
+					"line": 167,
+					"column": 1,
+					"label": ""
 				}
 			]
 		}
