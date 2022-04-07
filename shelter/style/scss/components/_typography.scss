@@ -1,0 +1,51 @@
+:root {
+
+    --color__h1: var(--color-2-1);
+    --color__h2: var(--color-2-1);
+    --color__h3: var(--color-2-1);
+    --color__h4: var(--color-2-1);
+    --color__h5: var(--color-2-1);
+    --color__h6: var(--color-2-1);
+    --color__s1: var(--color-2-1);
+    --color__s2: var(--color-2-1);
+    --color__p1: var(--color-2-1);
+    --color__p2: var(--color-0-4);
+    --color__cp: var(--color-2-1);
+    --color__bt: var(--color-2-1);
+    --color__ov: var(--color-2-1);
+
+    // --color__h1_inverse: var();
+    // --color__h2_inverse: var();
+    // --color__h3_inverse: var();
+    // --color__h4_inverse: var();
+    // --color__h5_inverse: var();
+    // --color__h6_inverse: var();
+    // --color__s1_inverse: var();
+    // --color__s2_inverse: var();
+    // --color__p1_inverse: var();
+    // --color__p2_inverse: var();
+    // --color__ct_inverse: var();
+    // --color__bt_inverse: var();
+    // --color__ov_inverse: var();
+}
+
+@mixin setFontColor($font__color, $font__color_inverse) {
+    color: $font__color;
+    &.inverse {
+        color: $font__color_inverse;
+    }
+}
+
+$typography-elements: (
+    h1, h2, h3, h4, h5,
+    // h6, s1, s2,
+    p1, p2, p3,
+    // ct, bt, ov,
+    logo, subtitle
+);
+
+@each $item in $typography-elements {
+    .#{$item} {
+        @include setFontColor( var(--color__ + $item), var(--color__ + $item + _inverse));
+    };
+};

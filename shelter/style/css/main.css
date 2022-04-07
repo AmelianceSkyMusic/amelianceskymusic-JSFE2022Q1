@@ -1,0 +1,1398 @@
+:root {
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 16px;
+  --spacing-4: 24px;
+  --spacing-5: 32px;
+  --spacing-6: 48px;
+  --spacing-7: 64px;
+  --spacing-8: 80px;
+  --spacing-9: 120px;
+  --spacing-10: 160px;
+  --radius-0: 0px;
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-3: 16px;
+  --radius-4: 32px;
+  --border-0: 0px;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-3: 4px;
+  --border-4: 8px;
+  --z-index-bottom: -1000;
+  --z-index-0: 0;
+  --z-index-1: 10;
+  --z-index-2: 20;
+  --z-index-3: 30;
+  --z-index-4: 40;
+  /*.songlist-menu, */
+  --z-index-5: 50;
+  /*'menu icons' */
+  --z-index-top: 1000;
+  --time-0: 0s;
+  --time-1: 100ms;
+  --time-2: 200ms;
+  --time-3: 300ms;
+  --time-4: 400ms;
+  --time-5: 500ms;
+  --time-6: 1s;
+  --animation-0: ease;
+  --animation-1: ease-in;
+  --animation-2: ease-out;
+  --animation-3: ease-in-out;
+  --animation-4: linear;
+  --animation-5: step-start;
+  --animation-6: step-end;
+  --animation-bz-1: cubic-bezier(.45, .15, .70, 1.4);
+}
+
+@font-face {
+  font-family: "Yeseva One";
+  src: url("../../assets/fonts/YesevaOne/YesevaOne-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-Black.ttf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-ExtraBold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-ExtraLight.ttf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../assets/fonts/Montserrat/static/Montserrat-Thin.ttf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-Black.ttf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-ExtraBold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-ExtraLight.ttf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Noto";
+  src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-Thin.ttf");
+  font-weight: 100;
+}
+:root {
+  --font-family__primary: "Georgia", "Yeseva One", serif;
+  --font-family__secondary: "Arial", "Montserrat", system-ui;
+  --font-family__tertiary: "Noto", monospace;
+  --font-weight__black: 900;
+  --font-weight__extra-bold: 800;
+  --font-weight__bold: 700;
+  --font-weight__semi-bold: 600;
+  --font-weight__medium: 500;
+  --font-weight__regular: 400;
+  --font-weight__light: 300;
+  --font-weight__extra-light: 200;
+  --font-weight__thin: 100;
+}
+:root .h1 {
+  --font-family: var(--font-family__primary);
+  --font-size: 44px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 130%;
+  --letter-spacing: 0;
+}
+:root .h2 {
+  --font-family: var(--font-family__secondary);
+  --font-size: 35px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 130%;
+  --letter-spacing: 6%;
+}
+@media (max-width: 480px) {
+  :root .h2 {
+    --font-family: var(--font-family__primary);
+    --font-size: 25px;
+    --line-height: var(--font-weight__regular);
+    --font-weight: 130%;
+    --letter-spacing: 6%;
+  }
+}
+:root .h3 {
+  --font-family: var(--font-family__primary);
+  --font-size: 20px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 115%;
+  --letter-spacing: 6%;
+}
+:root .h4 {
+  --font-family: var(--font-family__primary);
+  --font-size: 15px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 110%;
+  --letter-spacing: 6%;
+}
+:root .h5 {
+  --font-family: var(--font-family__primary);
+  --font-size: 15px;
+  --line-height: var(--font-weight__bold);
+  --font-weight: 110%;
+  --letter-spacing: 6%;
+}
+:root .p1 {
+  --font-family: var(--font-family__secondary);
+  --font-size: 15px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 160%;
+  --letter-spacing: 0;
+}
+:root .p2 {
+  --font-family: var(--font-family__secondary);
+  --font-size: 12px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 150%;
+  --letter-spacing: 0;
+}
+:root .p2 {
+  font-style: italic;
+}
+:root .p3 {
+  --font-family: var(--font-family__secondary);
+  --font-size: 32px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 160%;
+  --letter-spacing: 0;
+}
+:root .logo {
+  --font-family: var(--font-family__primary);
+  --font-size: 32px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: 110%;
+  --letter-spacing: 6%;
+}
+:root .subtitle {
+  --font-family: var(--font-family__secondary);
+  --font-size: 13px;
+  --line-height: var(--font-weight__regular);
+  --font-weight: auto;
+  --letter-spacing: 10%;
+}
+
+.h1 {
+  font-family: var(--font__font-family_h1);
+  font-size: var(--font__font-size_h1);
+  line-height: var(--font__line-height_h1);
+  font-weight: var(--font__font-weight_h1);
+  letter-spacing: var(--font__letter-spacing_h1);
+}
+
+.h2 {
+  font-family: var(--font__font-family_h2);
+  font-size: var(--font__font-size_h2);
+  line-height: var(--font__line-height_h2);
+  font-weight: var(--font__font-weight_h2);
+  letter-spacing: var(--font__letter-spacing_h2);
+}
+
+.h3 {
+  font-family: var(--font__font-family_h3);
+  font-size: var(--font__font-size_h3);
+  line-height: var(--font__line-height_h3);
+  font-weight: var(--font__font-weight_h3);
+  letter-spacing: var(--font__letter-spacing_h3);
+}
+
+.h4 {
+  font-family: var(--font__font-family_h4);
+  font-size: var(--font__font-size_h4);
+  line-height: var(--font__line-height_h4);
+  font-weight: var(--font__font-weight_h4);
+  letter-spacing: var(--font__letter-spacing_h4);
+}
+
+.h5 {
+  font-family: var(--font__font-family_h5);
+  font-size: var(--font__font-size_h5);
+  line-height: var(--font__line-height_h5);
+  font-weight: var(--font__font-weight_h5);
+  letter-spacing: var(--font__letter-spacing_h5);
+}
+
+.p1 {
+  font-family: var(--font__font-family_p1);
+  font-size: var(--font__font-size_p1);
+  line-height: var(--font__line-height_p1);
+  font-weight: var(--font__font-weight_p1);
+  letter-spacing: var(--font__letter-spacing_p1);
+}
+
+.p2 {
+  font-family: var(--font__font-family_p2);
+  font-size: var(--font__font-size_p2);
+  line-height: var(--font__line-height_p2);
+  font-weight: var(--font__font-weight_p2);
+  letter-spacing: var(--font__letter-spacing_p2);
+}
+
+.p3 {
+  font-family: var(--font__font-family_p3);
+  font-size: var(--font__font-size_p3);
+  line-height: var(--font__line-height_p3);
+  font-weight: var(--font__font-weight_p3);
+  letter-spacing: var(--font__letter-spacing_p3);
+}
+
+.logo {
+  font-family: var(--font__font-family_logo);
+  font-size: var(--font__font-size_logo);
+  line-height: var(--font__line-height_logo);
+  font-weight: var(--font__font-weight_logo);
+  letter-spacing: var(--font__letter-spacing_logo);
+}
+
+.subtitle {
+  font-family: var(--font__font-family_subtitle);
+  font-size: var(--font__font-size_subtitle);
+  line-height: var(--font__line-height_subtitle);
+  font-weight: var(--font__font-weight_subtitle);
+  letter-spacing: var(--font__letter-spacing_subtitle);
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1px;
+}
+
+html, body {
+  height: 100%;
+}
+
+.body-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  height: 64px;
+}
+
+.main {
+  height: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: lightgray;
+}
+
+.footer {
+  height: 64px;
+}
+
+:root {
+  --color__h1: var(--color-2-1);
+  --color__h2: var(--color-2-1);
+  --color__h3: var(--color-2-1);
+  --color__h4: var(--color-2-1);
+  --color__h5: var(--color-2-1);
+  --color__h6: var(--color-2-1);
+  --color__s1: var(--color-2-1);
+  --color__s2: var(--color-2-1);
+  --color__p1: var(--color-2-1);
+  --color__p2: var(--color-0-4);
+  --color__cp: var(--color-2-1);
+  --color__bt: var(--color-2-1);
+  --color__ov: var(--color-2-1);
+}
+
+.h1 {
+  color: var(--color__h1);
+}
+.h1.inverse {
+  color: var(--color__h1_inverse);
+}
+
+.h2 {
+  color: var(--color__h2);
+}
+.h2.inverse {
+  color: var(--color__h2_inverse);
+}
+
+.h3 {
+  color: var(--color__h3);
+}
+.h3.inverse {
+  color: var(--color__h3_inverse);
+}
+
+.h4 {
+  color: var(--color__h4);
+}
+.h4.inverse {
+  color: var(--color__h4_inverse);
+}
+
+.h5 {
+  color: var(--color__h5);
+}
+.h5.inverse {
+  color: var(--color__h5_inverse);
+}
+
+.p1 {
+  color: var(--color__p1);
+}
+.p1.inverse {
+  color: var(--color__p1_inverse);
+}
+
+.p2 {
+  color: var(--color__p2);
+}
+.p2.inverse {
+  color: var(--color__p2_inverse);
+}
+
+.p3 {
+  color: var(--color__p3);
+}
+.p3.inverse {
+  color: var(--color__p3_inverse);
+}
+
+.logo {
+  color: var(--color__logo);
+}
+.logo.inverse {
+  color: var(--color__logo_inverse);
+}
+
+.subtitle {
+  color: var(--color__subtitle);
+}
+.subtitle.inverse {
+  color: var(--color__subtitle_inverse);
+}
+
+:root {
+  --button--size: 3em;
+  --icon--size: 1.5em;
+  --icon--margin: 0.5em;
+  --button--font-size: 16rem;
+  --button--font-size_big: 16rem;
+  --button--font-size_medium: 14rem;
+  --button--font-size_small: 10rem;
+  --button--font-family: "Montserrat", system-ui;
+  --button--line-height: -150%;
+  --button--font-weight: 600;
+  --button--animation__duration: 0.1s;
+  --button--animation__time-type: ease-in-out;
+  --button--padding: 1.2em;
+  --button--border-radius: 0.5em;
+  --button-fill--font__color_hover: var(--color-2-0);
+  --button-fill--font__color: var(--color-2-1);
+  --button-fill--font__color_pressed: var(--color-2-1);
+  --button-fill--font__color_disabled: var(--color-2-3);
+  --button-fill--bg__color_hover: var(--color-1-0);
+  --button-fill--bg__color: var(--color-1-1);
+  --button-fill--bg__color_pressed: var(--color-1-2);
+  --button-fill--bg__color_disabled: var(--color-1-3);
+  --button-fill--border__color_hover: transparent;
+  --button-fill--border__color: transparent;
+  --button-fill--border__color_pressed: transparent;
+  --button-fill--border__color_disabled: transparent;
+  --button-fill--border__width: 2px;
+  --button-fill--icon__color_hover: var(--button-fill--font__color_hover);
+  --button-fill--icon__color: var(--button-fill--font__color);
+  --button-fill--icon__color_pressed: var(--button-fill--font__color_pressed);
+  --button-fill--icon__color_disabled: var(--button-fill--font__color_disabled);
+  --button-outline--font__color_hover: var(--color-2-0);
+  --button-outline--font__color: var(--color-2-1);
+  --button-outline--font__color_pressed: var(--color-2-2);
+  --button-outline--font__color_disabled: var(--color-2-3);
+  --button-outline--bg__color_hover: none;
+  --button-outline--bg__color: none;
+  --button-outline--bg__color_pressed: none;
+  --button-outline--bg__color_disabled: none;
+  --button-outline--border__color_hover: var(--color-1-0);
+  --button-outline--border__color: var(--color-1-1);
+  --button-outline--border__color_pressed: var(--color-1-2);
+  --button-outline--border__color_disabled: var(--color-1-3);
+  --button-outline--border__width: 2px;
+  --button-outline--icon__color_hover: var(--button-outline--font__color_hover);
+  --button-outline--icon__color: var(--button-outline--font__color);
+  --button-outline--icon__color_pressed: var(--button-outline--font__color_pressed);
+  --button-outline--icon__color_disabled: var(--button-outline--font__color_disabled);
+  --button-text--font__color_hover: var(--color-2-0);
+  --button-text--font__color: var(--color-2-1);
+  --button-text--font__color_pressed: var(--color-2-2);
+  --button-text--font__color_disabled: var(--color-2-3);
+  --button-text--bg__color_hover: none;
+  --button-text--bg__color: none;
+  --button-text--bg__color_pressed: var(--color-1-3);
+  --button-text--bg__color_disabled: none;
+  --button-text--border__color_hover: transparent;
+  --button-text--border__color: transparent;
+  --button-text--border__color_pressed: transparent;
+  --button-text--border__color_disabled: transparent;
+  --button-text--border__width: 2px;
+  --button-text--icon__color_hover: var(--button-text--font__color_hover);
+  --button-text--icon__color: var(--button-text--font__color);
+  --button-text--icon__color_pressed: var(--button-text--font__color_pressed);
+  --button-text--icon__color_disabled: var(--button-text--font__color_disabled);
+  --button-icon--font__color_hover: var(--color-2-0);
+  --button-icon--font__color: var(--color-2-1);
+  --button-icon--font__color_pressed: var(--color-2-2);
+  --button-icon--font__color_disabled: var(--color-2-3);
+  --button-icon--bg__color_hover: none;
+  --button-icon--bg__color: none;
+  --button-icon--bg__color_pressed: var(--color-1-3);
+  --button-icon--bg__color_disabled: none;
+  --button-icon--border__color_hover: transparent;
+  --button-icon--border__color: transparent;
+  --button-icon--border__color_pressed: transparent;
+  --button-icon--border__color_disabled: transparent;
+  --button-icon--border__width: 2px;
+  --button-icon--icon__color_hover: var(--button-icon--font__color_hover);
+  --button-icon--icon__color: var(--button-icon--font__color);
+  --button-icon--icon__color_pressed: var(--button-icon--font__color_pressed);
+  --button-icon--icon__color_disabled: var(--button-icon--font__color_disabled);
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-style: solid;
+  font-size: var(--button--font-size);
+  height: var(--button--size);
+  padding: 0 var(--button--padding);
+  border-radius: var(--button--border-radius);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.button .label {
+  font-family: var(--button--font-family);
+  line-height: var(--button--line-height);
+  font-weight: var(--button--font-weight);
+}
+.button__big {
+  font-size: var(--button--font-size_big);
+}
+.button__medium {
+  font-size: var(--button--font-size_medium);
+}
+.button__small {
+  font-size: var(--button--font-size_small);
+}
+.button__fill {
+  background: var(--button-fill--bg__color);
+  border-width: var(--button-fill--border__width);
+  border-color: var(--button-fill--border__color);
+}
+.button__fill .label {
+  color: var(--button-fill--font__color);
+}
+.button__fill .icon {
+  background-color: var(--button-fill--icon__color);
+}
+@media (hover: hover) {
+  .button__fill:hover {
+    color: var(--button-fill--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    background: var(--button-fill--bg__color_hover);
+    border-color: var(--button-fill--border__color_hover);
+  }
+  .button__fill:hover .label {
+    color: var(--button-fill--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+  .button__fill:hover .icon {
+    background-color: var(--button-fill--icon__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+}
+.button__fill:active {
+  color: var(--button-fill--font__color_pressed);
+  background: var(--button-fill--bg__color_pressed);
+  border-color: var(--button-fill--border__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__fill:active .label {
+  color: var(--button-fill--font__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__fill:active .icon {
+  background-color: var(--button-fill--icon__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__fill:disabled, .button__fill[disabled] {
+  color: var(--button-fill--font__color_disabled);
+  background: var(--button-fill--bg__color_disabled);
+  border-color: var(--button-fill--border__color_disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.button__fill:disabled .label, .button__fill[disabled] .label {
+  color: var(--button-fill--font__color_disabled);
+}
+.button__fill:disabled .icon, .button__fill[disabled] .icon {
+  background-color: var(--button-fill--icon__color_disabled);
+}
+.button__outline {
+  background: var(--button-outline--bg__color);
+  border-width: var(--button-outline--border__width);
+  border-color: var(--button-outline--border__color);
+}
+.button__outline .label {
+  color: var(--button-outline--font__color);
+}
+.button__outline .icon {
+  background-color: var(--button-outline--icon__color);
+}
+@media (hover: hover) {
+  .button__outline:hover {
+    color: var(--button-outline--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    background: var(--button-outline--bg__color_hover);
+    border-color: var(--button-outline--border__color_hover);
+  }
+  .button__outline:hover .label {
+    color: var(--button-outline--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+  .button__outline:hover .icon {
+    background-color: var(--button-outline--icon__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+}
+.button__outline:active {
+  color: var(--button-outline--font__color_pressed);
+  background: var(--button-outline--bg__color_pressed);
+  border-color: var(--button-outline--border__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__outline:active .label {
+  color: var(--button-outline--font__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__outline:active .icon {
+  background-color: var(--button-outline--icon__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__outline:disabled, .button__outline[disabled] {
+  color: var(--button-outline--font__color_disabled);
+  background: var(--button-outline--bg__color_disabled);
+  border-color: var(--button-outline--border__color_disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.button__outline:disabled .label, .button__outline[disabled] .label {
+  color: var(--button-outline--font__color_disabled);
+}
+.button__outline:disabled .icon, .button__outline[disabled] .icon {
+  background-color: var(--button-outline--icon__color_disabled);
+}
+.button__text {
+  background: var(--button-text--bg__color);
+  border-width: var(--button-text--border__width);
+  border-color: var(--button-text--border__color);
+}
+.button__text .label {
+  color: var(--button-text--font__color);
+}
+.button__text .icon {
+  background-color: var(--button-text--icon__color);
+}
+@media (hover: hover) {
+  .button__text:hover {
+    color: var(--button-text--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    background: var(--button-text--bg__color_hover);
+    border-color: var(--button-text--border__color_hover);
+  }
+  .button__text:hover .label {
+    color: var(--button-text--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+  .button__text:hover .icon {
+    background-color: var(--button-text--icon__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+}
+.button__text:active {
+  color: var(--button-text--font__color_pressed);
+  background: var(--button-text--bg__color_pressed);
+  border-color: var(--button-text--border__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__text:active .label {
+  color: var(--button-text--font__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__text:active .icon {
+  background-color: var(--button-text--icon__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__text:disabled, .button__text[disabled] {
+  color: var(--button-text--font__color_disabled);
+  background: var(--button-text--bg__color_disabled);
+  border-color: var(--button-text--border__color_disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.button__text:disabled .label, .button__text[disabled] .label {
+  color: var(--button-text--font__color_disabled);
+}
+.button__text:disabled .icon, .button__text[disabled] .icon {
+  background-color: var(--button-text--icon__color_disabled);
+}
+.button__text .label {
+  text-decoration: underline;
+  text-decoration-thickness: var(--button-text--border__width);
+}
+.button .icon {
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  width: var(--icon--size);
+  height: var(--icon--size);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+}
+.button .icon__left {
+  margin-right: var(--icon--margin);
+}
+.button .icon__right {
+  margin-left: var(--icon--margin);
+}
+.button__icon {
+  background: var(--button-icon--bg__color);
+  border-width: var(--button-icon--border__width);
+  border-color: var(--button-icon--border__color);
+  padding: 0 0;
+}
+.button__icon .label {
+  color: var(--button-icon--font__color);
+}
+.button__icon .icon {
+  background-color: var(--button-icon--icon__color);
+}
+@media (hover: hover) {
+  .button__icon:hover {
+    color: var(--button-icon--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    background: var(--button-icon--bg__color_hover);
+    border-color: var(--button-icon--border__color_hover);
+  }
+  .button__icon:hover .label {
+    color: var(--button-icon--font__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+  .button__icon:hover .icon {
+    background-color: var(--button-icon--icon__color_hover);
+    -webkit-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    -o-transition: all var(--button--animation__duration) var(--button--animation__time-type);
+    transition: all var(--button--animation__duration) var(--button--animation__time-type);
+  }
+}
+.button__icon:active {
+  color: var(--button-icon--font__color_pressed);
+  background: var(--button-icon--bg__color_pressed);
+  border-color: var(--button-icon--border__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__icon:active .label {
+  color: var(--button-icon--font__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__icon:active .icon {
+  background-color: var(--button-icon--icon__color_pressed);
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+}
+.button__icon:disabled, .button__icon[disabled] {
+  color: var(--button-icon--font__color_disabled);
+  background: var(--button-icon--bg__color_disabled);
+  border-color: var(--button-icon--border__color_disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.button__icon:disabled .label, .button__icon[disabled] .label {
+  color: var(--button-icon--font__color_disabled);
+}
+.button__icon:disabled .icon, .button__icon[disabled] .icon {
+  background-color: var(--button-icon--icon__color_disabled);
+}
+.button__icon.button {
+  width: var(--button--size);
+}
+
+:root {
+  --icon--color: var(--color-2-0);
+  --icon--color_hover: var(--color-2-2);
+  --icon--animation__duration: var(--time-2);
+  --icon--animation__time-type: var(--animation-3);
+  --icon--animation__delay: var(--time-1);
+}
+
+.icon {
+  height: 48px;
+  width: 48px;
+  background-color: var(--icon--color);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+@media (hover: hover) {
+  .icon:hover {
+    -webkit-transition: all var(--icon--animation__duration) var(--icon--animation__time-type);
+    -o-transition: all var(--icon--animation__duration) var(--icon--animation__time-type);
+    transition: all var(--icon--animation__duration) var(--icon--animation__time-type);
+    background-color: var(--icon--color_hover);
+  }
+}
+
+.link {
+  color: var(--color__link);
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .link:hover {
+    -webkit-transition: all var(--time__medium) var(--animation__standart);
+    -o-transition: all var(--time__medium) var(--animation__standart);
+    transition: all var(--time__medium) var(--animation__standart);
+    color: var(--color__link-hover);
+  }
+}
+
+:root {
+  --list-item--color: var(--color-2-0);
+  --list-item--color_hover: var(--color-2-2);
+  --list-item--animation__duration: var(--time-2);
+  --list-item--animation__time-type: var(--animation-3);
+  --list-item--animation__delay: var(--time-1);
+}
+
+.list-item {
+  color: var(--list-item--color);
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .list-item:hover {
+    -webkit-transition: all var(--list-item--animation__duration) var(--list-item--animation__time-type);
+    -o-transition: all var(--list-item--animation__duration) var(--list-item--animation__time-type);
+    transition: all var(--list-item--animation__duration) var(--list-item--animation__time-type);
+    color: var(--list-item--color_hover);
+  }
+}
+
+:root {
+  --menu-list--padding__outer: var(--spacing-5);
+  --menu-list--padding__inner: var(--spacing-3);
+  --menu-list--gap: var(--spacing-3);
+  --menu-list--color__bg: var(--color-0-2);
+  --menu-list--color: var(--color-2-0);
+  --menu-list--color_hover: var(--color-2-2);
+  --menu-list--animation__duration: var(--time-3);
+  --menu-list--animation__time-type: var(--animation-3);
+  --menu-list--animation__delay: var(--time-1);
+  --menu-list--z-index: var(--z-index-4);
+}
+
+.menu-list {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: -100%;
+  z-index: var(--menu-list--z-index);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  width: 100vw;
+  height: 100vh;
+  padding: var(--menu-list--padding__outer);
+  background-color: var(--menu-list--color__bg);
+  opacity: 0%;
+  -webkit-transition: right var(--menu-list--animation__duration) var(--menu-list--animation__time-type), opacity var(--menu-list--animation__duration) var(--menu-list--animation__delay);
+  -o-transition: right var(--menu-list--animation__duration) var(--menu-list--animation__time-type), opacity var(--menu-list--animation__duration) var(--menu-list--animation__delay);
+  transition: right var(--menu-list--animation__duration) var(--menu-list--animation__time-type), opacity var(--menu-list--animation__duration) var(--menu-list--animation__delay);
+}
+.menu-list.show {
+  right: 0%;
+  opacity: 100%;
+}
+.menu-list__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 10%;
+  margin-right: calc(10% - var(--spacing-2));
+}
+.menu-list__title {
+  padding-bottom: 18px;
+}
+.menu-list__items-container {
+  padding-right: var(--spacing-5);
+  height: calc(100vh - 200px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: var(--menu-list--gap);
+  overflow: auto;
+}
+.menu-list__item {
+  color: var(--menu-list--color);
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .menu-list__item:hover {
+    -webkit-transition: all var(--menu-list--animation__duration) var(--menu-list--animation__time-type);
+    -o-transition: all var(--menu-list--animation__duration) var(--menu-list--animation__time-type);
+    transition: all var(--menu-list--animation__duration) var(--menu-list--animation__time-type);
+    color: var(--menu-list--color_hover);
+  }
+}
+
+:root {
+  --popup--padding__outer: var(--spacing-5);
+  --popup--padding__inner: var(--spacing-3);
+  --popup--border-radius: var(--radius-3);
+  --popup--color__bg: var(--color-0-2);
+  --popup--animation__duration: var(--time-3);
+  --popup--animation__time-type: var(--animation-bz-1);
+  --popup--animation__delay: var(--time-1);
+  --popup--z-index: var(--z-index-4);
+}
+
+.popup {
+  position: absolute;
+  max-width: 80%;
+  top: 50%;
+  left: 50%;
+  z-index: var(--popup--z-index);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: var(--popup--padding__outer);
+  border-radius: var(--popup--border-radius);
+  background-color: var(--popup--color__bg);
+  opacity: 0%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: opacity var(--popup--animation__duration) var(--popup--animation__delay), -webkit-transform var(--popup--animation__duration) var(--popup--animation__time-type);
+  transition: opacity var(--popup--animation__duration) var(--popup--animation__delay), -webkit-transform var(--popup--animation__duration) var(--popup--animation__time-type);
+  -o-transition: transform var(--popup--animation__duration) var(--popup--animation__time-type), opacity var(--popup--animation__duration) var(--popup--animation__delay);
+  transition: transform var(--popup--animation__duration) var(--popup--animation__time-type), opacity var(--popup--animation__duration) var(--popup--animation__delay);
+  transition: transform var(--popup--animation__duration) var(--popup--animation__time-type), opacity var(--popup--animation__duration) var(--popup--animation__delay), -webkit-transform var(--popup--animation__duration) var(--popup--animation__time-type);
+}
+.popup.show {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 100%;
+}
+.popup__title {
+  padding-bottom: 18px;
+}
+.popup__text {
+  padding-bottom: 24px;
+  word-wrap: break-word;
+  max-width: calc(100% - var(--popup--padding__inner) * 2);
+}/*# sourceMappingURL=main.css.map */

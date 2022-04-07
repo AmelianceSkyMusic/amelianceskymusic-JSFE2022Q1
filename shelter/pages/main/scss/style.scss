@@ -2,7 +2,7 @@
 // >                            IMPORT                              <
 // >----------------------------------------------------------------<
 
-@use "../../../style/scss/main.scss" as *;
+// @use "../../../style/scss/main.scss" as *;
 
 
 
@@ -25,10 +25,10 @@
 :root {
 
     // ^------------------------ size ------------------------
-    --size-w__block-container_desktop: 1240px; // block container --> 80px * 12 columns / gutter 24 px
+    --size-w__block-container_desktop: 1200px; // block container --> 80px * 12 columns / gutter 24 px
 
     --size-h__block-container-header_desktop: 64px;
-    --size-h__block-container-main_desktop: auto;
+    --size-h__block-container-main_desktop: 100%;
     --size-h__block-container-footer_desktop: 64px;
 }
 
@@ -39,47 +39,40 @@
 // >                         START SETTINGS                         <
 // >----------------------------------------------------------------<
 
-*,  *::before, *::after {
-    box-sizing: border-box; // ! why?????????
-    -webkit-tap-highlight-color: transparent; // disable blue tap for sensor device
-}
-
-html {
-    scroll-behavior: smooth;
-    // scroll-padding-top: 64px;
-    font-size: 1px; // reset pixels for em / rem unit
-}
-
-
+// html, body {
+//     height: 100%;
+// }
 // ^------------------------ footer to buttom ------------------------
 
-.body {
-    .body__container {
-        position: relative;
-        height: min(100%, 100vh);
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-    }
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 1440px;
-    height: 100%;
-    margin: 0 auto;
-    background-color: var(--color-0-1);
-    .main {
-        flex: 1;
-    }
-}
+// .body {
+//     // .body__container {
+//     //     position: relative;
+//     //     height: min(100%, 100vh);
+//     //     width: 100vw;
+//     //     display: flex;
+//     //     flex-direction: column;
+//     //     overflow-x: hidden;
+//     // }
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     max-width: 1440px;
+//     height: 100%;
+//     margin: 0 auto;
+//     background-color: green;
+//     // .main {
+//     //     flex: 1;
+//     // }
+// }
 
 
-// ^------------------------ block container ------------------------
+// // ^------------------------ block container ------------------------
 
 .container {
-    max-height: 100%;
+    display: flex;
+    min-height: 100%;
     margin: 0 auto;
+    max-width: var(--size-w__block-container_desktop);
 }
 
 
@@ -91,10 +84,9 @@ html {
 
 .header {
     height: var(--size-h__block-container-header_desktop);
-    background-color: var(--color-0-2);
+    background-color: silver;
     & .container {
-        max-width: var(--size-w__block-container_desktop);
-        height: 100%;
+        background-color: gray;
     }
 }
 
@@ -107,10 +99,10 @@ html {
 
 .main {
     height: var(--size-h__block-container-main_desktop);
-    background-color: var(--color-0-1);
+    background-color: white;
     & .container {
-        max-width: var(--size-w__block-container_desktop);
-        height: 100%;
+        background-color: silver;
+        content: "500px";
     }
 }
 
@@ -123,19 +115,8 @@ html {
 
 .footer {
     height: var(--size-h__block-container-footer_desktop);
-    background-color: var(--color-0-0);
+    background-color: black;
     & .container {
-        max-width: var(--size-w__block-container_desktop);
-        height: 100%;
+        background-color: gray;
     }
-}
-
-
-
-
-
-
-
-.mainssss {
-    background-color: $red-color;
 }

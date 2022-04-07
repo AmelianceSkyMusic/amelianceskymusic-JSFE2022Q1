@@ -4,18 +4,18 @@
 			"path": "shelter/pages/main/index.html",
 			"bookmarks": [
 				{
-					"line": 28,
-					"column": 18,
+					"line": 31,
+					"column": 26,
 					"label": "!--HEADER"
 				},
 				{
-					"line": 39,
-					"column": 28,
+					"line": 45,
+					"column": 27,
 					"label": "!--MAIN"
 				},
 				{
-					"line": 50,
-					"column": 27,
+					"line": 58,
+					"column": 22,
 					"label": "!--FOOTER"
 				}
 			]
@@ -24,18 +24,18 @@
 			"path": "shelter/pages/main/scss/style.scss",
 			"bookmarks": [
 				{
-					"line": 88,
+					"line": 81,
 					"column": 27,
 					"label": "!--HEADER"
 				},
 				{
-					"line": 104,
-					"column": 26,
+					"line": 96,
+					"column": 13,
 					"label": "!--MAIN"
 				},
 				{
-					"line": 120,
-					"column": 25,
+					"line": 112,
+					"column": 4,
 					"label": "!--FOOTER"
 				}
 			]

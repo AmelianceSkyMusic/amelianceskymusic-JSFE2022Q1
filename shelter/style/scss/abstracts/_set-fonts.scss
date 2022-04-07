@@ -1,0 +1,159 @@
+@use "variables" as *;
+
+// >----------------------------------------------------------------<
+// >                           VARIBLES                             <
+// >----------------------------------------------------------------<
+$font-primary__path: "../../assets/fonts/YesevaOne/";
+$font-secondary__path: "../../assets/fonts/Montserrat/static/";
+$font-tertiary__path: "../../assets/fonts/Noto/static/NotoSansMono/";
+$font-primary__family-name: "Yeseva One";
+$font-secondary__family-name: "Montserrat";
+$font-tertiary__family-name: "Noto";
+
+// >----------------------------------------------------------------<
+// >                            MIXINS                              <
+// >----------------------------------------------------------------<
+
+@mixin initFont($font-family-name, $font-path, $font-family-file, $font-weight) {
+    font-family: $font-family-name;
+    src: url($font-path + $font-family-file);
+    font-weight: $font-weight;
+}
+
+@mixin setFont($font-family, $font-size, $font-line-height, $font-weight, $letter-spacing: 0) {
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $font-line-height;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin setTypoElem($elem, $font-family, $font-size, $font-line-height, $font-weight, $letter-spacing) {
+    .#{$elem} {
+        --font-family: #{$font-family};
+        --font-size: #{$font-size};
+        --line-height: #{$font-line-height};
+        --font-weight: #{$font-weight};
+        --letter-spacing: #{$letter-spacing};
+    }
+}
+
+
+// >----------------------------------------------------------------<
+// >                            FONTS                               <
+// >----------------------------------------------------------------<
+
+@font-face { @include initFont($font-primary__family-name, $font-primary__path, "YesevaOne-Regular.ttf", 400) }
+
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-Black.ttf", 900) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-ExtraBold.ttf", 800) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-Bold.ttf", 700) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-SemiBold.ttf", 600) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-Medium.ttf", 500) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-Regular.ttf", 400) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-Light.ttf", 300) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-ExtraLight.ttf", 200) }
+@font-face { @include initFont($font-secondary__family-name, $font-secondary__path, "Montserrat-Thin.ttf", 100) }
+
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-Black.ttf", 900) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-ExtraBold.ttf", 800) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-Bold.ttf", 700) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-SemiBold.ttf", 600) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-Medium.ttf", 500) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-Regular.ttf", 400) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-Light.ttf", 300) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-ExtraLight.ttf", 200) }
+@font-face { @include initFont($font-tertiary__family-name, $font-tertiary__path, "NotoSansMono-Thin.ttf", 100) }
+
+// >----------------------------------------------------------------<
+// >                             TOKENS                             <
+// >----------------------------------------------------------------<
+
+:root {
+
+
+    // ^------------------------ fonts varibles ------------------------
+
+    --font-family__primary:         "Georgia", "Yeseva One", serif;
+    --font-family__secondary:       "Arial", "Montserrat", system-ui;
+    --font-family__tertiary:        "Noto", monospace;
+
+    --font-weight__black:       900;
+    --font-weight__extra-bold:  800;
+    --font-weight__bold:        700;
+    --font-weight__semi-bold:   600;
+    --font-weight__medium:      500;
+    --font-weight__regular:     400;
+    --font-weight__light:       300;
+    --font-weight__extra-light: 200;
+    --font-weight__thin:        100;
+
+
+    // ^------------------------ typography elements ------------------------
+
+    // font-family, font-size, font-weight, line-height, letter-spacing
+    @include setTypoElem(h1, var(--font-family__primary), 44px, var(--font-weight__regular), 130%, 0);              // header 1
+
+    @include setTypoElem(h2, var(--font-family__secondary), 35px, var(--font-weight__regular), 130%, 6%);           // header 2
+
+    @media (max-width: $mobile) {
+        @include setTypoElem(h2, var(--font-family__primary), 25px, var(--font-weight__regular), 130%, 6%);         // header 2 mobile
+    }
+
+    @include setTypoElem(h3, var(--font-family__primary), 20px, var(--font-weight__regular), 115%, 6%);             // header 3
+
+    @include setTypoElem(h4, var(--font-family__primary), 15px, var(--font-weight__regular), 110%, 6%);             // header 4
+
+    @include setTypoElem(h5, var(--font-family__primary), 15px, var(--font-weight__bold), 110%, 6%);                // header 5
+
+    // @include setTypoElem(h6, var(--font-family__secondary), 16px, var(--font-weight__bold), 150%, 0);            // header 6
+
+    // @include setTypoElem(s1, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // subtitle 1
+
+    // @include setTypoElem(s2, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // subtitle 2
+
+    @include setTypoElem(p1, var(--font-family__secondary), 15px, var(--font-weight__regular), 160%, 0);
+
+    @include setTypoElem(p2, var(--font-family__secondary), 12px, var(--font-weight__regular), 150%, 0);
+    .p2 { font-style: italic; }
+
+    @include setTypoElem(p3, var(--font-family__secondary), 32px, var(--font-weight__regular), 160%, 0);            // menu
+
+    // @include setTypoElem(ct, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // caption
+
+    // @include setTypoElem(bt, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // button
+
+    // @include setTypoElem(ov, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // overline
+
+    @include setTypoElem(logo, var(--font-family__primary), 32px, var(--font-weight__regular), 110%, 6%);           // logo
+
+    @include setTypoElem(subtitle, var(--font-family__secondary), 13px, var(--font-weight__regular), auto, 10%);    // subtitle
+
+}
+
+
+
+
+// >----------------------------------------------------------------<
+// >                        SET TYPOGRAPHY                          <
+// >----------------------------------------------------------------<
+
+$setTypo-elements: (
+    h1, h2, h3, h4, h5,
+    // h6, s1, s2,
+    p1, p2, p3,
+    // ct, bt, ov,
+    logo, subtitle
+);
+
+@each $item in $setTypo-elements {
+    .#{$item} {
+        @include setFont(
+            var(--font__font-family_ + $item),
+            var(--font__font-size_ + $item),
+            var(--font__line-height_ + $item),
+            var(--font__font-weight_ + $item),
+            var(--font__letter-spacing_ + $item)
+        );
+    };
+};

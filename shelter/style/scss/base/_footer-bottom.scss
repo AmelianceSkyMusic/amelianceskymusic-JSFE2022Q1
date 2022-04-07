@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+}
+
+.body-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 32px;
+}
+
+.main {
+    height: auto;
+    flex: 1;
+    background: lightgray;
+}
+
+.footer {
+    padding: 32px;
+}
