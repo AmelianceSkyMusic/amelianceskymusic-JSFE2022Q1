@@ -11,9 +11,9 @@
   --color--primary: #f1cdb3;
   --color--primary-light: #fddcc4;
   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-  /* --color--main-gradient: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%); */
+  --color--main-gradient: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
   --color--main-background: #211F20;
   /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-  /* --color--footer-gradient: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%); */
+  --color--footer-gradient: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
   --color--footer-background: #211F20;
 }/*# sourceMappingURL=light.css.map */

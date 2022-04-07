@@ -9,32 +9,87 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100%;
   margin: 0 auto;
   max-width: var(--size-w__block-container_desktop);
 }
 
 .header {
-  height: var(--size-h__block-container-header_desktop);
-  background-color: silver;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  padding-top: 60px;
 }
 .header .container {
-  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__logo .logo {
+  padding-bottom: 10px;
+}
+.header__navigation {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header__navigation .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 35px;
 }
 
 .main {
-  height: var(--size-h__block-container-main_desktop);
   background-color: white;
 }
-.main .container {
-  background-color: silver;
-  content: "500px";
+.fold {
+  background: var(--color--main-gradient), var(--color--main-background);
+}
+.fold__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 460px;
+  gap: 42px;
+  padding-top: 341px;
+  padding-bottom: 243px;
+}
+.fold .content__header {
+  max-width: 310px;
 }
 
 .footer {
-  height: var(--size-h__block-container-footer_desktop);
-  background-color: black;
-}
-.footer .container {
-  background-color: gray;
+  padding: 0;
+  background: var(--color--footer-gradient), var(--color--footer-background);
 }/*# sourceMappingURL=style.css.map */

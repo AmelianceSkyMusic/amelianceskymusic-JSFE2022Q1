@@ -10,6 +10,7 @@ $font-primary__family-name: "Yeseva One";
 $font-secondary__family-name: "Montserrat";
 $font-tertiary__family-name: "Noto";
 
+
 // >----------------------------------------------------------------<
 // >                            MIXINS                              <
 // >----------------------------------------------------------------<
@@ -20,7 +21,7 @@ $font-tertiary__family-name: "Noto";
     font-weight: $font-weight;
 }
 
-@mixin setFont($font-family, $font-size, $font-line-height, $font-weight, $letter-spacing: 0) {
+@mixin setFont($font-family, $font-size, $font-weight, $font-line-height, $letter-spacing: 0) {
     font-family: $font-family;
     font-size: $font-size;
     line-height: $font-line-height;
@@ -28,13 +29,13 @@ $font-tertiary__family-name: "Noto";
     letter-spacing: $letter-spacing;
 }
 
-@mixin setTypoElem($elem, $font-family, $font-size, $font-line-height, $font-weight, $letter-spacing) {
+@mixin setTypoElem($elem, $font-family, $font-size, $font-weight, $font-line-height, $letter-spacing) {
     .#{$elem} {
-        --font-family: #{$font-family};
-        --font-size: #{$font-size};
-        --line-height: #{$font-line-height};
-        --font-weight: #{$font-weight};
-        --letter-spacing: #{$letter-spacing};
+        #{--font__font-family_ + $elem}: #{$font-family};
+        #{--font__font-size_ + $elem}: #{$font-size};
+        #{--font__line-height_ + $elem}: #{$font-line-height};
+        #{--font__font-weight_ + $elem}: #{$font-weight};
+        #{--font__letter-spacing_ + $elem}: #{$letter-spacing};
     }
 }
 
@@ -94,17 +95,17 @@ $font-tertiary__family-name: "Noto";
     // font-family, font-size, font-weight, line-height, letter-spacing
     @include setTypoElem(h1, var(--font-family__primary), 44px, var(--font-weight__regular), 130%, 0);              // header 1
 
-    @include setTypoElem(h2, var(--font-family__secondary), 35px, var(--font-weight__regular), 130%, 6%);           // header 2
+    @include setTypoElem(h2, var(--font-family__primary), 35px, var(--font-weight__regular), 130%, 0.06em);           // header 2
 
     @media (max-width: $mobile) {
-        @include setTypoElem(h2, var(--font-family__primary), 25px, var(--font-weight__regular), 130%, 6%);         // header 2 mobile
+        @include setTypoElem(h2, var(--font-family__primary), 25px, var(--font-weight__regular), 130%, 0.06em);         // header 2 mobile
     }
 
-    @include setTypoElem(h3, var(--font-family__primary), 20px, var(--font-weight__regular), 115%, 6%);             // header 3
+    @include setTypoElem(h3, var(--font-family__primary), 20px, var(--font-weight__regular), 115%, 0.06em);             // header 3
 
-    @include setTypoElem(h4, var(--font-family__primary), 15px, var(--font-weight__regular), 110%, 6%);             // header 4
+    @include setTypoElem(h4, var(--font-family__primary), 15px, var(--font-weight__regular), 110%, 0.06em);             // header 4
 
-    @include setTypoElem(h5, var(--font-family__primary), 15px, var(--font-weight__bold), 110%, 6%);                // header 5
+    @include setTypoElem(h5, var(--font-family__primary), 15px, var(--font-weight__bold), 110%, 0.06em);                // header 5
 
     // @include setTypoElem(h6, var(--font-family__secondary), 16px, var(--font-weight__bold), 150%, 0);            // header 6
 
@@ -125,9 +126,9 @@ $font-tertiary__family-name: "Noto";
 
     // @include setTypoElem(ov, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // overline
 
-    @include setTypoElem(logo, var(--font-family__primary), 32px, var(--font-weight__regular), 110%, 6%);           // logo
+    @include setTypoElem(logo, var(--font-family__primary), 32px, var(--font-weight__regular), 110%, 0.06em);           // logo
 
-    @include setTypoElem(subtitle, var(--font-family__secondary), 13px, var(--font-weight__regular), auto, 10%);    // subtitle
+    @include setTypoElem(subtitle, var(--font-family__secondary), 13px, var(--font-weight__regular), 100%, 0.1em);    // subtitle
 
 }
 
@@ -151,8 +152,8 @@ $setTypo-elements: (
         @include setFont(
             var(--font__font-family_ + $item),
             var(--font__font-size_ + $item),
-            var(--font__line-height_ + $item),
             var(--font__font-weight_ + $item),
+            var(--font__line-height_ + $item),
             var(--font__letter-spacing_ + $item)
         );
     };

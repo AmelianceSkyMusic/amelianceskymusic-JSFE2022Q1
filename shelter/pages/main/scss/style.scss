@@ -70,6 +70,7 @@
 
 .container {
     display: flex;
+    flex-direction: column;
     min-height: 100%;
     margin: 0 auto;
     max-width: var(--size-w__block-container_desktop);
@@ -83,10 +84,43 @@
 // >----------------------------------------------------------------<
 
 .header {
-    height: var(--size-h__block-container-header_desktop);
-    background-color: silver;
+    // height: var(--size-h__block-container-header_desktop);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    padding-top: 60px;
     & .container {
-        background-color: gray;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo {
+            padding-bottom: 10px;
+        }
+        .subtitle {
+
+        }
+
+    }
+
+    &__navigation{
+        margin-left: auto;
+        display: flex;
+        .navigation {
+            display: flex;
+            gap: 35px;
+            // flex-direction: row;
+        }
+
     }
 }
 
@@ -98,25 +132,46 @@
 // >----------------------------------------------------------------<
 
 .main {
-    height: var(--size-h__block-container-main_desktop);
+    // height: var(--size-h__block-container-main_desktop);
     background-color: white;
     & .container {
-        background-color: silver;
-        content: "500px";
+        // content: "500px";
     }
 }
 
+.fold {
+    background: var(--color--main-gradient), var(--color--main-background);
+    &__content {
+        display: flex;
+        flex-direction: column;
+        max-width: 460px;
+        gap: 42px;
+        // padding-top: 223px;
+        padding-top: 341px;
+        padding-bottom: 243px;
+    }
 
+    .content__header {
+        max-width: 310px;
+    }
+}
 
+.about {
+
+}
+
+.pets {
+
+}
 
 // >----------------------------------------------------------------<
 // >                             FOOTER                             <
 // >----------------------------------------------------------------<
 
 .footer {
-    height: var(--size-h__block-container-footer_desktop);
-    background-color: black;
+    padding: 0;
+    // height: var(--size-h__block-container-footer_desktop);
+    background: var(--color--footer-gradient), var(--color--footer-background);
     & .container {
-        background-color: gray;
     }
 }
