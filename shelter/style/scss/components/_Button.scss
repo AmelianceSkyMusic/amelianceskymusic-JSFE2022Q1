@@ -147,7 +147,7 @@
 
     // width: calc();
     height: var(--button--size);
-    padding: 0 var(--button--padding);
+    padding: var(--button--padding);
     border-radius: var(--button--border-radius);
 
     user-select: none;
@@ -156,6 +156,8 @@
         font-family: var(--button--font-family);
         line-height: var(--button--line-height);
         font-weight: var(--button--font-weight);
+        letter-spacing: var(--button--letter-spacing);
+        font-style: var(--button--font-style);
     }
 
     // ^------------------------ Button Size ------------------------
