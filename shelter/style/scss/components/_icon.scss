@@ -1,6 +1,13 @@
 :root {
-    --icon--color: var(--color--primary);
-    --icon--color_hover: var(--color--primary-light);
+
+    --icon-big--color: var(--color--primary);
+    // --icon-big--color_hover: var(--color--primary-light);
+
+    --icon-medium--color: var(--color--dark-3xl);
+    // --icon-medium--color_hover: var(--color--primary-light);
+
+    --icon-h32--color: var(--color--primary);
+    // --icon-medium--color_hover: var(--color--primary-light);
 
     --icon--animation__duration: var(--time-2);
     --icon--animation__time-type: var(--animation-3);
@@ -74,35 +81,59 @@
     // }
 }
 
-.icon_big {
-    height: 60px;
+.icon-big {
     width: 60px;
+    height: 60px;
 
-    &.pet-food {
-        @include maskImgSVG("icon-pet-food.svg", var(--icon--color), var(--icon--color_hover));
+    &_pet-food {
+        @include maskImgSVG("icon-big--pet-food.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.transportation {
-        @include maskImgSVG("icon-transportation.svg", var(--icon--color), var(--icon--color_hover));
+    &_transportation {
+        @include maskImgSVG("icon-big--transportation.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.toys {
-        @include maskImgSVG("icon-toys.svg", var(--icon--color), var(--icon--color_hover));
+    &_toys {
+        @include maskImgSVG("icon-big--toys.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.bowls-and-cups {
-        @include maskImgSVG("icon-bowls-and-cups.svg", var(--icon--color), var(--icon--color_hover));
+    &_bowls-and-cups {
+        @include maskImgSVG("icon-big--bowls-and-cups.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.shampoos {
-        @include maskImgSVG("icon-shampoos.svg", var(--icon--color), var(--icon--color_hover));
+    &_shampoos {
+        @include maskImgSVG("icon-big--shampoos.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.vitamins {
-        @include maskImgSVG("icon-vitamins.svg", var(--icon--color), var(--icon--color_hover));
+    &_vitamins {
+        @include maskImgSVG("icon-big--vitamins.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.medicines {
-        @include maskImgSVG("icon-medicines.svg", var(--icon--color), var(--icon--color_hover));
+    &_medicines {
+        @include maskImgSVG("icon-big--medicines.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.collars-leashes {
-        @include maskImgSVG("icon-collars-leashes.svg", var(--icon--color), var(--icon--color_hover));
+    &_collars-leashes {
+        @include maskImgSVG("icon-big--collars-leashes.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
-    &.sleeping-area {
-        @include maskImgSVG("icon-sleeping-area.svg", var(--icon--color), var(--icon--color_hover));
+    &_sleeping-area {
+        @include maskImgSVG("icon-big--sleeping-area.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+}
+
+.icon-medium {
+    width: 30px;
+    height: 30px;
+
+    &_credit-card {
+        @include maskImgSVG("icon-medium--credit-card.svg", var(--icon-medium--color), var(--icon-medium--color_hover));
+    }
+}
+
+.icon-h32 {
+    width: 40px;
+    height: 32px;
+
+    &_email {
+        @include maskImgSVG("icon-h32--email.svg", var(--icon-h32--color), var(--icon-h32--color_hover));
+    }
+    &_phone {
+        @include maskImgSVG("icon-h32--phone.svg", var(--icon-h32--color), var(--icon-h32--color_hover));
+    }
+    &_marker {
+        @include maskImgSVG("icon-h32--marker.svg", var(--icon-h32--color), var(--icon-h32--color_hover));
     }
 }

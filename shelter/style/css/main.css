@@ -797,10 +797,12 @@ html, body {
 }
 
 :root {
-  --color__h1: var(--color--primary);
-  --color__sb: var(--color--light-xl);
+  --color__h1: var();
+  --color__sb: var();
+  --color__h1_inverse: var(--color--primary);
   --color__h2_inverse: var(--color--light-xl);
   --color__p1_inverse: var(--color--dark-s);
+  --color__sb_inverse: var(--color--light-xl);
 }
 
 .h2 {
@@ -1281,97 +1283,144 @@ html, body {
 }
 
 :root {
-  --icon--color: var(--color--primary);
-  --icon--color_hover: var(--color--primary-light);
+  --icon-big--color: var(--color--primary);
+  --icon-medium--color: var(--color--dark-3xl);
+  --icon-h32--color: var(--color--primary);
   --icon--animation__duration: var(--time-2);
   --icon--animation__time-type: var(--animation-3);
   --icon--animation__delay: var(--time-1);
 }
 
-.icon_big {
-  height: 60px;
+.icon-big {
   width: 60px;
+  height: 60px;
 }
-.icon_big.pet-food {
-  background: var(--icon--color);
+.icon-big_pet-food {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-pet-food.svg");
-          mask-image: url("../../assets/svg/icon-pet-food.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--pet-food.svg");
+          mask-image: url("../../assets/svg/icon-big--pet-food.svg");
 }
-.icon_big.transportation {
-  background: var(--icon--color);
+.icon-big_transportation {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-transportation.svg");
-          mask-image: url("../../assets/svg/icon-transportation.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--transportation.svg");
+          mask-image: url("../../assets/svg/icon-big--transportation.svg");
 }
-.icon_big.toys {
-  background: var(--icon--color);
+.icon-big_toys {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-toys.svg");
-          mask-image: url("../../assets/svg/icon-toys.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--toys.svg");
+          mask-image: url("../../assets/svg/icon-big--toys.svg");
 }
-.icon_big.bowls-and-cups {
-  background: var(--icon--color);
+.icon-big_bowls-and-cups {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-bowls-and-cups.svg");
-          mask-image: url("../../assets/svg/icon-bowls-and-cups.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--bowls-and-cups.svg");
+          mask-image: url("../../assets/svg/icon-big--bowls-and-cups.svg");
 }
-.icon_big.shampoos {
-  background: var(--icon--color);
+.icon-big_shampoos {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-shampoos.svg");
-          mask-image: url("../../assets/svg/icon-shampoos.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--shampoos.svg");
+          mask-image: url("../../assets/svg/icon-big--shampoos.svg");
 }
-.icon_big.vitamins {
-  background: var(--icon--color);
+.icon-big_vitamins {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-vitamins.svg");
-          mask-image: url("../../assets/svg/icon-vitamins.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--vitamins.svg");
+          mask-image: url("../../assets/svg/icon-big--vitamins.svg");
 }
-.icon_big.medicines {
-  background: var(--icon--color);
+.icon-big_medicines {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-medicines.svg");
-          mask-image: url("../../assets/svg/icon-medicines.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--medicines.svg");
+          mask-image: url("../../assets/svg/icon-big--medicines.svg");
 }
-.icon_big.collars-leashes {
-  background: var(--icon--color);
+.icon-big_collars-leashes {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-collars-leashes.svg");
-          mask-image: url("../../assets/svg/icon-collars-leashes.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--collars-leashes.svg");
+          mask-image: url("../../assets/svg/icon-big--collars-leashes.svg");
 }
-.icon_big.sleeping-area {
-  background: var(--icon--color);
+.icon-big_sleeping-area {
+  background: var(--icon-big--color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: cover;
           mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-sleeping-area.svg");
-          mask-image: url("../../assets/svg/icon-sleeping-area.svg");
+  -webkit-mask-image: url("../../assets/svg/icon-big--sleeping-area.svg");
+          mask-image: url("../../assets/svg/icon-big--sleeping-area.svg");
+}
+
+.icon-medium {
+  width: 30px;
+  height: 30px;
+}
+.icon-medium_credit-card {
+  background: var(--icon-medium--color);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-image: url("../../assets/svg/icon-medium--credit-card.svg");
+          mask-image: url("../../assets/svg/icon-medium--credit-card.svg");
+}
+
+.icon-h32 {
+  width: 40px;
+  height: 32px;
+}
+.icon-h32_email {
+  background: var(--icon-h32--color);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-image: url("../../assets/svg/icon-h32--email.svg");
+          mask-image: url("../../assets/svg/icon-h32--email.svg");
+}
+.icon-h32_phone {
+  background: var(--icon-h32--color);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-image: url("../../assets/svg/icon-h32--phone.svg");
+          mask-image: url("../../assets/svg/icon-h32--phone.svg");
+}
+.icon-h32_marker {
+  background: var(--icon-h32--color);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-image: url("../../assets/svg/icon-h32--marker.svg");
+          mask-image: url("../../assets/svg/icon-h32--marker.svg");
 }
 
 .link {
@@ -1546,4 +1595,20 @@ html, body {
   padding-bottom: 24px;
   word-wrap: break-word;
   max-width: calc(100% - var(--popup--padding__inner) * 2);
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+  background-color: var(--color--light-s);
 }/*# sourceMappingURL=main.css.map */
