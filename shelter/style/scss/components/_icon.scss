@@ -1,0 +1,139 @@
+:root {
+
+    --icon-big--color: var(--color--primary);
+    // --icon-big--color_hover: var(--color--primary-light);
+
+    --icon-medium--color: var(--color--dark-3xl);
+    // --icon-medium--color_hover: var(--color--primary-light);
+
+    --icon-h32--color: var(--color--primary);
+    // --icon-medium--color_hover: var(--color--primary-light);
+
+    --icon--animation__duration: var(--time-2);
+    --icon--animation__time-type: var(--animation-3);
+    --icon--animation__delay: var(--time-1);
+}
+
+// .icon-primary {
+//     background-color: var(--color__icon-primary);
+//     @media (hover: hover) {
+//         &:hover {
+//             transition: all var(--time__medium) var(--animation__standart);
+//             background-color: var(--color__icon-primary-hover);
+//         }
+//     }
+//     // &.inverse {
+//     //     color: var(--color__ov_inverse);
+//         // @media (hover: hover) {
+//         //     &:hover {
+//         //         transition: all var(--time__medium) var(--animation__standart);
+//         //         color: var(--color__link-hover);
+//         //     }
+//         // }
+//     // }
+// }
+
+// .icon {
+//     height: 48px;
+//     width: 48px;
+//     // display: inline-block;
+//     background-color: var(--icon--color);
+//     mask-repeat: no-repeat;
+//     cursor: pointer;
+//     appearance: none;
+//     @media (hover: hover) {
+//         &:hover {
+//             transition: all var(--icon--animation__duration) var(--icon--animation__time-type);
+//             background-color: var(--icon--color_hover);
+//         }
+//     }
+//     // &.inverse {
+//     //     color: var(--color__ov_inverse);
+//         // @media (hover: hover) {
+//         //     &:hover {
+//         //         transition: all var(--time__medium) var(--animation__standart);
+//         //         color: var(--color__link-hover);
+//         //     }
+//         // }
+//     // }
+// }
+
+@mixin maskImgSVG($img, $icon-color, $icon-color_hover) { // image.svg
+    background: $icon-color;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-image: url("../../assets/svg/"+$img);
+    // @media (hover: hover) {
+    //     &:hover {
+    //         // transition: all var(--icon--animation__duration) var(--icon--animation__time-type);
+    //         background: $icon-color_hover;
+    //     }
+    // }
+    // &.static {
+    //     @media (hover: hover) {
+    //         &:hover {
+    //             transition: none;
+    //             background: $icon-color;
+    //             cursor: default;
+    //             appearance: none;
+    //         }
+    //     }
+    // }
+}
+
+.icon-big {
+    width: 60px;
+    height: 60px;
+
+    &_pet-food {
+        @include maskImgSVG("icon-big--pet-food.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_transportation {
+        @include maskImgSVG("icon-big--transportation.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_toys {
+        @include maskImgSVG("icon-big--toys.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_bowls-and-cups {
+        @include maskImgSVG("icon-big--bowls-and-cups.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_shampoos {
+        @include maskImgSVG("icon-big--shampoos.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_vitamins {
+        @include maskImgSVG("icon-big--vitamins.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_medicines {
+        @include maskImgSVG("icon-big--medicines.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_collars-leashes {
+        @include maskImgSVG("icon-big--collars-leashes.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+    &_sleeping-area {
+        @include maskImgSVG("icon-big--sleeping-area.svg", var(--icon-big--color), var(--icon-big--color_hover));
+    }
+}
+
+.icon-medium {
+    width: 30px;
+    height: 30px;
+
+    &_credit-card {
+        @include maskImgSVG("icon-medium--credit-card.svg", var(--icon-medium--color), var(--icon-medium--color_hover));
+    }
+}
+
+.icon-h32 {
+    width: 40px;
+    height: 32px;
+
+    &_email {
+        @include maskImgSVG("icon-h32--email.svg", var(--icon-h32--color), var(--icon-h32--color_hover));
+    }
+    &_phone {
+        @include maskImgSVG("icon-h32--phone.svg", var(--icon-h32--color), var(--icon-h32--color_hover));
+    }
+    &_marker {
+        @include maskImgSVG("icon-h32--marker.svg", var(--icon-h32--color), var(--icon-h32--color_hover));
+    }
+}

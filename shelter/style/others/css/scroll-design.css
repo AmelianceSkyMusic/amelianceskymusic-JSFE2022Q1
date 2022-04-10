@@ -1,0 +1,20 @@
+.scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  border-radius: 1000px;
+  background-color: var(--color-0-0);
+}
+@media (max-width: 480px) {
+  .scroll::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+}
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 1000px;
+  background-color: var(--color-0-3);
+}
+.scroll::-webkit-scrollbar-track {
+  border-radius: 1000px;
+  background-color: var(--color-0-0);
+}/*# sourceMappingURL=scroll-design.css.map */
