@@ -1,0 +1,203 @@
+:root {
+  --size-w__block-container_desktop: 1200px;
+  --size-h__block-container-header_desktop: 64px;
+  --size-h__block-container-main_desktop: 100%;
+  --size-h__block-container-footer_desktop: 64px;
+}
+
+.body .body-container {
+  height: auto;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: var(--size-w__block-container_desktop);
+  min-height: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 1280px) {
+  .container {
+    margin: 0 30px;
+  }
+}
+
+.header {
+  background: var(--color--light-xl);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.header .container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+}
+.header__logo .logo {
+  padding-bottom: 10px;
+}
+.header__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+}
+.header__navigation .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 35px;
+}
+
+.main {
+  background-color: var(--color--light-l);
+}
+.pets {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+.pets .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+}
+.pets .pets__catalog {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pets .h3 {
+  max-width: 400px;
+  text-align: center;
+}
+.pets .pets__layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
+  row-gap: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pets .pets__pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.footer {
+  padding: 0;
+  background: url("../../../assets/img/png/noise_transparent.png"), var(--color--footer-gradient), var(--color--footer-background);
+}
+.footer .container {
+  padding-top: 58px;
+  padding-bottom: 59px;
+}
+.footer .footer-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.footer .footer__contacts,
+.footer .footer__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+.footer .footer__contacts {
+  max-width: 279px;
+}
+.footer .footer__location {
+  margin-left: 160px;
+  max-width: 302px;
+}
+.footer .footer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.footer .icon-h32_marker {
+  width: 22px;
+}
+.footer .footer__primary-marker {
+  margin-top: -6px;
+}
+.footer .footer__secondary-marker {
+  margin-top: -8px;
+}
+.footer__image {
+  position: relative;
+  width: 300px;
+  margin-left: 160px;
+  max-width: 302px;
+}
+.footer__image .image {
+  position: absolute;
+  bottom: -59px;
+  right: 0;
+  width: 300px;
+  height: 310px;
+  overflow: hidden;
+  background-image: url("../../../assets/img/png/footer-puppy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}/*# sourceMappingURL=style.css.map */
