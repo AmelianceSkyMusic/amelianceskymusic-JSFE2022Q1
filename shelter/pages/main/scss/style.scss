@@ -156,6 +156,7 @@
     &__content {
         display: flex;
         flex-direction: column;
+        align-items: start;
         gap: 42px;
         max-width: 460px;
         padding-top: 344px;
@@ -224,6 +225,7 @@
 }
 
 .pets {
+    background: var(--color--light-l);
     padding-top: 80px;
     padding-bottom: 100px;
     .container {
@@ -233,9 +235,10 @@
         gap: 60px;
     }
     .pets__slider {
+        width: 100%;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 30px;
     }
 
     .h3 {
@@ -424,4 +427,10 @@
 .layout-3-columns {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.button {
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }

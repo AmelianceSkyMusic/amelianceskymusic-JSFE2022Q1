@@ -40,10 +40,10 @@
                 </div>
                 <nav class="header__navigation">
                     <ul class="navigation">
-                        <li class="p1 inverse active">About the shelter</li>
-                        <li class="p1 inverse">Our pets</li>
-                        <li class="p1 inverse">Help the shelter</li>
-                        <li class="p1 inverse">Contacts</li>
+                        <li class=""><a class="p1 link inverse active" href="#">About the shelter</a></li>
+                        <li class=""><a class="p1 link inverse" href="../our-pets/index.html">Our pets</a></li>
+                        <li class=""><a class="p1 link inverse" href="#help">Help the shelter</a></li>
+                        <li class=""><a class="p1 link inverse" href="#contacts">Contacts</a></li>
                     </ul>
                 </nav>
             </div>
@@ -65,9 +65,9 @@
                     <div class="fold__content content">
                         <h2 class="h2 inverse content__header">Not only people need a house</h2>
                         <p class="p1 inverse">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-                        <div class="content__button">
+                        <a href="#pets">
                             <button class="button button__fill button__big"><span class="label">Make a friend</span></button>
-                        </div>
+                        </a>
                     </div>
                     <div class="fold__image-container">
                         <div class="fold__image"></div>
@@ -95,16 +95,15 @@
 
 
 
-            <section class="pets">
+            <section class="pets" id="pets">
                 <div class="container">
                     <h3 class="h3">Our friends who<br>are looking for a house</h3>
 
                         <div class="pets__slider">
-                            <div class="pets__icon-button_left">
-                                <button class="button button__outline button__big">
-                                    <div class="icon"></div>
-                                </button>
-                            </div>
+
+                            <button class="button_left button button__icon-outline button__big">
+                                <div class="icon-random icon-random_arrow-left"></div>
+                            </button>
 
                             <div class="layout-3-columns pets__layout">
                                 <div class="card pets__card">
@@ -130,21 +129,22 @@
                                 </div>
                             </div>
 
-                            <div class="pets__icon-button_left">
-                                <button class="button button__outline button__big">
-                                    <div class="icon"></div>
-                                </button>
-                            </div>
+                            <button class="button_right button button__icon-outline button__big">
+                                <div class="icon-random icon-random_arrow-right"></div>
+                            </button>
+
                         </div>
                     <div class="pets__button">
-                        <button class="button button__fill button__big"><span class="label">Get to know the rest</span></button>
+                        <a href="../our-pets/index.html">
+                            <button class="button button__fill button__big"><span class="label">Get to know the rest</span></button>
+                        </a>
                     </div>
                 </div>
             </section>
 
 
 
-            <section class="help">
+            <section class="help" id="help">
                 <div class="container">
                     <h3 class="h3">How you can help our shelter</h3>
                     <div class="help__list">
@@ -201,7 +201,7 @@
                             <h5 class="h5">Name of the bank / Type of bank account</h5>
                             <div class="donation__credit-card">
                                 <div class="icon icon-medium icon-medium_credit-card"></div>
-                                <h4 class="h4 credit-card__number">8380 2880 8028 8791 7435</span>
+                                <a class="h4 credit-card__number">8380 2880 8028 8791 7435</span>
                             </div>
                             <p class="p2">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                         </div>
@@ -223,31 +223,39 @@
 
                 <div class="footer-layout">
 
-                    <div class="footer__contacts">
-                        <h3 class="h3">For questions and suggestions</h3>
+                    <div class="footer__contacts" id="contacts">
+                        <h3 class="h3 inverse">For questions and suggestions</h3>
 
                         <div class="footer__info footer__email">
                             <div class="icon-h32 icon-h32_email"></div>
-                            <h4 class="h4">email@shelter.com</h4>
+                            <h4 class="h4 inverse">
+                                <a class="h4 inverse" href="mailto:email@shelter.com">email@shelter.com</a>
+                            </h4>
                         </div>
 
                         <div class="footer__info footer__phone">
                             <div class="icon-h32 icon-h32_phone"></div>
-                            <h4 class="h4">+13 674 567 75 54</h4>
+                            <h4 class="h4 inverse">
+                                <a class="h4 inverse" href="tel:+13 674 567 75 54">+13 674 567 75 54</a>
+                            </h4>
                         </div>
                     </div>
 
                     <div class="footer__location">
-                        <h3 class="h3">We are waiting for your visit</h3>
+                        <h3 class="h3 inverse">We are waiting for your visit</h3>
 
                         <div class="footer__info footer__primary-marker">
                             <div class="icon-h32 icon-h32_marker"></div>
-                            <h4 class="h4">1 Central Street, Boston<br>(entrance from the store)</h4>
+                            <h4 class="h4 inverse">
+                                <a class="h4 inverse" href="https://www.google.com/maps/search/?api=1&query=1+Central+St,+Stoughton,+MA+02072,+%D0%A1%D0%A8%D0%90" target="_blank" rel="noopener noreferrer">1 Central Street, Boston<br>(entrance from the store)</a>
+                            </h4>
                         </div>
 
                         <div class="footer__info footer__secondary-marker">
                             <div class="icon-h32 icon-h32_marker"></div>
-                            <h4 class="h4">18 South Park, London </h4>
+                            <h4 class="h4 inverse">
+                                <a class="h4 inverse" href="https://www.google.com/maps/search/?api=1&query=South+Park,+London" target="_blank" rel="noopener noreferrer">18 South Park, London</a>
+                            </h4>
                         </div>
                     </div>
 
