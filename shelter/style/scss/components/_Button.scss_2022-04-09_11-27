@@ -178,19 +178,19 @@
     // ^------------------------ Button Fill Style ------------------------
 
     &__fill {
-        @include setStyle   (   $button-fill--font__color,              $button-fill--font__color_hover,
-                                $button-fill--font__color_pressed,      $button-fill--font__color_disabled,
+        @include setStyle   (   var(--button-fill--font__color), var(--button-fill--font__color_hover),
+                                var(--button-fill--font__color_pressed), var(--button-fill--font__color_disabled),
 
-                                $button-fill--bg__color,                $button-fill--bg__color_hover,
-                                $button-fill--bg__color_pressed,        $button-fill--bg__color_disabled,
+                                var(--button-fill--bg__color), var(--button-fill--bg__color_hover),
+                                var(--button-fill--bg__color_pressed), var(--button-fill--bg__color_disabled),
 
-                                $button-fill--border__color,            $button-fill--border__color_hover,
-                                $button-fill--border__color_pressed,    $button-fill--border__color_disabled,
+                                var(--button-fill--border__color), var(--button-fill--border__color_hover),
+                                var(--button-fill--border__color_pressed), var(--button-fill--border__color_disabled),
 
-                                $button-fill--icon__color,              $button-fill--icon__color_hover,
-                                $button-fill--icon__color_pressed,      $button-fill--icon__color_disabled,
+                                var(--button-fill--icon__color), var(--button-fill--icon__color_hover),
+                                var(--button-fill--icon__color_pressed), var(--button-fill--icon__color_disabled),
 
-                                $button-fill--border__width
+                                var(--button-fill--border__width)
                             );
     }
 
@@ -199,19 +199,19 @@
     // ^------------------------ Button Outline Style ------------------------
 
     &__outline {
-        @include setStyle   (   $button-outline--font__color,           $button-outline--font__color_hover,
-                                $button-outline--font__color_pressed,   $button-outline--font__color_disabled,
+        @include setStyle   (   var(--button-outline--font__color), var(--button-outline--font__color_hover),
+                                var(--button-outline--font__color_pressed), var(--button-outline--font__color_disabled),
 
-                                $button-outline--bg__color,             $button-outline--bg__color_hover,
-                                $button-outline--bg__color_pressed,     $button-outline--bg__color_disabled,
+                                var(--button-outline--bg__color), var(--button-outline--bg__color_hover),
+                                var(--button-outline--bg__color_pressed), var(--button-outline--bg__color_disabled),
 
-                                $button-outline--border__color,         $button-outline--border__color_hover,
-                                $button-outline--border__color_pressed, $button-outline--border__color_disabled,
+                                var(--button-outline--border__color), var(--button-outline--border__color_hover),
+                                var(--button-outline--border__color_pressed), var(--button-outline--border__color_disabled),
 
-                                $button-outline--icon__color,           $button-outline--icon__color_hover,
-                                $button-outline--icon__color_pressed,   $button-outline--icon__color_disabled,
+                                var(--button-outline--icon__color), var(--button-outline--icon__color_hover),
+                                var(--button-outline--icon__color_pressed), var(--button-outline--icon__color_disabled),
 
-                                $button-outline--border__width
+                                var(--button-outline--border__width)
                             );
     }
 
@@ -220,19 +220,19 @@
     // ^------------------------ Button Text Style ------------------------
 
     &__text {
-        @include setStyle   (   $button-text--font__color,              $button-text--font__color_hover,
-                                $button-text--font__color_pressed,      $button-text--font__color_disabled,
+        @include setStyle   (   var(--button-text--font__color), var(--button-text--font__color_hover),
+                                var(--button-text--font__color_pressed), var(--button-text--font__color_disabled),
 
-                                $button-text--bg__color,                $button-text--bg__color_hover,
-                                $button-text--bg__color_pressed,        $button-text--bg__color_disabled,
+                                var(--button-text--bg__color), var(--button-text--bg__color_hover),
+                                var(--button-text--bg__color_pressed), var(--button-text--bg__color_disabled),
 
-                                $button-text--border__color,            $button-text--border__color_hover,
-                                $button-text--border__color_pressed,    $button-text--border__color_disabled,
+                                var(--button-text--border__color), var(--button-text--border__color_hover),
+                                var(--button-text--border__color_pressed), var(--button-text--border__color_disabled),
 
-                                $button-text--icon__color,              $button-text--icon__color_hover,
-                                $button-text--icon__color_pressed,      $button-text--icon__color_disabled,
+                                var(--button-text--icon__color), var(--button-text--icon__color_hover),
+                                var(--button-text--icon__color_pressed), var(--button-text--icon__color_disabled),
 
-                                $button-text--border__width
+                                var(--button-text--border__width)
                             );
         .label {
             text-decoration: underline;
@@ -247,13 +247,10 @@
 
     .icon {
         // mask-image: none;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
         mask-repeat: no-repeat;
 
-        width: var(--icon--size_width);
-        height: var(--icon--size_height);
+        width: var(--icon--size);
+        height: var(--icon--size);
         mask-size: cover;
 
         &__left {
@@ -270,41 +267,20 @@
     // ^------------------------ Button Icon Style ------------------------
     // This block is after icon style block because it rewrite some styles
 
-    &__icon-fill {
-        @include setStyle   (   $button-icon-fill--font__color,             $button-icon-fill--font__color_hover,
-                                $button-icon-fill--font__color_pressed,     $button-icon-fill--font__color_disabled,
+    &__icon {
+        @include setStyle   (   var(--button-icon--font__color), var(--button-icon--font__color_hover),
+                                var(--button-icon--font__color_pressed), var(--button-icon--font__color_disabled),
 
-                                $button-icon-fill--bg__color,               $button-icon-fill--bg__color_hover,
-                                $button-icon-fill--bg__color_pressed,       $button-icon-fill--bg__color_disabled,
+                                var(--button-icon--bg__color), var(--button-icon--bg__color_hover),
+                                var(--button-icon--bg__color_pressed), var(--button-icon--bg__color_disabled),
 
-                                $button-icon-fill--border__color,           $button-icon-fill--border__color_hover,
-                                $button-icon-fill--border__color_pressed,   $button-icon-fill--border__color_disabled,
+                                var(--button-icon--border__color), var(--button-icon--border__color_hover),
+                                var(--button-icon--border__color_pressed), var(--button-icon--border__color_disabled),
 
-                                $button-icon-fill--icon__color,             $button-icon-fill--icon__color_hover,
-                                $button-icon-fill--icon__color_pressed,     $button-icon-fill--icon__color_disabled,
+                                var(--button-icon--icon__color), var(--button-icon--icon__color_hover),
+                                var(--button-icon--icon__color_pressed), var(--button-icon--icon__color_disabled),
 
-                                $button-icon-fill--border__width
-                            );
-        padding: 0 0;
-        &.button {
-            width: var(--button--size);
-        }
-    }
-
-    &__icon-outline {
-        @include setStyle   (   $button-icon-outline--font__color,              $button-icon-outline--font__color_hover,
-                                $button-icon-outline--font__color_pressed,      $button-icon-outline--font__color_disabled,
-
-                                $button-icon-outline--bg__color,                $button-icon-outline--bg__color_hover,
-                                $button-icon-outline--bg__color_pressed,        $button-icon-outline--bg__color_disabled,
-
-                                $button-icon-outline--border__color,            $button-icon-outline--border__color_hover,
-                                $button-icon-outline--border__color_pressed,    $button-icon-outline--border__color_disabled,
-
-                                $button-icon-outline--icon__color,              $button-icon-outline--icon__color_hover,
-                                $button-icon-outline--icon__color_pressed,      $button-icon-outline--icon__color_disabled,
-
-                                $button-icon-outline--border__width
+                                var(--button-icon--border__width)
                             );
         padding: 0 0;
         &.button {
@@ -312,5 +288,4 @@
         }
 
     }
-
 }

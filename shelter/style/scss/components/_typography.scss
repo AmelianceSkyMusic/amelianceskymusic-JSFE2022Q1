@@ -1,25 +1,28 @@
 :root {
 
-    --color__h1: var();
-    // --color__h2: var(--color-2-1);
-    // --color__h3: var(--color-2-1);
-    // --color__h4: var(--color-2-1);
-    // --color__h5: var(--color-2-1);
-    // --color__h6: var(--color-2-1);
-    // --color__s1: var(--color-2-1);
-    // --color__s2: var(--color-2-1);
-    // --color__p1: var(--color-2-1);
-    // --color__p2: var(--color-0-4);
-    // --color__p3: var(--color-0-4);
-    // --color__cp: var(--color-2-1);
-    // --color__bt: var(--color-2-1);
-    // --color__ov: var(--color-2-1);
-    --color__sb: var();
+    --color__h1: var(--color--dark-l);
+    // --color__h2: var(--color--dark-3xi);
+    --color__h3: var(--color--dark-l);
+    --color__h4: var(--color--dark-l);
+    --color__h5: var(--color--dark-l);
+    // --color__h6: var();
+    // --color__s1: var();
+    // --color__s2: var();
+    --color__p1: var(--color--dark-xl);
+    --color__p2: var(--color--dark-m);
+    // --color__p3: var();
+    // --color__cp: var();
+    // --color__bt: var();
+    // --color__ov: var();
+    --color__sb: var(--color--dark-3xl);
+    --color__link: var(--color--dark-l);
+
+
 
     --color__h1_inverse: var(--color--primary);
     --color__h2_inverse: var(--color--light-xl);
-    // --color__h3_inverse: var();
-    // --color__h4_inverse: var();
+    --color__h3_inverse: var(--color--light-xl);
+    --color__h4_inverse: var(--color--primary);
     // --color__h5_inverse: var();
     // --color__h6_inverse: var();
     // --color__s1_inverse: var();
@@ -31,6 +34,8 @@
     // --color__bt_inverse: var();
     // --color__ov_inverse: var();
     --color__sb_inverse: var(--color--light-xl);
+    --color__link_inverse: var(--color--dark-s);
+
 }
 
 @mixin setFontColor($font__color, $font__color_inverse) {
@@ -45,15 +50,11 @@ $typography-elements: (
     // h6, s1, s2,
     p1, p2, p3,
     // ct, bt, ov,
-    h1, sb
+    h1, sb, link
 );
 
 @each $item in $typography-elements {
     .#{$item} {
-        @include setFontColor( var(--color__ + $item), var(--color__ + $item + _inverse));
+        @include setFontColor( var(--color__ + $item), var(--color__ + $item + _inverse) );
     };
 };
-
-.p1.active {
-    color: var(--color--light-s)
-}

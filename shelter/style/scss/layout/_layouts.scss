@@ -1,0 +1,12 @@
+.layout-2-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.layout-3-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.layout-4-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

@@ -1,16 +1,25 @@
 :root {
+    --color__link_active: var(--color--dark-l);
+    --color__link_hover: var(--color--dark-3xl);
 
+    --color__link_active-inverse: var(--color--light-xl);
+    --color__link_hover-inverse: var(--color--light-s);
 }
 
+a {
+    cursor: pointer;
+}
+
+
 .link {
-    color: var(--color__link);
+    // color: var(--color__link);
     text-decoration: none;
-    @media (hover: hover) {
-        &:hover {
-            transition: all var(--time__medium) var(--animation__standart);
-            color: var(--color__link-hover);
-        }
-    }
+    // @media (hover: hover) {
+    //     &:hover {
+    //         transition: all var(--time__medium) var(--animation__standart);
+    //         color: var(--color__link-hover);
+    //     }
+    // }
     // &.inverse {
     //     color: var(--color__ov_inverse);
         // @media (hover: hover) {
@@ -20,4 +29,86 @@
         //     }
         // }
     // }
+}
+
+.link {
+    position: relative;
+    display: inline-block;
+
+    // &:after {
+    //     content: '';
+    //     position: absolute;
+    //     width: 100%;
+    //     transform: scaleX(0);
+    //     height: 3px;
+    //     bottom: -3px;
+    //     left: 0;
+    //     background-color: var(--color--dark-s);
+    //     transform-origin: bottom right;
+    //     transition: transform 0.3s ease-out;
+    // }
+    // &.inverse:after {
+    //     content: '';
+    //     position: absolute;
+    //     width: 100%;
+    //     transform: scaleX(0);
+    //     height: 3px;
+    //     bottom: -3px;
+    //     left: 0;
+    //     background-color: var(--color--dark-s);
+    //     transform-origin: bottom right;
+    //     transition: transform 0.3s ease-out;
+    // }
+
+    @media (hover: hover) {
+
+        &:hover {
+            color: var(--color__link_hover);
+            transition: all 0.3s ease-in-out;
+        }
+        &.inverse:hover {
+            transition: all 0.3s ease-in-out;
+            color: var(--color__link_hover-inverse);
+        }
+
+        &:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+
+
+    &.active {
+        color: var(--color__link_active);
+        cursor: default;
+
+        &.active:after {
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            content: '';
+            background-color: var(--color--primary);
+            transform: scaleX(100%);
+            transform-origin: bottom right;
+        }
+    }
+
+    &.inverse.active {
+        color: var(--color__link_active-inverse);
+        cursor: default;
+
+        &.active:after {
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            content: '';
+            background-color: var(--color--primary);
+            transform: scaleX(100%);
+            transform-origin: bottom right;
+        }
+    }
 }
