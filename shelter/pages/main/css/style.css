@@ -47,6 +47,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 60px;
 }
 .header__logo .logo {
   padding-bottom: 10px;
@@ -95,11 +96,12 @@
           align-items: start;
   gap: 42px;
   max-width: 460px;
-  padding-top: 344px;
+  padding-top: 343px;
   padding-bottom: 243px;
 }
 .fold .content__header {
   max-width: 310px;
+  height: 114px;
 }
 .fold__image-container {
   position: relative;
@@ -183,6 +185,7 @@
 }
 .pets .h3 {
   max-width: 400px;
+  height: 90px;
   text-align: center;
 }
 .pets .pets__layout {
@@ -209,6 +212,7 @@
 .help .h3 {
   max-width: 310px;
   text-align: center;
+  height: 90px;
 }
 .help .help__list {
   display: -webkit-box;
@@ -268,7 +272,7 @@
 }
 .donation__image .image {
   position: relative;
-  top: -3px;
+  top: -5px;
   width: 505px;
   height: 261px;
   background-image: url("../../../assets/img/png/donation-dog.png");
@@ -290,6 +294,10 @@
 }
 .donation .donation__content .h3 {
   max-width: 300px;
+  height: 90px;
+}
+.donation .donation__content .h5 {
+  height: 17px;
 }
 .donation .donation__content .p2 {
   max-width: 380px;
@@ -316,7 +324,7 @@
 }
 .footer .container {
   padding-top: 56px;
-  padding-bottom: 60px;
+  padding-bottom: 59px;
 }
 .footer .footer-layout {
   display: -webkit-box;
@@ -373,7 +381,7 @@
 }
 .footer__image .image {
   position: absolute;
-  bottom: -60px;
+  bottom: -59px;
   right: 0;
   width: 300px;
   height: 310px;
@@ -381,23 +389,4 @@
   background-image: url("../../../assets/img/png/footer-puppy.png");
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.layout-2-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.layout-3-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.button {
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }/*# sourceMappingURL=style.css.map */

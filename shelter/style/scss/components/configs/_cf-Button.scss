@@ -1,9 +1,9 @@
 :root {
     // TODO: Get styles from global styles css file
-    --button--size: 3em;
+    --button--size: 52px;
 
-    --icon--size_width: 1.5em;
-    --icon--size_height: 1.5em;
+    --icon--size_width: 52px;
+    --icon--size_height: 52px;
     --icon--margin: 0.5em;
 
     --button--font-size: 17rem;
@@ -12,7 +12,7 @@
     --button--font-size_small: 10rem;
 
     --button--font-family: "Georgia","Montserrat", system-ui;
-    --button--line-height: -130%;
+    --button--line-height: 130%;
     --button--font-weight: 400;
     --button--letter-spacing: 0.05em;
     --button--font-style: normal;
@@ -20,9 +20,10 @@
     --button--animation__duration: 0.2s;
     --button--animation__time-type: ease-in-out;
 
-    --button--padding: 15rem 45rem;
+    --button--padding: 14rem 45rem 15rem 45rem;
     --button--border-radius: 1000rem; // font size / 0.5
 
+    --button-icon--padding: 0;
 }
 
 // Change this icons
