@@ -107,7 +107,9 @@
         }
     }
 
-    &:disabled, &[disabled] {
+    &:disabled,
+    &.disabled,
+    &[data-is-disabled="true"] {
         color: $font__color_disabled;
         background: $bg__color_disabled;
         border-color: $border__color_disabled;
