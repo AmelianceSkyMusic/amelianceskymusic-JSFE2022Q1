@@ -11,6 +11,23 @@ $font-secondary__family-name: "Montserrat";
 $font-tertiary__family-name: "Noto";
 
 
+// ^------------------------ fonts varibles ------------------------
+
+$font-family__primary:         "Georgia", "Yeseva One", serif;
+$font-family__secondary:       "Arial", "Montserrat", system-ui;
+$font-family__tertiary:        "Noto", monospace;
+
+$font-weight__black:       900;
+$font-weight__extra-bold:  800;
+$font-weight__bold:        700;
+$font-weight__semi-bold:   600;
+$font-weight__medium:      500;
+$font-weight__regular:     400;
+$font-weight__light:       300;
+$font-weight__extra-light: 200;
+$font-weight__thin:        100;
+
+
 // >----------------------------------------------------------------<
 // >                            MIXINS                              <
 // >----------------------------------------------------------------<
@@ -74,63 +91,46 @@ $font-tertiary__family-name: "Noto";
 
 :root {
 
-
-    // ^------------------------ fonts varibles ------------------------
-
-    --font-family__primary:         "Georgia", "Yeseva One", serif;
-    --font-family__secondary:       "Arial", "Montserrat", system-ui;
-    --font-family__tertiary:        "Noto", monospace;
-
-    --font-weight__black:       900;
-    --font-weight__extra-bold:  800;
-    --font-weight__bold:        700;
-    --font-weight__semi-bold:   600;
-    --font-weight__medium:      500;
-    --font-weight__regular:     400;
-    --font-weight__light:       300;
-    --font-weight__extra-light: 200;
-    --font-weight__thin:        100;
-
-
     // ^------------------------ typography elements ------------------------
 
     // font-family, font-size, font-weight, line-height, letter-spacing
-    @include setTypoElem(h2, var(--font-family__primary), 44px, var(--font-weight__regular), 130%, 0);              // header 1
+    @include setTypoElem(h2, $font-family__primary, 44px, $font-weight__regular, 130%, 0);              // header 1
 
-    @include setTypoElem(h3, var(--font-family__primary), 35px, var(--font-weight__regular), 130%, 0.06em);           // header 2
+    @include setTypoElem(h3, $font-family__primary, 35px, $font-weight__regular, 130%, 0.06em);           // header 2
 
     @media (max-width: $mobile) {
-        @include setTypoElem(h3, var(--font-family__primary), 25px, var(--font-weight__regular), 130%, 0.06em);         // header 2 mobile
+        @include setTypoElem(h3, $font-family__primary, 25px, $font-weight__regular, 130%, 0.06em);         // header 2 mobile
     }
 
-    @include setTypoElem(h4, var(--font-family__primary), 20px, var(--font-weight__regular), 115%, 0.06em);             // header 3
+    @include setTypoElem(h4, $font-family__primary, 20px, $font-weight__regular, 115%, 0.06em);             // header 3
 
-    @include setTypoElem(h5, var(--font-family__primary), 15px, var(--font-weight__regular), 110%, 0.06em);             // header 4
+    @include setTypoElem(h5, $font-family__primary, 15px, $font-weight__regular, 110%, 0.06em);             // header 4
 
-    @include setTypoElem(h6, var(--font-family__primary), 15px, var(--font-weight__bold), 110%, 0.06em);                // header 5
+    @include setTypoElem(h6, $font-family__primary, 15px, $font-weight__bold, 110%, 0.06em);                // header 5
 
-    // @include setTypoElem(h6, var(--font-family__secondary), 16px, var(--font-weight__bold), 150%, 0);            // header 6
+    // @include setTypoElem(h6, $font-family__secondary, 16px, $font-weight__bold, 150%, 0);            // header 6
 
-    // @include setTypoElem(s1, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // subtitle 1
+    // @include setTypoElem(s1, $font-family__secondary, 32px, $font-weight__bold, 160%, 0);            // subtitle 1
 
-    // @include setTypoElem(s2, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // subtitle 2
+    // @include setTypoElem(s2, $font-family__secondary, 32px, $font-weight__bold, 160%, 0);            // subtitle 2
 
-    @include setTypoElem(p1, var(--font-family__secondary), 15px, var(--font-weight__regular), 160%, 0);
+    @include setTypoElem(p1, $font-family__secondary, 15px, $font-weight__regular, 160%, 0);
 
-    @include setTypoElem(p2, var(--font-family__secondary), 12px, var(--font-weight__regular), 150%, 0, italic);
+    @include setTypoElem(p2, $font-family__secondary, 12px, $font-weight__regular, 150%, 0, italic);
 
-    @include setTypoElem(p3, var(--font-family__secondary), 32px, var(--font-weight__regular), 160%, 0);            // menu
+    @include setTypoElem(p3, $font-family__secondary, 32px, $font-weight__regular, 160%, 0);            // menu
 
-    // @include setTypoElem(ct, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // caption
+    // @include setTypoElem(ct, $font-family__secondary, 32px, $font-weight__bold, 160%, 0);            // caption
 
-    // @include setTypoElem(bt, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // button
+    // @include setTypoElem(bt, $font-family__secondary, 32px, $font-weight__bold, 160%, 0);            // button
 
-    // @include setTypoElem(ov, var(--font-family__secondary), 32px, var(--font-weight__bold), 160%, 0);            // overline
+    // @include setTypoElem(ov, $font-family__secondary, 32px, $font-weight__bold, 160%, 0);            // overline
 
-    @include setTypoElem(h1, var(--font-family__primary), 32px, var(--font-weight__regular), 110%, 0.06em);           // logo
+    @include setTypoElem(h1, $font-family__primary, 32px, $font-weight__regular, 110%, 0.06em);           // logo
 
-    @include setTypoElem(sb, var(--font-family__secondary), 13px, var(--font-weight__regular), 100%, 0.1em);    // subtitle
+    @include setTypoElem(sb, $font-family__secondary, 13px, $font-weight__regular, 100%, 0.1em);    // subtitle
 
+    @include setTypoElem(link, $font-family__secondary, 15px, $font-weight__regular, 160%, 0);        // link
 }
 
 
@@ -145,7 +145,7 @@ $setTypo-elements: (
     // h6, s1, s2,
     p1, p2, p3,
     // ct, bt, ov,
-    h1, sb
+    h1, sb, link
 );
 
 @each $item in $setTypo-elements {

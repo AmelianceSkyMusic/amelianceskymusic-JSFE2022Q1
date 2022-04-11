@@ -46,6 +46,8 @@
 
 .body {
     .body-container {
+        height: auto;
+        // position: relative;
         // position: relative;
 //     //     height: min(100%, 100vh);
 //     //     width: 100vw;
@@ -90,12 +92,14 @@
 // >----------------------------------------------------------------<
 
 .header {
-    position: absolute;
+    background: var(--color--light-xl);
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     padding: 0;
-    padding-top: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     // height: var(--size-h__block-container-header_desktop);
     & .container {
         position: relative;
@@ -107,6 +111,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 60px;
 
         .logo {
             padding-bottom: 10px;
@@ -137,95 +142,13 @@
 
 .main {
     // height: var(--size-h__block-container-main_desktop);
-    background-color: white;
+    background-color: var(--color--light-l);
     & .container {
         // content: "500px";
     }
 }
 
-.fold {
-    background: url("../../../assets/img/png/noise_transparent.png"),
-                var(--color--main-gradient), var(--color--main-background);
-    background-repeat: repeat;
-    & .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 42px;
-        max-width: 460px;
-        padding-top: 344px;
-        padding-bottom: 243px;
-        // padding-top: 223px;
-    }
-
-    .content__header {
-        max-width: 310px;
-    }
-
-    &__image-container {
-        position: relative;
-        width: 698px;
-        height: 728px;
-        // background-image: url("../../../assets/img/png/fold-puppy.png");
-        // background-size: contain;
-        // background-repeat: no-repeat;
-    }
-    &__image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 698px;
-        height: 728px;
-        overflow: hidden;
-        background-image: url("../../../assets/img/png/fold-puppy.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-}
-
-.about {
-    padding-top: 80px;
-    padding-bottom: 100px;
-    // .container{
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    // }
-    .about__layout {
-        // display: flex;
-        // justify-content: center;
-        align-items: center;
-    }
-
-    &__image {
-        padding-left: 175px;
-        .image{
-            width: 300px;
-            height: 408px;
-            background-image: url("../../../assets/img/png/about-pets.png");
-            background-repeat: no-repeat;
-        }
-    }
-
-    &__content {
-        .h3 {
-            max-width: 370px;
-        }
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding-right: 175px;
-    }
-}
-
 .pets {
-    background: var(--color--light-l);
     padding-top: 80px;
     padding-bottom: 100px;
     .container {
@@ -234,10 +157,10 @@
         align-items: center;
         gap: 60px;
     }
-    .pets__slider {
+    .pets__catalog {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
@@ -247,97 +170,21 @@
     }
 
     .pets__layout {
-        gap: 90px;
-    }
-}
-
-.help {
-    padding-top: 80px;
-    padding-bottom: 100px;
-    .container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 60px;
-    }
-
-    .h3{
-        max-width: 310px;
-        text-align: center;
-    }
-
-    .help__list {
-        display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        row-gap: 55px;
-        column-gap: 120px;
-
-        .help__list-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-        }
+        width: 100%;
+        column-gap: 40px;
+        row-gap: 30px;
+        flex-wrap: wrap;
     }
 
-}
-
-.donation {
-    padding-top: 80px;
-    padding-bottom: 100px;
-    background: var(--color--light-l);
-    .container {
+    .pets__pagination {
         display: flex;
-        justify-content: end;
-        align-items: center;
-    }
-
-    .donation_layout{
-        align-items: center;
-    }
-
-    &__image {
-        padding-left: 143px;
-        padding-top: 11px;
-        .image{
-            position: relative;
-            top: -3px;
-            width: 505px;
-            height: 261px;
-            background-image: url("../../../assets/img/png/donation-dog.png");
-            background-repeat: no-repeat;
-        }
-    }
-
-    .donation__content {
-        padding-left: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
         gap: 20px;
-        .h3 {
-            max-width: 300px;
-        }
-        .p2 {
-            max-width: 380px;
-        }
     }
-    .donation__credit-card {
-        background-color: var(--color--primary);
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 10px 15px;
-        border-radius: 9px;
-        .icon {
-            height: 23px;
-        }
-    }
-
-
 }
+
+
 
 // >----------------------------------------------------------------<
 // >                             FOOTER                             <
@@ -349,8 +196,8 @@
     background: url("../../../assets/img/png/noise_transparent.png"),
                 var(--color--footer-gradient), var(--color--footer-background);
     & .container {
-        padding-top: 56px;
-        padding-bottom: 60px;
+        padding-top: 58px;
+        padding-bottom: 59px;
     }
 
     .footer-layout {
@@ -406,7 +253,7 @@
         max-width: 302px;
         .image {
             position: absolute;
-            bottom: -60px;
+            bottom: -59px;
             right: 0;
             width: 300px;
             height: 310px;
@@ -420,17 +267,14 @@
 }
 
 
-.layout-2-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.layout-3-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
 .button {
-    display: grid;
-    justify-content: center;
-    align-content: center;
+    .button__label {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // color: red;
+        // justify-self: center;
+        // align-self: center;
+        // text-align: center;
+    }
 }

@@ -1,3 +1,8 @@
+:root {
+  --card--animation__duration: 0.2s;
+  --card--animation__time-type: ease-in-out;
+}
+
 .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12,4 +17,23 @@
   gap: 30px;
   padding-bottom: 30px;
   background-color: var(--color--light-s);
+  border-radius: 9px;
+}
+@media (hover: hover) {
+  .card:hover {
+    background-color: var(--color--light-xl);
+    cursor: pointer;
+    -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    -webkit-transition: all var(--card--animation__duration) var(--card--animation__time-type);
+    -o-transition: all var(--card--animation__duration) var(--card--animation__time-type);
+    transition: all var(--card--animation__duration) var(--card--animation__time-type);
+  }
+  .card:hover .button {
+    -webkit-transition: all var(--card--animation__duration) var(--card--animation__time-type);
+    -o-transition: all var(--card--animation__duration) var(--card--animation__time-type);
+    transition: all var(--card--animation__duration) var(--card--animation__time-type);
+    background: var(--color--primary-light);
+    border-color: var(--color--primary-light);
+  }
 }/*# sourceMappingURL=cards.css.map */
