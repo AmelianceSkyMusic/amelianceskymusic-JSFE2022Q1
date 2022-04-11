@@ -105,6 +105,7 @@
 }
 .pets .h3 {
   max-width: 400px;
+  max-height: 90px;
   text-align: center;
 }
 .pets .pets__layout {
@@ -128,13 +129,16 @@
   display: flex;
   gap: 20px;
 }
+.pets .pets__pagination .button {
+  padding: 14rem 0rem 17.5rem 1.5rem;
+}
 
 .footer {
   padding: 0;
   background: url("../../../assets/img/png/noise_transparent.png"), var(--color--footer-gradient), var(--color--footer-background);
 }
 .footer .container {
-  padding-top: 58px;
+  padding-top: 56px;
   padding-bottom: 59px;
 }
 .footer .footer-layout {

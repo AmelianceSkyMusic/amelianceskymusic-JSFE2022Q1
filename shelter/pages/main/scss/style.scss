@@ -107,6 +107,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 60px;
 
         .logo {
             padding-bottom: 10px;
@@ -159,13 +160,14 @@
         align-items: start;
         gap: 42px;
         max-width: 460px;
-        padding-top: 344px;
+        padding-top: 343px;
         padding-bottom: 243px;
         // padding-top: 223px;
     }
 
     .content__header {
         max-width: 310px;
+        height: 114px;
     }
 
     &__image-container {
@@ -243,6 +245,7 @@
 
     .h3 {
         max-width: 400px;
+        height: 90px;
         text-align: center;
     }
 
@@ -264,6 +267,7 @@
     .h3{
         max-width: 310px;
         text-align: center;
+        height: 90px;
     }
 
     .help__list {
@@ -303,7 +307,7 @@
         padding-top: 11px;
         .image{
             position: relative;
-            top: -3px;
+            top: -5px;
             width: 505px;
             height: 261px;
             background-image: url("../../../assets/img/png/donation-dog.png");
@@ -319,6 +323,10 @@
         gap: 20px;
         .h3 {
             max-width: 300px;
+            height: 90px;
+        }
+        .h5 {
+            height: 17px;
         }
         .p2 {
             max-width: 380px;
@@ -343,6 +351,7 @@
 // >                             FOOTER                             <
 // >----------------------------------------------------------------<
 
+
 .footer {
     padding: 0;
     // height: var(--size-h__block-container-footer_desktop);
@@ -350,7 +359,7 @@
                 var(--color--footer-gradient), var(--color--footer-background);
     & .container {
         padding-top: 56px;
-        padding-bottom: 60px;
+        padding-bottom: 59px;
     }
 
     .footer-layout {
@@ -406,7 +415,7 @@
         max-width: 302px;
         .image {
             position: absolute;
-            bottom: -60px;
+            bottom: -59px;
             right: 0;
             width: 300px;
             height: 310px;
@@ -420,17 +429,102 @@
 }
 
 
-.layout-2-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.layout-3-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
 
-.button {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-}
+
+
+
+
+
+// .footer {
+//     padding: 0;
+//     // height: var(--size-h__block-container-footer_desktop);
+//     background: url("../../../assets/img/png/noise_transparent.png"),
+//                 var(--color--footer-gradient), var(--color--footer-background);
+//     & .container {
+//         padding-top: 56px;
+//         padding-bottom: 60px;
+//     }
+
+//     .footer-layout {
+//         display: flex;
+//         justify-content: space-between;
+//         // gap: 160px;
+//     }
+
+//     .footer__contacts,
+//     .footer__location {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 40px;
+//     }
+
+//     .footer__contacts {
+//         max-width: 279px;
+//     }
+
+//     .footer__location {
+//         margin-left: 160px;
+//         max-width: 302px;
+//     }
+
+//     .footer__info {
+//         display: flex;
+//         justify-content: start;
+//         align-items: center;
+//         gap: 20px;
+//     }
+
+//     .icon-h32_marker {
+//         width: 22px; // fix icon size
+//     }
+
+//     .footer__primary-marker {
+//         margin-top: -6px;
+//     }
+
+//     .footer__secondary-marker {
+//         margin-top: -8px;
+//     }
+
+
+
+
+
+
+
+//     &__image {
+//         position: relative;
+//         width: 300px;
+//         // height: 310px;
+//         margin-left: 160px;
+//         max-width: 302px;
+//         .image {
+//             position: absolute;
+//             bottom: -60px;
+//             right: 0;
+//             width: 300px;
+//             height: 310px;
+//             overflow: hidden;
+//             background-image: url("../../../assets/img/png/footer-puppy.png");
+//             background-repeat: no-repeat;
+//             background-size: contain;
+//         }
+//     }
+
+// }
+
+
+// .layout-2-columns {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+// }
+// .layout-3-columns {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+// }
+
+// .button {
+//     display: grid;
+//     justify-content: center;
+//     align-content: center;
+// }
