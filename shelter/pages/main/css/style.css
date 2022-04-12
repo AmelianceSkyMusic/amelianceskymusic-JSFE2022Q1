@@ -313,6 +313,7 @@
   gap: 15px;
   padding: 10px 15px;
   border-radius: 9px;
+  cursor: pointer;
 }
 .donation .donation__credit-card .icon {
   height: 23px;
