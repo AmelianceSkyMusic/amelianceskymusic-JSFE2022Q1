@@ -185,6 +185,10 @@
         .button {
             padding: 14rem 0rem 17.5rem 1.5rem; // fix align
         }
+        .button_number {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
     }
 }
 
