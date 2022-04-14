@@ -195,6 +195,11 @@
 .about__image {
   padding-left: 175px;
 }
+@media (max-width: 1120px) {
+  .about__image {
+    padding-left: 140px;
+  }
+}
 @media (max-width: 1024px) {
   .about__image {
     padding: 0;
@@ -502,7 +507,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media (max-width: 10224px) {
+@media (max-width: 1024px) {
   .footer .footer-layout {
     padding: 0 34px;
     -ms-flex-wrap: wrap;

@@ -250,6 +250,9 @@
 
     &__image {
         padding-left: 175px;
+        @media (max-width: 1120px) {
+            padding-left: 140px;
+        }
         @media (max-width: 1024px) {
             padding: 0;
         }
@@ -510,7 +513,7 @@
         display: flex;
         justify-content: space-between;
         // gap: 160px;
-        @media (max-width: 10224px) {
+        @media (max-width: 1024px) {
             padding: 0 34px;
             flex-wrap: wrap;
         }
@@ -589,104 +592,3 @@
     }
 
 }
-
-
-
-
-
-
-
-
-// .footer {
-//     padding: 0;
-//     // height: var(--size-h__block-container-footer_desktop);
-//     background: url("../../../assets/img/png/noise_transparent.png"),
-//                 var(--color--footer-gradient), var(--color--footer-background);
-//     & .container {
-//         padding-top: 56px;
-//         padding-bottom: 60px;
-//     }
-
-//     .footer-layout {
-//         display: flex;
-//         justify-content: space-between;
-//         // gap: 160px;
-//     }
-
-//     .footer__contacts,
-//     .footer__location {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 40px;
-//     }
-
-//     .footer__contacts {
-//         max-width: 279px;
-//     }
-
-//     .footer__location {
-//         margin-left: 160px;
-//         max-width: 302px;
-//     }
-
-//     .footer__info {
-//         display: flex;
-//         justify-content: start;
-//         align-items: center;
-//         gap: 20px;
-//     }
-
-//     .icon-h32_marker {
-//         width: 22px; // fix icon size
-//     }
-
-//     .footer__primary-marker {
-//         margin-top: -6px;
-//     }
-
-//     .footer__secondary-marker {
-//         margin-top: -8px;
-//     }
-
-
-
-
-
-
-
-//     &__image {
-//         position: relative;
-//         width: 300px;
-//         // height: 310px;
-//         margin-left: 160px;
-//         max-width: 302px;
-//         .image {
-//             position: absolute;
-//             bottom: -60px;
-//             right: 0;
-//             width: 300px;
-//             height: 310px;
-//             overflow: hidden;
-//             background-image: url("../../../assets/img/png/footer-puppy.png");
-//             background-repeat: no-repeat;
-//             background-size: contain;
-//         }
-//     }
-
-// }
-
-
-// .layout-2-columns {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-// }
-// .layout-3-columns {
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr;
-// }
-
-// .button {
-//     display: grid;
-//     justify-content: center;
-//     align-content: center;
-// }

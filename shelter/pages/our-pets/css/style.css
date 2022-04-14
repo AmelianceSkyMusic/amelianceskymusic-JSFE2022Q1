@@ -78,6 +78,11 @@
   padding-top: 80px;
   padding-bottom: 100px;
 }
+@media (max-width: 1024px) {
+  .pets {
+    padding-bottom: 76px;
+  }
+}
 .pets .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,6 +95,11 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 60px;
+}
+@media (max-width: 1024px) {
+  .pets .container {
+    gap: 30px;
+  }
 }
 .pets .pets__catalog {
   width: 100%;
@@ -123,11 +133,21 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+@media (max-width: 1259px) {
+  .pets .pets__layout > :nth-last-child(-n+2) {
+    display: none;
+  }
+}
 .pets .pets__pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+}
+@media (max-width: 1024px) {
+  .pets .pets__pagination {
+    padding-top: 10px;
+  }
 }
 .pets .pets__pagination .button {
   padding: 14rem 0rem 17.5rem 1.5rem;
@@ -145,13 +165,27 @@
   padding-top: 56px;
   padding-bottom: 59px;
 }
+@media (max-width: 1024px) {
+  .footer .container {
+    padding-top: 30px;
+    padding-bottom: 64px;
+  }
+}
 .footer .footer-layout {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .footer .footer-layout {
+    padding: 0 34px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 .footer .footer__contacts,
 .footer .footer__location {
@@ -168,8 +202,19 @@
   max-width: 279px;
 }
 .footer .footer__location {
-  margin-left: 160px;
+  position: relative;
+  left: 160px;
   max-width: 302px;
+}
+@media (max-width: 1120px) {
+  .footer .footer__location {
+    left: 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .footer .footer__location {
+    left: 0;
+  }
 }
 .footer .footer__info {
   display: -webkit-box;
@@ -198,6 +243,11 @@
   margin-left: 160px;
   max-width: 302px;
 }
+@media (max-width: 1024px) {
+  .footer__image {
+    margin-left: 170px;
+  }
+}
 .footer__image .image {
   position: absolute;
   bottom: -59px;
@@ -208,4 +258,10 @@
   background-image: url("../../../assets/img/png/footer-puppy.png");
   background-repeat: no-repeat;
   background-size: contain;
+}
+@media (max-width: 1024px) {
+  .footer__image .image {
+    position: relative;
+    bottom: -63px;
+  }
 }/*# sourceMappingURL=style.css.map */
