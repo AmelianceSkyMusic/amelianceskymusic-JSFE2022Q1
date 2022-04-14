@@ -1,0 +1,14 @@
+@mixin setLayout($col-width, $gap) {
+    display: flex;
+
+    @if $gap >= 0 {
+      gap: $gap;
+    } @else {
+      justify-content: space-between;
+    }
+
+    >* {
+        flex-basis: $col-width;
+    }
+
+}

@@ -799,19 +799,56 @@ html, body {
   padding: 32px;
 }
 
+.layout-1-columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.layout-1-columns > * {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
 .layout-2-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.layout-2-columns > * {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .layout-3-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.layout-3-columns > * {
+  -ms-flex-preferred-size: 33.3333333333%;
+      flex-basis: 33.3333333333%;
 }
 
 .layout-4-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.layout-4-columns > * {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
 }
 
 :root {

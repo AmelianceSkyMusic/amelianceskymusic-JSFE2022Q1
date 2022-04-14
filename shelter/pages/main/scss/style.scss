@@ -2,7 +2,7 @@
 // >                            IMPORT                              <
 // >----------------------------------------------------------------<
 
-// @use "../../../style/scss/main.scss" as *;
+@use "../../../style/scss/abstracts/mixins" as *;
 
 
 
@@ -46,13 +46,13 @@
 
 .body {
     .body-container {
-        // position: relative;
+        position: relative;
 //     //     height: min(100%, 100vh);
 //     //     width: 100vw;
 //     //     display: flex;
 //     //     flex-direction: column;
-        // overflow: hidden;
-    }
+// overflow-x: hidden;
+}
 //     display: flex;
 //     flex-direction: column;
 //     justify-content: space-between;
@@ -65,12 +65,6 @@
 //     // }
 }
 
-
-// .body-container {
-//     width: 100%;
-//     padding: 0 40px;
-// }
-
 // // ^------------------------ block container ------------------------
 
 .container {
@@ -79,7 +73,7 @@
     min-height: 100%;
     margin: 0 auto;
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
         margin: 0 30px;
     }
 }
@@ -96,6 +90,10 @@
     width: 100%;
     padding: 0;
     padding-top: 60px;
+
+    @media (max-width: 1279px) {
+        padding-top: 30px;
+    }
     // height: var(--size-h__block-container-header_desktop);
     & .container {
         position: relative;
@@ -148,10 +146,19 @@
     background: url("../../../assets/img/png/noise_transparent.png"),
                 var(--color--main-gradient), var(--color--main-background);
     background-repeat: repeat;
+
+    overflow-x: hidden;
+
     & .container{
         display: flex;
         justify-content: space-between;
         align-items: end;
+
+        @media (max-width: 1024px) {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
     }
 
     &__content {
@@ -163,6 +170,13 @@
         padding-top: 343px;
         padding-bottom: 243px;
         // padding-top: 223px;
+        @media (max-width: 1024px) {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            .button {
+                align-self: center;
+            }
+        }
     }
 
     .content__header {
@@ -177,6 +191,11 @@
         // background-image: url("../../../assets/img/png/fold-puppy.png");
         // background-size: contain;
         // background-repeat: no-repeat;
+        @media (max-width: 1024px) {
+            width: 569px;
+            height: 593px;
+
+        }
     }
     &__image {
         position: absolute;
@@ -188,25 +207,42 @@
         background-image: url("../../../assets/img/png/fold-puppy.png");
         background-repeat: no-repeat;
         background-size: contain;
+
+        @media (max-width: 1024px) {
+            width: 569px;
+            height: 593px;
+            left: 70px;
+        }
     }
 }
 
 .about {
     padding-top: 80px;
     padding-bottom: 100px;
-    // .container{
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    // }
+    .container{
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        @media (max-width: 1024px) {
+            justify-content: center;
+        }
+    }
     .about__layout {
         // display: flex;
         // justify-content: center;
         align-items: center;
+        // flex-wrap: wrap;
+        @media (max-width: 1024px) {
+            flex-direction: column-reverse;
+            max-width: 430px;
+        }
     }
 
     &__image {
         padding-left: 175px;
+        @media (max-width: 1024px) {
+            padding: 0;
+        }
         .image{
             width: 300px;
             height: 408px;
@@ -223,6 +259,10 @@
         flex-direction: column;
         gap: 25px;
         padding-right: 175px;
+        @media (max-width: 1024px) {
+            padding: 0;
+            padding-bottom: 80px;
+        }
     }
 }
 
@@ -239,8 +279,31 @@
     .pets__slider {
         width: 100%;
         display: flex;
+        // justify-content: center;
         justify-content: space-between;
+        // gap: clamp(20px, 4.4%, 53px);
         align-items: center;
+        .pets__icon-button {
+            width: 52px;
+            height: 52px;
+            &_left {
+                margin-right: 4.4%;
+            }
+
+            &_right {
+                margin-left: 4.4%;
+            }
+
+            @media (max-width: 824px) {
+                &_left {
+                    margin-right: 12px;
+                }
+
+                &_right {
+                    margin-left: 12px;
+                }
+            }
+        }
     }
 
     .h3 {
@@ -250,7 +313,30 @@
     }
 
     .pets__layout {
-        gap: 90px;
+        display: flex;
+        // padding: 0 53px;
+        width: min(990px, 100%);
+        @include setLayout((100%-180)/3, -1);
+
+        @media (max-width: 1120px) {
+            justify-content: space-evenly;
+            & >:last-child {
+                display: none;
+            }
+        }
+
+        @media (max-width: 824px) {
+            justify-content: space-between;
+        }
+        // justify-content: space-between;
+        // margin: 0 4.4%;
+        // gap: 9%;
+        // @media (max-width: 1279px) {
+        //     // @include setLayout(400px, 90px);
+        //     gap: 7.5%;
+        //     background:red;
+        // }
+        // flex-wrap: wrap;
     }
 }
 
@@ -276,6 +362,9 @@
         justify-content: center;
         row-gap: 55px;
         column-gap: 120px;
+        @media (max-width: 1120px) {
+            column-gap: 60px;
+        }
 
         .help__list-item {
             display: flex;
@@ -283,6 +372,9 @@
             justify-content: center;
             align-items: center;
             gap: 30px;
+            @media (max-width: 1120px) {
+                width: 170px;
+            }
         }
     }
 
@@ -294,17 +386,26 @@
     background: var(--color--light-l);
     .container {
         display: flex;
-        justify-content: end;
         align-items: center;
+        @media (max-width: 1120px) {
+            justify-content: center;
+        }
     }
 
     .donation_layout{
         align-items: center;
+        @media (max-width: 1120px) {
+            flex-direction: column-reverse;
+            // max-width: 430px;
+        }
     }
 
     &__image {
         padding-left: 143px;
         padding-top: 11px;
+        @media (max-width: 1120px) {
+            padding: 0;
+        }
         .image{
             position: relative;
             top: -5px;
@@ -312,6 +413,9 @@
             height: 261px;
             background-image: url("../../../assets/img/png/donation-dog.png");
             background-repeat: no-repeat;
+            @media (max-width: 1120px) {
+                top: 0;
+            }
         }
     }
 
@@ -330,6 +434,11 @@
         }
         .p2 {
             max-width: 380px;
+        }
+
+        @media (max-width: 1120px) {
+            padding: 0;
+            padding-bottom: 60px;
         }
     }
     .donation__credit-card {
@@ -361,12 +470,22 @@
     & .container {
         padding-top: 56px;
         padding-bottom: 59px;
+        @media (max-width: 1024px) {
+            padding-top: 30px;
+            padding-bottom: 64px;
+
+        }
     }
 
     .footer-layout {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         // gap: 160px;
+        @media (max-width: 10224px) {
+            padding: 0 34px;
+            flex-wrap: wrap;
+        }
     }
 
     .footer__contacts,
@@ -381,8 +500,15 @@
     }
 
     .footer__location {
-        margin-left: 160px;
+        position: relative;
+        left: 160px;
         max-width: 302px;
+        @media (max-width: 1120px) {
+            left: 60px;
+        }
+        @media (max-width: 1024px) {
+            left: 0;
+        }
     }
 
     .footer__info {
@@ -414,6 +540,9 @@
         // height: 310px;
         margin-left: 160px;
         max-width: 302px;
+        @media (max-width: 1024px) {
+            margin-left: 170px;
+        }
         .image {
             position: absolute;
             bottom: -59px;
@@ -424,6 +553,10 @@
             background-image: url("../../../assets/img/png/footer-puppy.png");
             background-repeat: no-repeat;
             background-size: contain;
+            @media (max-width: 1024px) {
+                position: relative;
+                bottom: -63px;
+            }
         }
     }
 
