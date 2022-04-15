@@ -84,6 +84,9 @@
     @media (max-width: 1280px) {
         margin: 0 30px;
     }
+    @media (max-width: 480px) {
+        margin: 0 10px;
+    }
 }
 
 
@@ -100,6 +103,7 @@
     padding: 0;
     padding-top: 30px;
     padding-bottom: 30px;
+    z-index: 1000;
     // height: var(--size-h__block-container-header_desktop);
     & .container {
         position: relative;
@@ -128,8 +132,13 @@
         .navigation {
             display: flex;
             gap: 35px;
+            @media (max-width: 720px) {
+                gap: 20px;
+            }
         }
-
+        @media (max-width: 670px) {
+            display: none;
+        }
     }
 }
 
@@ -153,7 +162,11 @@
     padding-bottom: 100px;
     @media (max-width: 1024px) {
         padding-bottom: 76px;
+    }
 
+    @media (max-width: 480px) {
+        padding-top: 42px;
+        padding-bottom: 42px;
     }
     .container {
         display: flex;
@@ -162,6 +175,9 @@
         gap: 60px;
         @media (max-width: 1024px) {
             gap: 30px;
+        }
+        @media (max-width: 480px) {
+            gap: 42px;
         }
     }
     .pets__catalog {
@@ -175,6 +191,10 @@
         max-width: 400px;
         max-height: 90px;
         text-align: center;
+        @media (max-width: 480px) {
+            max-height: 64px;
+
+        }
     }
 
     .pets__layout {
@@ -189,6 +209,11 @@
                 display: none;
             }
         }
+        @media (max-width: 480px) {
+            >:nth-last-child(-n+5) { // last 2 child
+                display: none;
+            }
+        }
     }
 
     .pets__pagination {
@@ -197,6 +222,10 @@
 
         @media (max-width: 1024px) {
             padding-top: 10px;
+        }
+        @media (max-width: 480px) {
+            gap: 10px;
+            padding-top: 0;
         }
         .button {
             padding: 14rem 0rem 17.5rem 1.5rem; // fix align
@@ -225,7 +254,9 @@
         @media (max-width: 1024px) {
             padding-top: 30px;
             padding-bottom: 64px;
-
+        }
+        @media (max-width: 720px) {
+            padding-bottom: 0;
         }
     }
 
@@ -238,6 +269,26 @@
             padding: 0 34px;
             flex-wrap: wrap;
         }
+        @media (max-width: 720px) {
+            justify-content: center;
+            padding: 0;
+            gap: 40px;
+        }
+        @media (max-width: 680px) {
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    .h3 {
+        @media (max-width: 720px) {
+            max-height: 64px;
+            text-align: center;
+            align-self: center;
+        }
+        @media (max-width: 480px) {
+            max-width: 270px;
+        }
     }
 
     .footer__contacts,
@@ -249,6 +300,9 @@
 
     .footer__contacts {
         max-width: 279px;
+        @media (max-width: 720px) {
+            align-items: center;
+        }
     }
 
     .footer__location {
@@ -276,10 +330,16 @@
 
     .footer__primary-marker {
         margin-top: -6px;
+        @media (max-width: 720px) {
+            margin-top: 0px;
+        }
     }
 
     .footer__secondary-marker {
         margin-top: -8px;
+        @media (max-width: 720px) {
+            margin-top: 0px;
+        }
     }
 
 
@@ -295,6 +355,11 @@
         @media (max-width: 1024px) {
             margin-left: 170px;
         }
+        @media (max-width: 720px) {
+            margin: 0;
+            width: 260px;
+            height: 269px;
+        }
         .image {
             position: absolute;
             bottom: -59px;
@@ -308,6 +373,12 @@
             @media (max-width: 1024px) {
                 position: relative;
                 bottom: -63px;
+            }
+            @media (max-width: 720px) {
+                position: relative;
+                bottom: 0px;
+                width: 260px;
+                height: 269px;
             }
         }
     }

@@ -89,6 +89,26 @@
 					"label": "!--FOOTER"
 				}
 			]
+		},
+		{
+			"path": "shelter/pages/our-pets/scss/style.scss",
+			"bookmarks": [
+				{
+					"line": 93,
+					"column": 18,
+					"label": "!--HEADER"
+				},
+				{
+					"line": 148,
+					"column": 20,
+					"label": "!--MAIN"
+				},
+				{
+					"line": 242,
+					"column": 12,
+					"label": "!--FOOTER"
+				}
+			]
 		}
 	]
 }
