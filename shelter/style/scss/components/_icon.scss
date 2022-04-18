@@ -1,3 +1,5 @@
+@use "../../../style/scss/abstracts/breakpoints" as *;
+
 :root {
 
     --icon-big--color: var(--color--primary);
@@ -115,6 +117,11 @@
     &_sleeping-area {
         @include maskImgSVG("icon-big--sleeping-area.svg", var(--icon-big--color), var(--icon-big--color_hover));
     }
+
+    @media (max-width: $bp__tab-to-mob-hi) {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .icon-medium {
@@ -150,5 +157,34 @@
     &_arrow-right {
         width: 14px; height: 6px;
         @include maskImgSVG("icon-random--arrow-right.svg", var(--icon-random--color), var(--icon-random--color_hover));
+    }
+}
+
+
+.icon-random_navigation-menu {
+    display: none;
+    @media (max-width: $bp__hide-header-mobile) {
+        position: absolute;
+        top: 15px;
+        right: -17px;
+        display: block;
+        width: 30px; height: 30px;
+        @include maskImgSVG("icon-random--navigation-menu.svg", var(--color--primary), var(--icon-random--color_hover));
+        cursor: pointer;
+        margin-right: 43px;
+        transition: transform 0.3s ease-in-out;
+        z-index: 2000;
+    }
+    &.inverse {
+        @include maskImgSVG("icon-random--navigation-menu.svg", var(--color--dark-l), var(--icon-random--color_hover));
+    }
+
+    @media (max-width: $bp__tab-to-mob-low) {
+        right: 0px;
+    }
+    &.show {
+        @media (max-width: $bp__hide-header-mobile) {
+            transform: rotate(-90deg);
+        }
     }
 }

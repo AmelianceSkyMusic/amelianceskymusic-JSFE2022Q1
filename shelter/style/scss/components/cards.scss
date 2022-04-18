@@ -10,6 +10,7 @@
     padding-bottom: 30px;
     background-color: var(--color--light-s);
     border-radius: 9px;
+    overflow: hidden;
 
     @media (hover: hover) {
         &:hover {

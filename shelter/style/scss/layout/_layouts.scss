@@ -1,12 +1,28 @@
+@use "../../../style/scss/abstracts/mixins" as *;
+
+// .layout-2-columns-grid {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+// }
+// .layout-3-columns-grid {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+// }
+// .layout-4-columns-grid {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+// }
+
+
+.layout-1-columns {
+    @include setLayout(100%, -1)
+}
 .layout-2-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    @include setLayout(100%/2, -1)
 }
 .layout-3-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    @include setLayout(100%/3, -1)
 }
 .layout-4-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @include setLayout(100%/4, -1)
 }

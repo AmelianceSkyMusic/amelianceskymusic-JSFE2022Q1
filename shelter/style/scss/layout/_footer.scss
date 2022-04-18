@@ -1,0 +1,148 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/breakpoints" as *;
+
+// >----------------------------------------------------------------<
+// >                             FOOTER                             <
+// >----------------------------------------------------------------<
+
+.footer {
+    padding: 0;
+    // height: var(--size-h__block-container-footer_desktop);
+    background: url("../../../../assets/img/png/noise_transparent.png"),
+                var(--color--footer-gradient), var(--color--footer-background);
+    & .container {
+        padding-top: 56px;
+        padding-bottom: 59px;
+        @media (max-width: $bp__pc-to-tab-low) {
+            padding-top: 30px;
+            padding-bottom: 64px;
+        }
+        @media (max-width: $bp__tab-to-mob-hi) {
+            padding-bottom: 0;
+        }
+    }
+
+    .footer-layout {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        // gap: 160px;
+        @media (max-width: $bp__pc-to-tab-low) {
+            padding: 0 34px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: $bp__tab-to-mob-hi) {
+            justify-content: center;
+            padding: 0;
+            gap: 40px;
+        }
+        @media (max-width: $bp__fix-footer-mobile) {
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    .h3 {
+        @media (max-width: $bp__tab-to-mob-hi) {
+            max-height: 64px;
+            text-align: center;
+            align-self: center;
+        }
+        @media (max-width: $bp__tab-to-mob-low) {
+            max-width: 270px;
+        }
+    }
+
+    .footer__contacts,
+    .footer__location {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer__contacts {
+        max-width: 279px;
+        @media (max-width: $bp__tab-to-mob-hi) {
+            align-items: center;
+        }
+    }
+
+    .footer__location {
+        position: relative;
+        left: 160px;
+        max-width: 302px;
+        @media (max-width: $bp__pc-to-tab-hi) {
+            left: 60px;
+        }
+        @media (max-width: $bp__pc-to-tab-low) {
+            left: 0;
+        }
+    }
+
+    .footer__info {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .icon-h32_marker {
+        width: 22px; // fix icon size
+    }
+
+    .footer__primary-marker {
+        margin-top: -6px;
+        @media (max-width: $bp__tab-to-mob-hi) {
+            margin-top: 0px;
+        }
+    }
+
+    .footer__secondary-marker {
+        margin-top: -8px;
+        @media (max-width: $bp__tab-to-mob-hi) {
+            margin-top: 0px;
+        }
+    }
+
+
+
+
+
+    &__image {
+        position: relative;
+        width: 300px;
+        // height: 310px;
+        margin-left: 160px;
+        max-width: 302px;
+        @media (max-width: $bp__pc-to-tab-low) {
+            margin-left: 170px;
+        }
+        @media (max-width: $bp__tab-to-mob-hi) {
+            margin: 0;
+            width: 260px;
+            height: 269px;
+        }
+        .image {
+            position: absolute;
+            bottom: -59px;
+            right: 0;
+            width: 300px;
+            height: 310px;
+            overflow: hidden;
+            background-image: url("../../assets/img/png/footer-puppy.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            @media (max-width: $bp__pc-to-tab-low) {
+                position: relative;
+                bottom: -63px;
+            }
+            @media (max-width: $bp__tab-to-mob-hi) {
+                position: relative;
+                bottom: 0px;
+                width: 260px;
+                height: 269px;
+            }
+        }
+    }
+
+}

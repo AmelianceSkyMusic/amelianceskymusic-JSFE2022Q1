@@ -2,7 +2,7 @@
 // >                            IMPORT                              <
 // >----------------------------------------------------------------<
 
-// @use "../../../style/scss/main.scss" as *;
+@use "../../../style/scss/abstracts/breakpoints" as *;
 
 
 
@@ -81,8 +81,11 @@
     min-height: 100%;
     margin: 0 auto;
 
-    @media (max-width: 1280px) {
+    @media (max-width: 1279px) {
         margin: 0 30px;
+    }
+    @media (max-width: $bp__tab-to-mob-low) {
+        margin: 0 10px;
     }
 }
 
@@ -100,6 +103,7 @@
     padding: 0;
     padding-top: 30px;
     padding-bottom: 30px;
+    z-index: 1000;
     // height: var(--size-h__block-container-header_desktop);
     & .container {
         position: relative;
@@ -122,15 +126,92 @@
 
     }
 
-    &__navigation{
+    &__navigation {
         display: flex;
         margin-left: auto;
         .navigation {
             display: flex;
             gap: 35px;
+            @media (max-width: $bp__tab-to-mob-hi) {
+                gap: 20px;
+            }
+        }
+    }
+
+
+
+    // ^------------------------ burger menu ------------------------
+
+    .navigation {
+        @media (max-width: $bp__hide-header-mobile) {
+            display: none;
+        }
+
+        &.show {
+            @media (max-width: $bp__hide-header-mobile) {
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                right: -20px;
+                top: -30px;
+                display: flex;
+                width: 320px;
+                height: 100vh;
+                background-color: var(--color--dark-3xl);
+                z-index: 1500;
+                gap: 41px;
+                margin: 0 -10px;
+            }
+            @media (max-width: $bp__tab-to-mob-low) {
+                right: 0px;
+            }
+
+            .link {
+                @media (max-width: $bp__hide-header-mobile) {
+                    font-family: var(--font__font-family_p3);
+                    font-size: var(--font__font-size_p3);
+                    line-height: var(--font__line-height_p3);
+                    font-weight: var(--font__font-weight_p3);
+                    letter-spacing: var(--font__letter-spacing_p3);
+                    font-style: var(--font__font-style_p3);
+                    color: var(--color--dark-s);
+                    &.active {
+                        color: var(--color--light-s);
+                    }
+                }
+            }
+
         }
 
     }
+    .header__logo.show {
+        .h1 {
+            color: var(--color--primary)
+        }
+        .sb{
+            color: var(--color--light-xl);
+        }
+        @media (max-width: $bp__hide-header-mobile) {
+            position: absolute;
+            width: 186px;
+            top: 0;
+            right: 96px;
+            z-index: 2000;
+        }
+        @media (max-width: $bp__tab-to-mob-low) {
+            right: 116px;
+        }
+    }
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -151,11 +232,25 @@
 .pets {
     padding-top: 80px;
     padding-bottom: 100px;
+    @media (max-width: $bp__pc-to-tab-low) {
+        padding-bottom: 76px;
+    }
+
+    @media (max-width: $bp__tab-to-mob-low) {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
     .container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 60px;
+        @media (max-width: $bp__pc-to-tab-low) {
+            gap: 30px;
+        }
+        @media (max-width: $bp__tab-to-mob-low) {
+            gap: 42px;
+        }
     }
     .pets__catalog {
         width: 100%;
@@ -168,6 +263,10 @@
         max-width: 400px;
         max-height: 90px;
         text-align: center;
+        @media (max-width: $bp__tab-to-mob-low) {
+            max-height: 64px;
+
+        }
     }
 
     .pets__layout {
@@ -177,11 +276,29 @@
         column-gap: 40px;
         row-gap: 30px;
         flex-wrap: wrap;
+        @media (max-width: $bp__hide-cards-pc) {
+            >:nth-last-child(-n+2) { // last 2 child
+                display: none;
+            }
+        }
+        @media (max-width: $bp__tab-to-mob-low) {
+            >:nth-last-child(-n+5) { // last 5 child
+                display: none;
+            }
+        }
     }
 
     .pets__pagination {
         display: flex;
         gap: 20px;
+
+        @media (max-width: $bp__pc-to-tab-low) {
+            padding-top: 10px;
+        }
+        @media (max-width: $bp__tab-to-mob-low) {
+            gap: 10px;
+            padding-top: 0;
+        }
         .button {
             padding: 14rem 0rem 17.5rem 1.5rem; // fix align
         }
@@ -189,100 +306,5 @@
             cursor: not-allowed;
             pointer-events: none;
         }
-    }
-}
-
-
-
-// >----------------------------------------------------------------<
-// >                             FOOTER                             <
-// >----------------------------------------------------------------<
-
-.footer {
-    padding: 0;
-    // height: var(--size-h__block-container-footer_desktop);
-    background: url("../../../assets/img/png/noise_transparent.png"),
-                var(--color--footer-gradient), var(--color--footer-background);
-    & .container {
-        padding-top: 56px;
-        padding-bottom: 59px;
-    }
-
-    .footer-layout {
-        display: flex;
-        justify-content: space-between;
-        // gap: 160px;
-    }
-
-    .footer__contacts,
-    .footer__location {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .footer__contacts {
-        max-width: 279px;
-    }
-
-    .footer__location {
-        margin-left: 160px;
-        max-width: 302px;
-    }
-
-    .footer__info {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .icon-h32_marker {
-        width: 22px; // fix icon size
-    }
-
-    .footer__primary-marker {
-        margin-top: -6px;
-    }
-
-    .footer__secondary-marker {
-        margin-top: -8px;
-    }
-
-
-
-
-
-    &__image {
-        position: relative;
-        width: 300px;
-        // height: 310px;
-        margin-left: 160px;
-        max-width: 302px;
-        .image {
-            position: absolute;
-            bottom: -59px;
-            right: 0;
-            width: 300px;
-            height: 310px;
-            overflow: hidden;
-            background-image: url("../../../assets/img/png/footer-puppy.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-    }
-
-}
-
-
-.button {
-    .button__label {
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // color: red;
-        // justify-self: center;
-        // align-self: center;
-        // text-align: center;
     }
 }
