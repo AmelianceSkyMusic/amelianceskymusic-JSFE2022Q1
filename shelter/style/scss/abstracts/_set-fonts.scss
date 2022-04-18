@@ -1,4 +1,6 @@
 @use "variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/breakpoints" as *;
 
 // >----------------------------------------------------------------<
 // >                           VARIBLES                             <
@@ -32,31 +34,31 @@ $font-weight__thin:        100;
 // >                            MIXINS                              <
 // >----------------------------------------------------------------<
 
-@mixin initFont($font-family-name, $font-path, $font-family-file, $font-weight) {
-    font-family: $font-family-name;
-    src: url($font-path + $font-family-file);
-    font-weight: $font-weight;
-}
+// @mixin initFont($font-family-name, $font-path, $font-family-file, $font-weight) {
+//     font-family: $font-family-name;
+//     src: url($font-path + $font-family-file);
+//     font-weight: $font-weight;
+// }
 
-@mixin setFont($font-family, $font-size, $font-weight, $font-line-height, $letter-spacing: 0, $font-style) {
-    font-family: $font-family;
-    font-size: $font-size;
-    line-height: $font-line-height;
-    font-weight: $font-weight;
-    letter-spacing: $letter-spacing;
-    font-style: $font-style;
-}
+// @mixin setFont($font-family, $font-size, $font-weight, $font-line-height, $letter-spacing: 0, $font-style) {
+//     font-family: $font-family;
+//     font-size: $font-size;
+//     line-height: $font-line-height;
+//     font-weight: $font-weight;
+//     letter-spacing: $letter-spacing;
+//     font-style: $font-style;
+// }
 
-@mixin setTypoElem($elem, $font-family, $font-size, $font-weight, $font-line-height, $letter-spacing, $font-style: normal) {
-    .#{$elem} {
-        #{--font__font-family_ + $elem}: #{$font-family};
-        #{--font__font-size_ + $elem}: #{$font-size};
-        #{--font__line-height_ + $elem}: #{$font-line-height};
-        #{--font__font-weight_ + $elem}: #{$font-weight};
-        #{--font__letter-spacing_ + $elem}: #{$letter-spacing};
-        #{--font__font-style_ + $elem}: #{$font-style};
-    }
-}
+// @mixin setTypoElem($elem, $font-family, $font-size, $font-weight, $font-line-height, $letter-spacing, $font-style: normal) {
+//     .#{$elem} {
+//         #{--font__font-family_ + $elem}: #{$font-family};
+//         #{--font__font-size_ + $elem}: #{$font-size};
+//         #{--font__line-height_ + $elem}: #{$font-line-height};
+//         #{--font__font-weight_ + $elem}: #{$font-weight};
+//         #{--font__letter-spacing_ + $elem}: #{$letter-spacing};
+//         #{--font__font-style_ + $elem}: #{$font-style};
+//     }
+// }
 
 
 // >----------------------------------------------------------------<
@@ -96,13 +98,21 @@ $font-weight__thin:        100;
     // font-family, font-size, font-weight, line-height, letter-spacing
     @include setTypoElem(h2, $font-family__primary, 44px, $font-weight__regular, 130%, 0);              // header 1
 
+    @media (max-width: $bp__tab-to-mob-hi) {
+        @include setTypoElem(h2, $font-family__primary, 25px, $font-weight__regular, 130%, 0.06em);         // header 2 mobile
+    }
+
     @include setTypoElem(h3, $font-family__primary, 35px, $font-weight__regular, 130%, 0.06em);           // header 2
 
-    @media (max-width: $mobile) {
+    @media (max-width: $bp__tab-to-mob-hi) {
         @include setTypoElem(h3, $font-family__primary, 25px, $font-weight__regular, 130%, 0.06em);         // header 2 mobile
     }
 
     @include setTypoElem(h4, $font-family__primary, 20px, $font-weight__regular, 115%, 0.06em);             // header 3
+
+    // @media (max-width: $bp__tab-to-mob-hi) {
+    //     @include setTypoElem(h4, $font-family__primary, 15px, $font-weight__regular, 110%, 0.06em);         // header 2 mobile
+    // }
 
     @include setTypoElem(h5, $font-family__primary, 15px, $font-weight__regular, 110%, 0.06em);             // header 4
 

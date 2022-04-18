@@ -143,24 +143,86 @@
   src: url("../../assets/fonts/Noto/static/NotoSansMono/NotoSansMono-Thin.ttf");
   font-weight: 100;
 }
-:root .h2 {
+:root {
   --font__font-family_h2: Georgia, Yeseva One, serif;
   --font__font-size_h2: 44px;
   --font__line-height_h2: 130%;
   --font__font-weight_h2: 400;
   --font__letter-spacing_h2: 0;
   --font__font-style_h2: normal;
-}
-:root .h3 {
   --font__font-family_h3: Georgia, Yeseva One, serif;
   --font__font-size_h3: 35px;
   --font__line-height_h3: 130%;
   --font__font-weight_h3: 400;
   --font__letter-spacing_h3: 0.06em;
   --font__font-style_h3: normal;
+  --font__font-family_h4: Georgia, Yeseva One, serif;
+  --font__font-size_h4: 20px;
+  --font__line-height_h4: 115%;
+  --font__font-weight_h4: 400;
+  --font__letter-spacing_h4: 0.06em;
+  --font__font-style_h4: normal;
+  --font__font-family_h5: Georgia, Yeseva One, serif;
+  --font__font-size_h5: 15px;
+  --font__line-height_h5: 110%;
+  --font__font-weight_h5: 400;
+  --font__letter-spacing_h5: 0.06em;
+  --font__font-style_h5: normal;
+  --font__font-family_h6: Georgia, Yeseva One, serif;
+  --font__font-size_h6: 15px;
+  --font__line-height_h6: 110%;
+  --font__font-weight_h6: 700;
+  --font__letter-spacing_h6: 0.06em;
+  --font__font-style_h6: normal;
+  --font__font-family_p1: Arial, Montserrat, system-ui;
+  --font__font-size_p1: 15px;
+  --font__line-height_p1: 160%;
+  --font__font-weight_p1: 400;
+  --font__letter-spacing_p1: 0;
+  --font__font-style_p1: normal;
+  --font__font-family_p2: Arial, Montserrat, system-ui;
+  --font__font-size_p2: 12px;
+  --font__line-height_p2: 150%;
+  --font__font-weight_p2: 400;
+  --font__letter-spacing_p2: 0;
+  --font__font-style_p2: italic;
+  --font__font-family_p3: Arial, Montserrat, system-ui;
+  --font__font-size_p3: 32px;
+  --font__line-height_p3: 160%;
+  --font__font-weight_p3: 400;
+  --font__letter-spacing_p3: 0;
+  --font__font-style_p3: normal;
+  --font__font-family_h1: Georgia, Yeseva One, serif;
+  --font__font-size_h1: 32px;
+  --font__line-height_h1: 110%;
+  --font__font-weight_h1: 400;
+  --font__letter-spacing_h1: 0.06em;
+  --font__font-style_h1: normal;
+  --font__font-family_sb: Arial, Montserrat, system-ui;
+  --font__font-size_sb: 13px;
+  --font__line-height_sb: 100%;
+  --font__font-weight_sb: 400;
+  --font__letter-spacing_sb: 0.1em;
+  --font__font-style_sb: normal;
+  --font__font-family_link: Arial, Montserrat, system-ui;
+  --font__font-size_link: 15px;
+  --font__line-height_link: 160%;
+  --font__font-weight_link: 400;
+  --font__letter-spacing_link: 0;
+  --font__font-style_link: normal;
 }
-@media (max-width: 480px) {
-  :root .h3 {
+@media (max-width: 740px) {
+  :root {
+    --font__font-family_h2: Georgia, Yeseva One, serif;
+    --font__font-size_h2: 25px;
+    --font__line-height_h2: 130%;
+    --font__font-weight_h2: 400;
+    --font__letter-spacing_h2: 0.06em;
+    --font__font-style_h2: normal;
+  }
+}
+@media (max-width: 740px) {
+  :root {
     --font__font-family_h3: Georgia, Yeseva One, serif;
     --font__font-size_h3: 25px;
     --font__line-height_h3: 130%;
@@ -168,78 +230,6 @@
     --font__letter-spacing_h3: 0.06em;
     --font__font-style_h3: normal;
   }
-}
-:root .h4 {
-  --font__font-family_h4: Georgia, Yeseva One, serif;
-  --font__font-size_h4: 20px;
-  --font__line-height_h4: 115%;
-  --font__font-weight_h4: 400;
-  --font__letter-spacing_h4: 0.06em;
-  --font__font-style_h4: normal;
-}
-:root .h5 {
-  --font__font-family_h5: Georgia, Yeseva One, serif;
-  --font__font-size_h5: 15px;
-  --font__line-height_h5: 110%;
-  --font__font-weight_h5: 400;
-  --font__letter-spacing_h5: 0.06em;
-  --font__font-style_h5: normal;
-}
-:root .h6 {
-  --font__font-family_h6: Georgia, Yeseva One, serif;
-  --font__font-size_h6: 15px;
-  --font__line-height_h6: 110%;
-  --font__font-weight_h6: 700;
-  --font__letter-spacing_h6: 0.06em;
-  --font__font-style_h6: normal;
-}
-:root .p1 {
-  --font__font-family_p1: Arial, Montserrat, system-ui;
-  --font__font-size_p1: 15px;
-  --font__line-height_p1: 160%;
-  --font__font-weight_p1: 400;
-  --font__letter-spacing_p1: 0;
-  --font__font-style_p1: normal;
-}
-:root .p2 {
-  --font__font-family_p2: Arial, Montserrat, system-ui;
-  --font__font-size_p2: 12px;
-  --font__line-height_p2: 150%;
-  --font__font-weight_p2: 400;
-  --font__letter-spacing_p2: 0;
-  --font__font-style_p2: italic;
-}
-:root .p3 {
-  --font__font-family_p3: Arial, Montserrat, system-ui;
-  --font__font-size_p3: 32px;
-  --font__line-height_p3: 160%;
-  --font__font-weight_p3: 400;
-  --font__letter-spacing_p3: 0;
-  --font__font-style_p3: normal;
-}
-:root .h1 {
-  --font__font-family_h1: Georgia, Yeseva One, serif;
-  --font__font-size_h1: 32px;
-  --font__line-height_h1: 110%;
-  --font__font-weight_h1: 400;
-  --font__letter-spacing_h1: 0.06em;
-  --font__font-style_h1: normal;
-}
-:root .sb {
-  --font__font-family_sb: Arial, Montserrat, system-ui;
-  --font__font-size_sb: 13px;
-  --font__line-height_sb: 100%;
-  --font__font-weight_sb: 400;
-  --font__letter-spacing_sb: 0.1em;
-  --font__font-style_sb: normal;
-}
-:root .link {
-  --font__font-family_link: Arial, Montserrat, system-ui;
-  --font__font-size_link: 15px;
-  --font__line-height_link: 160%;
-  --font__font-weight_link: 400;
-  --font__letter-spacing_link: 0;
-  --font__font-style_link: normal;
 }
 
 .h2 {
@@ -851,6 +841,185 @@ html, body {
       flex-basis: 25%;
 }
 
+.footer {
+  padding: 0;
+  background: url("../../../../assets/img/png/noise_transparent.png"), var(--color--footer-gradient), var(--color--footer-background);
+}
+.footer .container {
+  padding-top: 56px;
+  padding-bottom: 59px;
+}
+@media (max-width: 1024px) {
+  .footer .container {
+    padding-top: 30px;
+    padding-bottom: 64px;
+  }
+}
+@media (max-width: 740px) {
+  .footer .container {
+    padding-bottom: 0;
+  }
+}
+.footer .footer-layout {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .footer .footer-layout {
+    padding: 0 34px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media (max-width: 740px) {
+  .footer .footer-layout {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0;
+    gap: 40px;
+  }
+}
+@media (max-width: 680px) {
+  .footer .footer-layout {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 740px) {
+  .footer .h3 {
+    max-height: 64px;
+    text-align: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
+@media (max-width: 480px) {
+  .footer .h3 {
+    max-width: 270px;
+  }
+}
+.footer .footer__contacts,
+.footer .footer__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+.footer .footer__contacts {
+  max-width: 279px;
+}
+@media (max-width: 740px) {
+  .footer .footer__contacts {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.footer .footer__location {
+  position: relative;
+  left: 160px;
+  max-width: 302px;
+}
+@media (max-width: 1120px) {
+  .footer .footer__location {
+    left: 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .footer .footer__location {
+    left: 0;
+  }
+}
+.footer .footer__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.footer .icon-h32_marker {
+  width: 22px;
+}
+.footer .footer__primary-marker {
+  margin-top: -6px;
+}
+@media (max-width: 740px) {
+  .footer .footer__primary-marker {
+    margin-top: 0px;
+  }
+}
+.footer .footer__secondary-marker {
+  margin-top: -8px;
+}
+@media (max-width: 740px) {
+  .footer .footer__secondary-marker {
+    margin-top: 0px;
+  }
+}
+.footer__image {
+  position: relative;
+  width: 300px;
+  margin-left: 160px;
+  max-width: 302px;
+}
+@media (max-width: 1024px) {
+  .footer__image {
+    margin-left: 170px;
+  }
+}
+@media (max-width: 740px) {
+  .footer__image {
+    margin: 0;
+    width: 260px;
+    height: 269px;
+  }
+}
+.footer__image .image {
+  position: absolute;
+  bottom: -59px;
+  right: 0;
+  width: 300px;
+  height: 310px;
+  overflow: hidden;
+  background-image: url("../../assets/img/png/footer-puppy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 1024px) {
+  .footer__image .image {
+    position: relative;
+    bottom: -63px;
+  }
+}
+@media (max-width: 740px) {
+  .footer__image .image {
+    position: relative;
+    bottom: 0px;
+    width: 260px;
+    height: 269px;
+  }
+}
+
 :root {
   --color__h1: var(--color--dark-l);
   --color__h3: var(--color--dark-l);
@@ -1448,6 +1617,12 @@ html, body {
   -webkit-mask-image: url("../../assets/svg/icon-big--sleeping-area.svg");
           mask-image: url("../../assets/svg/icon-big--sleeping-area.svg");
 }
+@media (max-width: 740px) {
+  .icon-big {
+    width: 50px;
+    height: 50px;
+  }
+}
 
 .icon-medium {
   width: 30px;
@@ -1516,6 +1691,56 @@ html, body {
           mask-size: cover;
   -webkit-mask-image: url("../../assets/svg/icon-random--arrow-right.svg");
           mask-image: url("../../assets/svg/icon-random--arrow-right.svg");
+}
+
+.icon-random_navigation-menu {
+  display: none;
+}
+@media (max-width: 680px) {
+  .icon-random_navigation-menu {
+    position: absolute;
+    top: 15px;
+    right: -17px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: var(--color--primary);
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+            mask-size: cover;
+    -webkit-mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
+            mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
+    cursor: pointer;
+    margin-right: 43px;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    z-index: 2000;
+  }
+}
+.icon-random_navigation-menu.inverse {
+  background: var(--color--dark-l);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
+          mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
+}
+@media (max-width: 480px) {
+  .icon-random_navigation-menu {
+    right: 0px;
+  }
+}
+@media (max-width: 680px) {
+  .icon-random_navigation-menu.show {
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
 }
 
 :root {

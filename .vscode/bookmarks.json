@@ -4,42 +4,42 @@
 			"path": "shelter/pages/main/index.html",
 			"bookmarks": [
 				{
-					"line": 31,
+					"line": 34,
 					"column": 26,
 					"label": "!--HEADER"
 				},
 				{
-					"line": 55,
+					"line": 59,
 					"column": 27,
 					"label": "!--MAIN"
 				},
 				{
-					"line": 62,
+					"line": 66,
 					"column": 30,
 					"label": "    Fold"
 				},
 				{
-					"line": 81,
+					"line": 85,
 					"column": 35,
 					"label": "    About"
 				},
 				{
-					"line": 98,
+					"line": 102,
 					"column": 34,
 					"label": "    Pets"
 				},
 				{
-					"line": 143,
+					"line": 147,
 					"column": 30,
 					"label": "    Help"
 				},
 				{
-					"line": 189,
+					"line": 193,
 					"column": 38,
 					"label": "    Donation"
 				},
 				{
-					"line": 214,
+					"line": 218,
 					"column": 22,
 					"label": "!--FOOTER"
 				}
@@ -49,42 +49,42 @@
 			"path": "shelter/pages/main/scss/style.scss",
 			"bookmarks": [
 				{
-					"line": 82,
+					"line": 87,
 					"column": 27,
 					"label": "!--HEADER"
 				},
 				{
-					"line": 133,
+					"line": 267,
 					"column": 1,
 					"label": "!--MAIN"
 				},
 				{
-					"line": 149,
+					"line": 283,
 					"column": 3,
 					"label": "    Fold"
 				},
 				{
-					"line": 228,
+					"line": 389,
 					"column": 4,
 					"label": "    About"
 				},
 				{
-					"line": 286,
+					"line": 482,
 					"column": 7,
 					"label": "    Pets"
 				},
 				{
-					"line": 365,
+					"line": 596,
 					"column": 4,
 					"label": "    Help"
 				},
 				{
-					"line": 410,
+					"line": 675,
 					"column": 11,
 					"label": "    Donation"
 				},
 				{
-					"line": 491,
+					"line": 803,
 					"column": 12,
 					"label": "!--FOOTER"
 				}
@@ -99,12 +99,12 @@
 					"label": "!--HEADER"
 				},
 				{
-					"line": 148,
+					"line": 220,
 					"column": 20,
 					"label": "!--MAIN"
 				},
 				{
-					"line": 242,
+					"line": 310,
 					"column": 12,
 					"label": "!--FOOTER"
 				}
