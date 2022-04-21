@@ -843,7 +843,7 @@ html, body {
 
 .footer {
   padding: 0;
-  background: url("../../../../assets/img/png/noise_transparent.png"), var(--color--footer-gradient), var(--color--footer-background);
+  background: url("../../assets/img/png/noise_transparent.png"), var(--color--footer-gradient), var(--color--footer-background);
 }
 .footer .container {
   padding-top: 56px;
@@ -1735,6 +1735,15 @@ html, body {
     right: 0px;
   }
 }
+.icon-random_navigation-menu.show {
+  background: var(--color--primary);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
+          mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
+}
 @media (max-width: 680px) {
   .icon-random_navigation-menu.show {
     -webkit-transform: rotate(-90deg);
@@ -2023,4 +2032,49 @@ a {
     background: var(--color--primary-light);
     border-color: var(--color--primary-light);
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+.blackout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1500;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+  background-color: transparent;
+  -webkit-transition: all 0.3s ease-in-out, z-index 0s 0.3s;
+  -o-transition: all 0.3s ease-in-out, z-index 0s 0.3s;
+  transition: all 0.3s ease-in-out, z-index 0s 0.3s;
+}
+.blackout.show {
+  height: 5000px;
+  -webkit-transition: all 0.3s ease-in-out, z-index 0s 0s;
+  -o-transition: all 0.3s ease-in-out, z-index 0s 0s;
+  transition: all 0.3s ease-in-out, z-index 0s 0s;
+  background-color: var(--color--dark-3xl);
+  z-index: 400;
+  opacity: 0.8;
+}
+
+/* :root { */
+/* } */
+/* .blackout { */
+/* position: absolute; */
+/* top: 0; */
+/* left: 0; */
+/* z-index: 10; */
+/* width: 100vw; */
+/* height: 100vh; */
+/* user-select: none; */
+/* background-color: var(--color__blackout); */
+/* opacity: 0; */
+/* transition: opacity var(--time__short); */
+/* &.show{ */
+/* opacity: var(--opacity__blackout); */
+/* } */
+/* } *//*# sourceMappingURL=main.css.map */

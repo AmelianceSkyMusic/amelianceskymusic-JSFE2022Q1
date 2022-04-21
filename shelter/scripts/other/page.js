@@ -1,1 +1,1 @@
-const PAGE = { };
+const PAGE = {};
