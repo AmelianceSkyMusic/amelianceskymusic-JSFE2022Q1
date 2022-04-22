@@ -610,7 +610,6 @@ html {
   width: min(990px, 100%);
   position: relative;
   overflow: hidden;
-  gap: 90px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -626,31 +625,14 @@ html {
   -ms-flex-preferred-size: -26.6666666667%;
       flex-basis: -26.6666666667%;
 }
-@media (max-width: 1120px) {
+@media (max-width: 1279px) {
   .pets .pets__layout {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  .pets .pets__layout > :nth-last-child(-n+1) {
-    display: none;
+    width: 580px;
   }
 }
-@media (max-width: 824px) {
+@media (max-width: 767px) {
   .pets .pets__layout {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-@media (max-width: 740px) {
-  .pets .pets__layout {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .pets .pets__layout > :nth-last-child(-n+2) {
-    display: none;
+    width: 270px;
   }
 }
 .pets .pets__layout .pets-cards__container {
@@ -706,6 +688,92 @@ html {
   }
   to {
     left: -2160px;
+  }
+}
+@media (max-width: 1279px) {
+  .pets .pets__layout .pets-cards__container {
+    gap: 40px;
+    width: 1160px;
+    left: -620px;
+  }
+  .pets .pets__layout .pets-cards__container > :nth-child(3n) {
+    display: none;
+    background-color: red;
+  }
+  @-webkit-keyframes transition-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes transition-left {
+    from {
+      left: -620px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @-webkit-keyframes transition-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+  @keyframes transition-right {
+    from {
+      left: -620px;
+    }
+    to {
+      left: -1240px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .pets .pets__layout .pets-cards__container {
+    gap: 0;
+    width: 270px;
+    left: -270px;
+  }
+  .pets .pets__layout .pets-cards__container > :nth-child(3n-1) {
+    display: none;
+    background-color: red;
+  }
+  @-webkit-keyframes transition-left {
+    from {
+      left: -270px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes transition-left {
+    from {
+      left: -270px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @-webkit-keyframes transition-right {
+    from {
+      left: -270px;
+    }
+    to {
+      left: -540px;
+    }
+  }
+  @keyframes transition-right {
+    from {
+      left: -270px;
+    }
+    to {
+      left: -540px;
+    }
   }
 }
 

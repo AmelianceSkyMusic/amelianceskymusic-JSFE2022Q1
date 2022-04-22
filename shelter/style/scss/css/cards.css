@@ -20,9 +20,6 @@
   border-radius: 9px;
   width: 270px;
 }
-.card.left {
-  background-color: red;
-}
 @media (hover: hover) {
   .card:hover {
     background-color: var(--color--light-xl);

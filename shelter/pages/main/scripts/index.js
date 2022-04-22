@@ -113,42 +113,43 @@ const VISIBLE_CARDS = document.querySelectorAll('.pets__layout .visible');
 function moveSliderBackward() {
     PETS_BACKWARD.removeEventListener('click', moveSliderBackward);
 
+    PETS_CONTAINER.classList.add('move-left');
+
     const visibleCards = document.querySelectorAll('.pets__layout .visible');
-    const rightCards = document.querySelectorAll('.pets__layout .right');
     const leftCards = document.querySelectorAll('.pets__layout .left');
+
     const visibleCardsIds = [];
 
     for (const card of leftCards) { // add left cards id for generate newunique cards
         visibleCardsIds.push(+card.id);
-        card.classList.remove('left');
-        card.classList.add('visible');
     }
 
-    for (const card of visibleCards) { // move visible cards to right
-        card.classList.remove('visible');
-        card.classList.add('right');
-    }
-
-
-
-    // setTimeout(() => {
-        for (const card of rightCards) { // remove right cards
-            card.remove();
-        }
-    // }, 500);
 
     const curNum = new Set();
     while (curNum.size < 8) {
         const randomNum = getRandomNumber(0, 7);
         curNum.add(randomNum);
     }
+
     const validPetsId = removeKeysFromArray([...curNum], visibleCardsIds);
 
-    for (let i = 0; i < 3; i++) {
-        generateLeftCard(PETS_CONTAINER, validPetsId[i]);
-    }
+    PETS_CONTAINER.addEventListener('animationend', () => {
+        PETS_CONTAINER.classList.remove('move-left');
+        PETS_BACKWARD.addEventListener('click', moveSliderBackward);
 
-    PETS_BACKWARD.addEventListener('click', moveSliderBackward);
+
+        for (let i = 0; i < 3; i++) {
+            visibleCards[i].innerHTML = leftCards[i].innerHTML;
+            visibleCards[i].id = leftCards[i].id;
+        }
+
+        for (let i = 0; i < 3; i++) {
+            const newCard = generateCard(PETS_CONTAINER, validPetsId[i]);
+            leftCards[i].innerHTML = newCard.innerHTML;
+            leftCards[i].id = newCard.id;
+            newCard.remove();
+        }
+    });
 }
 
 PETS_BACKWARD.addEventListener('click', moveSliderBackward);

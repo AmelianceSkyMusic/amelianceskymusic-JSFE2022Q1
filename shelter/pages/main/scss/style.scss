@@ -643,30 +643,20 @@ html {
         width: min(990px, 100%);
         position: relative;
         overflow: hidden;
-        gap: 90px;
+        // gap: 90px;
         justify-content: center;
         align-items: center;
         @include setLayout((100%-180)/3, -1);
 
-        @media (max-width: $bp__pc-to-tab-hi) {
-            justify-content: space-evenly;
-            >:nth-last-child(-n+1) {
-                display: none;
-            }
+        @media (max-width: 1279px) {
+            width: 580px;
         }
-        @media (max-width: 824px) {
-            justify-content: space-between;
+        @media (max-width: 767px) {
+            width: 270px;
         }
-        @media (max-width: $bp__tab-to-mob-hi) {
-            justify-content: center;
-            >:nth-last-child(-n+2) {
-                display: none;
-            }
-        }
-
         .pets-cards__container {
             position: relative;
-            left: -1080px;
+            left: calc(-990px + -90px);
             display: flex;
             gap: 90px;
             // margin: 0 90px;
@@ -685,13 +675,63 @@ html {
             }
 
             @keyframes transition-left {
-                from { left: -1080px; }
+                from { left: calc(-990px + -90px); }
                 to { left: 0; }
             }
             @keyframes transition-right {
-                from { left: -1080px; }
-                to { left: -2160px; }
+                from { left: calc(-990px + -90px); }
+                to { left: calc((-990px + -90px) * 2); }
             }
+
+
+
+            @media (max-width: 1279px) {
+                // justify-content: space-evenly;
+                gap: 40px;
+                & > :nth-child(3n) {
+                    display: none;
+                    background-color: red;
+                }
+                width: calc(580px * 2);
+                left: calc(-580px + -40px);
+                @keyframes transition-left {
+                    from { left: calc(-580px + -40px); }
+                    to { left: 0; }
+                }
+                @keyframes transition-right {
+                    from { left: calc(-580px + -40px); }
+                    to { left: calc((-580px + -40px) * 2); }
+                }
+            }
+
+            @media (max-width: 767px) {
+                // justify-content: space-evenly;
+                gap: 0;
+                & > :nth-child(3n-1) {
+                    display: none;
+                    background-color: red;
+                }
+                width: calc(270px);
+                left: calc(-270px);
+                @keyframes transition-left {
+                    from { left: calc(-270px); }
+                    to { left: 0; }
+                }
+                @keyframes transition-right {
+                    from { left: calc(-270px); }
+                    to { left: calc(-540px); }
+                }
+            }
+
+            // @media (max-width: 824px) {
+            //     justify-content: space-between;
+            // }
+            // @media (max-width: $bp__tab-to-mob-hi) {
+            //     justify-content: center;
+            //     >:nth-last-child(-n+2) {
+            //         display: none;
+            //     }
+            // }
         }
 
 
