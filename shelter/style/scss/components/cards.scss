@@ -10,7 +10,28 @@
     padding-bottom: 30px;
     background-color: var(--color--light-s);
     border-radius: 9px;
-    overflow: hidden;
+    // overflow: hidden;
+    width: 270px;
+    // position: relative;
+    // left: 0px;
+
+    // &.visible {;
+    //     transition: left 3s ease-in-out;
+    //     left: 0;
+    //     right: 0;
+    // };
+
+    &.left {;
+        // transition: left 3s ease-in-out;
+        // left: -990px;
+        // background-color: red
+    };
+
+    &.right {
+        // transition: right 3s ease-in-out;
+        // background-color: blue
+        // right: 990px;
+    };
 
     @media (hover: hover) {
         &:hover {

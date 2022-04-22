@@ -18,6 +18,8 @@ import {msg, msgG, msgGV, msgV} from './msg.js';
 import {sortAB} from './sortAB.js';
 import {addTimeForwardZero}     from './addTimeForwardZero.js';
 import {getUserDate}            from './getUserDate.js';
+import {getRandomNumber}        from './getRandomNumber.js';
+import {removeKeysFromArray}    from './removeKeysFromArray.js';
 
 
 // export const asm = {
@@ -49,4 +51,6 @@ export {
     sortAB,
     addTimeForwardZero,
     getUserDate,
+    getRandomNumber,
+    removeKeysFromArray
 };
