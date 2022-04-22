@@ -179,12 +179,13 @@ html {
             width: 320px;
             height: 100vh;
             margin: 0 -10px;
-            background-color: var(--color--dark-3xl);
+            background-color: var(--color--light-xl);
             transition: right 0.5s ease-in-out;
         }
         @media (max-width: $bp__tab-to-mob-low) {
             right:  calc(0px + -320px);
         }
+
         &.show {
             @media (max-width: $bp__hide-header-mobile) {
                 right: calc(-20px);
@@ -206,20 +207,20 @@ html {
 
     }
 
-    .link {
-        @media (max-width: $bp__hide-header-mobile) {
-            font-family: var(--font__font-family_p3);
-            font-size: var(--font__font-size_p3);
-            line-height: var(--font__line-height_p3);
-            font-weight: var(--font__font-weight_p3);
-            letter-spacing: var(--font__letter-spacing_p3);
-            font-style: var(--font__font-style_p3);
-            color: var(--color--dark-s);
-            &.active {
-                color: var(--color--light-s);
-            }
-        }
-    }
+    // .link {
+    //     @media (max-width: $bp__hide-header-mobile) {
+    //         font-family: var(--font__font-family_p3);
+    //         font-size: var(--font__font-size_p3);
+    //         line-height: var(--font__line-height_p3);
+    //         font-weight: var(--font__font-weight_p3);
+    //         letter-spacing: var(--font__letter-spacing_p3);
+    //         font-style: var(--font__font-style_p3);
+    //         color: var(--color--dark-s);
+    //         &.active {
+    //             color: var(--color--light-s);
+    //         }
+    //     }
+    // }
     &.show {
         background: none;
     }
@@ -248,12 +249,12 @@ html {
         animation-duration: 0.5s;
         animation-timing-function: cubic-bezier(.30,-0.30,.70,1.30);
         animation-timing-function: ease-in-out;
-        .h1 {
-            color: var(--color--primary)
-        }
-        .sb{
-            color: var(--color--light-xl);
-        }
+        // .h1 {
+        //     color: var(--color--primary)
+        // }
+        // .sb{
+        //     color: var(--color--light-xl);
+        // }
     }
     // .icon-random_navigation-menu.show {
     //     color: var(--color--light-xl);
@@ -340,7 +341,9 @@ html {
 
 
 }
-
+.blackout.show {
+    background-color: var(--color--light-xl);
+}
 
 
 

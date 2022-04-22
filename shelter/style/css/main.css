@@ -1735,15 +1735,6 @@ html, body {
     right: 0px;
   }
 }
-.icon-random_navigation-menu.show {
-  background: var(--color--primary);
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-          mask-size: cover;
-  -webkit-mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
-          mask-image: url("../../assets/svg/icon-random--navigation-menu.svg");
-}
 @media (max-width: 680px) {
   .icon-random_navigation-menu.show {
     -webkit-transform: rotate(-90deg);
@@ -2013,7 +2004,10 @@ a {
   padding-bottom: 30px;
   background-color: var(--color--light-s);
   border-radius: 9px;
-  overflow: hidden;
+  width: 270px;
+}
+.card.left {
+  background-color: red;
 }
 @media (hover: hover) {
   .card:hover {

@@ -18,7 +18,10 @@
   padding-bottom: 30px;
   background-color: var(--color--light-s);
   border-radius: 9px;
-  overflow: hidden;
+  width: 270px;
+}
+.card.left {
+  background-color: red;
 }
 @media (hover: hover) {
   .card:hover {

@@ -641,6 +641,11 @@ html {
         display: flex;
         // padding: 0 53px;
         width: min(990px, 100%);
+        position: relative;
+        overflow: hidden;
+        gap: 90px;
+        justify-content: center;
+        align-items: center;
         @include setLayout((100%-180)/3, -1);
 
         @media (max-width: $bp__pc-to-tab-hi) {
@@ -658,6 +663,37 @@ html {
                 display: none;
             }
         }
+
+        .pets-cards__container {
+            position: relative;
+            left: -1080px;
+            display: flex;
+            gap: 90px;
+            // margin: 0 90px;
+            height: 435px;
+            width: calc(990px * 3);
+            background: burlywood;
+
+            &.move-left {
+                animation-name: transition-left;
+                animation-duration: 1s;
+            }
+
+            &.move-right {
+                animation-name: transition-right;
+                animation-duration: 1s;
+            }
+
+            @keyframes transition-left {
+                from { left: -1080px; }
+                to { left: 0; }
+            }
+            @keyframes transition-right {
+                from { left: -1080px; }
+                to { left: -2160px; }
+            }
+        }
+
 
         // justify-content: space-between;
         // margin: 0 4.4%;

@@ -608,6 +608,15 @@ html {
   display: -ms-flexbox;
   display: flex;
   width: min(990px, 100%);
+  position: relative;
+  overflow: hidden;
+  gap: 90px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -642,6 +651,61 @@ html {
   }
   .pets .pets__layout > :nth-last-child(-n+2) {
     display: none;
+  }
+}
+.pets .pets__layout .pets-cards__container {
+  position: relative;
+  left: -1080px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 90px;
+  height: 435px;
+  width: 2970px;
+  background: burlywood;
+}
+.pets .pets__layout .pets-cards__container.move-left {
+  -webkit-animation-name: transition-left;
+          animation-name: transition-left;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+.pets .pets__layout .pets-cards__container.move-right {
+  -webkit-animation-name: transition-right;
+          animation-name: transition-right;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+@-webkit-keyframes transition-left {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes transition-left {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: 0;
+  }
+}
+@-webkit-keyframes transition-right {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: -2160px;
+  }
+}
+@keyframes transition-right {
+  from {
+    left: -1080px;
+  }
+  to {
+    left: -2160px;
   }
 }
 
