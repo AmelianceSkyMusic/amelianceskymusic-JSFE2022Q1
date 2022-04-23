@@ -1,45 +1,139 @@
+@use "../../../style/scss/components/icon" as *;
+
 :root {
 
-    --popup--padding__outer: var(--spacing-5);
-    --popup--padding__inner: var(--spacing-3);
-    --popup--border-radius: var(--radius-3);
-    --popup--color__bg: var(--color-0-2);
-    --popup--animation__duration: var(--time-3);
+    --popup--padding__outer: 0px;
+    --popup--padding__inner: 0px;
+
+    --popup--border-radius: 9px;
+    --popup--color__bg: var(--color--light-s);
+    --popup--animation__duration: 0.5s;
     // --popup--animation__time-type: var(--animation-3);
-    --popup--animation__time-type: var(--animation-bz-1);
-    --popup--animation__delay: var(--time-1);
-    --popup--z-index: var(--z-index-4);
+    --popup--animation__time-type: ease-in-out;
+    --popup--animation__delay: 0.5s;
+    --popup--z-index: 3000;
 }
 
+
+
+
 .popup {
-    position: absolute;
+    position: fixed;
     max-width: 80%;
+    width: 900px;
+    height: 500px;
     top: 50%;
     left: 50%;
     z-index: var(--popup--z-index);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: center;
     padding: var(--popup--padding__outer);
     border-radius: var(--popup--border-radius);
     background-color: var(--popup--color__bg);
-    opacity: 0%;
-    transform: translate(-50%, -50%) scale(0.0);
-    transition: transform var(--popup--animation__duration) var(--popup--animation__time-type),
-                opacity var(--popup--animation__duration) var(--popup--animation__delay);
+    // opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    // transition: transform var(--popup--animation__duration) var(--popup--animation__time-type),
+    //             opacity var(--popup--animation__duration) var(--popup--animation__delay);
+    animation-name: hide-popup;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
     &.show {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 100%;
+        // opacity: 1;
+        animation-name: show-popup;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
     }
 
-    &__title {
-        padding-bottom: 18px;
+    .popup__button-close {
+        position: absolute;
+        right: -42px;
+        top: -52px;
     }
 
-    &__text {
-        padding-bottom: 24px;
-        word-wrap: break-word;
-        max-width: calc(100% - (var(--popup--padding__inner) * 2));
+    // &__title {
+    //     padding-bottom: 18px;
+    // }
+
+    // &__text {
+    //     padding-bottom: 24px;
+    //     word-wrap: break-word;
+    //     max-width: calc(100% - (var(--popup--padding__inner) * 2));
+    // }
+}
+
+@keyframes show-popup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes hide-popup {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+.popup {
+    .popup__img-container {
+        border-radius: 9px;
+        overflow: hidden;
+
+        .popup__img {
+            width: 500px;
+            height: 500px;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
+        }
+    }
+    .popup__info {
+        max-width: 350px;
+        margin-left: 29px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        gap: 40px;
+        .popup__heading {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .popup__characteristics {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+            padding-left: 14px;
+
+            .characteristics__item {
+                position: relative;
+                // height: 17px;
+                font-size: 15px;
+                ::before {
+                    content: "";
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    @include maskImgSVG("icon-random--bullet.svg", var(--color--primary), var(--color--primary));
+                    left: -14px;
+                    top: 7px;
+                    // background: black;
+                }
+            }
+        }
     }
 }

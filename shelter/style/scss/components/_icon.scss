@@ -158,6 +158,10 @@
         width: 14px; height: 6px;
         @include maskImgSVG("icon-random--arrow-right.svg", var(--icon-random--color), var(--icon-random--color_hover));
     }
+    &_close {
+        width: 12px; height: 12px;
+        @include maskImgSVG("icon-random--close.svg", var(--icon-random--color), var(--icon-random--color_hover));
+    }
 }
 
 
