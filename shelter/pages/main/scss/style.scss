@@ -566,6 +566,8 @@ html {
     background: var(--color--light-l);
     padding-top: 80px;
     padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
 
     @media (max-width: $bp__tab-to-mob-low) {
         padding-top: 42px;
@@ -576,9 +578,13 @@ html {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 60px;
-        @media (max-width: $bp__tab-to-mob-hi) {
+        // gap: 60px;
+        // @media (max-width: $bp__tab-to-mob-hi) {
+        //     gap: 41px;
+        // }
+        @media (max-width: 767px) {
             gap: 41px;
+            max-width: 300px;
         }
     }
     .pets__slider {
@@ -589,6 +595,9 @@ html {
         // gap: clamp(20px, 4.4%, 53px);
         align-items: center;
 
+        @media (max-width: 767px) {
+            gap: 20px;
+        }
         @media (max-width: $bp__tab-to-mob-hi) {
             gap: 20px;
         }
@@ -600,6 +609,11 @@ html {
                 margin-right: 4.4%;
                 @media (max-width: 824px) {
                     margin-right: 12px;
+                }
+                @media (max-width: 767px) {
+                    align-self: start;
+                    margin-right: 0px;
+                    order: 1;
                 }
                 @media (max-width: $bp__tab-to-mob-hi) {
                     align-self: start;
@@ -613,12 +627,21 @@ html {
                 @media (max-width: 824px) {
                     margin-left: 12px;
                 }
+                @media (max-width: 767px) {
+                    margin-left: 0px;
+                    order: 2;
+                }
                 @media (max-width: $bp__tab-to-mob-hi) {
                     margin-left: 0px;
                     order: 2;
                 }
             }
 
+        }
+        @media (max-width: 767px) {
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 80px;
         }
         @media (max-width: $bp__tab-to-mob-hi) {
             justify-content: center;
@@ -646,6 +669,14 @@ html {
         // gap: 90px;
         justify-content: center;
         align-items: center;
+        height: 555px;
+        // @media (max-width: $bp__tab-to-mob-hi) {
+        //     height: 517px;
+        // }
+
+        @media (max-width: 767px) {
+            height: 435px;
+        }
         @include setLayout((100%-180)/3, -1);
 
         @media (max-width: 1279px) {
@@ -656,13 +687,14 @@ html {
         }
         .pets-cards__container {
             position: relative;
-            left: calc(-990px + -90px);
+            left: calc(-990px);
             display: flex;
             gap: 90px;
             // margin: 0 90px;
             height: 435px;
+            // height: 475px;
             width: calc(990px * 3);
-            background: burlywood;
+            // background: burlywood;
 
             &.move-left {
                 animation-name: transition-left;
@@ -674,13 +706,13 @@ html {
                 animation-duration: 1s;
             }
 
-            @keyframes transition-left {
-                from { left: calc(-990px + -90px); }
-                to { left: 0; }
+            @keyframes transition-left { // backward
+                from { left: calc(-990px + -0px); }
+                to { left: 30px; }
             }
-            @keyframes transition-right {
-                from { left: calc(-990px + -90px); }
-                to { left: calc((-990px + -90px) * 2); }
+            @keyframes transition-right { // forward
+                from { left: calc(-990px + -30px); }
+                to { left: calc((-990px * 2) + -30px); }
             }
 
 
@@ -692,7 +724,7 @@ html {
                     display: none;
                     background-color: red;
                 }
-                width: calc(580px * 2);
+                width: calc((580px * 3) + (40px * 2));
                 left: calc(-580px + -40px);
                 @keyframes transition-left {
                     from { left: calc(-580px + -40px); }
@@ -711,7 +743,7 @@ html {
                     display: none;
                     background-color: red;
                 }
-                width: calc(270px);
+                width: calc(270px * 3);
                 left: calc(-270px);
                 @keyframes transition-left {
                     from { left: calc(-270px); }
