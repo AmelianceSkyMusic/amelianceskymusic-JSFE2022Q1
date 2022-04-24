@@ -242,6 +242,9 @@ html {
   }
 }
 
+.blackout {
+  background-color: var(--color--light-xl);
+}
 .blackout.show {
   background-color: var(--color--light-xl);
 }
