@@ -199,8 +199,10 @@ html {
         // @media (max-width: $bp__hide-header-mobile) {
         //     display: none;
         // }
-
             @media (max-width: $bp__hide-header-mobile) {
+                // overflow-y: scroll;
+                // margin: 100px 0;
+
                 position: absolute;
                 top: -30px;
                 right: calc(-20px + -320px);
