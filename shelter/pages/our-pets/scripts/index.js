@@ -60,6 +60,8 @@ const dataUrl = '/shelter/data/pets.json';
 let PETS_DATA = [];
 let PETS_CARD = [];
 let PETS_ARRAY = [];
+let PETS_ARRAY_TAB = [];
+let PETS_ARRAY_MOB = [];
 
 async function getDataFromServer(url) {
 
@@ -68,7 +70,9 @@ async function getDataFromServer(url) {
     await fetchDate.forEach(item => PETS_DATA.push(item));
     // Msg('fetchDatem', fetchDate);
     PETS_CARD = generateCards(PETS_DATA);
-    PETS_ARRAY = generatePetsArray(PETS_DATA);
+    PETS_ARRAY = generatePetsArray(6, 8);
+    PETS_ARRAY_TAB = generatePetsArray(8, 6);
+    PETS_ARRAY_MOB = generatePetsArray(16, 3);
 
 }
 
@@ -83,23 +87,25 @@ function generateCards (data) {
     return cards;
 }
 
-function generatePetsArray(data) {
+function generatePetsArray(pagesCount, cardsCount) {
 
     const petsArray = [];
 
     let prevArr = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < pagesCount; i++) {
         const curNum = new Set();
-        while (curNum.size < 8) {
+        while (curNum.size < cardsCount) {
             const randomNum = getRandomNumber(0, 7);
-
-            if (curNum.size >= 2 || (randomNum !== prevArr[6] && randomNum !== prevArr[7])) {
+            // if (curNum.size >= 2 || (randomNum !== prevArr[6] && randomNum !== prevArr[7])) {
                 curNum.add(randomNum);
-            }
+            // }
         }
+        // Msg(curNum)
         petsArray.push(...curNum);
         prevArr = [...curNum];
     }
+
+    // Msg(petsArray);
     return petsArray;
 }
 
@@ -177,4 +183,197 @@ function generatePopUp(name) {
 
     buttonClose.addEventListener('click', closePopup);
     blackout.addEventListener('click', closePopup);
+}
+
+
+
+
+
+
+// >----------------------------------------------------------------<
+// >                          PAGINATION                            <
+// >----------------------------------------------------------------<
+
+
+const paginFirst    = document.querySelector('.button__first');
+const paginPrevious = document.querySelector('.button__previous');
+const paginNext     = document.querySelector('.button__next');
+const paginLast     = document.querySelector('.button__last');
+
+const paginNumberLabel  = document.querySelector('.button__number .label');
+
+
+let CURRENT_PAGE = 1;
+
+// ^------------------------ Go First ------------------------
+
+function goFirst() {
+
+    Msg('goFirst');
+    CURRENT_PAGE = 1;
+    paginNumberLabel.innerText = CURRENT_PAGE;
+    paginFirst.classList.add('disabled');
+    paginPrevious.classList.add('disabled');
+    paginNext.classList.remove('disabled');
+    paginLast.classList.remove('disabled');
+    generatePagination();
+}
+paginFirst.addEventListener('click', goFirst);
+
+
+
+// ^------------------------ Go Previous ------------------------
+
+function goPrevious() {
+    Msg('goPrevious');
+
+    CURRENT_PAGE--;
+    if (CURRENT_PAGE <= 1) {
+        paginFirst.classList.add('disabled');
+        paginPrevious.classList.add('disabled');
+    } else {
+        paginNext.classList.remove('disabled');
+        paginLast.classList.remove('disabled');
+    }
+    paginNumberLabel.innerText = CURRENT_PAGE;
+    generatePagination();
+}
+
+paginPrevious.addEventListener('click', goPrevious);
+
+
+
+// ^------------------------ Go Next ------------------------
+
+function goNext() {
+    Msg('goNext');
+    CURRENT_PAGE++;
+    if (CURRENT_PAGE >= PAGES_PAGIN_COUNT) {
+        paginNext.classList.add('disabled');
+        paginLast.classList.add('disabled');
+    } else {
+        paginFirst.classList.remove('disabled');
+        paginPrevious.classList.remove('disabled');
+    }
+    paginNumberLabel.innerText = CURRENT_PAGE;
+    generatePagination();
+}
+
+paginNext.addEventListener('click', goNext);
+
+
+
+// ^------------------------ Go Last ------------------------
+
+function goLast() {
+    Msg('goLast');
+    CURRENT_PAGE = PAGES_PAGIN_COUNT;
+    paginNumberLabel.innerText = CURRENT_PAGE;
+    paginNext.classList.add('disabled');
+    paginLast.classList.add('disabled');
+    paginFirst.classList.remove('disabled');
+    paginPrevious.classList.remove('disabled');
+    generatePagination();
+}
+
+paginLast.addEventListener('click', goLast);
+
+
+// >----------------------------------------------------------------<
+// >                                                              <
+// >----------------------------------------------------------------<
+
+let PAGES_PAGIN_COUNT = 0;
+
+function generatePagination() {
+
+
+    const windowSize = window.innerWidth;
+    let currentPetsArray = [];
+    Msg(windowSize)
+    let cardsOnPage = 0;
+    if (windowSize <= 767) {
+        Msg('mob');
+        cardsOnPage = 3;
+        PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
+        currentPetsArray = [...PETS_ARRAY_MOB];
+    } else if (windowSize <= 1279) {
+        Msg('tab');
+        cardsOnPage = 6;
+        PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
+        currentPetsArray = [...PETS_ARRAY_TAB];
+    } else {
+        Msg('pc');
+        cardsOnPage = 8;
+        PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
+        currentPetsArray = [...PETS_ARRAY];
+    }
+
+
+
+    const petsLayout = document.querySelectorAll('.pets__layout .pets__card');
+    let pageCards = 0;
+    for (const card of petsLayout) {
+        pageCards++;
+        card.style.display = 'flex';
+        if (pageCards > cardsOnPage) {
+            Msg(pageCards, cardsOnPage);
+            card.remove();
+        }
+        // Msg(window.getComputedStyle(card).display);
+        // if (window.getComputedStyle(card).display === 'none') {
+        // }
+        // card.style.display = 'flex';
+        // const gotCard = ((CURRENT_PAGE * cardsOnPage) - cardsOnPage + pageCards - 1);
+        const gotCard = currentPetsArray[((CURRENT_PAGE * cardsOnPage) - cardsOnPage + pageCards - 1)];
+        Msg(gotCard);
+        const generatedCard = generateCard(gotCard);
+        Msg(generatedCard.innerHTML);
+        card.innerHTML = generatedCard.innerHTML;
+        generatedCard.remove();
+    }
+
+
+    // generateCard(pets__layout, 1);
+
+    Msg('PAGES_PAGIN_COUNT:', PAGES_PAGIN_COUNT);
+}
+
+window.addEventListener('load', generatePagination);
+
+
+
+
+
+
+// const desktop_Device    = window.matchMedia('(min-width: 1280px)');
+const tablet_Device     = window.matchMedia('(max-width: 1279px)');
+const mobile_Device     = window.matchMedia('(max-width: 767px)');
+
+
+// desktop_Device.addListener( () => { generatePagination('desktop'); });
+// tablet_Device.addListener( (event) => { generatePagination(event, 'tablet'); });
+// mobile_Device.addListener( (event) => { generatePagination(event, 'mobile'); });
+tablet_Device.addListener( () => { location.reload(); });
+mobile_Device.addListener( () => { location.reload(); });
+
+
+
+// >----------------------------------------------------------------<
+// >                         GENERATE CARD                          <
+// >----------------------------------------------------------------<
+
+function generateCard(id) {
+    const parent = document.querySelector('.pets__layout');
+    const cardData = PETS_DATA[id];
+    const card = createHTMLElemPrep(parent, 'div', ['card', 'pets__card']);
+    card.id = id;
+    card.style.display = 'none';
+    const cardImg = createHTMLElem(card, 'img', ['card__image']);
+    cardImg.src = cardData.img;
+    cardImg.alt = cardData.name;
+    const cardHeading = createHTMLElem(card, 'h4', ['h4'], cardData.name);
+    const cardLink = createHTMLElem(card, 'a', ['pets__button', 'button', 'button__outline', 'button__big']);
+    const cardLinkLabel = createHTMLElem(cardLink, 'span', ['label'], 'Learn more');
+    return card;
 }
