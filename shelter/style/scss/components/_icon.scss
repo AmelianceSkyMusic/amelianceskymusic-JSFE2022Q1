@@ -188,7 +188,7 @@
     }
     &.show {
         // @include maskImgSVG("icon-random--navigation-menu.svg", var(--color--primary), var(--icon-random--color_hover));
-        @media (max-width: $bp__hide-header-mobile) {
+        @media (max-width: 767px) {
             transform: rotate(-90deg);
         }
     }
