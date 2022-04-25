@@ -242,6 +242,9 @@ html {
   }
 }
 
+.blackout {
+  background-color: var(--color--light-xl);
+}
 .blackout.show {
   background-color: var(--color--light-xl);
 }
@@ -354,7 +357,7 @@ html {
 .pets .pets__pagination .button {
   padding: 14rem 0rem 17.5rem 1.5rem;
 }
-.pets .pets__pagination .button_number {
+.pets .pets__pagination .button__number {
   cursor: not-allowed;
   pointer-events: none;
 }/*# sourceMappingURL=style.css.map */

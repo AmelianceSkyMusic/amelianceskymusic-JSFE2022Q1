@@ -28,11 +28,24 @@ const toogleBurgerMenu = () => {
     iconMenu.classList.toggle('show');
     // blackout.classList.toggle('show'); // TODO: add blackout
     bodyСontainer.classList.toggle('scroll-lock');
+    const blackout = document.querySelector('.blackout');
+    if (blackout) {
+        blackout.classList.remove('show');
+        setTimeout(() => {
+            blackout.remove();
+        }, 500);
+    } else {
+        const zeroBlock = document.querySelector('.zero-block');
+        const blackout = createHTMLElem(zeroBlock, 'div', ['blackout']);
+        blackout.classList.add('show');
+        blackout.addEventListener('click', toogleBurgerMenu);
+    }
+
 };
+
 
 iconMenu.addEventListener('click', toogleBurgerMenu);
 navigation.addEventListener('click', toogleBurgerMenu);
-// blackout.addEventListener('click', toogleBurgerMenu); // TODO: add blackout
 
 
 
@@ -53,7 +66,7 @@ async function getDataFromServer(url) {
     const res = await fetch(url);
     const fetchDate = await res.json();
     await fetchDate.forEach(item => PETS_DATA.push(item));
-    Msg('fetchDatem', fetchDate);
+    // Msg('fetchDatem', fetchDate);
     PETS_CARD = generateCards(PETS_DATA);
     PETS_ARRAY = generatePetsArray(PETS_DATA);
 
@@ -309,7 +322,6 @@ function showInfo(event) {
 }
 
 function generatePopUp(name) {
-    Msg('Hello ');
     const cardData = PETS_CARD[name]; // get data ftom global variable
 
     const zeroBlock = document.querySelector('.zero-block');
