@@ -167,7 +167,7 @@
 
 .icon-random_navigation-menu {
     display: none;
-    @media (max-width: $bp__hide-header-mobile) {
+    @media (max-width: 767px) {
         position: absolute;
         top: 15px;
         right: -17px;

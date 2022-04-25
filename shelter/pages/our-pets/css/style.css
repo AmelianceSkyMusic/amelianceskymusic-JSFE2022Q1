@@ -96,7 +96,7 @@ html {
     gap: 20px;
   }
 }
-@media (max-width: 680px) {
+@media (max-width: 767px) {
   .header .navigation {
     position: absolute;
     top: -30px;
@@ -130,7 +130,7 @@ html {
     right: -320px;
   }
 }
-@media (max-width: 680px) {
+@media (max-width: 767px) {
   .header .navigation.show {
     right: -20px;
   }
@@ -140,7 +140,7 @@ html {
     right: 0px;
   }
 }
-@media (max-width: 680px) {
+@media (max-width: 767px) {
   .header .navigation .link {
     font-family: var(--font__font-family_p3);
     font-style: var(--font__font-style_p3);
@@ -179,7 +179,7 @@ html {
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
 }
-@media (max-width: 680px) {
+@media (max-width: 767px) {
   .header .header__logo.show {
     position: absolute;
     width: 186px;
