@@ -35,30 +35,30 @@ a {
     position: relative;
     display: inline-block;
 
-    // &:after {
-    //     content: '';
-    //     position: absolute;
-    //     width: 100%;
-    //     transform: scaleX(0);
-    //     height: 3px;
-    //     bottom: -3px;
-    //     left: 0;
-    //     background-color: var(--color--dark-s);
-    //     transform-origin: bottom right;
-    //     transition: transform 0.3s ease-out;
-    // }
-    // &.inverse:after {
-    //     content: '';
-    //     position: absolute;
-    //     width: 100%;
-    //     transform: scaleX(0);
-    //     height: 3px;
-    //     bottom: -3px;
-    //     left: 0;
-    //     background-color: var(--color--dark-s);
-    //     transform-origin: bottom right;
-    //     transition: transform 0.3s ease-out;
-    // }
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        background-color: var(--color--dark-s);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    &.inverse:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: -3px;
+        left: 0;
+        background-color: var(--color--dark-s);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
 
     @media (hover: hover) {
 
