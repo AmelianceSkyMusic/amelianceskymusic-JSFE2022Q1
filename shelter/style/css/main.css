@@ -1707,7 +1707,7 @@ html, body {
 .icon-random_navigation-menu {
   display: none;
 }
-@media (max-width: 680px) {
+@media (max-width: 767px) {
   .icon-random_navigation-menu {
     position: absolute;
     top: 15px;

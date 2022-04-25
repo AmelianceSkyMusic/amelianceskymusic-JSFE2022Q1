@@ -166,7 +166,7 @@ html {
 
     .navigation {
 
-        @media (max-width: $bp__hide-header-mobile) {
+        @media (max-width: 767px) {
             position: absolute;
             top: -30px;
             right: calc(-20px + -320px);
@@ -187,7 +187,7 @@ html {
         }
 
         &.show {
-            @media (max-width: $bp__hide-header-mobile) {
+            @media (max-width: 767px) {
                 right: calc(-20px);
             }
             @media (max-width: $bp__tab-to-mob-low) {
@@ -195,7 +195,7 @@ html {
             }
         }
         .link {
-            @media (max-width: $bp__hide-header-mobile) {
+            @media (max-width: 767px) {
                 font-family: var(--font__font-family_p3);
                 font-style: var(--font__font-style_p3);
                 font-size: var(--font__font-size_p3);
@@ -208,7 +208,7 @@ html {
     }
 
     // .link {
-    //     @media (max-width: $bp__hide-header-mobile) {
+    //     @media (max-width: 767px) {
     //         font-family: var(--font__font-family_p3);
     //         font-size: var(--font__font-size_p3);
     //         line-height: var(--font__line-height_p3);
@@ -234,7 +234,7 @@ html {
     }
 
     .header__logo.show {
-        @media (max-width: $bp__hide-header-mobile) {
+        @media (max-width: 767px) {
             position: absolute;
             width: 186px;
             top: 0;
