@@ -2036,6 +2036,7 @@ a {
 }
 .popup .popup__button-close {
   position: absolute;
+  cursor: pointer;
   right: -42px;
   top: -52px;
 }
@@ -2282,6 +2283,7 @@ a {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0.8;
+  cursor: pointer;
 }
 
 @-webkit-keyframes show-blackout {
