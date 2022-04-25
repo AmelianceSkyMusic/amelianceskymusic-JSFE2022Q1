@@ -45,7 +45,30 @@ const toogleBurgerMenu = () => {
 
 
 iconMenu.addEventListener('click', toogleBurgerMenu);
-navigation.addEventListener('click', toogleBurgerMenu);
+
+
+
+const navigationLink = document.querySelectorAll('.navigation .link');
+
+const closeBurgerMenu = () => {
+    navigation.classList.remove('show');
+    headerLogo.classList.remove('show');
+    iconMenu.classList.remove('show');
+    // blackout.classList.toggle('show'); // TODO: add blackout
+    bodyСontainer.classList.remove('scroll-lock');
+    const blackout = document.querySelector('.blackout');
+
+    blackout.classList.remove('show');
+    setTimeout(() => {
+        blackout.remove();
+    }, 500);
+
+};
+
+for (const link of navigationLink) {
+    link.addEventListener('click', closeBurgerMenu);
+}
+
 
 
 
@@ -54,7 +77,7 @@ navigation.addEventListener('click', toogleBurgerMenu);
 // >                           GET DATA                             <
 // >----------------------------------------------------------------<
 
-const dataUrl = '/shelter/data/pets.json';
+const dataUrl = '../../data/pets.json';
 // const dataUrl = 'https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/markups/level-2/shelter/pets.json';
 
 let PETS_DATA = [];
