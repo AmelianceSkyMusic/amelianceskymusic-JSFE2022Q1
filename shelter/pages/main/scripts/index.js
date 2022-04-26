@@ -2,10 +2,12 @@
 
 import {
     msg as Msg,
+    msgG as MsgG,
     getRandomNumber,
     createHTMLElem,
     createHTMLElemPrep,
     removeKeysFromArray,
+    randomizeArray,
 } from '../../../scripts/modules/asm.js';
 // import * as asm from 'ASM_js-unctions.js';
 
@@ -171,17 +173,13 @@ function moveSliderBackward() {
 
     const validPetsId = removeKeysFromArray([...curNum], visibleCardsIds);
 
-
-    Msg(validPetsId, visibleCardsIds);
+    const validPetsIdLeft = randomizeArray(validPetsId).splice(0, 3);
+    const validPetsIdRight = randomizeArray(validPetsId).splice(0, 3);
+    MsgG('CARDS:', 'Left: ', validPetsIdLeft, 'Center: ', visibleCardsIds, 'Right: ', validPetsIdRight);
 
     PETS_CONTAINER.addEventListener('animationend', () => {
         PETS_CONTAINER.classList.remove('move-left');
         PETS_BACKWARD.addEventListener('click', moveSliderBackward);
-
-        for (let i = 0; i < 3; i++) {
-            rightCards[i].innerHTML = visibleCards[i].innerHTML;
-            rightCards[i].id = visibleCards[i].id;
-        }
 
         for (let i = 0; i < 3; i++) {
             visibleCards[i].innerHTML = leftCards[i].innerHTML;
@@ -189,10 +187,14 @@ function moveSliderBackward() {
         }
 
         for (let i = 0; i < 3; i++) {
-            const newCard = generateCard(PETS_CONTAINER, validPetsId[i]);
-            leftCards[i].innerHTML = newCard.innerHTML;
-            leftCards[i].id = newCard.id;
-            newCard.remove();
+            const newRightCard = generateCard(PETS_CONTAINER, validPetsIdRight[i]);
+            rightCards[i].innerHTML = newRightCard.innerHTML;
+            rightCards[i].id = newRightCard.id;
+            newRightCard.remove();
+            const newLeftCard = generateCard(PETS_CONTAINER, validPetsIdLeft[i]);
+            leftCards[i].innerHTML = newLeftCard.innerHTML;
+            leftCards[i].id = newLeftCard.id;
+            newLeftCard.remove();
         }
     });
 }
@@ -228,18 +230,22 @@ function moveSliderForward() {
         curNum.add(randomNum);
     }
 
+
     const validPetsId = removeKeysFromArray([...curNum], visibleCardsIds);
 
-    Msg(validPetsId, visibleCardsIds);
+    const validPetsIdLeft = randomizeArray(validPetsId).splice(0, 3);
+    const validPetsIdRight = randomizeArray(validPetsId).splice(0, 3);
+    MsgG('CARDS:', 'Left: ', validPetsIdLeft, 'Center: ', visibleCardsIds, 'Right: ', validPetsIdRight);
+
 
     PETS_CONTAINER.addEventListener('animationend', () => {
         PETS_CONTAINER.classList.remove('move-right');
         PETS_FORWARD.addEventListener('click', moveSliderForward);
 
-        for (let i = 0; i < 3; i++) {
-            leftCards[i].innerHTML = visibleCards[i].innerHTML;
-            leftCards[i].id = visibleCards[i].id;
-        }
+        // for (let i = 0; i < 3; i++) {
+        //     leftCards[i].innerHTML = visibleCards[i].innerHTML;
+        //     leftCards[i].id = visibleCards[i].id;
+        // }
 
         for (let i = 0; i < 3; i++) {
             visibleCards[i].innerHTML = rightCards[i].innerHTML;
@@ -248,10 +254,14 @@ function moveSliderForward() {
 
 
         for (let i = 0; i < 3; i++) {
-            const newCard = generateCard(PETS_CONTAINER, validPetsId[i]);
-            rightCards[i].innerHTML = newCard.innerHTML;
-            rightCards[i].id = newCard.id;
-            newCard.remove();
+            const newRightCard = generateCard(PETS_CONTAINER, validPetsIdRight[i]);
+            rightCards[i].innerHTML = newRightCard.innerHTML;
+            rightCards[i].id = newRightCard.id;
+            newRightCard.remove();
+            const newLeftCard = generateCard(PETS_CONTAINER, validPetsIdLeft[i]);
+            leftCards[i].innerHTML = newLeftCard.innerHTML;
+            leftCards[i].id = newLeftCard.id;
+            newLeftCard.remove();
         }
     });
 }

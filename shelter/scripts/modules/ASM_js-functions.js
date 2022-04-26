@@ -78,14 +78,14 @@ const createArrayWithNums = (min, max) => {
 };
 
 //
-const randomizeArray = (array) => {
-    let randomArray = [];
-    while (array.length > 0) {
-        const random = Math.trunc((Math.random()*array.length));
-        randomArray = [...randomArray, ...array.splice(random, 1)];
-    }
-    return randomArray;
-};
+// const randomizeArray = (array) => {
+//     let randomArray = [];
+//     while (array.length > 0) {
+//         const random = Math.trunc((Math.random()*array.length));
+//         randomArray = [...randomArray, ...array.splice(random, 1)];
+//     }
+//     return randomArray;
+// };
 
 //
 function rgbToHex( ){ // r, g, b
