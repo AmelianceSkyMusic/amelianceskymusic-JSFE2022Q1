@@ -209,7 +209,7 @@ PETS_BACKWARD.addEventListener('click', moveSliderBackward);
 // ^------------------------ Move Slider Forward ------------------------
 
 function moveSliderForward() {
-    PETS_BACKWARD.removeEventListener('click', moveSliderForward);
+    PETS_BACKWARD.removeEventListener('click', moveSliderBackward);
     PETS_FORWARD.removeEventListener('click', moveSliderForward);
 
     PETS_CONTAINER.classList.add('move-right');
@@ -266,7 +266,7 @@ function moveSliderForward() {
         }
 
         PETS_FORWARD.addEventListener('click', moveSliderForward);
-        PETS_BACKWARD.addEventListener('click', moveSliderForward);
+        PETS_BACKWARD.addEventListener('click', moveSliderBackward);
     });
 }
 
