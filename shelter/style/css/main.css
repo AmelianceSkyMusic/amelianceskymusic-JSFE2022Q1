@@ -2218,6 +2218,14 @@ a {
   top: 7px;
 }
 
+.popup__button-close.hovered {
+  -webkit-transition: all var(--card--animation__duration) var(--card--animation__time-type);
+  -o-transition: all var(--card--animation__duration) var(--card--animation__time-type);
+  transition: all var(--card--animation__duration) var(--card--animation__time-type);
+  background: var(--color--primary-light);
+  border-color: var(--color--primary-light);
+}
+
 :root {
   --card--animation__duration: 0.2s;
   --card--animation__time-type: ease-in-out;
