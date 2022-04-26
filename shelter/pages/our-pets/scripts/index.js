@@ -82,6 +82,9 @@ let PETS_CARD = [];
 let PETS_ARRAY = [];
 let PETS_ARRAY_TAB = [];
 let PETS_ARRAY_MOB = [];
+let PETS_OBJ = [];
+let PETS_OBJ_TAB = [];
+let PETS_OBJ_MOB = [];
 
 async function getDataFromServer(url) {
 
@@ -93,6 +96,17 @@ async function getDataFromServer(url) {
     PETS_ARRAY = generatePetsArray(6, 8);
     PETS_ARRAY_TAB = generatePetsArray(8, 6);
     PETS_ARRAY_MOB = generatePetsArray(16, 3);
+
+    for (const i of PETS_ARRAY) {
+        PETS_OBJ.push(PETS_DATA[i]);
+    }
+    for (const i of PETS_ARRAY_TAB) {
+        PETS_OBJ_TAB.push(PETS_DATA[i]);
+    }
+    for (const i of PETS_ARRAY_MOB) {
+        PETS_OBJ_MOB.push(PETS_DATA[i]);
+    }
+    // Msg(PETS_OBJ);
 
 }
 
@@ -316,17 +330,20 @@ function generatePagination() {
         Msg('mob');
         cardsOnPage = 3;
         PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
-        currentPetsArray = [...PETS_ARRAY_MOB];
+        // currentPetsArray = [...PETS_ARRAY_MOB];
+        currentPetsArray = [...PETS_OBJ_MOB];
     } else if (windowSize <= 1279) {
         Msg('tab');
         cardsOnPage = 6;
         PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
-        currentPetsArray = [...PETS_ARRAY_TAB];
+        // currentPetsArray = [...PETS_ARRAY_TAB];
+        currentPetsArray = [...PETS_OBJ_TAB];
     } else {
         Msg('pc');
         cardsOnPage = 8;
         PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
-        currentPetsArray = [...PETS_ARRAY];
+        // currentPetsArray = [...PETS_ARRAY];
+        currentPetsArray = [...PETS_OBJ];
     }
 
 
@@ -383,11 +400,11 @@ mobile_Device.addListener( () => { location.reload(); });
 // >                         GENERATE CARD                          <
 // >----------------------------------------------------------------<
 
-function generateCard(id) {
+function generateCard(cardData) {
     const parent = document.querySelector('.pets__layout');
-    const cardData = PETS_DATA[id];
+    // const cardData = PETS_DATA[id];
     const card = createHTMLElemPrep(parent, 'div', ['card', 'pets__card']);
-    card.id = id;
+    card.id = cardData.id;
     card.style.display = 'none';
     const cardImg = createHTMLElem(card, 'img', ['card__image']);
     cardImg.src = cardData.img;
