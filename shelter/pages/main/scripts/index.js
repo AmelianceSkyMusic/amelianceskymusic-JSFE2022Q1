@@ -387,13 +387,13 @@ function generatePopUp(name) {
 
 
     const popup = createHTMLElem(zeroBlock, 'div', ['popup']);
-        const buttonClose = createHTMLElem(popup, 'div', ['popup__button-close', 'button', 'button__icon-outline', 'button__big']);
-            const buttonCloseIcon = createHTMLElem(buttonClose, 'span', ['icon-random', 'icon-random_close']);
+    const buttonClose = createHTMLElem(popup, 'div', ['popup__button-close', 'button', 'button__icon-outline', 'button__big']);
+    const buttonCloseIcon = createHTMLElem(buttonClose, 'span', ['icon-random', 'icon-random_close']);
 
-        const popupImgContainer = createHTMLElem(popup, 'div', ['popup__img-container']);
-            const popupImg = createHTMLElem(popupImgContainer, 'img', ['popup__img']);
-                popupImg.src = cardData.img;
-                popupImg.alt = cardData.name;
+    const popupImgContainer = createHTMLElem(popup, 'div', ['popup__img-container']);
+    const popupImg = createHTMLElem(popupImgContainer, 'img', ['popup__img']);
+    popupImg.src = cardData.img;
+    popupImg.alt = cardData.name;
 
 
         const popupInfo = createHTMLElem(popup, 'div', ['popup__info']);
@@ -409,8 +409,15 @@ function generatePopUp(name) {
                 const itemDiseases        = createHTMLElem(characteristics, 'h5', ['h5', 'characteristics__item'], `<b>Diseases:</b> ${cardData.diseases.join(', ')}`);
                 const itemParasites       = createHTMLElem(characteristics, 'h5', ['h5', 'characteristics__item'], `<b>Parasites:</b> ${cardData.parasites.join(', ')}`);
 
-    popup.classList.add('show');
+                popup.classList.add('show');
 
+        blackout.addEventListener('mouseover', () => { buttonClose.classList.add('hovered')})
+        blackout.addEventListener('mouseleave ', () => { buttonClose.classList.remove('hovered')})
+        blackout.addEventListener('mouseout', () => { buttonClose.classList.remove('hovered')})
+        popup.addEventListener('mouseover', () => { buttonClose.classList.remove('hovered')})
+        setTimeout(() => {
+            buttonClose.classList.remove('hovered')
+        }, 0);
 
 
 
