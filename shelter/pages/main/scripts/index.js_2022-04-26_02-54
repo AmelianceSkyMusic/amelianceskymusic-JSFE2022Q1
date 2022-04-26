@@ -153,8 +153,6 @@ function moveSliderBackward() {
 
     const visibleCards = document.querySelectorAll('.pets__layout .visible');
     const leftCards = document.querySelectorAll('.pets__layout .left');
-    const rightCards = document.querySelectorAll('.pets__layout .right');
-
 
     const visibleCardsIds = [];
 
@@ -178,10 +176,6 @@ function moveSliderBackward() {
         PETS_CONTAINER.classList.remove('move-left');
         PETS_BACKWARD.addEventListener('click', moveSliderBackward);
 
-        for (let i = 0; i < 3; i++) {
-            rightCards[i].innerHTML = visibleCards[i].innerHTML;
-            rightCards[i].id = visibleCards[i].id;
-        }
 
         for (let i = 0; i < 3; i++) {
             visibleCards[i].innerHTML = leftCards[i].innerHTML;
@@ -212,8 +206,8 @@ function moveSliderForward() {
 
     const visibleCards = document.querySelectorAll('.pets__layout .visible');
     const rightCards = document.querySelectorAll('.pets__layout .right');
-    const leftCards = document.querySelectorAll('.pets__layout .left');
 
+    const leftCards = document.querySelectorAll('.pets__layout .left');
 
     const visibleCardsIds = [];
 
@@ -221,6 +215,10 @@ function moveSliderForward() {
         visibleCardsIds.push(+card.id);
     }
 
+    const hidenCardsIds = [];
+    for (const card of leftCards) { // add left cards id for generate newunique cards
+        hidenCardsIds.push(+card.id);
+    }
 
     const curNum = new Set();
     while (curNum.size < 8) {
@@ -228,7 +226,15 @@ function moveSliderForward() {
         curNum.add(randomNum);
     }
 
+    const curNumAdditional = new Set();
+    while (curNumAdditional.size < 8) {
+        const randomNum = getRandomNumber(0, 7);
+        curNumAdditional.add(randomNum);
+    }
+
     const validPetsId = removeKeysFromArray([...curNum], visibleCardsIds);
+
+    const validPetsIdHiden = removeKeysFromArray([...curNumAdditional], hidenCardsIds);
 
     Msg(validPetsId, visibleCardsIds);
 
@@ -236,16 +242,11 @@ function moveSliderForward() {
         PETS_CONTAINER.classList.remove('move-right');
         PETS_FORWARD.addEventListener('click', moveSliderForward);
 
-        for (let i = 0; i < 3; i++) {
-            leftCards[i].innerHTML = visibleCards[i].innerHTML;
-            leftCards[i].id = visibleCards[i].id;
-        }
 
         for (let i = 0; i < 3; i++) {
             visibleCards[i].innerHTML = rightCards[i].innerHTML;
             visibleCards[i].id = rightCards[i].id;
         }
-
 
         for (let i = 0; i < 3; i++) {
             const newCard = generateCard(PETS_CONTAINER, validPetsId[i]);
