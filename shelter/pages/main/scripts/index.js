@@ -150,6 +150,7 @@ const VISIBLE_CARDS = document.querySelectorAll('.pets__layout .visible');
 
 function moveSliderBackward() {
     PETS_BACKWARD.removeEventListener('click', moveSliderBackward);
+    PETS_FORWARD.removeEventListener('click', moveSliderForward);
 
     PETS_CONTAINER.classList.add('move-left');
 
@@ -179,7 +180,6 @@ function moveSliderBackward() {
 
     PETS_CONTAINER.addEventListener('animationend', () => {
         PETS_CONTAINER.classList.remove('move-left');
-        PETS_BACKWARD.addEventListener('click', moveSliderBackward);
 
         for (let i = 0; i < 3; i++) {
             visibleCards[i].innerHTML = leftCards[i].innerHTML;
@@ -196,6 +196,8 @@ function moveSliderBackward() {
             leftCards[i].id = newLeftCard.id;
             newLeftCard.remove();
         }
+        PETS_BACKWARD.addEventListener('click', moveSliderBackward);
+        PETS_FORWARD.addEventListener('click', moveSliderForward);
     });
 }
 
@@ -207,7 +209,7 @@ PETS_BACKWARD.addEventListener('click', moveSliderBackward);
 // ^------------------------ Move Slider Forward ------------------------
 
 function moveSliderForward() {
-
+    PETS_BACKWARD.removeEventListener('click', moveSliderBackward);
     PETS_FORWARD.removeEventListener('click', moveSliderForward);
 
     PETS_CONTAINER.classList.add('move-right');
@@ -240,7 +242,6 @@ function moveSliderForward() {
 
     PETS_CONTAINER.addEventListener('animationend', () => {
         PETS_CONTAINER.classList.remove('move-right');
-        PETS_FORWARD.addEventListener('click', moveSliderForward);
 
         // for (let i = 0; i < 3; i++) {
         //     leftCards[i].innerHTML = visibleCards[i].innerHTML;
@@ -263,6 +264,9 @@ function moveSliderForward() {
             leftCards[i].id = newLeftCard.id;
             newLeftCard.remove();
         }
+
+        PETS_FORWARD.addEventListener('click', moveSliderForward);
+        PETS_BACKWARD.addEventListener('click', moveSliderBackward);
     });
 }
 
