@@ -19,6 +19,7 @@ import {sortAB} from './sortAB.js';
 import {addTimeForwardZero}     from './addTimeForwardZero.js';
 import {getUserDate}            from './getUserDate.js';
 import {getRandomNumber}        from './getRandomNumber.js';
+import {randomizeArray}         from './randomizeArray.js';
 import {removeKeysFromArray}    from './removeKeysFromArray.js';
 
 
@@ -52,5 +53,6 @@ export {
     addTimeForwardZero,
     getUserDate,
     getRandomNumber,
+    randomizeArray,
     removeKeysFromArray
 };

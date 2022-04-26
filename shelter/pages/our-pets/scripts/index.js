@@ -243,7 +243,7 @@ let CURRENT_PAGE = 1;
 
 function goFirst() {
 
-    Msg('goFirst');
+    // Msg('goFirst');
     CURRENT_PAGE = 1;
     paginNumberLabel.innerText = CURRENT_PAGE;
     paginFirst.classList.add('disabled');
@@ -259,7 +259,7 @@ paginFirst.addEventListener('click', goFirst);
 // ^------------------------ Go Previous ------------------------
 
 function goPrevious() {
-    Msg('goPrevious');
+    // Msg('goPrevious');
 
     CURRENT_PAGE--;
     if (CURRENT_PAGE <= 1) {
@@ -280,7 +280,7 @@ paginPrevious.addEventListener('click', goPrevious);
 // ^------------------------ Go Next ------------------------
 
 function goNext() {
-    Msg('goNext');
+    // Msg('goNext');
     CURRENT_PAGE++;
     if (CURRENT_PAGE >= PAGES_PAGIN_COUNT) {
         paginNext.classList.add('disabled');
@@ -300,7 +300,7 @@ paginNext.addEventListener('click', goNext);
 // ^------------------------ Go Last ------------------------
 
 function goLast() {
-    Msg('goLast');
+    // Msg('goLast');
     CURRENT_PAGE = PAGES_PAGIN_COUNT;
     paginNumberLabel.innerText = CURRENT_PAGE;
     paginNext.classList.add('disabled');
@@ -324,22 +324,22 @@ function generatePagination() {
 
     const windowSize = window.innerWidth;
     let currentPetsArray = [];
-    Msg(windowSize)
+    // Msg(windowSize + 'px')
     let cardsOnPage = 0;
     if (windowSize <= 767) {
-        Msg('mob');
+        // Msg('mob');
         cardsOnPage = 3;
         PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
         // currentPetsArray = [...PETS_ARRAY_MOB];
         currentPetsArray = [...PETS_OBJ_MOB];
     } else if (windowSize <= 1279) {
-        Msg('tab');
+        // Msg('tab');
         cardsOnPage = 6;
         PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
         // currentPetsArray = [...PETS_ARRAY_TAB];
         currentPetsArray = [...PETS_OBJ_TAB];
     } else {
-        Msg('pc');
+        // Msg('pc');
         cardsOnPage = 8;
         PAGES_PAGIN_COUNT = PETS_ARRAY.length / cardsOnPage;
         // currentPetsArray = [...PETS_ARRAY];
@@ -354,7 +354,7 @@ function generatePagination() {
         pageCards++;
         card.style.display = 'flex';
         if (pageCards > cardsOnPage) {
-            Msg(pageCards, cardsOnPage);
+            // Msg(pageCards, cardsOnPage);
             card.remove();
         }
         // Msg(window.getComputedStyle(card).display);
@@ -363,9 +363,9 @@ function generatePagination() {
         // card.style.display = 'flex';
         // const gotCard = ((CURRENT_PAGE * cardsOnPage) - cardsOnPage + pageCards - 1);
         const gotCard = currentPetsArray[((CURRENT_PAGE * cardsOnPage) - cardsOnPage + pageCards - 1)];
-        Msg(gotCard);
+        // Msg(gotCard);
         const generatedCard = generateCard(gotCard);
-        Msg(generatedCard.innerHTML);
+        // Msg(generatedCard.innerHTML);
         card.innerHTML = generatedCard.innerHTML;
         generatedCard.remove();
     }
@@ -373,10 +373,25 @@ function generatePagination() {
 
     // generateCard(pets__layout, 1);
 
-    Msg('PAGES_PAGIN_COUNT:', PAGES_PAGIN_COUNT);
+    // Msg('PAGES_PAGIN_COUNT:', PAGES_PAGIN_COUNT);
 }
 
 window.addEventListener('load', generatePagination);
+
+
+
+
+function detectDevice() {
+    const windowSize = window.innerWidth;
+    if (windowSize <= 767) {
+        Msg('Mobile: ' + windowSize + 'px');
+    } else if (windowSize <= 1279) {
+        Msg('Tablet: ' + windowSize + 'px');
+    } else {
+        Msg('PC: ' + windowSize + 'px');
+    }
+}
+window.addEventListener('load', detectDevice);
 
 
 
