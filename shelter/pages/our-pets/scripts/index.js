@@ -202,6 +202,14 @@ function generatePopUp(name) {
 
     popup.classList.add('show');
 
+    blackout.addEventListener('mouseover', () => { buttonClose.classList.add('hovered')})
+    blackout.addEventListener('mouseleave ', () => { buttonClose.classList.remove('hovered')})
+    blackout.addEventListener('mouseout', () => { buttonClose.classList.remove('hovered')})
+    popup.addEventListener('mouseover', () => { buttonClose.classList.remove('hovered')})
+    setTimeout(() => {
+        buttonClose.classList.remove('hovered')
+    }, 0);
+
 
 
 
