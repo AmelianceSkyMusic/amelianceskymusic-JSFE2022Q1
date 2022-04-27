@@ -74,11 +74,11 @@ for (const link of navigationLink) {
 
 
 
-alert(`❗❗❗ Извините, только что мне написали (2020 04 27), что на некоторых машинах (у меня все хорошо) есть проблемы с глобальными переменными из-за чего поломалоьс буквально все.
+// alert(`❗❗❗ Извините, только что мне написали (2020 04 27), что на некоторых машинах (у меня все хорошо) есть проблемы с глобальными переменными из-за чего поломалоьс буквально все.
 
-Не могли бы вы, пожалуйста, немного подождать или написать мне в дискорд Ameliance SkyMusic#7975 или Телеграм @amelianceskymusic, я сообщю когда пофикшу
+// Не могли бы вы, пожалуйста, немного подождать или написать мне в дискорд Ameliance SkyMusic#7975 или Телеграм @amelianceskymusic, я сообщю когда пофикшу
 
-Странно, что уже есть успешные проверки, хотя из-за алерта точно будет проблема с подгрузкой`)
+// Странно, что уже есть успешные проверки, хотя из-за алерта точно будет проблема с подгрузкой`)
 // >----------------------------------------------------------------<
 // >                           GET DATA                             <
 // >----------------------------------------------------------------<
@@ -97,8 +97,10 @@ async function getDataFromServer(url) {
     const fetchDate = await res.json();
     await fetchDate.forEach(item => PETS_DATA.push(item));
     // Msg('fetchDatem', fetchDate);
-        PETS_CARD = generateCards(PETS_DATA);
-        PETS_ARRAY = generatePetsArray(PETS_DATA);
+    PETS_CARD = generateCards(PETS_DATA);
+    PETS_ARRAY = generatePetsArray(PETS_DATA);
+
+    generateStartCards();
 
 }
 
@@ -356,8 +358,9 @@ function generateStartCards() {
 
 }
 
-setTimeou
-window.addEventListener('load', generateStartCards);
+
+// window.addEventListener('load', generateStartCards);
+// generateStartCards();
 
 
 
