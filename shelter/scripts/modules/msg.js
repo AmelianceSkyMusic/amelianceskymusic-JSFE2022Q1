@@ -59,6 +59,29 @@ function msgV(...args) {
 }
 
 
+// Msg(...args)
+function msgO(...args) {
+    console.log({...args});
+}
+
+// Msg(...args)
+function msgA(...args) {
+    console.assert({...args});
+}
+
+// Msg(...args)
+function msgT(...args) {
+    console.table({...args});
+}
+// Msg(...args)
+function msgE(...args) {
+    console.error({...args});
+}
+// Msg(...args)
+function msgW(...args) {
+    console.warn({...args});
+}
+
 
 
 
@@ -72,4 +95,10 @@ export {
     msgG,
     msgGV,
     msgV,
+
+    msgO,
+    msgA,
+    msgT,
+    msgE,
+    msgW,
 };
