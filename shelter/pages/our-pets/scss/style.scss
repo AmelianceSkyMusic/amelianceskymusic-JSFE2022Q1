@@ -365,11 +365,11 @@ html {
 .pets {
     padding-top: 200px;
     padding-bottom: 100px;
-    @media (max-width: $bp__pc-to-tab-low) {
+    @media (max-width: 1279px) {
         padding-bottom: 76px;
     }
 
-    @media (max-width: $bp__tab-to-mob-low) {
+    @media (max-width: 797px) {
         padding-top: 162px;
         padding-bottom: 42px;
     }
@@ -378,10 +378,10 @@ html {
         flex-direction: column;
         align-items: center;
         gap: 60px;
-        @media (max-width: $bp__pc-to-tab-low) {
+        @media (max-width: 1279px) {
             gap: 30px;
         }
-        @media (max-width: $bp__tab-to-mob-low) {
+        @media (max-width: 767px) {
             gap: 42px;
         }
     }
@@ -396,7 +396,7 @@ html {
         max-width: 400px;
         max-height: 90px;
         text-align: center;
-        @media (max-width: $bp__tab-to-mob-low) {
+        @media (max-width: 767px) {
             max-height: 64px;
 
         }
@@ -409,12 +409,14 @@ html {
         column-gap: 40px;
         row-gap: 30px;
         flex-wrap: wrap;
-        @media (max-width: $bp__hide-cards-pc) { // ! remove becouse js remove this??
+        @media (max-width: 1279px) { // ! remove becouse js remove this??
+            max-width: 708px;
             >:nth-last-child(-n+2) { // last 2 child
                 display: none;
             }
         }
-        @media (max-width: $bp__tab-to-mob-low) {
+        @media (max-width: 767px) {
+            max-width: 320px;
             >:nth-last-child(-n+5) { // last 5 child
                 display: none;
             }
@@ -425,10 +427,10 @@ html {
         display: flex;
         gap: 20px;
 
-        @media (max-width: $bp__pc-to-tab-low) {
+        @media (max-width: 1279px) {
             padding-top: 10px;
         }
-        @media (max-width: $bp__tab-to-mob-low) {
+        @media (max-width: 767px) {
             gap: 10px;
             padding-top: 0;
         }
