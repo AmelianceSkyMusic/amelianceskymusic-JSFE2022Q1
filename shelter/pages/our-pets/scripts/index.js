@@ -107,7 +107,8 @@ async function getDataFromServer(url) {
         PETS_OBJ_MOB.push(PETS_DATA[i]);
     }
     // Msg(PETS_OBJ);
-
+    generatePagination();
+    detectDevice();
 }
 
 
@@ -384,7 +385,7 @@ function generatePagination() {
     // Msg('PAGES_PAGIN_COUNT:', PAGES_PAGIN_COUNT);
 }
 
-window.addEventListener('load', generatePagination);
+// window.addEventListener('load', generatePagination);
 
 
 
@@ -399,7 +400,7 @@ function detectDevice() {
         Msg('PC: ' + windowSize + 'px');
     }
 }
-window.addEventListener('load', detectDevice);
+// window.addEventListener('load', detectDevice);
 
 
 
