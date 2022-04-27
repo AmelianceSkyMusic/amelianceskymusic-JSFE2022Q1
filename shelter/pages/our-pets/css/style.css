@@ -256,12 +256,12 @@ html {
   padding-top: 200px;
   padding-bottom: 100px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1279px) {
   .pets {
     padding-bottom: 76px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 797px) {
   .pets {
     padding-top: 162px;
     padding-bottom: 42px;
@@ -280,12 +280,12 @@ html {
           align-items: center;
   gap: 60px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1279px) {
   .pets .container {
     gap: 30px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .pets .container {
     gap: 42px;
   }
@@ -307,7 +307,7 @@ html {
   max-height: 90px;
   text-align: center;
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .pets .h3 {
     max-height: 64px;
   }
@@ -327,12 +327,18 @@ html {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-@media (max-width: 1259px) {
+@media (max-width: 1279px) {
+  .pets .pets__layout {
+    max-width: 708px;
+  }
   .pets .pets__layout > :nth-last-child(-n+2) {
     display: none;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  .pets .pets__layout {
+    max-width: 320px;
+  }
   .pets .pets__layout > :nth-last-child(-n+5) {
     display: none;
   }
@@ -343,12 +349,12 @@ html {
   display: flex;
   gap: 20px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1279px) {
   .pets .pets__pagination {
     padding-top: 10px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .pets .pets__pagination {
     gap: 10px;
     padding-top: 0;
