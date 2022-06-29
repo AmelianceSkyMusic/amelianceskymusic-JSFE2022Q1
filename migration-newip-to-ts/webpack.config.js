@@ -16,9 +16,14 @@ const baseConfig = {
             {
                 test: /\.ts$/i,
                 use: 'ts-loader',
-            }
+            },
+            {
+                test: /\.js$/, loader:
+                "source-map-loader"
+            },
         ],
     },
+    devtool: "source-map",
     resolve: {
         extensions: ['.ts', '.js']
     },
