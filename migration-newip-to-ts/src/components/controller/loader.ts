@@ -15,7 +15,6 @@ class Loader {
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
-        console.log('res', res);
         return res;
     }
 
@@ -23,7 +22,6 @@ class Loader {
         const urlOptions: { [key: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
-        // console.log('urlOptions', urlOptions);
         Object.keys(urlOptions).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
         });
