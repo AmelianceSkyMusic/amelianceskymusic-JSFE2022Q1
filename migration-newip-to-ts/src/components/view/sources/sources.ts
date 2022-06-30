@@ -1,14 +1,6 @@
 import './sources.css';
 
-interface SourcesData {
-    category: string;
-    country: string;
-    description: string;
-    id: string;
-    language: string;
-    name: string;
-    url: string;
-}
+import { SourcesData } from '../../types/interface';
 
 class Sources {
     draw(data: SourcesData[]) {

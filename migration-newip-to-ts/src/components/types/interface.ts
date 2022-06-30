@@ -57,6 +57,18 @@ export interface DrawSourcesData {
     ];
 }
 
+export interface LoadCallbackData {
+    body: ReadableStream; // ?
+    bodyUsed: boolean;
+    headers: Headers; // ?
+    ok: boolean;
+    redirected: boolean;
+    status: number;
+    statusText: string;
+    type: string;
+    url: string;
+}
+
 // export interface DrawSourcesValueFromData {
 //     length: number;
 //     [index: number]: {
@@ -68,4 +80,19 @@ export interface DrawSourcesData {
 //         name: string;
 //         url: string;
 //     };
+// }
+
+// interface AAA {
+//     status: string;
+//     sources: [
+//         {
+//             category: string;
+//             country: string;
+//             description: string;
+//             id: string;
+//             language: string;
+//             name: string;
+//             url: string;
+//         }
+//     ];
 // }
