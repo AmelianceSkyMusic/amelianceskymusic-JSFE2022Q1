@@ -1,11 +1,6 @@
 import { LoadCallbackData } from '../types/interface';
 class Loader {
-    baseLink: string;
-    options: { apiKey: string };
-    constructor(baseLink: string, options: { apiKey: string }) {
-        this.baseLink = baseLink;
-        this.options = options;
-    }
+    constructor(public baseLink: string, public options: { apiKey: string }) {}
 
     getResp(
         { endpoint, options }: { endpoint: string; options: { sources: string } },
