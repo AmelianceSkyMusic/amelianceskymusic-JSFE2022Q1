@@ -3,14 +3,14 @@ import './news.css';
 import { NewsData } from '../../types/interface';
 
 class News {
-    draw(data: NewsData[]) {
-        const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
+    draw(data: NewsData[]): void {
+        const news = data.length >= 10 ? data.filter((_item, idx): boolean => idx < 10) : data;
 
         const fragment = document.createDocumentFragment(); // ? as DocumentFragment;
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
         // ? QUESTION TO MENTOR: The cleaner way would be to not use .forEach. It's almost never needed if you're using TypeScript or a modern version of JavaScript
-        news.forEach((item, idx) => {
+        news.forEach((item, idx): void => {
             const newsClone = newsItemTemp.content.cloneNode(true) as HTMLElement;
 
             if (idx % 2) (newsClone.querySelector('.news__item') as HTMLDivElement).classList.add('alt');

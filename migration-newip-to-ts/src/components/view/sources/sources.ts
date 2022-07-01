@@ -3,12 +3,12 @@ import './sources.css';
 import { SourcesData } from '../../types/interface';
 
 class Sources {
-    draw(data: SourcesData[]) {
+    draw(data: SourcesData[]): void {
         const fragment = document.createDocumentFragment(); // ? as DocumentFragment;
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
         // ? QUESTION TO MENTOR: The cleaner way would be to not use .forEach. It's almost never needed if you're using TypeScript or a modern version of JavaScript
-        data.forEach((item) => {
+        data.forEach((item): void => {
             // console.log('forEach', item);
             const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLElement;
 

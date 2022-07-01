@@ -11,13 +11,13 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: DrawNewsData) {
+    drawNews(data: DrawNewsData): void {
         // ? const values: NewsData[] = data.articles;
         const values: NewsData[] = data.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data: DrawSourcesData) {
+    drawSources(data: DrawSourcesData): void {
         // ? const values: SourcesData[] = data?.sources;
         const values: SourcesData[] = data?.sources ? data?.sources : [];
         this.sources.draw(values);

@@ -1,11 +1,11 @@
 import AppLoader from './appLoader';
 // import { LoadCallbackData } from '../types/interface';
 class AppController extends AppLoader {
-    getSources<T>(callback: (someData: T) => void) {
+    getSources<T>(callback: (someData: T) => void): void {
         super.getResp({ endpoint: 'sources' }, callback);
     }
 
-    getNews<T>(e: Event, callback: (someData: T) => void) {
+    getNews<T>(e: Event, callback: (someData: T) => void): void {
         let target = e.target as HTMLDivElement;
         // let target = e.target;
         const newsContainer = e.currentTarget as HTMLDivElement;

@@ -10,11 +10,11 @@ class App {
         this.view = new AppView();
     }
 
-    start() {
-        (document.querySelector('.sources') as HTMLDivElement).addEventListener('click', (e) =>
-            this.controller.getNews(e, (data: DrawNewsData) => this.view.drawNews(data))
+    start(): void {
+        (document.querySelector('.sources') as HTMLDivElement).addEventListener('click', (e): void =>
+            this.controller.getNews(e, (data: DrawNewsData): void => this.view.drawNews(data))
         );
-        this.controller.getSources((data: DrawSourcesData) => this.view.drawSources(data));
+        this.controller.getSources((data: DrawSourcesData): void => this.view.drawSources(data));
     }
 }
 
