@@ -1,18 +1,17 @@
 import { HTTPStatusCode } from '../types/enum';
 
 class Loader {
-    constructor(public baseLink: string, public options: { apiKey: string }) {}
+    constructor(public baseLink: string, public options: { apiKey: string } | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": | Partial<object>
 
     getResp<T>(
         { endpoint, options = {} }: { endpoint: string; options?: { sources?: string } },
-        callback: (data: T) => void // getResp( //     { endpoint, options = {} }: { endpoint: string; options?: { sources?: string } }, //     // (data) => this.view.drawNews(data) //     callback = () => { //         console.error('No callback for GET response'); //     } // )
+        callback: (data: T) => void
     ): void {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res: Response): Response {
+    private errorHandler(res: Response): Response {
         if (!res.ok) {
-            // 401 Unauthorized 404 Not Found
             if (res.status === HTTPStatusCode.unauthorized || res.status === HTTPStatusCode.notFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
@@ -31,7 +30,12 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: string, endpoint: string, callback: (data: T) => void, options: { sources?: string } = {}): void {
+    private load<T>(
+        method: Readonly<string>, // ? ONLY FOR TASK "Readonly": Readonly<string>
+        endpoint: Readonly<string>, // ? ONLY FOR TASK "Readonly": Readonly<string>
+        callback: (data: T) => void,
+        options: { sources?: string } = {}
+    ): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res): Promise<T> => res.json())
