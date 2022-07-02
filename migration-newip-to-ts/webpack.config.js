@@ -14,18 +14,27 @@ const baseConfig = {
                 use: ['style-loader', 'css-loader'],
             },
             {
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            {
                 test: /\.ts$/i,
                 use: 'ts-loader',
             },
             {
-                test: /\.js$/, loader:
-                "source-map-loader"
+                test: /\.js$/,
+                loader: 'source-map-loader',
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|ico)$/i,
+                type: 'asset',
+                // type: 'asset/resource',
             },
         ],
     },
-    devtool: "source-map",
+    devtool: 'source-map',
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
     },
     output: {
         filename: 'index.js',
@@ -37,7 +46,7 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
-        new EslintWebpackPlugin({ extensions: 'ts' })
+        new EslintWebpackPlugin({ extensions: 'ts' }),
     ],
 };
 
