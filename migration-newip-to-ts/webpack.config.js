@@ -4,8 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const stylesHandler = MiniCssExtractPlugin.loader;
+
 const baseConfig = {
-    entry: path.resolve(__dirname, './src/index'),
+    entry: {
+        'theme-dark': './src/theme-dark', // #asm основной путь к файлу вхождения в сборку
+        'theme-light': './src/theme-light', // #asm основной путь к файлу вхождения в сборку
+        index: path.resolve(__dirname, './src/index'),
+    },
     mode: 'development',
     module: {
         rules: [
@@ -15,7 +22,8 @@ const baseConfig = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: [stylesHandler, 'css-loader', 'sass-loader'],
+                // use: [stylesHandler, 'style-loader', 'css-loader', 'sss-loader'],
             },
             {
                 test: /\.ts$/i,
@@ -32,21 +40,33 @@ const baseConfig = {
             },
         ],
     },
-    devtool: 'source-map',
+    // devtool: 'source-map',
+    optimization: {
+        splitChunks: {
+            chunks: 'all', // #asm оптимизация кода для выненесния повторющихся кодов в одельные чанки
+        },
+    },
     resolve: {
         extensions: ['.ts', '.js'],
     },
     output: {
-        filename: 'index.js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, './dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
+            chunks: ['theme-dark', 'theme-light', 'index'],
+            // chunks: ['index'],
+            inject: 'body',
         }),
         new CleanWebpackPlugin(),
         new EslintWebpackPlugin({ extensions: 'ts' }),
+        new MiniCssExtractPlugin({
+            // filename: filename('css'), // #asm имя файла выхода
+            filename: '[name].[hash].css',
+        }),
     ],
 };
 
