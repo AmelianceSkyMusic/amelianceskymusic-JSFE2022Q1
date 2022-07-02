@@ -1,7 +1,15 @@
 import { HTTPStatusCode } from '../types/enum';
 
+// ? ONLY FOR TASK
+interface Option {
+    apiKey: string;
+    nothing: null;
+}
+
+type apikeyobj = Pick<Option, 'apiKey'>; // ? ONLY FOR TASK
+
 class Loader {
-    constructor(public baseLink: string, public options: { apiKey: string } | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": | Partial<object>
+    constructor(public baseLink: string, public options: apikeyobj | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": | Partial<object>
 
     getResp<T>(
         { endpoint, options = {} }: { endpoint: string; options?: { sources?: string } },
