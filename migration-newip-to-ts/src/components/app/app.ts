@@ -1,8 +1,9 @@
 import AppController from '../controller/controller';
 import { DrawNewsData, DrawSourcesData } from '../types/interface';
 import { AppView } from '../view/appView';
+import { AppClass } from '../types/class';
 
-class App {
+class App implements AppClass {
     controller: AppController;
     view: AppView;
     constructor() {

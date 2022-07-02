@@ -1,8 +1,9 @@
 import './news.css';
 
 import { NewsData } from '../../types/interface';
+import { NewClass } from '../../types/class';
 
-class News {
+class News implements NewClass {
     draw(data: NewsData[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx): boolean => idx < 10) : data;
 

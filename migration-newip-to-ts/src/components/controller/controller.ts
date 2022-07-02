@@ -1,6 +1,7 @@
 import AppLoader from './appLoader';
-// import { LoadCallbackData } from '../types/interface';
-class AppController extends AppLoader {
+import { AppControllerClass } from '../types/class';
+
+class AppController extends AppLoader implements AppControllerClass {
     getSources<T>(callback: (someData: T) => void): void {
         super.getResp({ endpoint: 'sources' }, callback);
     }

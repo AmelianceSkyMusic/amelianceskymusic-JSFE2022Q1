@@ -1,4 +1,5 @@
 import { HTTPStatusCode } from '../types/enum';
+import { LoaderClass } from '../types/class';
 
 // ? ONLY FOR TASK
 interface Option {
@@ -6,9 +7,9 @@ interface Option {
     nothing: null;
 }
 
-type apikeyobj = Pick<Option, 'apiKey'> | null; // ? ONLY FOR TASK
+export type apikeyobj = Pick<Option, 'apiKey'> | null; // ? ONLY FOR TASK
 
-class Loader {
+class Loader implements LoaderClass {
     constructor(public baseLink: string, public options: apikeyobj | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": apikeyobj | Partial<object>
 
     getResp<T>(
