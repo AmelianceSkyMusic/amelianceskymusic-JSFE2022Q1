@@ -6,10 +6,10 @@ interface Option {
     nothing: null;
 }
 
-type apikeyobj = Pick<Option, 'apiKey'>; // ? ONLY FOR TASK
+type apikeyobj = Pick<Option, 'apiKey'> | null; // ? ONLY FOR TASK
 
 class Loader {
-    constructor(public baseLink: string, public options: apikeyobj | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": | Partial<object>
+    constructor(public baseLink: string, public options: apikeyobj | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": apikeyobj | Partial<object>
 
     getResp<T>(
         { endpoint, options = {} }: { endpoint: string; options?: { sources?: string } },
