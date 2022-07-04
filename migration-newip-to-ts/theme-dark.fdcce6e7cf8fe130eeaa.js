@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector('link[href*="theme-dark"]').media="all"})();
