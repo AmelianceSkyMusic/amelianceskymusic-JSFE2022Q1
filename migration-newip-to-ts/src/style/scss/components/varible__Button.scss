@@ -1,0 +1,161 @@
+// >----------------------------------------------------------------<
+// >                            VARIBLES                            <
+// >----------------------------------------------------------------<
+
+:root {
+    // TODO: Get styles from global styles css file
+    --button--size: 16px;
+
+    --icon--size_width: 52px;
+    --icon--size_height: 52px;
+    --icon--margin: 0.5em;
+
+    --button--font-size: 17rem;
+    --button--font-size_big: 17rem;
+    --button--font-size_medium: 14rem;
+    --button--font-size_small: 10rem;
+
+    --button--font-family: "Montserrat", system-ui;
+    --button--line-height: 130%;
+    --button--font-weight: 700;
+    --button--letter-spacing: 0.05em;
+    --button--font-style: normal;
+
+    --button--animation__duration: 0.2s;
+    --button--animation__time-type: ease-in-out;
+
+    --button--padding: 16rem 16rem;
+    --button--border-radius: 8rem; // font size / 0.5
+
+    --button-icon--padding: 0;
+}
+
+// Change this icons
+$icon--scale__big: 1; // ! what is it?
+$icon--scale__medium: 0.875;
+$icon--scale__small: 0.625;
+
+ // ^------------------------ Button Fill ------------------------
+
+ $button-fill--font__color_hover:        var(--color-2-0);
+ $button-fill--font__color:              var(--color-2-1);
+ $button-fill--font__color_pressed:      var(--color-2-2);
+ $button-fill--font__color_disabled:     var(--color-2-3);
+
+ $button-fill--bg__color_hover:          var(--color-1-0);
+ $button-fill--bg__color:                var(--color-1-1);
+ $button-fill--bg__color_pressed:        var(--color-1-2);
+ $button-fill--bg__color_disabled:       var(--color-1-3);
+
+ // TODO: refactor code for more button style
+ // button-fill--bg_normal:   var();
+ // button-fill--bg_active:   var();
+ // button-fill--bg_focus:    var();
+ // button-fill--bg_disabled: var();
+ // button-fill--bg_loading:  var();
+
+ $button-fill--border__color_hover:      transparent;
+ $button-fill--border__color:            transparent;
+ $button-fill--border__color_pressed:    transparent;
+ $button-fill--border__color_disabled:   transparent;
+ $button-fill--border__width:            2px;
+
+ $button-fill--icon__color_hover:        var($button-fill--font__color_hover);
+ $button-fill--icon__color:              var($button-fill--font__color);
+ $button-fill--icon__color_pressed:      var($button-fill--font__color_pressed);
+ $button-fill--icon__color_disabled:     var($button-fill--font__color_disabled);
+
+
+
+ // ^------------------------ Button Outline ------------------------
+
+ $button-outline--font__color_hover:      var(--color--dark-3xl);
+ $button-outline--font__color:            var(--color--dark-3xl);
+ $button-outline--font__color_pressed:    var(--color--dark-3xl);
+ $button-outline--font__color_disabled:   var(--color-2-3);
+
+ $button-outline--bg__color_hover:        var(--color--primary-light);
+ $button-outline--bg__color:              none;
+ $button-outline--bg__color_pressed:      none;
+ $button-outline--bg__color_disabled:     none;
+
+ $button-outline--border__color_hover:    var(--color--primary-light);
+ $button-outline--border__color:          var(--color--primary);
+ $button-outline--border__color_pressed:  var(--color--primary);
+ $button-outline--border__color_disabled: var(--color-1-3);
+ $button-outline--border__width:          2px;
+
+ $button-outline--icon__color_hover:      var($button-outline--font__color_hover);
+ $button-outline--icon__color:            var($button-outline--font__color);
+ $button-outline--icon__color_pressed:    var($button-outline--font__color_pressed);
+ $button-outline--icon__color_disabled:   var($button-outline--font__color_disabled);
+
+ // ^------------------------ Button Text ------------------------
+
+ $button-text--font__color_hover:       var(--color-2-0);
+ $button-text--font__color:             var(--color-2-1);
+ $button-text--font__color_pressed:     var(--color-2-2);
+ $button-text--font__color_disabled:    var(--color-2-3);
+
+ $button-text--bg__color_hover:         none;
+ $button-text--bg__color:               none;
+ $button-text--bg__color_pressed:       none;
+ $button-text--bg__color_disabled:      none;
+
+ $button-text--border__color_hover:     transparent;
+ $button-text--border__color:           transparent;
+ $button-text--border__color_pressed:   transparent;
+ $button-text--border__color_disabled:  transparent;
+ $button-text--border__width:           2px;
+
+ $button-text--icon__color_hover:       var($button-text--font__color_hover);
+ $button-text--icon__color:             var($button-text--font__color);
+ $button-text--icon__color_pressed:     var($button-text--font__color_pressed);
+ $button-text--icon__color_disabled:    var($button-text--font__color_disabled);
+
+
+ // ^------------------------ Button Icon ------------------------
+
+ $button-icon-fill--font__color_hover:       var(--color--dark-3xl);
+ $button-icon-fill--font__color:             var(--color--dark-3xl);
+ $button-icon-fill--font__color_pressed:     var(--color--dark-3xl);
+ $button-icon-fill--font__color_disabled:    var(--color--dark-s);
+
+ $button-icon-fill--bg__color_hover:         var(--color--primary-light);
+ $button-icon-fill--bg__color:               var(--color--primary);
+ $button-icon-fill--bg__color_pressed:       var(--color--primary);
+ $button-icon-fill--bg__color_disabled:      var(--color--dark-s);
+
+ $button-icon-fill--border__color_hover:     transparent;
+ $button-icon-fill--border__color:           transparent;
+ $button-icon-fill--border__color_pressed:   transparent;
+ $button-icon-fill--border__color_disabled:  transparent;
+ $button-icon-fill--border__width:           2px;
+
+ $button-icon-fill--icon__color_hover:       var($button-icon-fill--font__color_hover);
+ $button-icon-fill--icon__color:             var($button-icon-fill--font__color);
+ $button-icon-fill--icon__color_pressed:     var($button-icon-fill--font__color_pressed);
+ $button-icon-fill--icon__color_disabled:    var($button-icon-fill--font__color_disabled);
+
+ // ^------------------------ Button Icon ------------------------
+
+ $button-icon-outline--font__color_hover:       var(--color--dark-3xl);
+ $button-icon-outline--font__color:             var(--color--dark-3xl);
+ $button-icon-outline--font__color_pressed:     var(--color--dark-3xl);
+ $button-icon-outline--font__color_disabled:    var(--color--dark-s);
+
+ $button-icon-outline--bg__color_hover:         var(--color--primary-light);
+ $button-icon-outline--bg__color:               none;
+ $button-icon-outline--bg__color_pressed:       none;
+ $button-icon-outline--bg__color_disabled:      none;
+
+ $button-icon-outline--border__color_hover:     var(--color--primary-light);
+ $button-icon-outline--border__color:           var(--color--primary);
+ $button-icon-outline--border__color_pressed:   var(--color--primary);
+ $button-icon-outline--border__color_disabled:  var(--color--dark-s);
+ $button-icon-outline--border__width:           2px;
+
+ $button-icon-outline--icon__color_hover:       var($button-icon-outline--font__color_hover);
+ $button-icon-outline--icon__color:             var($button-icon-outline--font__color);
+ $button-icon-outline--icon__color_pressed:     var($button-icon-outline--font__color_pressed);
+ $button-icon-outline--icon__color_disabled:    var($button-icon-outline--font__color_disabled);

@@ -1,0 +1,24 @@
+:root{
+
+    // ^------------------------ Bacground ------------------------
+
+    --background-color--background: var(--color-0-1);
+
+
+
+
+    // ^------------------------ Blackout ------------------------
+
+    --blackout-color: var(--color-0);
+
+
+
+
+    // ^------------------------ Scroll ------------------------
+
+    --scroll-color--background: rgba(0, 0, 0, 0);
+    --scroll-color--track: var(--color-0-0);
+    --scroll-color--thumb: var(--color-1-3);
+
+    --scroll-radius--border: 10000px
+}

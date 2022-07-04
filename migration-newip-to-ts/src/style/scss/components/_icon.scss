@@ -1,0 +1,36 @@
+// >----------------------------------------------------------------<
+// >                             IMPORT                             <
+// >----------------------------------------------------------------<
+
+// Edit this file for change style
+@use "varible__icon" as *;
+@use "mixin__icon" as *;
+
+
+
+
+// >----------------------------------------------------------------<
+// >                             CLASS                              <
+// >----------------------------------------------------------------<
+
+// .icon-big {
+//     width: 60px;
+//     height: 60px;
+
+//     &_pet-food {
+//         @include maskImgSVG("icon-big--pet-food.svg", $icon-big__color, $icon-big__color_hover);
+//     }
+// }
+
+.github-logo{
+    width: 140px;
+    height: 48px;
+    @include maskImgSVG("github-logo.svg", $icon-color, $icon-color_hover);
+    transform: scale(0.6);
+}
+.rsschool-js-logo{
+    width: 140px;
+    height: 48px;
+    @include maskImgSVG("rsschool-js-logo.svg", $icon-color, $icon-color_hover);
+    transform: scale(0.6);
+}

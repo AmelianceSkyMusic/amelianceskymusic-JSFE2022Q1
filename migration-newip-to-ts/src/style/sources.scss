@@ -1,0 +1,96 @@
+.container__sources {
+    position: relative;
+    display: flex;
+    // flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 32px 128px;
+
+    @media (max-width: 639px) {
+        justify-content: center;
+        padding: 16px 16px;
+    }
+}
+
+.sources {
+    position: relative;
+    z-index: 6000;
+    display: flex;
+    flex-direction: column;
+    // justify-content: end;
+    align-items: end;
+    gap: 12px;
+    overflow: auto;
+    height: 100%;
+    opacity: 0%;
+
+    min-width: 300px;
+    max-width: 1280px;
+    // width: 80%;
+    // transform: translate(0%, -50%);
+    animation-name: hide-blackout;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    &.show {
+        animation-name: show-blackout;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        // transform: translate(0%, 0%),
+    }
+
+    .sources__header {
+        position: sticky;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 16px;
+    }
+    .sources__close {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // height: 24px;
+        // width: 24px;
+        cursor: pointer;
+        & span.label {
+            text-decoration: none;
+            font-size: 24px;
+        }
+    }
+}
+
+.source__item {
+    justify-content: start;
+    align-self: start;
+    .label {
+        font-weight: 400;
+    }
+}
+
+@keyframes show-sources {
+    from { opacity: 0; }
+    to { opacity: 100%; }
+}
+@keyframes hide-sources {
+    from { opacity: 100%; }
+    to { opacity: 0; }
+}
+
+.source__item {
+    // background: var(--color-1-1);
+    cursor: pointer;
+    user-select: none;
+
+    // &:hover,
+    // &:focus {
+    //     background: var(--color-1-0);
+    // }
+}
+
+// .source__item-name {
+//     font-weight: 400;
+//     white-space: nowrap;
+// }

@@ -1,0 +1,232 @@
+// >----------------------------------------------------------------<
+// >                            IMPORT                              <
+// >----------------------------------------------------------------<
+
+@use "./scss/main.scss" as *;
+@use "./news.scss" as *;
+@use "./sources.scss" as *;
+
+// body {
+//     color: brown;
+//     background-image: url('../assets/img/photo.jpg');
+// }
+// .img {
+//     width: 500px;
+//     height: 500px;
+// }
+
+
+// >----------------------------------------------------------------<
+// >                            MIXINS                              <
+// >----------------------------------------------------------------<
+
+// @mixin bgImgSVG($img) { // image.svg
+//     background-image: url("../assets/svg/"+$img);
+// }
+
+
+
+
+// // >----------------------------------------------------------------<
+// // >                              ROOT                              <
+// // >----------------------------------------------------------------<
+
+:root {
+
+    // ^------------------------ size ------------------------
+    --size-w__block-container_desktop: 1280px; // block container --> 80px * 12 columns / gutter 24 px
+
+    --size-h__block-container-header_desktop: 32px;
+    --size-h__block-container-main_desktop: auto;
+    --size-h__block-container-footer_desktop: 64px;
+}
+
+// :root{
+//     --textarea-color--text: rgb(150, 150, 150);
+//     --textarea-color--background: rgb(30, 30, 30);
+//     --background-color--background: rgb(20, 20, 20);
+//     --key-color--text: rgb(180, 180, 180);
+
+
+//     --textarea-color--caret: rgb(180, 180, 180);
+
+//     --key-color--common_normal: rgb(30, 30, 30);
+//     --key-color--common_hover: rgb(90, 50, 30);
+
+//     --key-color--special_normal: rgb(45, 45,45);
+//     --key-color--special_hover: rgb(65, 65, 65);
+//     --key-color--special-active_normal: rgb(75, 75, 75);
+//     --key-color--special-active_hover: rgb(95, 95, 95);
+
+//     --key-color--additional_normal: rgb(40, 40, 40);
+//     --key-color--additional_hover: rgb(70, 70, 70);
+
+//     --key-color--arrow_normal:  rgb(35, 35, 35);
+//     --key-color--arrow_hover: rgb(55, 55, 55);
+
+// }
+
+
+
+// >----------------------------------------------------------------<
+// >                         START SETTINGS                         <
+// >----------------------------------------------------------------<
+
+// ^------------------------ footer to buttom ------------------------
+.body {
+
+    .body__container {
+        height: min(100%, 100vh);
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1920px;
+    margin: 0 auto;
+    background: var(--background-color--background);
+}
+
+
+// // ^------------------------ block container ------------------------
+
+.container {
+    max-height: 100%;
+    margin: 0 auto;
+    @media (max-width: 1339px) {
+        margin: 0 30px;
+    }
+    @media (max-width: 639px) {
+        margin: 0 16px;
+    }
+    @media (max-width: 479px) {
+        margin: 0 16px;
+    }
+}
+
+
+
+
+// >----------------------------------------------------------------<
+// >                             HEADER                             <
+// >----------------------------------------------------------------<
+
+.header {
+    height: auto;
+    background-color: var(--color-0-1);
+    .container {
+        max-width: var(--size-w__block-container_desktop);
+        // height: var(--size-h__block-container-header_desktop);
+        display: flex;
+        // justify-content: space-between;
+        align-items: end;
+
+        padding-top: 32px;
+        padding-bottom: 64px;
+        @media (max-width: 639px) {
+            padding-bottom: 32px;
+            padding-top: 16px;
+        }
+        gap: 16px;
+        @media (max-width: 419px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .h1 {
+        margin-right: auto;
+    }
+    .button-source {
+        @media (max-width: 419px) {
+            width: 100%;
+            order: 3;
+        }
+    }
+}
+
+
+
+
+// // >----------------------------------------------------------------<
+// // >                              MAIN                              <
+// // >----------------------------------------------------------------<
+.main {
+    height: var(--size-h__block-container-main_desktop);
+    background: var(--color-0-1);
+    .container {
+        max-width: var(--size-w__block-container_desktop);
+        height: 100%;
+    }
+}
+
+.main .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    // flex-direction: column;
+    // gap: 32px;
+    // padding: 64px;
+}
+
+// >----------------------------------------------------------------<
+// >                             FOOTER                             <
+// >----------------------------------------------------------------<
+
+.footer {
+    height: auto;
+    background-color: var(--color-0-1);
+    .container {
+        max-width: var(--size-w__block-container_desktop);
+        padding-top: 64px;
+        padding-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .github-logo{
+    //     width: 200px;
+    //     height: 48px;
+    //     // background: var(--color-1-1);
+    //     // mask-repeat: no-repeat;
+    //     // mask-size: cover;
+    //     // background: url("../assets/svg/github-logo.svg");
+    //     background-color: red;
+    //     -webkit-mask-image: url("../assets/svg/github-logo.svg");
+    //     mask-image: url("../assets/svg/github-logo.svg");
+    //     // @media (hover: hover) {
+    //     //     &:hover {
+    //     //         // transition: all var(--icon--animation__duration) var(--icon--animation__time-type);
+    //     //         background: $icon-color_hover;
+    //     //     }
+    //     // }
+    // }
+    // .rsschool-js-logo{
+    //     width: 200px;
+    //     height: 48px;
+    //    @include bgImgSVG('rsschool-js-logo.svg')
+    // }
+
+    .copyright {
+        .h3{
+            color: var(--color-1-1);
+        }
+        text-align: center;
+    }
+    .copyright a {
+        color: var(--color-1-1);
+        &:hover {
+            color: var(--color-1-0);
+        }
+    }
+}
+
+// .blackout {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
