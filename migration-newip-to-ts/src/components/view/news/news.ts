@@ -1,5 +1,3 @@
-import './news.css';
-
 import { NewsData } from '../../types/interface';
 import { NewClass } from '../../types/class';
 
@@ -17,7 +15,7 @@ class News implements NewClass {
             if (idx % 2) (newsClone.querySelector('.news__item') as HTMLDivElement).classList.add('alt');
 
             (newsClone.querySelector('.news__meta-photo') as HTMLDivElement).style.backgroundImage = `url(${
-                item.urlToImage || 'img/news_placeholder.jpg'
+                item.urlToImage || 'assets/img/news_placeholder.jpg'
             })`;
             (newsClone.querySelector('.news__meta-author') as HTMLUListElement).textContent =
                 item.author || item.source.name;
@@ -31,7 +29,7 @@ class News implements NewClass {
             (newsClone.querySelector('.news__description-source') as HTMLHeadingElement).textContent = item.source.name;
             (newsClone.querySelector('.news__description-content') as HTMLParagraphElement).textContent =
                 item.description;
-            (newsClone.querySelector('.news__read-more a') as HTMLLinkElement).setAttribute('href', item.url);
+            (newsClone.querySelector('.news__read-more a') as HTMLAnchorElement).setAttribute('href', item.url);
 
             fragment.append(newsClone);
         });

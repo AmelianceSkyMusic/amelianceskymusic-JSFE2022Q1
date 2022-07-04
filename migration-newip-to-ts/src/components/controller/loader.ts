@@ -1,5 +1,6 @@
 import { HTTPStatusCode } from '../types/enum';
 import { LoaderClass } from '../types/class';
+import { RequestParameters, RequestTopHeadlinesParameters } from '../types/interface';
 
 // ? ONLY FOR TASK
 interface Option {
@@ -13,7 +14,10 @@ class Loader implements LoaderClass {
     constructor(public baseLink: string, public options: apikeyobj | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": apikeyobj | Partial<object>
 
     getResp<T>(
-        { endpoint, options = {} }: { endpoint: string; options?: { sources?: string } },
+        {
+            endpoint,
+            options = {},
+        }: { endpoint: string; options?: Partial<RequestParameters> | Partial<RequestTopHeadlinesParameters> },
         callback: (data: T) => void
     ): void {
         this.load('GET', endpoint, callback, options);
@@ -29,14 +33,16 @@ class Loader implements LoaderClass {
     }
 
     makeUrl(options: { sources?: string } = {}, endpoint: string): string {
+        console.log(this.options); // ! apikey
+        console.log(options); // ! options {sources }
         const urlOptions: { [key: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key): void => {
-            url += `${key}=${urlOptions[key]}&`;
+            url += `${key}=${urlOptions[key]}&`; // https://newsapi.org/v2/sources?apiKey=2e5debdad61a4b9cb982ed04656c99f7&
         });
-
-        return url.slice(0, -1);
+        console.log('url slice', url.slice(0, -1)); // https://newsapi.org/v2/everything?apiKey=2e5debdad61a4b9cb982ed04656c99f7&sources=abc-news
+        return url.slice(0, -1); // ! remove & in end of link
     }
 
     private load<T>(

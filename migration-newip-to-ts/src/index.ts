@@ -1,5 +1,6 @@
 import App from './components/app/app';
-import './global.css';
+import './style/style.scss';
+// import './global.css';
 
 const app = new App();
 app.start();

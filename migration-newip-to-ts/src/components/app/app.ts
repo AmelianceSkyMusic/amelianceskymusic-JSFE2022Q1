@@ -12,10 +12,13 @@ class App implements AppClass {
     }
 
     start(): void {
-        (document.querySelector('.sources') as HTMLDivElement).addEventListener('click', (e): void =>
-            this.controller.getNews(e, (data: DrawNewsData): void => this.view.drawNews(data))
-        );
-        this.controller.getSources((data: DrawSourcesData): void => this.view.drawSources(data));
+        this.controller.addActions();
+
+        // (document.querySelector('.sources') as HTMLDivElement).addEventListener('click', (e): void =>
+        //     this.controller.getNews(e, (data: DrawNewsData): void => this.view.drawNews(data))
+        // );
+
+        // this.controller.getSources((data: DrawSourcesData): void => this.view.drawSources(data));
     }
 }
 
