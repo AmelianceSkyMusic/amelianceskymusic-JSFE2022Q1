@@ -68,7 +68,7 @@ class AppController extends AppLoader implements AppControllerClass {
             {
                 endpoint: 'top-headlines',
                 options: {
-                    country: 'pl',
+                    country: 'ua',
                 },
             },
             (data: DrawNewsData): void => this.view.drawNews(data)
