@@ -85,32 +85,6 @@ export interface RequestTopHeadlinesParameters {
     country: string;
     category: string;
     sources: string;
+
+    //...
 }
-
-// export interface DrawSourcesValueFromData {
-//     length: number;
-//     [index: number]: {
-//         category: string;
-//         country: string;
-//         description: string;
-//         id: string;
-//         language: string;
-//         name: string;
-//         url: string;
-//     };
-// }
-
-// interface AAA {
-//     status: string;
-//     sources: [
-//         {
-//             category: string;
-//             country: string;
-//             description: string;
-//             id: string;
-//             language: string;
-//             name: string;
-//             url: string;
-//         }
-//     ];
-// }
