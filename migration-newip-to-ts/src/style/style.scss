@@ -6,31 +6,6 @@
 @use "./news.scss" as *;
 @use "./sources.scss" as *;
 
-// body {
-//     color: brown;
-//     background-image: url('../assets/img/photo.jpg');
-// }
-// .img {
-//     width: 500px;
-//     height: 500px;
-// }
-
-
-// >----------------------------------------------------------------<
-// >                            MIXINS                              <
-// >----------------------------------------------------------------<
-
-// @mixin bgImgSVG($img) { // image.svg
-//     background-image: url("../assets/svg/"+$img);
-// }
-
-
-
-
-// // >----------------------------------------------------------------<
-// // >                              ROOT                              <
-// // >----------------------------------------------------------------<
-
 :root {
 
     // ^------------------------ size ------------------------
@@ -40,32 +15,6 @@
     --size-h__block-container-main_desktop: auto;
     --size-h__block-container-footer_desktop: 64px;
 }
-
-// :root{
-//     --textarea-color--text: rgb(150, 150, 150);
-//     --textarea-color--background: rgb(30, 30, 30);
-//     --background-color--background: rgb(20, 20, 20);
-//     --key-color--text: rgb(180, 180, 180);
-
-
-//     --textarea-color--caret: rgb(180, 180, 180);
-
-//     --key-color--common_normal: rgb(30, 30, 30);
-//     --key-color--common_hover: rgb(90, 50, 30);
-
-//     --key-color--special_normal: rgb(45, 45,45);
-//     --key-color--special_hover: rgb(65, 65, 65);
-//     --key-color--special-active_normal: rgb(75, 75, 75);
-//     --key-color--special-active_hover: rgb(95, 95, 95);
-
-//     --key-color--additional_normal: rgb(40, 40, 40);
-//     --key-color--additional_hover: rgb(70, 70, 70);
-
-//     --key-color--arrow_normal:  rgb(35, 35, 35);
-//     --key-color--arrow_hover: rgb(55, 55, 55);
-
-// }
-
 
 
 // >----------------------------------------------------------------<
@@ -186,36 +135,25 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: 469px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
-    // .github-logo{
-    //     width: 200px;
-    //     height: 48px;
-    //     // background: var(--color-1-1);
-    //     // mask-repeat: no-repeat;
-    //     // mask-size: cover;
-    //     // background: url("../assets/svg/github-logo.svg");
-    //     background-color: red;
-    //     -webkit-mask-image: url("../assets/svg/github-logo.svg");
-    //     mask-image: url("../assets/svg/github-logo.svg");
-    //     // @media (hover: hover) {
-    //     //     &:hover {
-    //     //         // transition: all var(--icon--animation__duration) var(--icon--animation__time-type);
-    //     //         background: $icon-color_hover;
-    //     //     }
-    //     // }
-    // }
-    // .rsschool-js-logo{
-    //     width: 200px;
-    //     height: 48px;
-    //    @include bgImgSVG('rsschool-js-logo.svg')
-    // }
-
     .copyright {
+        @media (max-width: 469px) {
+            transform: scale(0.6);
+            padding-top: 16px;
+        }
         .h3{
             color: var(--color-1-1);
         }
         text-align: center;
+        @media (max-width: 469px) {
+            width: 100%;
+            order: 3;
+        }
     }
     .copyright a {
         color: var(--color-1-1);
@@ -224,9 +162,3 @@
         }
     }
 }
-
-// .blackout {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
