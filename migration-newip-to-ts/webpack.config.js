@@ -6,11 +6,12 @@ const EslintWebpackPlugin = require('eslint-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const stylesHandler = MiniCssExtractPlugin.loader;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const baseConfig = {
     entry: {
-        'theme-dark': './src/theme-dark', // #asm основной путь к файлу вхождения в сборку
-        'theme-light': './src/theme-light', // #asm основной путь к файлу вхождения в сборку
+        'theme-dark': './src/theme-dark',
+        'theme-light': './src/theme-light',
         index: path.resolve(__dirname, './src/index'),
     },
     mode: 'development',
@@ -23,7 +24,6 @@ const baseConfig = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [stylesHandler, 'css-loader', 'sass-loader'],
-                // use: [stylesHandler, 'style-loader', 'css-loader', 'sss-loader'],
             },
             {
                 test: /\.ts$/i,
@@ -36,14 +36,13 @@ const baseConfig = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|ico)$/i,
                 type: 'asset',
-                // type: 'asset/resource',
             },
         ],
     },
-    // devtool: 'source-map',
+    devtool: 'source-map',
     optimization: {
         splitChunks: {
-            chunks: 'all', // #asm оптимизация кода для выненесния повторющихся кодов в одельные чанки
+            chunks: 'all',
         },
     },
     resolve: {
@@ -52,20 +51,22 @@ const baseConfig = {
     output: {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, './dist'),
+        clean: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
             chunks: ['theme-dark', 'theme-light', 'index'],
-            // chunks: ['index'],
             inject: 'body',
         }),
         new CleanWebpackPlugin(),
         new EslintWebpackPlugin({ extensions: 'ts' }),
         new MiniCssExtractPlugin({
-            // filename: filename('css'), // #asm имя файла выхода
             filename: '[name].[hash].css',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [{ from: __dirname + '/src/assets', to: 'assets', noErrorOnMissing: true }],
         }),
     ],
 };
