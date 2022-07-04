@@ -39,7 +39,7 @@ const baseConfig = {
             },
         ],
     },
-    devtool: 'source-map',
+    // devtool: 'source-map',
     optimization: {
         splitChunks: {
             chunks: 'all',
