@@ -1,0 +1,4 @@
+/node_modules
+/_legacy
+/dist
+/src/**/asm-components
