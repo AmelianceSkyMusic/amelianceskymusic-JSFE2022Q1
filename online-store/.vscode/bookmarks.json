@@ -64,6 +64,21 @@
 					"label": "!--MODULE EXPORT"
 				}
 			]
+		},
+		{
+			"path": "src/index.html",
+			"bookmarks": [
+				{
+					"line": 19,
+					"column": 35,
+					"label": "!--HEADER"
+				},
+				{
+					"line": 33,
+					"column": 22,
+					"label": "!--MAIN"
+				}
+			]
 		}
 	]
 }
