@@ -1,5 +1,2 @@
-const msg = 'hello';
-
-const hello = (msg: string): void => console.log(msg);
-
-hello(msg);
+import './scss/themes/dark.scss';
+import './style.scss';
