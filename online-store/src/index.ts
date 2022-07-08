@@ -1,2 +1,2 @@
-import './scss/themes/dark.scss';
+import './scss/_themes/dark.scss';
 import './style.scss';
