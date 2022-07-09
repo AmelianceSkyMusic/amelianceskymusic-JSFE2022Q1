@@ -1,3 +1,13 @@
-node_modules
-dist
-_legacy
+/node_modules
+/dist
+
+#amelianceskymusic own modules
+/src/**/asm-components
+
+/**/_legacy*
+*._legacy*
+_legacy*
+
+/**/_backup*
+*._backup*
+_backup*
