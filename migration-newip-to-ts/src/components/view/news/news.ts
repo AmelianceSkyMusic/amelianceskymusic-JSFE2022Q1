@@ -1,8 +1,8 @@
-import { NewsData } from '../../types/interface';
+import { ArticleData } from '../../types/interface';
 import { INews } from '../../types/class';
 
 class News implements INews {
-    draw(data: NewsData[]): void {
+    draw(data: ArticleData[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx): boolean => idx < 10) : data;
 
         const fragment = document.createDocumentFragment(); // ? as DocumentFragment;

@@ -4,7 +4,7 @@ import AppController from '../controller/controller';
 import AppView from '../view/appView';
 import News from '../view/news/news';
 import Sources from '../view/sources/sources';
-import { DrawNewsData, DrawSourcesData, NewsData, SourcesData } from './interface';
+import { DrawNewsData, DrawSourcesData, ArticleData, SourcesData } from './interface';
 
 export interface ILoader {
     getResp(
@@ -25,7 +25,7 @@ export interface AppClass {
 }
 
 export interface INews {
-    draw(data: NewsData[]): void;
+    draw(data: ArticleData[]): void;
 }
 export interface ISources {
     draw(data: SourcesData[]): void;

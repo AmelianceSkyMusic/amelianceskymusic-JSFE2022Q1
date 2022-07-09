@@ -1,7 +1,7 @@
 import News from './news/news';
 import Sources from './sources/sources';
 
-import { DrawNewsData, NewsData, DrawSourcesData, SourcesData } from '../types/interface';
+import { DrawNewsData, ArticleData, DrawSourcesData, SourcesData } from '../types/interface';
 import { IAppView } from '../types/class';
 
 export class AppView implements IAppView {
@@ -14,7 +14,7 @@ export class AppView implements IAppView {
 
     drawNews(data: Partial<DrawNewsData>): void {
         // ? const values: NewsData[] = data.articles;
-        const values: NewsData[] = data?.articles ?? [];
+        const values: ArticleData[] = data?.articles ?? [];
         this.news.draw(values);
     }
 

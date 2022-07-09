@@ -1,4 +1,4 @@
-export interface NewsData {
+export interface ArticleData {
     author: string;
     content: string;
     description: string;
@@ -25,7 +25,7 @@ export interface SourcesData {
 export interface DrawNewsData {
     status: string;
     totalResults: number;
-    articles: NewsData[];
+    articles: ArticleData[];
 }
 
 export interface DrawSourcesData {
