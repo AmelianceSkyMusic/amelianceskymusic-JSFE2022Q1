@@ -2,9 +2,9 @@ import News from './news/news';
 import Sources from './sources/sources';
 
 import { DrawNewsData, NewsData, DrawSourcesData, SourcesData } from '../types/interface';
-import { AppViewClass } from '../types/class';
+import { IAppView } from '../types/class';
 
-export class AppView implements AppViewClass {
+export class AppView implements IAppView {
     news: News;
     sources: Sources;
     constructor() {

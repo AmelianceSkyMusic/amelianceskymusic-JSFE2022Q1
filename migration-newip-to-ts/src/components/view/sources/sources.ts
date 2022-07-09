@@ -1,7 +1,7 @@
 import { SourcesData } from '../../types/interface';
-import { SourcesClass } from '../../types/class';
+import { ISources } from '../../types/class';
 
-class Sources implements SourcesClass {
+class Sources implements ISources {
     draw(data: SourcesData[]): void {
         const suorseItems = document.querySelectorAll('.source__item') as NodeListOf<HTMLDivElement>;
         if (suorseItems) {

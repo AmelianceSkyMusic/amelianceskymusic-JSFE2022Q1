@@ -1,8 +1,8 @@
 import { HTTPStatusCode } from '../types/enum';
-import { LoaderClass } from '../types/class';
+import { ILoader } from '../types/class';
 import { DrawNewsData, DrawSourcesData, FilterOptions, RequestTopHeadlinesParameters } from '../types/interface';
 
-class Loader implements LoaderClass {
+class Loader implements ILoader {
     constructor(public baseLink: string, public options: { apiKey?: string }) {}
 
     getResp(

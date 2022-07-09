@@ -1,10 +1,10 @@
 import AppLoader from './appLoader';
 import { AppView } from '../view/appView';
-import { AppControllerClass } from '../types/class';
+import { IAppController } from '../types/class';
 import { DrawNewsData, DrawSourcesData, FilterOptions } from '../types/interface';
 import { createHTMLElem } from '../scripts/_asm';
 
-class AppController extends AppLoader implements AppControllerClass {
+class AppController extends AppLoader implements IAppController {
     view: AppView;
     constructor() {
         super();

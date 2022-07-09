@@ -1,7 +1,7 @@
 import { NewsData } from '../../types/interface';
-import { NewClass } from '../../types/class';
+import { INews } from '../../types/class';
 
-class News implements NewClass {
+class News implements INews {
     draw(data: NewsData[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx): boolean => idx < 10) : data;
 
