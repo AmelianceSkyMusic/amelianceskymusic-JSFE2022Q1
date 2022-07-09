@@ -24,7 +24,7 @@ class Loader implements LoaderClass {
         return res;
     }
 
-    makeUrl(options: { sources?: string } = {}, endpoint: string): string {
+    makeUrl<T>(options: { [key: string]: T } = {}, endpoint: string): string {
         const urlOptions: { [key: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -35,10 +35,10 @@ class Loader implements LoaderClass {
     }
 
     private load<T>(
-        method: Readonly<string>, // ? ONLY FOR TASK "Readonly": Readonly<string>
-        endpoint: Readonly<string>, // ? ONLY FOR TASK "Readonly": Readonly<string>
+        method: string,
+        endpoint: string,
         callback: (data: T) => void,
-        options: { sources?: string } = {}
+        options: { [key: string]: string | number } = {}
     ): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
