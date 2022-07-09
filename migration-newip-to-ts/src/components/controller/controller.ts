@@ -1,7 +1,7 @@
 import AppLoader from './appLoader';
 import { AppView } from '../view/appView';
 import { AppControllerClass } from '../types/class';
-import { DrawNewsData, DrawSourcesData, RequestParameters } from '../types/interface';
+import { DrawNewsData, DrawSourcesData, FilterOptions } from '../types/interface';
 import { createHTMLElem } from '../scripts/_asm';
 
 class AppController extends AppLoader implements AppControllerClass {
@@ -10,7 +10,7 @@ class AppController extends AppLoader implements AppControllerClass {
         super();
         this.view = new AppView();
     }
-    getSources(callback: (newsData: Partial<DrawSourcesData>) => void, optionData?: Partial<RequestParameters>): void {
+    getSources(callback: (newsData: Partial<DrawSourcesData>) => void, optionData?: Partial<FilterOptions>): void {
         super.getResp({ endpoint: 'sources', options: optionData }, callback);
     }
 
@@ -46,13 +46,15 @@ class AppController extends AppLoader implements AppControllerClass {
         btnShowNews$.addEventListener('click', (): void => {
             const filterLanguage$ = document.querySelector('.language__selection') as HTMLSelectElement;
             const filterSortType$ = document.querySelectorAll('.sort__type') as NodeListOf<HTMLInputElement>;
+
             let filterSortTypeChecked: string; // ?
             filterSortTypeChecked = 'publishedAt';
+
             for (const item of filterSortType$) {
                 if (item.checked) filterSortTypeChecked = item.value;
             }
 
-            const optionsFiltered: Partial<RequestParameters> = {
+            const optionsFiltered: Partial<FilterOptions> = {
                 language: filterLanguage$.value,
                 sortBy: filterSortTypeChecked,
             };

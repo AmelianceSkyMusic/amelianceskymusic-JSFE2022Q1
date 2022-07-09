@@ -1,6 +1,6 @@
 import { HTTPStatusCode } from '../types/enum';
 import { LoaderClass } from '../types/class';
-import { DrawNewsData, DrawSourcesData, RequestParameters, RequestTopHeadlinesParameters } from '../types/interface';
+import { DrawNewsData, DrawSourcesData, FilterOptions, RequestTopHeadlinesParameters } from '../types/interface';
 
 class Loader implements LoaderClass {
     constructor(public baseLink: string, public options: { apiKey?: string }) {}
@@ -9,7 +9,7 @@ class Loader implements LoaderClass {
         {
             endpoint,
             options = {},
-        }: { endpoint: string; options?: Partial<RequestParameters> | Partial<RequestTopHeadlinesParameters> },
+        }: { endpoint: string; options?: Partial<FilterOptions> | Partial<RequestTopHeadlinesParameters> },
         callback: (data: Partial<DrawNewsData> | Partial<DrawSourcesData>) => void
     ): void {
         this.load('GET', endpoint, callback, options);
