@@ -1,7 +1,6 @@
 // ? file realize classe's interfases
 
 import AppController from '../controller/controller';
-import { apikeyobj } from '../controller/loader';
 import AppView from '../view/appView';
 import News from '../view/news/news';
 import Sources from '../view/sources/sources';
@@ -9,7 +8,7 @@ import { DrawNewsData, DrawSourcesData, NewsData, SourcesData } from './interfac
 
 export interface LoaderClass {
     baseLink: string;
-    options: apikeyobj | Partial<object>;
+    options: { apiKey?: string };
     getResp<T>(
         { endpoint, options }: { endpoint: string; options?: { sources?: string } },
         callback: (data: T) => void

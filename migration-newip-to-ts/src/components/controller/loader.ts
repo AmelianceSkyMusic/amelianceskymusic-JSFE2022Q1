@@ -2,16 +2,8 @@ import { HTTPStatusCode } from '../types/enum';
 import { LoaderClass } from '../types/class';
 import { RequestParameters, RequestTopHeadlinesParameters } from '../types/interface';
 
-// ? ONLY FOR TASK
-interface Option {
-    apiKey: string;
-    nothing: null;
-}
-
-export type apikeyobj = Pick<Option, 'apiKey'> | null; // ? ONLY FOR TASK
-
 class Loader implements LoaderClass {
-    constructor(public baseLink: string, public options: apikeyobj | Partial<object>) {} // ? ONLY FOR TASK "Partial, union": apikeyobj | Partial<object>
+    constructor(public baseLink: string, public options: { apiKey?: string }) {}
 
     getResp<T>(
         {
