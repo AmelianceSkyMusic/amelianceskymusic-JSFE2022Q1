@@ -69,12 +69,12 @@
 			"path": "src/index.html",
 			"bookmarks": [
 				{
-					"line": 19,
+					"line": 20,
 					"column": 35,
 					"label": "!--HEADER"
 				},
 				{
-					"line": 33,
+					"line": 40,
 					"column": 22,
 					"label": "!--MAIN"
 				}
