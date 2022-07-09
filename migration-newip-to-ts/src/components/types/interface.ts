@@ -25,19 +25,7 @@ export interface SourcesData {
 export interface DrawNewsData {
     status: string;
     totalResults: number;
-    articles: {
-        author: string;
-        content: string;
-        description: string;
-        publishedAt: string;
-        source: {
-            id: string;
-            name: string;
-        };
-        title: string;
-        url: string;
-        urlToImage: string;
-    }[];
+    articles: NewsData[];
 }
 
 export interface DrawSourcesData {
