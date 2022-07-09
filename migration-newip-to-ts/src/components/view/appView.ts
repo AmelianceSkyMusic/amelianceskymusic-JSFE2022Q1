@@ -12,13 +12,13 @@ export class AppView implements AppViewClass {
         this.sources = new Sources();
     }
 
-    drawNews(data: DrawNewsData): void {
+    drawNews(data: Partial<DrawNewsData>): void {
         // ? const values: NewsData[] = data.articles;
         const values: NewsData[] = data?.articles ?? [];
         this.news.draw(values);
     }
 
-    drawSources(data: DrawSourcesData): void {
+    drawSources(data: Partial<DrawSourcesData>): void {
         // ? const values: SourcesData[] = data?.sources;
         const values: SourcesData[] = data?.sources ?? [];
         this.sources.draw(values);

@@ -9,16 +9,16 @@ import { DrawNewsData, DrawSourcesData, NewsData, SourcesData } from './interfac
 export interface LoaderClass {
     baseLink: string;
     options: { apiKey?: string };
-    getResp<T>(
+    getResp(
         { endpoint, options }: { endpoint: string; options?: { sources?: string } },
-        callback: (data: T) => void
+        callback: (data: Partial<DrawNewsData> | Partial<DrawSourcesData>) => void
     ): void;
     makeUrl(options: { sources?: string }, endpoint: string): string;
 }
 
 export interface AppControllerClass extends Partial<LoaderClass> {
-    getSources<T>(callback: (someData: T) => void): void;
-    getNews<T>(e: Event, callback: (someData: T) => void): void;
+    getSources(callback: (newsData: Partial<DrawSourcesData>) => void): void;
+    getNews(e: Event, callback: (someData: Partial<DrawNewsData>) => void): void;
 }
 
 export interface AppClass {

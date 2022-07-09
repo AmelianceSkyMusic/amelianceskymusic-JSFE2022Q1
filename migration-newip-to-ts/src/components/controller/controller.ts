@@ -10,11 +10,11 @@ class AppController extends AppLoader implements AppControllerClass {
         super();
         this.view = new AppView();
     }
-    getSources<T>(callback: (someData: T) => void, optionData?: Partial<RequestParameters>): void {
+    getSources(callback: (newsData: Partial<DrawSourcesData>) => void, optionData?: Partial<RequestParameters>): void {
         super.getResp({ endpoint: 'sources', options: optionData }, callback);
     }
 
-    getNews<T>(e: Event, callback: (someData: T) => void): void {
+    getNews(e: Event, callback: (newsData: Partial<DrawNewsData>) => void): void {
         let target = e.target as HTMLDivElement;
         const newsContainer = e.currentTarget as HTMLDivElement;
 
@@ -57,7 +57,7 @@ class AppController extends AppLoader implements AppControllerClass {
                 sortBy: filterSortTypeChecked,
             };
 
-            this.getSources((data: DrawSourcesData): void => this.view.drawSources(data), optionsFiltered);
+            this.getSources((data: Partial<DrawSourcesData>): void => this.view.drawSources(data), optionsFiltered);
         });
     }
 
@@ -71,7 +71,7 @@ class AppController extends AppLoader implements AppControllerClass {
                     country: 'ua',
                 },
             },
-            (data: DrawNewsData): void => this.view.drawNews(data)
+            (data: Partial<DrawNewsData>): void => this.view.drawNews(data)
         );
 
         btnArticle$.addEventListener('click', (): void => {
@@ -95,7 +95,7 @@ class AppController extends AppLoader implements AppControllerClass {
             });
             createHTMLElem(sourcesClose$, 'span', { class: 'label' }, '×');
 
-            this.getSources((data: DrawSourcesData): void => this.view.drawSources(data));
+            this.getSources((data: Partial<DrawSourcesData>): void => this.view.drawSources(data));
 
             const closeSource = (): void => {
                 sources$.classList.remove('show');
@@ -114,7 +114,7 @@ class AppController extends AppLoader implements AppControllerClass {
             (document.querySelector('.sources') as HTMLParagraphElement).addEventListener('click', closeSource);
 
             (document.querySelector('.sources') as HTMLDivElement).addEventListener('click', (e): void =>
-                this.getNews(e, (data: DrawNewsData): void => this.view.drawNews(data))
+                this.getNews(e, (data: Partial<DrawNewsData>): void => this.view.drawNews(data))
             );
         });
 
