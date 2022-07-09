@@ -11,7 +11,6 @@ export default function createHTMLElem(
     },
     text = ''
 ): HTMLElement {
-    // create element
     const elName$ = document.createElement(elementType);
     if (classNames?.class) {
         const classes: string[] = classNames.class.split(' ');
