@@ -1,0 +1,36 @@
+// >----------------------------------------------------------------<
+// >                      RANGE SLIDER DOUBLE                       <
+// >----------------------------------------------------------------<
+// ! use rgb/rgba only
+
+// ^------------------------ Slider Range ------------------------
+$range-slider-double--track__height: 4px;
+$range-slider-double--track__background: var(--color-f1-1);
+$range-slider-double--track__border-radius: 1000px;
+
+// ^------------------------ Slider Range Background ------------------------
+$range-slider-double--track-bg__height: 2px;
+$range-slider-double--track-bg__background: $range-slider-double--track__background;
+$range-slider-double--track-bg__border-radius: $range-slider-double--track__border-radius;
+
+// ^------------------------ Slider Thumb ------------------------
+$range-slider-double--slider-thumb__size: 16px;
+$range-slider-double--slider-thumb__border-radius: 1000px;
+$range-slider-double--slider-thumb__background: var(--color-fl-0);
+$range-slider-double--slider-thumb__border-size: 2px;
+$range-slider-double--slider-thumb__border-color: $range-slider-double--track__background;
+
+// ^------------------------ Slider Thumb Active ------------------------
+$range-slider-double--slider-thumb__background_active: var(--color-fl-0);
+$range-slider-double--slider-thumb__border-size_active: $range-slider-double--slider-thumb__border-size;
+$range-slider-double--slider-thumb__border-color_active: $range-slider-double--track__background;
+
+// ^------------------------ Slider Labels ------------------------
+$range-slider-double--width: 80px;
+$range-slider-double--height: 28px;
+$range-slider-double--background-color: none;
+$range-slider-double--border-color: $range-slider-double--track__background;
+$range-slider-double--border-width: 2px;
+$range-slider-double--border-radius: 1000px;
+
+$range-slider-double--gap: 16px;

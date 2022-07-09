@@ -1,0 +1,130 @@
+// >----------------------------------------------------------------<
+// >                             IMPORT                             <
+// >----------------------------------------------------------------<
+
+// Edit this file for change style
+@use "varible__range-slider-double" as *;
+
+
+// >----------------------------------------------------------------<
+// >                           TYPOGRAPHY                           <
+// >----------------------------------------------------------------<
+
+.range-slider-double {
+    display: flex;
+    flex-direction: column;
+    gap: $range-slider-double--gap;
+
+    .range-slider-double__range {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+
+        input[type=range] {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            -webkit-appearance: none;
+            -moz-appeaarance: none;
+            appearance: none;
+            outline: none;
+            background: none;
+            pointer-events: none;
+
+            &::-webkit-slider-runnable-track {
+                -webkit-appearance: none;
+                height: $range-slider-double--slider-thumb__size;
+            }
+            &::-moz-range-track {
+                -moz-appearance: none;
+                height: $range-slider-double--slider-thumb__size;
+            }
+            &::-ms-track {
+                appearance: none;
+                height: $range-slider-double--slider-thumb__size;
+            }
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: $range-slider-double--slider-thumb__size;
+                width: $range-slider-double--slider-thumb__size;
+                background-color: $range-slider-double--slider-thumb__background;
+                cursor: pointer;
+                border-radius: $range-slider-double--slider-thumb__border-radius;
+                pointer-events: auto;
+                border: $range-slider-double--slider-thumb__border-size
+                        solid
+                        $range-slider-double--slider-thumb__border-color;
+            }
+            &::-moz-range-thumb {
+                -webkit-appearance: none;
+                height: $range-slider-double--slider-thumb__size;
+                width: $range-slider-double--slider-thumb__size;
+                background-color: $range-slider-double--slider-thumb__background;
+                cursor: pointer;
+                border-radius: $range-slider-double--slider-thumb__border-radius;
+                pointer-events: auto;
+                border: $range-slider-double--slider-thumb__border-size
+                solid
+                $range-slider-double--slider-thumb__border-color;
+            }
+            &::-ms-thumb {
+                appearance: none;
+                height: $range-slider-double--slider-thumb__size;
+                width: $range-slider-double--slider-thumb__size;
+                background-color: $range-slider-double--slider-thumb__background;
+                cursor: pointer;
+                border-radius: $range-slider-double--slider-thumb__border-radius;
+                pointer-events: auto;
+                border: $range-slider-double--slider-thumb__border-size
+                solid
+                $range-slider-double--slider-thumb__border-color;
+            }
+
+            &:active::-webkit-slider-thumb {
+                background: $range-slider-double--slider-thumb__background_active;
+                border: $range-slider-double--slider-thumb__border-size_active
+                solid
+                $range-slider-double--slider-thumb__border-color_active;
+            }
+        }
+
+        .range-slider-double__track {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            width: 100%;
+            height: $range-slider-double--track__height;
+            background-color: $range-slider-double--track__background;
+            border-radius: $range-slider-double--track__border-radius;
+        }
+
+        .range-slider-double__track-bg {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            width: 100%;
+            height: $range-slider-double--track-bg__height;
+            background-color: $range-slider-double--track-bg__background;
+            border-radius: $range-slider-double--track-bg__border-radius;
+        }
+    }
+
+    .range-slider-double__labels {
+        display: flex;
+        justify-content: space-between;
+
+        .range-slider-double__label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: $range-slider-double--width;
+            height: $range-slider-double--height;
+            user-select: none;
+            background-color: $range-slider-double--background-color;
+            border: solid;
+            border-color: $range-slider-double--border-color;
+            border-width: $range-slider-double--border-width;
+            border-radius: $range-slider-double--border-radius;
+        }
+    }
+}
