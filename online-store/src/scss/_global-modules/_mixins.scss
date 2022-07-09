@@ -1,0 +1,13 @@
+// >----------------------------------------------------------------<
+// >                             MIXINS                             <
+// >----------------------------------------------------------------<
+
+@mixin wh($w: auto, $h: auto) { // @include wh(10px, 10px);
+    width: $w;
+    height: $h;
+}
+
+@mixin bgImgSVG($img, $w: auto, $h: auto) { // @include bgImgSVG("img.svg", 10px, 10px);
+    @include wh($w, $h);
+    background-image: url("./assets/svg/"+$img);
+}

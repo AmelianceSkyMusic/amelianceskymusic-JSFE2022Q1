@@ -1,8 +1,17 @@
 // >----------------------------------------------------------------<
 // >                            IMPORT                              <
 // >----------------------------------------------------------------<
-
+// @use "@material/theme" with (
+//     $primary: var(--color-el-1),
+//     $secondary: #feeae6,
+//     $on-primary: #442b2d,
+//     $on-secondary: #442b2d,
+// );
 @use "./scss/index" as *;
+// @use '@material/slider/slider-theme';
+// @include track-active-color(blue);
+// @use "@material/button/mdc-button";
+@use "@material/slider/styles";
 // @import "./custom";
 
 
@@ -15,7 +24,7 @@
 :root {
 
     // ^------------------------ size ------------------------
-    --size-w__block-container_desktop: 1216px; // block container --> 72px * 12 columns / gutter 32 px
+    --size-w__container_desktop: 1216px; // block container --> 72px * 12 columns / gutter 32 px
 
     // --size-h__block-container-header_desktop: 32px;
     // --size-h__block-container-main_desktop: auto;
@@ -30,11 +39,13 @@
 // >----------------------------------------------------------------<
 
 .container {
-//     max-height: 100%;
+    max-width: var(--size-w__container_desktop);
+    display: flex;
+    max-height: 100%;
     margin: 0 auto;
-//     @media (max-width: 1339px) {
-//         margin: 0 30px;
-//     }
+    @media (max-width: 1263px) {
+        margin: 0 24px;
+    }
 //     @media (max-width: 639px) {
 //         margin: 0 16px;
 //     }
@@ -43,6 +54,9 @@
 //     }
 }
 
+.h2, .h3 {
+    text-transform: uppercase;
+}
 
 
 
@@ -51,10 +65,22 @@
 // >----------------------------------------------------------------<
 
 .header {
-	min-height: 50px; // ! remove when add content
-	background: var(--color-fl-2);
+	// background: var(--color-fl-2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .container {
+        padding-top: 36px
+    }
+    .header__bar{
+        margin-left: auto;
+    }
 }
 
+.header__logo {
+    @include bgImgSVG("shoptobi-logo.svg", 132px, 48px);
+}
 
 
 
@@ -64,6 +90,92 @@
 
 .main {
 	background: var(--color-fl-0);
+    .container {
+        flex-direction: column;
+    }
+
+    .cover {
+        background-image: linear-gradient(180deg, rgba(46, 46, 46, 1), rgba(46, 46, 46, 0.7) 100%),
+                            url("./assets/img/cover-image.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 164px;
+        padding-bottom: 32px;
+        margin-bottom: 64px;
+        .p1{
+            font-size: 30px;
+        }
+    }
+
+    .catalog {
+        .container {
+            flex-direction: row;
+            gap: 32px;
+        }
+        margin-bottom: 64px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .content__heading {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .cards {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+
+        max-width: 1008px;
+        .card {
+            border-radius: 16px;
+            width: 176px;
+            height: 220px;
+            background: var(--color-fl-1);
+        }
+    }
+
+    .filters {
+        width: 176px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        .filters__container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .filter {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            .chackbox-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    }
 }
 
 
@@ -74,6 +186,6 @@
 // >----------------------------------------------------------------<
 
 .footer {
-	min-height: 50px; // ! remove when add content
+	height: 50px; // ! remove when add content
 	background: var(--color-fl-1);
 }

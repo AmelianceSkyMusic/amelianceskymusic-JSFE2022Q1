@@ -4,7 +4,7 @@
 }
 
 html {
-    font-size: 1px; // reset pixels for em / rem unit
+    // font-size: 1px; // reset pixels for em / rem unit
     scroll-behavior: smooth;
     // scroll-padding-top: 64px;
 }
@@ -17,7 +17,8 @@ h1, h2, h3, h4, h5, h6 {
 .body {
 	.body__container { // footer to bottom
 		display: grid;
-		grid-template-rows: auto 1fr auto;
+		// grid-template-rows: auto 1fr auto;
+		grid-template-rows: 1fr auto; // header absolute
 		min-height: 100vh;
 		margin: 0;
 	}
