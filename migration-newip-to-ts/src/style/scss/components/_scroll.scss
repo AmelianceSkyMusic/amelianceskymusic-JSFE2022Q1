@@ -4,11 +4,13 @@
         width: 8px;
         border-radius: var(--scroll-radius--border);
         background-color: var(--scroll-color--background);
-        @media (max-width: 480px) { & {
-            width: 4px;
-            height: 4px;
-        } }
 
+        @media (max-width: 480px) {
+            & {
+                width: 4px;
+                height: 4px;
+            }
+        }
     }
 
     &::-webkit-scrollbar-thumb {
@@ -28,11 +30,13 @@
         width: 8px;
         border-radius: var(--scroll-radius--border);
         background-color: none;
-        @media (max-width: 480px) { & {
-            width: 4px;
-            height: 4px;
-        } }
 
+        @media (max-width: 480px) {
+            & {
+                width: 4px;
+                height: 4px;
+            }
+        }
     }
 
     &::-webkit-scrollbar-thumb {

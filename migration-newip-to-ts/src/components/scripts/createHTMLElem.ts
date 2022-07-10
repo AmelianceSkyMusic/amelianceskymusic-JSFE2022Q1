@@ -1,7 +1,3 @@
-// >----------------------------------------------------------------<
-// >                           FUNCTIONS                            <
-// >----------------------------------------------------------------<
-
 export default function createHTMLElem(
     parent: HTMLElement | DocumentFragment,
     elementType: string,

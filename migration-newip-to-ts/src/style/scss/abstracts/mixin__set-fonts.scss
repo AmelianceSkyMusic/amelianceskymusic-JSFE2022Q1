@@ -1,7 +1,3 @@
-// >----------------------------------------------------------------<
-// >                            MIXINS                              <
-// >----------------------------------------------------------------<
-
 @mixin initFont($font-family-name, $font-path, $font-family-file, $font-weight) {
     font-family: $font-family-name;
     src: url($font-path + $font-family-file);

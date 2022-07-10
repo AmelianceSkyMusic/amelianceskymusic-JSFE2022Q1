@@ -13,13 +13,11 @@ export class AppView implements IAppView {
     }
 
     drawNews(data: Partial<NewsResponseData>): void {
-        // ? const values: NewsData[] = data.articles;
         const values: ArticleData[] = data?.articles ?? [];
         this.news.draw(values);
     }
 
     drawSources(data: Partial<SourcesResponseData>): void {
-        // ? const values: SourcesData[] = data?.sources;
         const values: SourcesData[] = data?.sources ?? [];
         this.sources.draw(values);
     }

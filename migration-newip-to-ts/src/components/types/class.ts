@@ -1,5 +1,3 @@
-// ? file realize classe's interfases
-
 import AppController from '../controller/controller';
 import AppView from '../view/appView';
 import News from '../view/news/news';

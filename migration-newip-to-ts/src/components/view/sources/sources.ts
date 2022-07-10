@@ -10,10 +10,9 @@ class Sources implements ISources {
             }
         }
 
-        const fragment = document.createDocumentFragment(); // ? as DocumentFragment;
+        const fragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
-        // ? QUESTION TO MENTOR: The cleaner way would be to not use .forEach. It's almost never needed if you're using TypeScript or a modern version of JavaScript
         data.forEach((item): void => {
             const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLElement;
 
