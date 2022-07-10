@@ -1,15 +1,4 @@
-// >----------------------------------------------------------------<
-// >                             IMPORT                             <
-// >----------------------------------------------------------------<
-
-// Edit this file for change style
-@use "varible__blackout" as *;
-
-
-
-// >----------------------------------------------------------------<
-// >                             CLASS                              <
-// >----------------------------------------------------------------<
+@use "varible__blackout"as *;
 
 .blackout {
     position: absolute;
@@ -25,6 +14,7 @@
     animation-name: hide-blackout;
     animation-duration: $blackout__animation-duration;
     animation-fill-mode: forwards;
+
     &.show {
         animation-name: show-blackout;
         animation-duration: 0;
@@ -32,11 +22,23 @@
         cursor: pointer;
     }
 }
+
 @keyframes show-blackout {
-    from { opacity: 0; }
-    to { opacity: $blackout__opacity; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: $blackout__opacity;
+    }
 }
+
 @keyframes hide-blackout {
-    from { opacity: $blackout__opacity; }
-    to { opacity: 0; }
+    from {
+        opacity: $blackout__opacity;
+    }
+
+    to {
+        opacity: 0;
+    }
 }

@@ -1,17 +1,3 @@
-// >----------------------------------------------------------------<
-// >                             IMPORT                             <
-// >----------------------------------------------------------------<
-
-// Edit this file for change style
-// @use "variables" as *;
-
-
-
-
-
-// >----------------------------------------------------------------<
-// >                           VARIBLES                             <
-// >----------------------------------------------------------------<
 $font-path: "../assets/fonts/";
 $font-primary__path: $font-path+"YesevaOne/";
 $font-secondary__path: $font-path+"Montserrat/static/";
@@ -19,20 +5,11 @@ $font-tertiary__path: $font-path+"Noto/static/NotoSansMono/";
 $font-primary__family-name: "Yeseva One";
 $font-secondary__family-name: "Montserrat";
 $font-tertiary__family-name: "Noto";
-
-
-// ^------------------------ fonts varibles ------------------------
-
-$font-family__primary:         "Yeseva One", serif;
-$font-family__secondary:       "Montserrat", system-ui;
-$font-family__tertiary:        "Noto", monospace;
-
-// $font-weight__black:       900;
-// $font-weight__extra-bold:  800;
-$font-weight__bold:        700;
-// $font-weight__semi-bold:   600;
-// $font-weight__medium:      500;
-$font-weight__regular:     400;
-// $font-weight__light:       300;
-// $font-weight__extra-light: 200;
-// $font-weight__thin:        100;
+$font-family__primary: "Yeseva One",
+serif;
+$font-family__secondary: "Montserrat",
+system-ui;
+$font-family__tertiary: "Noto",
+monospace;
+$font-weight__bold: 700;
+$font-weight__regular: 400;
