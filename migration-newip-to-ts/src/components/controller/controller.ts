@@ -1,7 +1,7 @@
 import AppLoader from './appLoader';
 import { AppView } from '../view/appView';
 import { IAppController } from '../types/class';
-import { DrawNewsData, DrawSourcesData, FilterOptions } from '../types/interface';
+import { NewsResponseData, DrawSourcesData, FilterOptions } from '../types/interface';
 import { createHTMLElem } from '../scripts/_asm';
 
 class AppController extends AppLoader implements IAppController {
@@ -14,7 +14,7 @@ class AppController extends AppLoader implements IAppController {
         super.getResp({ endpoint: 'sources', options: optionData }, callback);
     }
 
-    getNews(e: Event, callback: (newsData: Partial<DrawNewsData>) => void): void {
+    getNews(e: Event, callback: (newsData: Partial<NewsResponseData>) => void): void {
         let target = e.target as HTMLDivElement;
         const newsContainer = e.currentTarget as HTMLDivElement;
 
@@ -73,7 +73,7 @@ class AppController extends AppLoader implements IAppController {
                     country: 'ua',
                 },
             },
-            (data: Partial<DrawNewsData>): void => this.view.drawNews(data)
+            (data: Partial<NewsResponseData>): void => this.view.drawNews(data)
         );
 
         btnArticle$.addEventListener('click', (): void => {
@@ -116,7 +116,7 @@ class AppController extends AppLoader implements IAppController {
             (document.querySelector('.sources') as HTMLParagraphElement).addEventListener('click', closeSource);
 
             (document.querySelector('.sources') as HTMLDivElement).addEventListener('click', (e): void =>
-                this.getNews(e, (data: Partial<DrawNewsData>): void => this.view.drawNews(data))
+                this.getNews(e, (data: Partial<NewsResponseData>): void => this.view.drawNews(data))
             );
         });
 

@@ -22,7 +22,7 @@ export interface SourcesData {
     url: string;
 }
 
-export interface DrawNewsData {
+export interface NewsResponseData {
     status: string;
     totalResults: number;
     articles: ArticleData[];
