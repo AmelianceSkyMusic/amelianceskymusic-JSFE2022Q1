@@ -28,7 +28,7 @@ export interface NewsResponseData {
     articles: ArticleData[];
 }
 
-export interface DrawSourcesData {
+export interface SourcesResponseData {
     status: string;
     sources: {
         category: string;

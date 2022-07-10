@@ -1,7 +1,7 @@
 import AppLoader from './appLoader';
 import { AppView } from '../view/appView';
 import { IAppController } from '../types/class';
-import { NewsResponseData, DrawSourcesData, FilterOptions } from '../types/interface';
+import { NewsResponseData, SourcesResponseData, FilterOptions } from '../types/interface';
 import { createHTMLElem } from '../scripts/_asm';
 
 class AppController extends AppLoader implements IAppController {
@@ -10,7 +10,7 @@ class AppController extends AppLoader implements IAppController {
         super();
         this.view = new AppView();
     }
-    getSources(callback: (newsData: Partial<DrawSourcesData>) => void, optionData?: Partial<FilterOptions>): void {
+    getSources(callback: (newsData: Partial<SourcesResponseData>) => void, optionData?: Partial<FilterOptions>): void {
         super.getResp({ endpoint: 'sources', options: optionData }, callback);
     }
 
@@ -59,7 +59,7 @@ class AppController extends AppLoader implements IAppController {
                 sortBy: filterSortTypeChecked,
             };
 
-            this.getSources((data: Partial<DrawSourcesData>): void => this.view.drawSources(data), optionsFiltered);
+            this.getSources((data: Partial<SourcesResponseData>): void => this.view.drawSources(data), optionsFiltered);
         });
     }
 
@@ -97,7 +97,7 @@ class AppController extends AppLoader implements IAppController {
             });
             createHTMLElem(sourcesClose$, 'span', { class: 'label' }, '×');
 
-            this.getSources((data: Partial<DrawSourcesData>): void => this.view.drawSources(data));
+            this.getSources((data: Partial<SourcesResponseData>): void => this.view.drawSources(data));
 
             const closeSource = (): void => {
                 sources$.classList.remove('show');

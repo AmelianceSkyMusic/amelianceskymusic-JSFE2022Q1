@@ -4,17 +4,17 @@ import AppController from '../controller/controller';
 import AppView from '../view/appView';
 import News from '../view/news/news';
 import Sources from '../view/sources/sources';
-import { NewsResponseData, DrawSourcesData, ArticleData, SourcesData } from './interface';
+import { NewsResponseData, SourcesResponseData, ArticleData, SourcesData } from './interface';
 
 export interface ILoader {
     getResp(
         { endpoint, options }: { endpoint: string; options?: { sources?: string } },
-        callback: (data: Partial<NewsResponseData> | Partial<DrawSourcesData>) => void
+        callback: (data: Partial<NewsResponseData> | Partial<SourcesResponseData>) => void
     ): void;
 }
 
 export interface IAppController extends Partial<ILoader> {
-    getSources(callback: (newsData: Partial<DrawSourcesData>) => void): void;
+    getSources(callback: (newsData: Partial<SourcesResponseData>) => void): void;
     getNews(e: Event, callback: (someData: Partial<NewsResponseData>) => void): void;
 }
 
@@ -35,5 +35,5 @@ export interface IAppView {
     news: News;
     sources: Sources;
     drawNews(data: NewsResponseData): void;
-    drawSources(data: DrawSourcesData): void;
+    drawSources(data: SourcesResponseData): void;
 }
