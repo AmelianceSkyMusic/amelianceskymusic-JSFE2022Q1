@@ -34,7 +34,7 @@ class Loader implements ILoader {
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key): void => {
-            url += `${key}=${urlOptions[key]}&`; // https://newsapi.org/v2/sources?apiKey=2e5debdad61a4b9cb982ed04656c99f7&
+            url += `${key}=${urlOptions[key]}&`;
         });
         return url.slice(0, -1);
     }

@@ -47,7 +47,7 @@ class AppController extends AppLoader implements IAppController {
             const filterLanguage$ = document.querySelector('.language__selection') as HTMLSelectElement;
             const filterSortType$ = document.querySelectorAll('.sort__type') as NodeListOf<HTMLInputElement>;
 
-            let filterSortTypeChecked: string; // ?
+            let filterSortTypeChecked: string;
             filterSortTypeChecked = 'publishedAt';
 
             for (const item of filterSortType$) {
@@ -79,7 +79,7 @@ class AppController extends AppLoader implements IAppController {
         btnArticle$.addEventListener('click', (): void => {
             const body$: HTMLBodyElement = document.querySelector('body') as HTMLBodyElement;
 
-            const fragment$: DocumentFragment = new DocumentFragment() as DocumentFragment; // createvirtual fragment for compose no parent node
+            const fragment$: DocumentFragment = new DocumentFragment() as DocumentFragment;
             const zeroBlock$: HTMLElement = createHTMLElem(fragment$, 'div', { class: 'zero-block' });
 
             const blackout$: HTMLElement = createHTMLElem(zeroBlock$, 'div', { class: 'blackout' });
