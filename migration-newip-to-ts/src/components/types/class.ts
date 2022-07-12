@@ -5,9 +5,9 @@ import Sources from '../view/sources/sources';
 import { NewsResponseData, SourcesResponseData, ArticleData, SourcesData } from './interface';
 
 export interface ILoader {
-    getResp(
+    getResp<T>(
         { endpoint, options }: { endpoint: string; options?: { sources?: string } },
-        callback: (data: Partial<NewsResponseData> | Partial<SourcesResponseData>) => void
+        callback: (data: T) => void
     ): void;
 }
 
