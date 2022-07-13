@@ -1,5 +1,5 @@
 import AppModel from '../models/AppModel';
-// import AppView from '../views/AppView';
+import AppView from '../views/AppView';
 export default class App {
 	state: { [key: string]: string };
 	constructor() {
@@ -16,9 +16,7 @@ export default class App {
 	async start() {
 		const model = new AppModel(this.state);
 		const data = await model.getCards();
-		console.log('->', data);
-
-		// const view = new AppView(data);
-		// view.render();
+		const view = new AppView(data);
+		view.render();
 	}
 }
