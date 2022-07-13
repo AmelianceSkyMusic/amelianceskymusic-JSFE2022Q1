@@ -1,10 +1,11 @@
 import devs from '../devs';
+import { ICard } from '../types/interfaces';
 
 export default class AppModel {
 	constructor(public state: {[key: string]: string}) {}
 
-	async getGoogleSheetsData(): Promise<{ [key: string]: string[]; }> {
-		const { url } = this.state;
+	static async getGoogleSheetsData(url: string): Promise<{ [key: string]: string[]; }> {
+
 		const response = await fetch(url);
 
 		const dataObj: { [key: string]: string[] } = {};
@@ -36,17 +37,23 @@ export default class AppModel {
 	}
 
 	async getCards() {
-		const dataObj = await this.getGoogleSheetsData();
+		const { url } = this.state;
 
-		const cards: {[key: string]: string}[] = [];
+		const dataObj = await AppModel.getGoogleSheetsData(url);
+
+		const cards: ICard[] = [];
 
 		// *----- convert data object heading based to cards array index based-----
-		for (let i = 0; i < dataObj.id.length - 1; i++) {
-			const card: {[key: string]: string} = {};
+		for (let i = 0; i < dataObj.id.length; i++) {
+			const card: { [key: string]: string | number } = {}; // TODO: rewrite to ICard
 			Object.keys(dataObj).forEach(el => {
-				card[el] = dataObj[el][i] || '';
+				card[el] = dataObj[el][i];
 			});
-			cards.push (card);
+
+			card['id'] = i;
+			card['inCart'] = 0;
+
+			cards.push(card);
 		}
 
 		return cards;
