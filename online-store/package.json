@@ -1,23 +1,23 @@
 {
-  "name": "my-webpack-project",
+  "name": "online-store",
   "version": "1.0.0",
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production --node-env=production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
     "serve": "webpack serve",
-    "start": "webpack serve",
     "dev": "webpack --mode=development --watch",
     "predeploy": "npm run build",
-    "gh-pages": "gh-pages -d dist"
+    "gh-pages": "gh-pages -d dist -e online-store-part1",
+    "build": "webpack --mode=production --node-env=production",
+    "start": "webpack serve"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmelianceSkyMusic/webpack-ts.git"
+    "url": ""
   },
   "keywords": [
     "webpack",
@@ -27,9 +27,9 @@
   "author": "Ameliance SkyMusic <amelianceskymusic@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AmelianceSkyMusic/webpack-ts/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/AmelianceSkyMusic/webpack-ts#readme",
+  "homepage": "",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
