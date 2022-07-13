@@ -8,7 +8,6 @@ module.exports = {
 	'extends': [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
-		// 'plugin:@typescript-eslint/recommended-requiring-type-checking'
 	],
 	'parser': '@typescript-eslint/parser',
 	'parserOptions': {
@@ -36,5 +35,13 @@ module.exports = {
 			'always'
 		],
 		'@typescript-eslint/no-explicit-any': 2, // 0 - off, 1 - warn, 2 - error
-	}
+	},
+	'overrides': [
+		{
+			'files': ['_legacy/*.*'],
+			'rules': {
+
+			}
+		}
+	]
 };
