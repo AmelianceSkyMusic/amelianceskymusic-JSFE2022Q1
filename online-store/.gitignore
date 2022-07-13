@@ -2,12 +2,11 @@
 /dist
 
 #amelianceskymusic own modules
-/src/**/asm-components
+*.-asm-*
+-asm-*
 
-/**/_legacy*
 *._legacy*
 _legacy*
 
-/**/_backup*
 *._backup*
 _backup*
