@@ -25,5 +25,7 @@
         #{--font__font-weight_ + $elem}: #{$font-weight};
         #{--font__letter-spacing_ + $elem}: #{$letter-spacing};
         #{--font__font-style_ + $elem}: #{$font-style};
+        margin: 0;
+        padding: 0;
     }
 }
