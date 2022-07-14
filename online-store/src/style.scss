@@ -1,18 +1,8 @@
 // >----------------------------------------------------------------<
 // >                            IMPORT                              <
 // >----------------------------------------------------------------<
-// @use "@material/theme" with (
-//     $primary: var(--color-el-1),
-//     $secondary: #feeae6,
-//     $on-primary: #442b2d,
-//     $on-secondary: #442b2d,
-// );
+
 @use "./scss/index" as *;
-// @use '@material/slider/slider-theme';
-// @include track-active-color(blue);
-// @use "@material/button/mdc-button";
-@use "@material/slider/styles";
-// @import "./custom";
 
 
 
@@ -130,20 +120,6 @@
         .content__heading {
             display: flex;
             justify-content: space-between;
-        }
-    }
-
-    .cards {
-        display: flex;
-        gap: 32px;
-        flex-wrap: wrap;
-
-        max-width: 1008px;
-        .card {
-            border-radius: 16px;
-            width: 176px;
-            height: 220px;
-            background: var(--color-fl-1);
         }
     }
 
