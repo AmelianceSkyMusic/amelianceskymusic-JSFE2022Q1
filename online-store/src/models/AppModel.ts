@@ -1,4 +1,4 @@
-import devs from '../devs';
+import { devs } from '../asm-scripts';
 import { ICard } from '../types/interfaces';
 
 export default class AppModel {

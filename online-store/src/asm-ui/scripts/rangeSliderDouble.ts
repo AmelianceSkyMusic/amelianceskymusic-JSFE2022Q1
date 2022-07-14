@@ -11,7 +11,7 @@ interface IRangeSliderDoubleObj {
 	step?: number,
 }
 
-function rangeSliderDouble(
+export function rangeSliderDouble (
 	siderComponent$: HTMLElement, {
 		minGap = 10,
 		range = [0, 100],
@@ -111,5 +111,3 @@ function rangeSliderDouble(
 
 	fillColor();
 }
-
-export default rangeSliderDouble;

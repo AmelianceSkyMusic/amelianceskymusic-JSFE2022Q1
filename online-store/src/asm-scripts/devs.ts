@@ -2,8 +2,6 @@ const error = (...msg: unknown[]): void => {
 	console.log('ASM | ERROR -->', ...msg);
 };
 
-const devs = {
+export const devs = {
 	error
 };
-
-export default devs;

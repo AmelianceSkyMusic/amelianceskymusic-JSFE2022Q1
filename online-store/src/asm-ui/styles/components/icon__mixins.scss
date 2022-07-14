@@ -1,3 +1,4 @@
+@use "../_global-modules/varibles" as *;
 // >----------------------------------------------------------------<
 // >                            MIXINS                              <
 // >----------------------------------------------------------------<
@@ -6,8 +7,8 @@
     background: $icon-color;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-image: url("./assets/svg/" + $img);
-    -webkit-mask-image: url("./assets/svg/" + $img);
+    mask-image: url($path-assets + "svg/" + $img);
+    -webkit-mask-image: url($path-assets + "svg/" + $img);
     // @media (hover: hover) {
     //     &:hover {
     //         cursor: pointer;

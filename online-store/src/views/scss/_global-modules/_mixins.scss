@@ -1,3 +1,5 @@
+@use "varibles" as *;
+
 // >----------------------------------------------------------------<
 // >                             MIXINS                             <
 // >----------------------------------------------------------------<
@@ -9,5 +11,5 @@
 
 @mixin bgImgSVG($img, $w: auto, $h: auto) { // @include bgImgSVG("img.svg", 10px, 10px);
     @include wh($w, $h);
-    background-image: url("./assets/svg/"+$img);
+    background-image: url($path-assets-svg + $img);
 }

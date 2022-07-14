@@ -1,0 +1,1 @@
+export { rangeSliderDouble } from './rangeSliderDouble';
