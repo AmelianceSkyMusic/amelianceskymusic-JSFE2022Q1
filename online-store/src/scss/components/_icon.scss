@@ -1,0 +1,58 @@
+// >----------------------------------------------------------------<
+// >                             IMPORT                             <
+// >----------------------------------------------------------------<
+
+// Edit this file for change style
+@use "varible__icon" as *;
+@use "mixin__icon" as *;
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+
+
+// >----------------------------------------------------------------<
+// >                             CLASS                              <
+// >----------------------------------------------------------------<
+
+// .icon-medium {
+//     font-size: 24rem;
+//     color: $icon-color;
+//     cursor: pointer;
+//     &:hover {
+//         color: $icon-color_hover;
+//     }
+// }
+
+.card__brand-logo {
+    width: 80px;
+    height: 24px;
+    align-self: end;
+    background-attachment: fixed;
+    background-position: right;
+    -webkit-mask-position: top left;
+    mask-position: top left;
+    &.nike {
+        @include maskIconSVG("nike.svg", $icon-color, $icon-color_hover);
+    }
+    &.adidas {
+        @include maskIconSVG("adidas.svg", $icon-color, $icon-color_hover);
+    }
+    &.reebok {
+        @include maskIconSVG("reebok.svg", $icon-color, $icon-color_hover);
+    }
+    &.puma {
+        @include maskIconSVG("puma.svg", $icon-color, $icon-color_hover);
+    }
+    &.new-balance {
+        @include maskIconSVG("new-balance.svg", $icon-color, $icon-color_hover);
+    }
+}
+
+// .icon-big {
+//     width: 60px;
+//     height: 60px;
+
+//     &_pet-food {
+//         @include maskImgSVG("icon-big--pet-food.svg", $icon-big__color, $icon-big__color_hover);
+//     }
+// }
