@@ -1,0 +1,93 @@
+.cards {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    max-width: 1008px;
+
+    .card {
+        border-radius: 16px;
+        width: 176px;
+        min-height: 300px;
+        background: var(--color-fl-1);
+        display: flex;
+        flex-direction: column;
+        padding: 16px 16px;
+        gap: 12px;
+
+        .card__img {
+            width: 144px;
+            height: 80px;
+            transition: box-shadow 0.3s ease-in-out,
+            transform 0.3s ease-in-out;
+
+        }
+
+        .card__title {
+            text-transform: capitalize;
+        }
+
+        .card__brand-block,
+        .card__info-block,
+        .card__count-block {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card__info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+            height: 96px;
+        }
+
+
+        .card__count-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        transition: box-shadow 0.2s ease-in-out;
+        @media (hover: hover) {
+            &:hover {
+                box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.25);
+                .card__img {
+                    transform: scale(1.02)
+                }
+            }
+        }
+    }
+
+    .card-preloader {
+        .card-preloader__img {
+            background: var(--color-fl-2);
+            width: 144px;
+            height: 80px;
+            margin: 0 auto;
+            margin-top: 42px;
+            border-radius: 8px;
+            animation-name: cardPreloader;
+            animation-duration: 0.6s;
+            animation-timing-function: ease-in;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    @keyframes cardPreloader {
+        0% { transform: scale(0.9); }
+        100% { transform: scale(1); }
+    }
+
+    .button {
+        width: 32px;
+        height: 32px;
+        background: var(--color-el-1);
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+    }
+
+}
