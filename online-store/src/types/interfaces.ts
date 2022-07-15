@@ -1,4 +1,3 @@
-
 export interface ICard {
 	price?: string,
     name?: string,
