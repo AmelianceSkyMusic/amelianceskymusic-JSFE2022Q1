@@ -22,7 +22,6 @@
 			<div class="container">
 				<a class="header__logo" href="#"></a>
 				<div class="header__bar">
-					<input class="search" type="search" name="seatch" id="search">
 					<button type="button" class="button">
 						<span class="material-symbols-rounded">shopping_bag</span>
 						<span>(10)</span>
@@ -57,18 +56,13 @@
 						<div class="filters__container">
 							<div class="filter filter__stock-balance">
 								<h3 class="h3">Stock Balance</h3>
-								<!-- <div class="range-slider-double"> -->
-									<!-- <div class="range-slider-double__track"></div> -->
-									<!-- <input class="c1" type="range" name="" id="sleder-1" min="0" max="100" value="30"> -->
-									<!-- <input class="c1" type="range" name="" id="sleder-2" min="0" max="100" value="70"> -->
-								<!-- </div> -->
 
 								<div class="range-slider-double" id="range-slider-double-stock-balance">
 									<div class="range-slider-double__range">
 										<div class="range-slider-double__track-bg"></div>
 										<div class="range-slider-double__track" id="range-slider-double__track"></div>
-										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="30">
-										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="70">
+										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="0">
+										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="100">
 									</div>
 									<div class="range-slider-double__labels" id="range-slider-double__labels">
 										<span class="p1 range-slider-double__label" id="range-slider-double__label-1">$ 60</span>
@@ -76,25 +70,6 @@
 									</div>
 								</div>
 
-								<!-- <div id="slider-balance"></div> -->
-								<!-- <div class="mdc-slider mdc-slider--range"> -->
-									<!-- <input class="mdc-slider__input" type="range" min="0" max="70" value="30" name="rangeStart" -->
-										<!-- aria-label="Continuous range slider demo"> -->
-									<!-- <input class="mdc-slider__input" type="range" min="30" max="100" value="70" name="rangeEnd" -->
-										<!-- aria-label="Continuous range slider demo"> -->
-									<!-- <div class="mdc-slider__track"> -->
-										<!-- <div class="mdc-slider__track--inactive"></div> -->
-										<!-- <div class="mdc-slider__track--active"> -->
-											<!-- <div class="mdc-slider__track--active_fill"></div> -->
-										<!-- </div> -->
-									<!-- </div> -->
-									<!-- <div class="mdc-slider__thumb"> -->
-										<!-- <div class="mdc-slider__thumb-knob"></div> -->
-									<!-- </div> -->
-									<!-- <div class="mdc-slider__thumb"> -->
-										<!-- <div class="mdc-slider__thumb-knob"></div> -->
-									<!-- </div> -->
-								<!-- </div> -->
 							</div>
 							<div class="filter filter__year">
 								<h3 class="h3">Year</h3>
@@ -102,8 +77,8 @@
 									<div class="range-slider-double__range">
 										<div class="range-slider-double__track-bg"></div>
 										<div class="range-slider-double__track" id="range-slider-double__track"></div>
-										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="30">
-										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="70">
+										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="0">
+										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="100">
 									</div>
 									<div class="range-slider-double__labels" id="range-slider-double__labels">
 										<span class="p1 range-slider-double__label" id="range-slider-double__label-1">2014</span>
@@ -111,78 +86,103 @@
 									</div>
 								</div>
 							</div>
+
+							<div class="filter filter__balance">
+								<h3 class="h3">Balance</h3>
+								<div class="range-slider-double" id="range-slider-double-year">
+									<div class="range-slider-double__range">
+										<div class="range-slider-double__track-bg"></div>
+										<div class="range-slider-double__track" id="range-slider-double__track"></div>
+										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="0">
+										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="100">
+									</div>
+									<div class="range-slider-double__labels" id="range-slider-double__labels">
+										<span class="p1 range-slider-double__label" id="range-slider-double__label-1">1</span>
+										<span class="p1 range-slider-double__label" id="range-slider-double__label-2">610</span>
+									</div>
+								</div>
+							</div>
+
 							<div class="filter filter__brand">
 								<h3 class="h3">Brand</h3>
 								<div class="checkbox-container">
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns1">
-										<label for="horns1">Nike</label>
+										<input type="checkbox" id="checkbox-brand-adidas" name="checkbox-brand" value="adidas">
+										<label class="p1" for="checkbox-brand-adidas">Adidas</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns2">
-										<label for="horns2">Adidas</label>
+										<input type="checkbox" id="checkbox-brand-new-balance" name="checkbox-brand" value="new-balance">
+										<label class="p1" for="checkbox-brand-new-balance">New Balance</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns3">
-										<label for="horns3">New Balance</label>
+										<input type="checkbox" id="checkbox-brand-nike" name="checkbox-brand" value="nike">
+										<label class="p1" for="checkbox-brand-nike">Nike</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns4">
-										<label for="horns4">Baba Galya</label>
+										<input type="checkbox" id="checkbox-brand-puma" name="checkbox-brand" value="puma">
+										<label class="p1" for="checkbox-brand-puma">Puma</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox-brand-reebok" name="checkbox-brand" value="reebok">
+										<label class="p1" for="checkbox-brand-reebok">Reebok</label>
 									</div>
 								</div>
 							</div>
+
 							<div class="filter filter__popularity">
 								<h3 class="h3">Popularity</h3>
 								<div class="checkbox-container">
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns1">
-										<label for="horns1">Popular</label>
+										<input type="checkbox" id="checkbox-popular-top" name="checkbox-popular" value="top">
+										<label class="p1" for="checkbox-popular-top">TOP</label>
 									</div>
 								</div>
 							</div>
+
 							<div class="filter filter__color">
 								<h3 class="h3">Color</h3>
 								<div class="checkbox-container">
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns1">
-										<label for="horns1">black</label>
+										<input type="checkbox" id="checkbox-color-black" name="checkbox-color" value="black">
+										<label class="p1" for="checkbox-color-black">black</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns2">
-										<label for="horns2">white</label>
+										<input type="checkbox" id="checkbox-color-white" name="checkbox-color" value="white">
+										<label class="p1" for="checkbox-color-white">white</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns3">
-										<label for="horns3">Colored</label>
+										<input type="checkbox" id="checkbox-color-blue" name="checkbox-color" value="blue">
+										<label class="p1" for="checkbox-color-blue">Blue</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns4">
-										<label for="horns4">Blue</label>
+										<input type="checkbox" id="checkbox-color-red" name="checkbox-color" value="red">
+										<label class="p1" for="checkbox-color-red">Red</label>
 									</div>
 								</div>
 							</div>
+
 							<div class="filter filters__size">
 								<h3 class="h3">Size</h3>
 								<div class="checkbox-container">
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns1">
-										<label for="horns1">Nike</label>
+										<input type="checkbox" id="checkbox-size-4" name="size" value="4">
+										<label class="p1" for="checkbox-size-4">4</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns2">
-										<label for="horns2">Adidas</label>
+										<input type="checkbox" id="checkbox-size-5" name="size" value="5">
+										<label class="p1" for="checkbox-size-5">5</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns3">
-										<label for="horns3">New Balance</label>
+										<input type="checkbox" id="checkbox-size-6" name="size" value="6">
+										<label class="p1" for="checkbox-size-6">6</label>
 									</div>
 									<div class="chackbox-item">
-										<input type="checkbox" id="horns" name="horns4">
-										<label for="horns4">Baba Galya</label>
+										<input type="checkbox" id="checkbox-size-7" name="size" value="7">
+										<label class="p1" for="checkbox-size-7">7</label>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</section>
 
@@ -190,8 +190,9 @@
 					<section class="content">
 						<!-- ^--------------------------- Heading ----------------------------- -->
 						<div class="content__heading">
-							<h2 class="h2">Find (130)</h2>
-							<select name="sort" id="sort">
+							<input class="cards-search" type="search" name="seatch" id="search">
+							<select class="cards-sort" name="sort" id="sort">
+								<option value="default">Sort by default</option>
 								<option value="az">Sort by name (A-Z)</option>
 								<option value="za">Sort by name (Z-A)</option>
 								<option value="newest">Sort by year (newest first)</option>
@@ -201,187 +202,20 @@
 
 						<!-- ^--------------------------- Cards ----------------------------- -->
 						<div class="cards">
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
-							<div class="card card-preloader">
-								<div class="card-preloader__img">
-									<div class="loader">
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-							</div>
+
 						</div>
+						<script>
+							const cardsD = document.querySelector('.cards');
+							for (let i = 0; i < 20; i++) {
+								cardsD.innerHTML += `
+									<div class="card card-preloader">
+										<div class="card-preloader__img">
+											<div class="loader"><div></div><div></div><div></div></div>
+										</div>
+									</div>
+								`;
+							}
+						</script>
 					</section>
 
 
@@ -390,6 +224,7 @@
 
 
 		</main>
+
 
 
 
