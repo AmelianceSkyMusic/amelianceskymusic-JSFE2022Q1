@@ -54,15 +54,95 @@
 					<section class="filters">
 						<h2 class="h2">Filters</h2>
 						<div class="filters__container">
-							<div class="filter filter__stock-balance">
-								<h3 class="h3">Stock Balance</h3>
 
-								<div class="range-slider-double" id="range-slider-double-stock-balance">
+							<div class="filter filter__brand">
+								<h3 class="h3">Brand</h3>
+								<div class="checkbox-container">
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__brand-adidas" name="checkbox__brand" value="adidas">
+										<label class="p1" for="checkbox__brand-adidas">Adidas</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__brand-new-balance" name="checkbox__brand" value="new-balance">
+										<label class="p1" for="checkbox__brand-new-balance">New Balance</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__brand-nike" name="checkbox__brand" value="nike">
+										<label class="p1" for="checkbox__brand-nike">Nike</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__brand-puma" name="checkbox__brand" value="puma">
+										<label class="p1" for="checkbox__brand-puma">Puma</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__brand-reebok" name="checkbox__brand" value="reebok">
+										<label class="p1" for="checkbox__brand-reebok">Reebok</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="filter filter__popularity">
+								<h3 class="h3">Popularity</h3>
+								<div class="checkbox-container">
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__popular-top" name="checkbox__popular" value="top">
+										<label class="p1" for="checkbox__popular-top">TOP</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="filter filter__color">
+								<h3 class="h3">Color</h3>
+								<div class="checkbox-container">
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__color-black" name="checkbox__color" value="black">
+										<label class="p1" for="checkbox__color-black">black</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__color-white" name="checkbox__color" value="white">
+										<label class="p1" for="checkbox__color-white">white</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__color-blue" name="checkbox__color" value="blue">
+										<label class="p1" for="checkbox__color-blue">Blue</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__color-red" name="checkbox__color" value="red">
+										<label class="p1" for="checkbox__color-red">Red</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="filter filter__size">
+								<h3 class="h3">Size</h3>
+								<div class="checkbox-container">
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__size-4" name="checkbox__size" value="4">
+										<label class="p1" for="checkbox__size-4">4</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__size-5" name="checkbox__size" value="5">
+										<label class="p1" for="checkbox__size-5">5</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__size-6" name="checkbox__size" value="6">
+										<label class="p1" for="checkbox__size-6">6</label>
+									</div>
+									<div class="chackbox-item">
+										<input type="checkbox" id="checkbox__size-7" name="checkbox__size" value="7">
+										<label class="p1" for="checkbox__size-7">7</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="filter filter__price">
+								<h3 class="h3">Price</h3>
+								<div class="range-slider-double" id="range-slider-double-price">
 									<div class="range-slider-double__range">
 										<div class="range-slider-double__track-bg"></div>
 										<div class="range-slider-double__track" id="range-slider-double__track"></div>
-										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="0">
-										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="100">
+										<input type="range" name="range__low-price" id="range-slider-double__slider-1" min="0" max="100" value="0">
+										<input type="range" name="range__hi-price" id="range-slider-double__slider-2" min="0" max="100" value="100">
 									</div>
 									<div class="range-slider-double__labels" id="range-slider-double__labels">
 										<span class="p1 range-slider-double__label" id="range-slider-double__label-1">$ 60</span>
@@ -77,8 +157,8 @@
 									<div class="range-slider-double__range">
 										<div class="range-slider-double__track-bg"></div>
 										<div class="range-slider-double__track" id="range-slider-double__track"></div>
-										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="0">
-										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="100">
+										<input type="range" name="range__low-year" id="range-slider-double__slider-1" min="0" max="100" value="0">
+										<input type="range" name="range__hi-year" id="range-slider-double__slider-2" min="0" max="100" value="100">
 									</div>
 									<div class="range-slider-double__labels" id="range-slider-double__labels">
 										<span class="p1 range-slider-double__label" id="range-slider-double__label-1">2014</span>
@@ -93,92 +173,12 @@
 									<div class="range-slider-double__range">
 										<div class="range-slider-double__track-bg"></div>
 										<div class="range-slider-double__track" id="range-slider-double__track"></div>
-										<input type="range" name="" id="range-slider-double__slider-1" min="0" max="100" value="0">
-										<input type="range" name="" id="range-slider-double__slider-2" min="0" max="100" value="100">
+										<input type="range" name="range__low-balance" id="range-slider-double__slider-1" min="0" max="100" value="0">
+										<input type="range" name="range__hi-balance" id="range-slider-double__slider-2" min="0" max="100" value="100">
 									</div>
 									<div class="range-slider-double__labels" id="range-slider-double__labels">
 										<span class="p1 range-slider-double__label" id="range-slider-double__label-1">1</span>
 										<span class="p1 range-slider-double__label" id="range-slider-double__label-2">610</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="filter filter__brand">
-								<h3 class="h3">Brand</h3>
-								<div class="checkbox-container">
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-brand-adidas" name="checkbox-brand" value="adidas">
-										<label class="p1" for="checkbox-brand-adidas">Adidas</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-brand-new-balance" name="checkbox-brand" value="new-balance">
-										<label class="p1" for="checkbox-brand-new-balance">New Balance</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-brand-nike" name="checkbox-brand" value="nike">
-										<label class="p1" for="checkbox-brand-nike">Nike</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-brand-puma" name="checkbox-brand" value="puma">
-										<label class="p1" for="checkbox-brand-puma">Puma</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-brand-reebok" name="checkbox-brand" value="reebok">
-										<label class="p1" for="checkbox-brand-reebok">Reebok</label>
-									</div>
-								</div>
-							</div>
-
-							<div class="filter filter__popularity">
-								<h3 class="h3">Popularity</h3>
-								<div class="checkbox-container">
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-popular-top" name="checkbox-popular" value="top">
-										<label class="p1" for="checkbox-popular-top">TOP</label>
-									</div>
-								</div>
-							</div>
-
-							<div class="filter filter__color">
-								<h3 class="h3">Color</h3>
-								<div class="checkbox-container">
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-color-black" name="checkbox-color" value="black">
-										<label class="p1" for="checkbox-color-black">black</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-color-white" name="checkbox-color" value="white">
-										<label class="p1" for="checkbox-color-white">white</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-color-blue" name="checkbox-color" value="blue">
-										<label class="p1" for="checkbox-color-blue">Blue</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-color-red" name="checkbox-color" value="red">
-										<label class="p1" for="checkbox-color-red">Red</label>
-									</div>
-								</div>
-							</div>
-
-							<div class="filter filters__size">
-								<h3 class="h3">Size</h3>
-								<div class="checkbox-container">
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-size-4" name="size" value="4">
-										<label class="p1" for="checkbox-size-4">4</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-size-5" name="size" value="5">
-										<label class="p1" for="checkbox-size-5">5</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-size-6" name="size" value="6">
-										<label class="p1" for="checkbox-size-6">6</label>
-									</div>
-									<div class="chackbox-item">
-										<input type="checkbox" id="checkbox-size-7" name="size" value="7">
-										<label class="p1" for="checkbox-size-7">7</label>
 									</div>
 								</div>
 							</div>
