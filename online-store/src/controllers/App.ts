@@ -1,3 +1,4 @@
+import { RangeSliderDouble } from '../asm-ui/scripts';
 import { shuffleArray } from '../asm-scripts';
 import AppModel from '../models/AppModel';
 import { ICard } from '../types/interfaces';
@@ -20,7 +21,7 @@ export default class App {
 	data: ICard[] = [];
 	view: AppView;
 	filters: IFilters;
-	// filters: { {[key: string]: string[]}{}  };
+
 	constructor() {
 		this.state = {
 			sheetID: '11IF6n311xG3ycdE_mOQaZizL7NFzeynvFu2ni1sghQ0',
@@ -28,22 +29,23 @@ export default class App {
 			sheetRange: '',
 			get url() {
 				return 'https://docs.google.com/spreadsheets/d/' + this.sheetID +
-						'/gviz/tq?tqx=out:json&sheet=' + this.sheetTitle + '&range=' + this.sheetRange;
+				'/gviz/tq?tqx=out:json&sheet=' + this.sheetTitle + '&range=' + this.sheetRange;
 			}
 		};
 		this.view = new AppView();
 		this.filters = {
-			'price': [],
-			'year': [],
-			'balance': [],
-			'brand': [],
-			'popular': [],
-			'color': [],
-			'size': []
+			price: [],
+			year: [],
+			balance: [],
+			brand: [],
+			popular: [],
+			color: [],
+			size: []
 		};
 	}
 
 	async start() {
+		this.addRangeFilters();
 		const model = new AppModel(this.state);
 		const data = await model.getCards();
 		this.initData = shuffleArray(data);
@@ -53,12 +55,76 @@ export default class App {
 
 		this.search();
 		this.filter();
-		this.applyFilters();
+	}
+
+	addRangeFilters() {
+
+		const getRangeSliderDoubleFilter = (event: Event, ) => {
+			const target$ = event.currentTarget as HTMLInputElement;
+			const slider1$ = target$.querySelector('#range-slider-double__slider-1') as HTMLInputElement;
+			const slider2$ = target$.querySelector('#range-slider-double__slider-2') as HTMLInputElement;
+
+			const inputNameArr1 = slider1$.name.split('__');
+			const inputName1 = inputNameArr1[inputNameArr1.length - 1];
+
+			const params = this.filters[inputName1 as keyof IFilters] as string[];
+			params[0] = slider1$.value;
+			params[1] = slider2$.value;
+
+			console.log(slider1$.value, slider2$.value);
+
+
+			this.applyFilters();
+		};
+
+		const siderStockPrice$ = document.querySelector('#range-slider-double__price') as HTMLDivElement;
+		new RangeSliderDouble(siderStockPrice$, {
+			labelPrefix1: '$ ',
+			labelPrefix2: '$ ',
+			range: [60, 150],
+			step: [10, 10],
+			minGap: 10
+		}).render();
+		siderStockPrice$.addEventListener('input', getRangeSliderDoubleFilter, true);
+
+		const siderYear$ = document.querySelector('#range-slider-double__year') as HTMLDivElement;
+		new RangeSliderDouble(siderYear$, {
+			range: [2014, 2022],
+			startValues: [2014, 2022],
+			minGap: 1,
+		}).render();
+		siderYear$.addEventListener('input', getRangeSliderDoubleFilter);
+
+		const siderBalance$ = document.querySelector('#range-slider-double__balance') as HTMLDivElement;
+		new RangeSliderDouble(siderBalance$, {
+			range: [1, 61],
+			startValues: [1, 61],
+			step: [5, 5],
+			minGap: 10,
+		}).render();
+		siderBalance$.addEventListener('input', getRangeSliderDoubleFilter);
+
 	}
 
 	applyFilters() {
 
 		this.data = this.initData;
+
+		const filterByRange = (dataArray: ICard[], property: string, valuesArray: number[]): ICard[] => {
+			const resultData: ICard[] = [];
+			if (valuesArray.length > 0) {
+				for (const cardObj of dataArray) {
+					const prop = (cardObj[property as keyof ICard])?.toString() || '';
+					if(Number(prop) >= valuesArray[0] && Number(prop) <= valuesArray[1]) {
+						resultData.push(cardObj);
+					}
+				}
+				return resultData;
+			}
+			return dataArray;
+
+
+		};
 
 		const filterByValues = (dataArray: ICard[], property: string, valuesArray: string[]): ICard[] => {
 			const resultData: ICard[] = [];
@@ -76,10 +142,14 @@ export default class App {
 					}
 				});
 				return resultData;
-			} else {
-				return dataArray;
 			}
+			return dataArray;
+
 		};
+
+		this.data = [...filterByRange(this.data, 'price', this.filters.price)];
+		this.data = [...filterByRange(this.data, 'balance', this.filters.balance)];
+		this.data = [...filterByRange(this.data, 'year', this.filters.year)];
 		this.data = [...filterByValues(this.data, 'brand', this.filters.brand)];
 		this.data = [...filterByValues(this.data, 'popular', this.filters.popular)];
 		this.data = [...filterByValues(this.data, 'color', this.filters.color)];
@@ -101,6 +171,7 @@ export default class App {
 			this.view.render(resultData);
 		});
 	}
+
 	filter() {
 
 		const getCheckboxFilter = (event: Event) => {
@@ -115,8 +186,8 @@ export default class App {
 				params.splice(params.indexOf(target.value), 1);
 			}
 			this.applyFilters();
-
 		};
+
 		const filterBrandD = document.querySelector('.filter__brand');
 		const filterPopularityD = document.querySelector('.filter__popularity');
 		const filterColorD = document.querySelector('.filter__color');
