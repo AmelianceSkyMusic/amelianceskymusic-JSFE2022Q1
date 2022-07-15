@@ -12,7 +12,7 @@ export default class AppView {
 
 			const cardBrandBlockD = createHTMLElem(cardD, 'div', { class: 'card__brand-block' }) as HTMLDivElement;
 			createHTMLElem(cardBrandBlockD, 'div', { class: `card__brand-logo ${obj.brand}` }) as HTMLDivElement;
-			createHTMLElem(cardBrandBlockD, 'h3', { class: 'h3' }, obj.popular !== '0' ? 'TOP' : '');
+			createHTMLElem(cardBrandBlockD, 'h3', { class: 'h3' }, obj.popular === 'top' ? 'TOP' : '');
 			const cardImgD = createHTMLElem(cardD, 'img', { class: 'card__img' }) as HTMLImageElement;
 			cardImgD.src = `./assets/img/${obj.image}.png`;
 			cardImgD.alt = `${obj.image}`;
