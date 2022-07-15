@@ -13,7 +13,8 @@ export default class App {
 			sheetTitle: 'base',
 			sheetRange: '',
 			get url() {
-				return 'https://docs.google.com/spreadsheets/d/' + this.sheetID + '/gviz/tq?tqx=out:json&sheet=' + this.sheetTitle + '&range=' + this.sheetRange;
+				return 'https://docs.google.com/spreadsheets/d/' + this.sheetID +
+						'/gviz/tq?tqx=out:json&sheet=' + this.sheetTitle + '&range=' + this.sheetRange;
 			}
 		};
 	}
@@ -35,8 +36,9 @@ export default class App {
 			const target = event.target as HTMLInputElement;
 			const resultData: ICard[] = [];
 			for (const cardObj of this.data) {
-
-				if(cardObj.name?.includes(target.value)) resultData.push(cardObj);
+				if(cardObj.name?.toString().toLocaleLowerCase().includes((target.value.toLocaleLowerCase()))) {
+					resultData.push(cardObj);
+				}
 			}
 			this.view.render(resultData);
 		});
