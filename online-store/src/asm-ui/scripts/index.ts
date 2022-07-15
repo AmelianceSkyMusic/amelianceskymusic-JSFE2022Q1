@@ -1,1 +1,1 @@
-export { rangeSliderDouble } from './rangeSliderDouble';
+export { RangeSliderDouble } from './RangeSliderDouble';
