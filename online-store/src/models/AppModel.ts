@@ -50,7 +50,6 @@ export default class AppModel {
 				card[el] = dataObj[el][i];
 			});
 
-			card['id'] = i;
 			card['inCart'] = 0;
 
 			cards.push(card);
