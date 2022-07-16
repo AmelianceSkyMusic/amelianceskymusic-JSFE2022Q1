@@ -63,16 +63,18 @@ export default class App {
 			const target$ = event.currentTarget as HTMLInputElement;
 			const slider1$ = target$.querySelector('#range-slider-double__slider-1') as HTMLInputElement;
 			const slider2$ = target$.querySelector('#range-slider-double__slider-2') as HTMLInputElement;
+			const max = slider1$.dataset.max as string;
+			const min = slider2$.dataset.min as string;
 
-			const inputNameArr1 = slider1$.name.split('__');
-			const inputName1 = inputNameArr1[inputNameArr1.length - 1];
+			if(slider1$ && slider2$){
+				const inputNameArr1 = slider1$.name.split('__');
+				const inputName1 = inputNameArr1[inputNameArr1.length - 1];
 
-			const params = this.filters[inputName1 as keyof IFilters] as string[];
-			params[0] = slider1$.value;
-			params[1] = slider2$.value;
+				const params = this.filters[inputName1 as keyof IFilters] as string[];
 
-			console.log(slider1$.value, slider2$.value);
-
+				params[0] = +slider1$.value >= +max ? max : slider1$.value.toString();
+				params[1] = +slider2$.value <= +min ? min : slider2$.value.toString();
+			}
 
 			this.applyFilters();
 		};

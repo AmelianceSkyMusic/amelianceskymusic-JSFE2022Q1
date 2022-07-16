@@ -66,6 +66,8 @@ export class RangeSliderDouble {
 			slider1$.step = this.step[0].toString();
 			slider2$.step = this.step[1].toString();
 		}
+		slider1$.dataset.max = (range[1] - minGap).toString();
+		slider2$.dataset.min = (range[0] + minGap).toString();
 
 		if (!this.label1 && !this.label2) {
 			labels$.style.display = 'none';
@@ -104,7 +106,6 @@ export class RangeSliderDouble {
 
 			label1$.textContent = labelValue;
 
-			console.log(slider1$.value);
 			fillColor();
 
 			return labelValue;
@@ -122,7 +123,6 @@ export class RangeSliderDouble {
 
 			label2$.textContent = labelValue;
 
-			console.log(slider2$.value);
 			fillColor();
 
 			return labelValue;
