@@ -1,5 +1,5 @@
 import { RangeSliderDouble } from '../asm-ui/scripts';
-import { shuffleArray } from '../asm-scripts';
+import { shuffleArray, sortArrayOfObj } from '../asm-scripts';
 import AppModel from '../models/AppModel';
 import { ICard } from '../types/interfaces';
 import AppView from '../views/AppView';
@@ -12,6 +12,8 @@ interface IFilters {
 	popular: string[],
 	color: string[],
 	size: string[],
+	sorting: string,
+	search: string
 
 }
 
@@ -43,39 +45,79 @@ export default class App {
 			brand: [],
 			popular: [],
 			color: [],
-			size: []
+			size: [],
+			sorting: 'default',
+			search: ''
 		};
 	}
 
 	async start() {
-		this.rangeFilters();
-		this.checkboxFilter();
-		this.resetFilters();
+		this.addRangeFiltersListener();
+		this.addCheckboxFiltersListener();
+		this.addSearchListener();
+		this.addSortingListener();
+		this.resetAll();
 		const model = new AppModel(this.state);
 		const data = await model.getCards();
 		this.initData = shuffleArray(data);
 		this.view = new AppView();
 		this.view.render(this.initData);
 		this.data = this.initData;
-
-		this.search();
 	}
 
-	search() {
-		const searchD = document.querySelector('.cards-search');
-		searchD?.addEventListener('input', (event) => {
-			const target = event.target as HTMLInputElement;
-			const resultData: ICard[] = [];
-			for (const cardObj of this.data) {
-				if(cardObj.name?.toString().toLocaleLowerCase().includes(target.value.toLocaleLowerCase())) {
-					resultData.push(cardObj);
-				}
-			}
-			this.view.render(resultData);
+	applyAll() {
+		this.data = this.initData;
+		this.applyFilters();
+		this.applySorting();
+		this.applySearch();
+		this.view.render(this.data);
+	}
+
+	applySorting() {
+		switch (this.filters.sorting) {
+		case 'az':    this.data = [...sortArrayOfObj(this.data, 'name', 'srt')]; break;
+		case 'za':    this.data = [...sortArrayOfObj(this.data, 'name', 'str')].reverse(); break;
+		case 'low':   this.data = [...sortArrayOfObj(this.data, 'price', 'num')]; break;
+		case 'high':  this.data = [...sortArrayOfObj(this.data, 'price', 'num')].reverse(); break;
+		case 'newest':this.data = [...sortArrayOfObj(this.data, 'year', 'num')].reverse(); break;
+		case 'oldest':this.data = [...sortArrayOfObj(this.data, 'year', 'num')]; break;
+			// default:[...sortArrayOfObj(this.data, 'price', 'num')]break;
+		}
+	}
+	addSortingListener() {
+		const cardsSort$ = document.querySelector('.cards-sort') as HTMLSelectElement;
+		cardsSort$.addEventListener('input', () => {
+			this.filters.sorting = cardsSort$.value;
+			this.applyAll();
 		});
 	}
 
-	checkboxFilter() {
+	resetSorting() {
+		(document.querySelector('.cards-sort') as HTMLSelectElement).value = 'default';
+	}
+
+	applySearch() {
+		const resultData: ICard[] = [];
+		for (const cardObj of this.data) {
+			if(cardObj.name?.toString().toLocaleLowerCase().includes(this.filters.search.toLocaleLowerCase())) {
+				resultData.push(cardObj);
+			}
+		}
+		this.data = [...resultData];
+	}
+	addSearchListener() {
+		const search$ = document.querySelector('.cards-search') as HTMLInputElement;
+		search$.addEventListener('input', () => {
+			this.filters.search = search$.value;
+			this.applyAll();
+		});
+	}
+
+	resetSearch() {
+		(document.querySelector('.cards-search') as HTMLInputElement).value = '';
+	}
+
+	addCheckboxFiltersListener() {
 
 		const getCheckboxFilter = (event: Event) => {
 			const target = event.target as HTMLInputElement;
@@ -88,7 +130,7 @@ export default class App {
 			} else {
 				params.splice(params.indexOf(target.value), 1);
 			}
-			this.applyFilters();
+			this.applyAll();
 		};
 
 		const filterBrandD = document.querySelector('.filter__brand');
@@ -101,7 +143,7 @@ export default class App {
 		filterSizeD?.addEventListener('input', getCheckboxFilter);
 	}
 
-	rangeFilters() {
+	addRangeFiltersListener() {
 
 		const getRangeSliderDoubleFilter = (event: Event, ) => {
 			const target$ = event.currentTarget as HTMLInputElement;
@@ -120,7 +162,7 @@ export default class App {
 				params[1] = +slider2$.value <= +min ? min : slider2$.value.toString();
 			}
 
-			this.applyFilters();
+			this.applyAll();
 		};
 
 		const siderStockPrice$ = document.querySelector('#range-slider-double__price') as HTMLDivElement;
@@ -157,8 +199,6 @@ export default class App {
 	}
 
 	applyFilters() {
-
-		this.data = this.initData;
 
 		const filterByRange = (dataArray: ICard[], property: string, valuesArray: number[]): ICard[] => {
 			const resultData: ICard[] = [];
@@ -204,13 +244,13 @@ export default class App {
 		this.data = [...filterByValues(this.data, 'popular', this.filters.popular)];
 		this.data = [...filterByValues(this.data, 'color', this.filters.color)];
 		this.data = [...filterByValues(this.data, 'size', this.filters.size)];
-
-		this.view.render(this.data);
 	}
 
-	resetFilters() {
+	resetAll() {
 		const resetButton$ = document.querySelector('#filter__reset-button');
 		resetButton$?.addEventListener('click', () => {
+			this.resetSearch();
+			this.resetSorting();
 			this.data = this.initData;
 			const filterBrand$ = document.querySelectorAll('.filter__brand [type="checkbox"]') as NodeListOf<HTMLInputElement>;
 			const filterPopularity$ = document.querySelectorAll('.filter__popularity [type="checkbox"]') as NodeListOf<HTMLInputElement>;
@@ -237,5 +277,6 @@ export default class App {
 			(this.rangeSliderDoubleBalance as RangeSliderDouble).update();
 			this.view.render(this.data);
 		});
+		this.resetSearch();
 	}
 }
