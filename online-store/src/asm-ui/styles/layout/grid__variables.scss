@@ -1,0 +1,14 @@
+:root{
+    --container-width: calc(1216px + 64px); // block container --> 72px * 12 columns / gutter 32 px + padding 32px * 2
+    --col-width: 32px;
+    --col-outer: var(--col-width);
+    @media (max-width: 1024px) {
+        --col-width: 24px;
+    }
+    @media (max-width: 480px) {
+        --col-width: 16px;
+    }
+    @media (max-width: 360px) {
+        --col-width: 8px;
+    }
+}

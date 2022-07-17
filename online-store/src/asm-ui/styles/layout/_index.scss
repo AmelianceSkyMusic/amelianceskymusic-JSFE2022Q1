@@ -1,0 +1,96 @@
+@forward "grid";
+
+// // :root {
+
+// //     // ^------------------------ size ------------------------
+// //     --size-w__container_desktop: calc(1216px + 64px); // block container --> 72px * 12 columns / gutter 32 px + padding 32px * 2
+// //     // --size-h__block-container-header_desktop: 32px;
+// //     // --size-h__block-container-main_desktop: auto;
+// //     // --size-h__block-container-footer_desktop: 64px;
+// // }
+// $container-width: calc(1216px + 64px); // block container --> 72px * 12 columns / gutter 32 px + padding 32px * 2
+// $col-width-1: 32px;
+// $col-width-2: 24px;
+// $col-width-3: 16px;
+// $col-width-4: 8px;
+// $col-outer-1: $col-width-1;
+// $col-outer-2: $col-width-2;
+// $col-outer-3: $col-width-3;
+// $col-outer-4: $col-width-4;
+
+// .container {
+//     max-width: $container-width;
+//     display: flex;
+//     max-height: 100%;
+//     margin: 0 auto;
+//     padding: 0 $col-outer-1;
+//     @media (max-width: 1024px) {
+//         width: 100%;
+//         padding: 0 $col-outer-2;
+//     }
+//     @media (max-width: 480px) {
+//         padding: 0 $col-outer-3;
+//     }
+//     @media (max-width: 360px) {
+//         padding: 0 $col-outer-4;
+//     }
+// }
+
+// .row {
+//     width: 100%;
+//     display: flex;
+//     flex-wrap: wrap;
+//     column-gap: $col-width-1;
+//     background-color: green;
+
+//     @media (max-width: 1024px) {
+//         column-gap: $col-width-2;
+//     }
+//     @media (max-width: 480px) {
+//         column-gap: $col-width-2;
+//     }
+//     @media (max-width: 360px) {
+//         column-gap: $col-width-2;
+//     }
+
+//     & > div {
+//         // margin: 0 auto;
+//         background-color: red;
+//         border: 1px solid black;
+//     }
+// }
+
+// $setCol-elements: (
+//     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+// );
+
+
+// @each $item in $setCol-elements {
+//     .#{col- + $item} {
+//         width: calc((100% - (11 * $col-width-1)) / 12 * $item + (($item - 1) * $col-width-1));
+//     };
+// };
+
+// @media (max-width: 1024px) {
+//     @each $item in $setCol-elements {
+//         .#{col-l- + $item} {
+//             width: calc((100% - (11 * $col-width-2)) / 12 * $item + (($item - 1) * $col-width-2));
+//         };
+//     };
+// }
+
+// @media (max-width: 480px) {
+//     @each $item in $setCol-elements {
+//         .#{col-m- + $item} {
+//             width: calc((100% - (11 * $col-width-3)) / 12 * $item + (($item - 1) * $col-width-3));
+//         };
+//     };
+// }
+
+// @media (max-width: 360px) {
+//     @each $item in $setCol-elements {
+//         .#{col-s- + $item} {
+//             width: calc((100% - (11 * $col-width-4)) / 12 * $item + (($item - 1) * $col-width-4));
+//         };
+//     };
+// }
