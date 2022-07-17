@@ -9,41 +9,8 @@
 
 
 // >----------------------------------------------------------------<
-// >                             ROOT                               <
-// >----------------------------------------------------------------<
-
-:root {
-
-    // ^------------------------ size ------------------------
-    --size-w__container_desktop: 1216px; // block container --> 72px * 12 columns / gutter 32 px
-
-    // --size-h__block-container-header_desktop: 32px;
-    // --size-h__block-container-main_desktop: auto;
-    // --size-h__block-container-footer_desktop: 64px;
-}
-
-
-
-
-// >----------------------------------------------------------------<
 // >                         START SETTINGS                         <
 // >----------------------------------------------------------------<
-
-.container {
-    max-width: var(--size-w__container_desktop);
-    display: flex;
-    max-height: 100%;
-    margin: 0 auto;
-    @media (max-width: 1263px) {
-        margin: 0 24px;
-    }
-//     @media (max-width: 639px) {
-//         margin: 0 16px;
-//     }
-//     @media (max-width: 479px) {
-//         margin: 0 16px;
-//     }
-}
 
 .h2, .h3 {
     text-transform: uppercase;
