@@ -14,7 +14,6 @@ interface IFilters {
 	size: string[],
 	sorting: string,
 	search: string
-
 }
 
 export default class App {
@@ -26,6 +25,8 @@ export default class App {
 	rangeSliderDoublePrice: RangeSliderDouble | undefined;
 	rangeSliderDoubleYear: RangeSliderDouble | undefined;
 	rangeSliderDoubleBalance: RangeSliderDouble | undefined;
+	settings: { initData: ICard[], filters: IFilters, cart: { [key: string]: number } };
+	cart: { [key: string]: number } = {};
 
 	constructor() {
 		this.state = {
@@ -37,7 +38,9 @@ export default class App {
 				'/gviz/tq?tqx=out:json&sheet=' + this.sheetTitle + '&range=' + this.sheetRange;
 			}
 		};
+
 		this.view = new AppView();
+
 		this.filters = {
 			price: [],
 			year: [],
@@ -49,6 +52,7 @@ export default class App {
 			sorting: 'default',
 			search: ''
 		};
+		this.settings = { initData: this.initData, filters: this.filters, cart: this.cart };
 	}
 
 	async start() {
@@ -56,21 +60,85 @@ export default class App {
 		this.addCheckboxFiltersListener();
 		this.addSearchListener();
 		this.addSortingListener();
-		this.resetAll();
+		this.addResetAllSettingsListener();
+
+		this.addResetFiltersAndSearchListener();
+
 		const model = new AppModel(this.state);
 		const data = await model.getCards();
 		this.initData = shuffleArray(data);
 		this.view = new AppView();
-		this.view.render(this.initData);
-		this.data = this.initData;
+
+		this.loadSettings();
+		this.applyAll();
+	}
+
+	loadSettings() {
+		if(localStorage.getItem('settings')) {
+			this.settings = JSON.parse((localStorage.getItem('settings') as string));
+			this.initData = this.settings.initData;
+			this.filters = this.settings.filters;
+			this.cart = this.settings.cart;
+		}
+
+		const filterBrand$ = document.querySelectorAll('.filter__brand [type="checkbox"]') as NodeListOf<HTMLInputElement>;
+		const filterPopularity$ = document.querySelectorAll('.filter__popularity [type="checkbox"]') as NodeListOf<HTMLInputElement>;
+		const filterColor$ = document.querySelectorAll('.filter__color [type="checkbox"]') as NodeListOf<HTMLInputElement>;
+		const filterSize$ = document.querySelectorAll('.filter__size [type="checkbox"]') as NodeListOf<HTMLInputElement>;
+		filterBrand$.forEach(elem => { if (this.filters.brand.includes(elem.value)) elem.checked = true; });
+		filterPopularity$.forEach(elem => { if (this.filters.popular.includes(elem.value)) elem.checked = true; });
+		filterColor$.forEach(elem => { if (this.filters.color.includes(elem.value)) elem.checked = true; });
+		filterSize$.forEach(elem => { if (this.filters.size.includes(elem.value)) elem.checked = true; });
+
+		const sliderStockPrice1$ = document.querySelector('#range-slider-double__price #range-slider-double__slider-1') as HTMLInputElement;
+		const sliderStockPrice2$ = document.querySelector('#range-slider-double__price #range-slider-double__slider-2') as HTMLInputElement;
+		const sliderYear1$ = document.querySelector('#range-slider-double__year #range-slider-double__slider-1') as HTMLInputElement;
+		const sliderYear2$ = document.querySelector('#range-slider-double__year #range-slider-double__slider-2') as HTMLInputElement;
+		const sliderBalance1$ = document.querySelector('#range-slider-double__balance #range-slider-double__slider-1') as HTMLInputElement;
+		const sliderBalance2$ = document.querySelector('#range-slider-double__balance #range-slider-double__slider-2') as HTMLInputElement;
+		if(this.filters.price.length > 1) {
+			sliderStockPrice1$.value = (this.filters.price[0]).toString();
+			sliderStockPrice2$.value = (this.filters.price[1]).toString();
+		}
+		if(this.filters.year.length > 1) {
+			sliderYear1$.value = (this.filters.year[0]).toString();
+			sliderYear2$.value = (this.filters.year[1]).toString();
+		}
+		if(this.filters.balance.length > 1) {
+			sliderBalance1$.value = (this.filters.balance[0]).toString();
+			sliderBalance2$.value = (this.filters.balance[1]).toString();
+		}
+		(this.rangeSliderDoublePrice as RangeSliderDouble).update();
+		(this.rangeSliderDoubleYear as RangeSliderDouble).update();
+		(this.rangeSliderDoubleBalance as RangeSliderDouble).update();
+
+		const cardsSort$ = document.querySelector('.cards-sort') as HTMLSelectElement;
+		cardsSort$.value = this.filters.sorting;
+	}
+
+	addResetAllSettingsListener() {
+		document.querySelector('#filter__hard-reset-button')?.addEventListener('click', () => {
+			this.resetAllSettings();
+		});
+	}
+
+	saveSettings() {
+		this.settings = {initData: this.initData, filters: this.filters, cart: this.cart};
+		localStorage.setItem('settings', JSON.stringify(this.settings));
 	}
 
 	applyAll() {
+		this.saveSettings();
 		this.data = this.initData;
 		this.applyFilters();
 		this.applySorting();
 		this.applySearch();
 		this.view.render(this.data);
+	}
+
+	resetAllSettings() {
+		localStorage.removeItem('settings');
+		document.location.reload();
 	}
 
 	applySorting() {
@@ -81,7 +149,6 @@ export default class App {
 		case 'high':  this.data = [...sortArrayOfObj(this.data, 'price', 'num')].reverse(); break;
 		case 'newest':this.data = [...sortArrayOfObj(this.data, 'year', 'num')].reverse(); break;
 		case 'oldest':this.data = [...sortArrayOfObj(this.data, 'year', 'num')]; break;
-			// default:[...sortArrayOfObj(this.data, 'price', 'num')]break;
 		}
 	}
 	addSortingListener() {
@@ -165,23 +232,23 @@ export default class App {
 			this.applyAll();
 		};
 
-		const siderStockPrice$ = document.querySelector('#range-slider-double__price') as HTMLDivElement;
-		const siderYear$ = document.querySelector('#range-slider-double__year') as HTMLDivElement;
-		const siderBalance$ = document.querySelector('#range-slider-double__balance') as HTMLDivElement;
+		const sliderStockPrice$ = document.querySelector('#range-slider-double__price') as HTMLDivElement;
+		const sliderYear$ = document.querySelector('#range-slider-double__year') as HTMLDivElement;
+		const sliderBalance$ = document.querySelector('#range-slider-double__balance') as HTMLDivElement;
 
-		this.rangeSliderDoublePrice = new RangeSliderDouble (siderStockPrice$, {
+		this.rangeSliderDoublePrice = new RangeSliderDouble (sliderStockPrice$, {
 			labelPrefix1: '$ ',
 			labelPrefix2: '$ ',
 			range: [60, 150],
 			step: [10, 10],
 			minGap: 10
 		});
-		this.rangeSliderDoubleYear = new RangeSliderDouble (siderYear$, {
+		this.rangeSliderDoubleYear = new RangeSliderDouble (sliderYear$, {
 			range: [2014, 2022],
 			startValues: [2014, 2022],
 			minGap: 1,
 		});
-		this.rangeSliderDoubleBalance = new RangeSliderDouble (siderBalance$, {
+		this.rangeSliderDoubleBalance = new RangeSliderDouble (sliderBalance$, {
 			range: [1, 61],
 			startValues: [1, 61],
 			step: [5, 5],
@@ -192,9 +259,9 @@ export default class App {
 		this.rangeSliderDoubleYear.render();
 		this.rangeSliderDoubleBalance.render();
 
-		siderStockPrice$.addEventListener('input', getRangeSliderDoubleFilter);
-		siderYear$.addEventListener('input', getRangeSliderDoubleFilter);
-		siderBalance$.addEventListener('input', getRangeSliderDoubleFilter);
+		sliderStockPrice$.addEventListener('input', getRangeSliderDoubleFilter);
+		sliderYear$.addEventListener('input', getRangeSliderDoubleFilter);
+		sliderBalance$.addEventListener('input', getRangeSliderDoubleFilter);
 
 	}
 
@@ -246,11 +313,10 @@ export default class App {
 		this.data = [...filterByValues(this.data, 'size', this.filters.size)];
 	}
 
-	resetAll() {
+	addResetFiltersAndSearchListener() {
 		const resetButton$ = document.querySelector('#filter__reset-button');
 		resetButton$?.addEventListener('click', () => {
 			this.resetSearch();
-			this.resetSorting();
 			this.data = this.initData;
 			const filterBrand$ = document.querySelectorAll('.filter__brand [type="checkbox"]') as NodeListOf<HTMLInputElement>;
 			const filterPopularity$ = document.querySelectorAll('.filter__popularity [type="checkbox"]') as NodeListOf<HTMLInputElement>;
@@ -260,18 +326,18 @@ export default class App {
 			filterPopularity$.forEach(elem => elem.checked = false);
 			filterColor$.forEach(elem => elem.checked = false);
 			filterSize$.forEach(elem => elem.checked = false);
-			const siderStockPrice1$ = document.querySelector('#range-slider-double__price #range-slider-double__slider-1') as HTMLInputElement;
-			const siderStockPrice2$ = document.querySelector('#range-slider-double__price #range-slider-double__slider-2') as HTMLInputElement;
-			const siderYear1$ = document.querySelector('#range-slider-double__year #range-slider-double__slider-1') as HTMLInputElement;
-			const siderYear2$ = document.querySelector('#range-slider-double__year #range-slider-double__slider-2') as HTMLInputElement;
-			const siderBalance1$ = document.querySelector('#range-slider-double__balance #range-slider-double__slider-1') as HTMLInputElement;
-			const siderBalance2$ = document.querySelector('#range-slider-double__balance #range-slider-double__slider-2') as HTMLInputElement;
-			siderStockPrice1$.value = siderStockPrice1$.min;
-			siderStockPrice2$.value = siderStockPrice2$.max;
-			siderYear1$.value = siderYear1$.min;
-			siderYear2$.value = siderYear2$.max;
-			siderBalance1$.value = siderBalance1$.min;
-			siderBalance2$.value = siderBalance2$.max;
+			const sliderStockPrice1$ = document.querySelector('#range-slider-double__price #range-slider-double__slider-1') as HTMLInputElement;
+			const sliderStockPrice2$ = document.querySelector('#range-slider-double__price #range-slider-double__slider-2') as HTMLInputElement;
+			const sliderYear1$ = document.querySelector('#range-slider-double__year #range-slider-double__slider-1') as HTMLInputElement;
+			const sliderYear2$ = document.querySelector('#range-slider-double__year #range-slider-double__slider-2') as HTMLInputElement;
+			const sliderBalance1$ = document.querySelector('#range-slider-double__balance #range-slider-double__slider-1') as HTMLInputElement;
+			const sliderBalance2$ = document.querySelector('#range-slider-double__balance #range-slider-double__slider-2') as HTMLInputElement;
+			sliderStockPrice1$.value = sliderStockPrice1$.min;
+			sliderStockPrice2$.value = sliderStockPrice2$.max;
+			sliderYear1$.value = sliderYear1$.min;
+			sliderYear2$.value = sliderYear2$.max;
+			sliderBalance1$.value = sliderBalance1$.min;
+			sliderBalance2$.value = sliderBalance2$.max;
 			(this.rangeSliderDoublePrice as RangeSliderDouble).update();
 			(this.rangeSliderDoubleYear as RangeSliderDouble).update();
 			(this.rangeSliderDoubleBalance as RangeSliderDouble).update();
