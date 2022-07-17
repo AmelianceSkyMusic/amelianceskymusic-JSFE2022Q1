@@ -170,8 +170,6 @@ export class RangeSliderDouble {
 		const [r, g, b, a] = this.rgbaSliderTrackColorsArray;
 		const range = this.range as number[];
 		const minGap = this.minGap as number;
-		slider1$.value = range[0].toString();
-		slider2$.value = range[1].toString();
 
 		const fillColor = (): void => {
 			const percent1: number = Math.trunc((+slider1$.value - range[0]) * 100 / (range[1] - range[0]));
