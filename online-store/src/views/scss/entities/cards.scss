@@ -109,20 +109,12 @@
     .button {
         width: 32px;
         height: 32px;
-        user-select: none;
-        background: var(--color-el-1);
-        border: none;
         border-radius: 8px;
-        cursor: pointer;
-        @media (hover: hover) {
-            &:hover {
-                background: var(--color-el-2);
-            }
-        }
     }
 
     .in-cart {
         background: var(--color-a1-0);
+        transition: background 0.2s ease-in-out;
         @media (hover: hover) {
             &:hover {
                 background: var(--color-a1-1);
