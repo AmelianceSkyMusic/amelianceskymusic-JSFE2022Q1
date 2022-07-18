@@ -1,7 +1,7 @@
 :root {
-	--main-bg: linear-gradient(180deg, rgba(46, 46, 46, 1), rgba(46, 46, 46, 0.7) 100%),
+	--main-bg: linear-gradient(180deg, #FFFFFF 0%, rgba(227, 232, 237, 0.71) 100%),
 	url("../../../assets/img/cover-image.jpg");
-    --color-0: rgba(0, 0, 0, 1);
+	--color-0: rgba(0, 0, 0, 1);
     --color-a1-0: rgba(127, 188, 103, 1);
     --color-a1-1: rgba(143, 201, 120, 1);
     --color-a1-2: rgba(160, 213, 139, 1);
@@ -17,16 +17,16 @@
     --color-a5-0: rgba(219, 117, 117, 1);
     --color-a5-1: rgba(229, 140, 140, 1);
     --color-a5-2: rgba(236, 161, 161, 1);
-    --color-el-0: rgba(74, 74, 74, 1);
-    --color-el-1: rgba(90, 90, 90, 1);
-    --color-el-2: rgba(105, 105, 105, 1);
-    --color-f1-0: rgba(214, 214, 214, 1);
-    --color-f1-1: rgba(230, 230, 230, 1);
-    --color-f1-2: rgba(245, 245, 245, 1);
-    --color-f2-0: rgba(84, 84, 84, 1);
-    --color-f2-1: rgba(100, 100, 100, 1);
-    --color-f2-2: rgba(115, 115, 115, 1);
-    --color-fl-0: rgba(46, 46, 46, 1);
-    --color-fl-1: rgba(60, 60, 60, 1);
-    --color-fl-2: rgba(70, 70, 70, 1);
+    --color-el-0: rgba(196, 217, 227, 1);
+    --color-el-1: rgba(216, 231, 238, 1);
+    --color-el-2: rgba(206, 224, 233, 1);
+    --color-f1-0: rgba(84, 84, 84, 1);
+    --color-f1-1: rgba(100, 100, 100, 1);
+    --color-f1-2: rgba(115, 115, 115, 1);
+    --color-f2-0: rgba(224, 224, 224, 1);
+    --color-f2-1: rgba(240, 240, 240, 1);
+    --color-f2-2: rgba(255, 255, 255, 1);
+    --color-fl-0: rgba(227, 232, 237, 1);
+    --color-fl-1: rgba(245, 247, 249, 1);
+    --color-fl-2: rgba(253, 254, 254, 1);
 }
