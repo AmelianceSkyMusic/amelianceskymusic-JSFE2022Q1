@@ -10,7 +10,7 @@ $range-slider-double--track__border-radius: 1000px;
 
 // ^------------------------ Slider Range Background ------------------------
 $range-slider-double--track-bg__height: 2px;
-$range-slider-double--track-bg__background: $range-slider-double--track__background;
+$range-slider-double--track-bg__background: var(--color-f1-0);
 $range-slider-double--track-bg__border-radius: $range-slider-double--track__border-radius;
 
 // ^------------------------ Slider Thumb ------------------------
