@@ -5,42 +5,43 @@ export default class AppView {
 
 	render(data: ICard[]) {
 
-		const fragmentD: DocumentFragment = new DocumentFragment() as DocumentFragment;
+		const fragment$: DocumentFragment = new DocumentFragment() as DocumentFragment;
 
 		if(data.length > 0){
 
 			data.forEach(obj => {
-				const cardD = createHTMLElem(fragmentD, 'div', { class: 'card', id: `card-${obj.id}`});
+				const card$ = createHTMLElem(fragment$, 'div', { class: 'card', id: `card-${obj.id}`});
 
-				const cardBrandBlockD = createHTMLElem(cardD, 'div', { class: 'card__brand-block' }) as HTMLDivElement;
-				createHTMLElem(cardBrandBlockD, 'div', { class: `card__brand-logo ${obj.brand}` }) as HTMLDivElement;
-				createHTMLElem(cardBrandBlockD, 'h3', { class: 'h3' }, obj.popular === 'top' ? 'TOP' : '');
-				const cardImgD = createHTMLElem(cardD, 'img', { class: 'card__img' }) as HTMLImageElement;
-				cardImgD.src = `./assets/img/${obj.image}.png`;
-				cardImgD.alt = `${obj.image}`;
+				const cardBrandBlock$ = createHTMLElem(card$, 'div', { class: 'card__brand-block' }) as HTMLDivElement;
+				createHTMLElem(cardBrandBlock$, 'div', { class: `card__brand-logo ${obj.brand}` }) as HTMLDivElement;
+				createHTMLElem(cardBrandBlock$, 'h3', { class: 'h3' }, obj.popular === 'top' ? 'TOP' : '');
+				const cardImg$ = createHTMLElem(card$, 'img', { class: 'card__img' }) as HTMLImageElement;
+				cardImg$.src = `./assets/img/${obj.image}.png`;
+				cardImg$.alt = `${obj.image}`;
 
-				const cardInfoBlockD = createHTMLElem(cardD, 'div', { class: 'card__info' }) as HTMLDivElement;
-				createHTMLElem(cardInfoBlockD, 'h4', { class: 'h4 card__info-title' }, `${(obj.name)}`);
-				const cardInfoBlock1D = createHTMLElem(cardInfoBlockD, 'div', { class: 'card__info-block' }) as HTMLDivElement;
-				createHTMLElem(cardInfoBlock1D, 'p', { class: `p2 card__price-${obj.price}` }, `$${obj.price}`);
-				createHTMLElem(cardInfoBlock1D, 'p', { class: `p2 card__year-${obj.year}` }, `${obj.year}`);
-				const cardInfoBlock2D = createHTMLElem(cardInfoBlockD, 'div', { class: 'card__info-block' }) as HTMLDivElement;
-				createHTMLElem(cardInfoBlock2D, 'p', { class: `p2 card__color-${obj.color?.split('/').join('-')}` }, `${obj.color}`);
-				createHTMLElem(cardInfoBlock2D, 'p', { class: `p2 card__size-${obj.size?.split('').join('-')}` }, `${obj.size?.split('').join('/')}`);
+				const cardInfoBlock$ = createHTMLElem(card$, 'div', { class: 'card__info' }) as HTMLDivElement;
+				createHTMLElem(cardInfoBlock$, 'h4', { class: 'h4 card__info-title' }, `${(obj.name)}`);
+				const cardInfoBlock1$ = createHTMLElem(cardInfoBlock$, 'div', { class: 'card__info-block' }) as HTMLDivElement;
+				createHTMLElem(cardInfoBlock1$, 'p', { class: `p2 card__price-${obj.price}` }, `$${obj.price}`);
+				createHTMLElem(cardInfoBlock1$, 'p', { class: `p2 card__year-${obj.year}` }, `${obj.year}`);
+				const cardInfoBlock2$ = createHTMLElem(cardInfoBlock$, 'div', { class: 'card__info-block' }) as HTMLDivElement;
+				createHTMLElem(cardInfoBlock2$, 'p', { class: `p2 card__color-${obj.color?.split('/').join('-')}` }, `${obj.color}`);
+				createHTMLElem(cardInfoBlock2$, 'p', { class: `p2 card__size-${obj.size?.split('').join('-')}` }, `${obj.size?.split('').join('/')}`);
 
-				const cardCountBlockD = createHTMLElem(cardD, 'div', { class: 'card__count-block' }) as HTMLDivElement;
-				createHTMLElem(cardCountBlockD, 'button', { class: 'p2 button card__button-plus' }, '-');
-				createHTMLElem(cardCountBlockD, 'p', { class: 'p2 card__in-cart' }, '0');
-				createHTMLElem(cardCountBlockD, 'p', { class: 'p2' }, '/');
-				createHTMLElem(cardCountBlockD, 'p', { class: 'p2 card__balance' }, `${obj.balance}`);
-				createHTMLElem(cardCountBlockD, 'button', { class: 'p2 button card__button-plus' }, '+');
+				const cardCountCartBlock$ = createHTMLElem(card$, 'div', { class: 'card__count-cart-block' }) as HTMLDivElement;
+				createHTMLElem(cardCountCartBlock$, 'button', { class: 'p2 button card__button-plus' }, '-');
+				const cardCountBlock$ = createHTMLElem(cardCountCartBlock$, 'div', { class: 'card__count-block' }) as HTMLDivElement;
+				createHTMLElem(cardCountBlock$, 'p', { class: 'p2 card__in-cart' }, '0');
+				createHTMLElem(cardCountBlock$, 'p', { class: 'p2' }, '/');
+				createHTMLElem(cardCountBlock$, 'p', { class: 'p2 card__balance' }, `${obj.balance}`);
+				createHTMLElem(cardCountCartBlock$, 'button', { class: 'p2 button card__button-plus' }, '+');
 			});
 		} else {
-			createHTMLElem(fragmentD, 'h3', { class: 'h3 filter__messaga'}, 'No matching items found...');
+			createHTMLElem(fragment$, 'h3', { class: 'h3 filter__messaga'}, 'No matching items found...');
 		}
 
-		const cardsD = document.querySelector('.cards') as HTMLDivElement;
-		cardsD.innerHTML = '';
-		cardsD.prepend(fragmentD);
+		const cards$ = document.querySelector('.cards') as HTMLDivElement;
+		cards$.innerHTML = '';
+		cards$.prepend(fragment$);
 	}
 }
