@@ -29,7 +29,7 @@
     left: 0;
     width: 100%;
     .container {
-        padding-top: 36px
+        padding-top: 36px;
     }
     .header__bar{
         margin-left: auto;
@@ -53,6 +53,9 @@
     }
 
     .cover {
+        .container {
+            align-items: center;
+        }
         background-image: linear-gradient(180deg, rgba(46, 46, 46, 1), rgba(46, 46, 46, 0.7) 100%),
                             url("./assets/img/cover-image.jpg");
         background-repeat: no-repeat;
@@ -64,18 +67,29 @@
         align-items: center;
         margin: 0 auto;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
         padding-top: 164px;
         padding-bottom: 32px;
         margin-bottom: 64px;
         .p1{
             font-size: 30px;
+            text-align: center;
+            @media (max-width: $screen-xl) {
+                font-size: 24px;
+            }
+        }
+        @media (max-width: $screen-xl) {
+            .h1{
+                font-size: 36px;
+                text-align: center;
+            }
         }
     }
 
     .catalog {
         .container {
             flex-direction: row;
+            justify-content: center;
             gap: 32px;
         }
         margin-bottom: 64px;
@@ -92,7 +106,6 @@
     }
 
     .filters {
-        width: 176px;
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -128,8 +141,45 @@
 // >----------------------------------------------------------------<
 // >                             FOOTER                             <
 // >----------------------------------------------------------------<
-
 .footer {
-	height: 50px; // ! remove when add content
-	background: var(--color-fl-1);
+	background: var(--color-fl-0);
+    padding-bottom: calc(var(--col-gap) * 2);
+    .row {
+        @media (max-width: $screen-md) {
+            row-gap: var(--col-gap);
+        }
+    }
+    .col {
+        display: flex;
+        justify-content: center;
+    }
+    .footer__github-logo {
+        justify-content: start;
+        @media (max-width: $screen-md) {
+            justify-content: end;
+
+        }
+    }
+    .footer__copyright {
+        align-items: center;
+        @media (max-width: $screen-md) {
+            order: -1;
+
+        }
+    }
+    .footer__rsschool-logo {
+        justify-content: end;
+        @media (max-width: $screen-md) {
+            justify-content: start;
+
+        }
+    }
+
+    .github-logo{
+        @include bgImgSVG("github-logo.svg", 136px, 48px);
+    }
+
+    .rsschool-logo{
+        @include bgImgSVG("rsschool-logo.svg", 136px, 48px);
+    }
 }
