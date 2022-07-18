@@ -29,7 +29,7 @@ export default class AppView {
 				createHTMLElem(cardInfoBlock2$, 'p', { class: `p2 card__size-${obj.size?.split('').join('-')}` }, `${obj.size?.split('').join('/')}`);
 
 				const cardCountCartBlock$ = createHTMLElem(card$, 'div', { class: 'card__count-cart-block' }) as HTMLDivElement;
-				createHTMLElem(cardCountCartBlock$, 'button', { class: 'p2 button card__button-plus' }, '-');
+				createHTMLElem(cardCountCartBlock$, 'button', { class: 'p2 button card__button-minus' }, '-');
 				const cardCountBlock$ = createHTMLElem(cardCountCartBlock$, 'div', { class: 'card__count-block' }) as HTMLDivElement;
 				createHTMLElem(cardCountBlock$, 'p', { class: 'p2 card__in-cart' }, '0');
 				createHTMLElem(cardCountBlock$, 'p', { class: 'p2' }, '/');
