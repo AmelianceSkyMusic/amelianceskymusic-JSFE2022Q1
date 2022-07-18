@@ -4,18 +4,18 @@
         // "**/.vscode": true,
 
         // "**/dist": true,
-        "**/public": true,
+        // "**/public": true,
         // "**/_legacy": true,
 
         // "**/node_modules": true,
 
-        "**/.eslintrc.js": true,
-        "**/.gitignore": true,
+        // "**/.eslintrc.js": true,
+        // "**/.gitignore": true,
         "**/package-lock.json": true,
         // "**/package.json": true,
-        "**/tsconfig.json": true,
-        // "**/README.md": true,
-        "**/webpack.*": true,
+        // "**/tsconfig.json": true,
+        "**/README.md": true,
+        // "**/webpack.*": true,
     },
     // hide folders in search
     "search.exclude": {
