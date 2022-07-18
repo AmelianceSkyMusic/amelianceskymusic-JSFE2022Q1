@@ -25,8 +25,8 @@ export default class App {
 	rangeSliderDoublePrice: RangeSliderDouble | undefined;
 	rangeSliderDoubleYear: RangeSliderDouble | undefined;
 	rangeSliderDoubleBalance: RangeSliderDouble | undefined;
-	settings: { initData: ICard[], filters: IFilters, cart: { [key: string]: number } };
-	cart: { [key: string]: number } = {};
+	settings: { initData: ICard[], filters: IFilters, cart: string[] };
+	cart: string[] = [];
 
 	constructor() {
 		this.state = {
@@ -134,6 +134,21 @@ export default class App {
 		this.applySorting();
 		this.applySearch();
 		this.view.render(this.data);
+		this.addCardListeners();
+
+		const cartCount$ = document.querySelector('#button__cart-count') as HTMLButtonElement;
+		cartCount$.innerText = '0';
+		this.cart.forEach(elem => {
+			const card$ = document.querySelector(`#card-${elem}`) as HTMLDivElement;
+			console.log(card$);
+			if (card$) {
+				const cardInCart$ = card$.querySelector('.card__in-cart') as HTMLParagraphElement;
+				const buttonPlus$ = card$.querySelector('.card__button-plus') as HTMLButtonElement;
+				cardInCart$.innerText = (+cardInCart$.innerText + 1).toString();
+				buttonPlus$.classList.add('in-cart');
+			}
+			this.addToCart();
+		});
 	}
 
 	resetAllSettings() {
@@ -164,6 +179,7 @@ export default class App {
 	}
 
 	applySearch() {
+		(document.querySelector('.cards-search') as HTMLInputElement).value = this.filters.search;
 		const resultData: ICard[] = [];
 		for (const cardObj of this.data) {
 			if(cardObj.name?.toString().toLocaleLowerCase().includes(this.filters.search.toLocaleLowerCase())) {
@@ -316,8 +332,14 @@ export default class App {
 	addResetFiltersAndSearchListener() {
 		const resetButton$ = document.querySelector('#filter__reset-button');
 		resetButton$?.addEventListener('click', () => {
-			this.resetSearch();
 			this.data = this.initData;
+			this.filters.price = [];
+			this.filters.year = [];
+			this.filters.balance = [];
+			this.filters.brand = [];
+			this.filters.popular = [];
+			this.filters.color = [];
+			this.filters.size = [];
 			const filterBrand$ = document.querySelectorAll('.filter__brand [type="checkbox"]') as NodeListOf<HTMLInputElement>;
 			const filterPopularity$ = document.querySelectorAll('.filter__popularity [type="checkbox"]') as NodeListOf<HTMLInputElement>;
 			const filterColor$ = document.querySelectorAll('.filter__color [type="checkbox"]') as NodeListOf<HTMLInputElement>;
@@ -341,8 +363,67 @@ export default class App {
 			(this.rangeSliderDoublePrice as RangeSliderDouble).update();
 			(this.rangeSliderDoubleYear as RangeSliderDouble).update();
 			(this.rangeSliderDoubleBalance as RangeSliderDouble).update();
-			this.view.render(this.data);
+			this.applyAll();
 		});
-		this.resetSearch();
+	}
+
+	addCardListeners() {
+
+		const cardsList$ = document.querySelectorAll('.card') as NodeListOf<HTMLButtonElement>;
+		cardsList$.forEach(card$ => {
+			const cardId = card$.id.split('-')[1];
+			const buttonPlus$ = card$.querySelector('.card__button-plus') as HTMLButtonElement;
+			const buttonMinus$ = card$.querySelector('.card__button-minus') as HTMLButtonElement;
+
+			buttonPlus$.addEventListener('click', () => {
+				const cardInCart$ = card$.querySelector('.card__in-cart') as HTMLParagraphElement;
+				const cardBalance$ = card$.querySelector('.card__balance') as HTMLParagraphElement;
+				const cartCount$ = document.querySelector('#button__cart-count') as HTMLButtonElement;
+				if (+cartCount$.innerText === 20) alert('Hey! Did you have enough money?\nCart has limited to 20 items to save your money!');
+				if (+cardInCart$.innerText < +cardBalance$.innerText && +cartCount$.innerText < 20) {
+					cardInCart$.innerText = (+cardInCart$.innerText + 1).toString();
+					buttonPlus$.classList.add('in-cart');
+					this.addToCart();
+					this.collectCardsInCart(cardId);
+				}
+
+			});
+
+			buttonMinus$.addEventListener('click', () => {
+				const cardInCart$ = card$.querySelector('.card__in-cart') as HTMLParagraphElement;
+				if (+cardInCart$.innerText > 0) {
+					cardInCart$.innerText = (+cardInCart$.innerText - 1).toString();
+					this.removeFormCart();
+					this.removeCardsInCart(cardId);
+				}
+				if (+cardInCart$.innerText === 0) buttonPlus$.classList.remove('in-cart');
+			});
+		});
+	}
+
+	addToCart() {
+		const buttonCart$ = document.querySelector('#button__cart') as HTMLButtonElement;
+		const cartCount$ = document.querySelector('#button__cart-count') as HTMLButtonElement;
+		if (+cartCount$.innerText < 20) {
+			cartCount$.innerText = (+cartCount$.innerText + 1).toString();
+			buttonCart$.classList.add('in-cart');
+		}
+	}
+	removeFormCart() {
+		const buttonCart$ = document.querySelector('#button__cart') as HTMLButtonElement;
+		const cartCount$ = document.querySelector('#button__cart-count') as HTMLButtonElement;
+		if (+cartCount$.innerText > 0) {
+			cartCount$.innerText = (+cartCount$.innerText - 1).toString();
+		}
+		if (+cartCount$.innerText === 0) buttonCart$.classList.remove('in-cart');
+	}
+
+	collectCardsInCart(id: string) {
+		this.cart.push(id);
+		this.saveSettings();
+	}
+	removeCardsInCart(id: string) {
+		this.cart.splice(this.cart.indexOf(id), 1);
+		this.saveSettings();
 	}
 }
