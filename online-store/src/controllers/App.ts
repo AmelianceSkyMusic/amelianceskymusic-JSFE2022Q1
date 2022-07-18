@@ -1,4 +1,4 @@
-import { RangeSliderDouble } from '../asm-ui/scripts';
+import { RangeSliderDouble, addChangeThemeListener } from '../asm-ui/scripts';
 import { shuffleArray, sortArrayOfObj } from '../asm-scripts';
 import AppModel from '../models/AppModel';
 import { ICard } from '../types/interfaces';
@@ -27,6 +27,8 @@ export default class App {
 	rangeSliderDoubleBalance: RangeSliderDouble | undefined;
 	settings: { initData: ICard[], filters: IFilters, cart: string[] };
 	cart: string[] = [];
+
+	addChangeThemeListener = addChangeThemeListener;
 
 	constructor() {
 		this.state = {
@@ -71,6 +73,7 @@ export default class App {
 
 		this.loadSettings();
 		this.applyAll();
+		this.addChangeThemeListener();
 	}
 
 	loadSettings() {
