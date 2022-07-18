@@ -1,0 +1,81 @@
+input[type="checkbox"] {
+	&#checkbox__color-blue,
+	&#checkbox__color-red,
+	&#checkbox__color-white,
+	&#checkbox__color-black {
+		width: 32px;
+		height: 32px;
+		border-radius: 1000px;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width: 18px;
+			height: 18px;
+			border-radius: 1000px;
+			background-color: var(--color-f2-0);
+			transform: scale(1);
+			clip-path: none;
+			// border: 2px solid var(--color-f1-0);
+
+		}
+
+		&::after {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-radius: 1000px;
+			transform: scale(0);
+			transition: 120ms transform ease-in-out;
+			clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+			background-color: var(--color-f1-0);
+		}
+
+		&:checked::after {
+			transform: scale(1);
+		}
+	}
+
+	&#checkbox__color-blue {
+		background-color: var(--color-a2-0);
+
+		// &::after {
+		// 	background-color: var(--color-a2-0);
+		// }
+	}
+
+	&#checkbox__color-red {
+		background-color: var(--color-a5-0);
+
+		// &::after {
+		// 	background-color: var(--color-a5-0);
+		// }
+	}
+
+	&#checkbox__color-white {
+		background-color: var(--color-f1-2);
+
+		// &::after {
+		// 	background-color: var(--color-f1-2);
+		// }
+	}
+
+	&#checkbox__color-black {
+		background-color: var(--color-0);
+
+		// &::after {
+		// 	background-color: var(--color-0);
+		// }
+	}
+}
