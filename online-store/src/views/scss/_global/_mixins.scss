@@ -11,5 +11,14 @@
 
 @mixin bgImgSVG($img, $w: auto, $h: auto) { // @include bgImgSVG("img.svg", 10px, 10px);
     @include wh($w, $h);
-    background-image: url($path-assets-svg + $img);
+    // background-image: url($path-assets-svg + $img);
+	background: var(--color-f1-1);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url($path-assets-svg + $img);
+    -webkit-mask-image: url($path-assets-svg + $img);
+	transition: background 0.2s ease-in-out;
+	&:hover {
+		background: var(--color-f1-2);
+	}
 }
