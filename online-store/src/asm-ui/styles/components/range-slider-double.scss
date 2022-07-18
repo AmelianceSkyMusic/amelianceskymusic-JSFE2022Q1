@@ -106,11 +106,15 @@
             background-color: $range-slider-double--track-bg__background;
             border-radius: $range-slider-double--track-bg__border-radius;
         }
+        .range-slider {
+            width: 100%;
+        }
     }
 
     .range-slider-double__labels {
         display: flex;
         justify-content: space-between;
+        gap: 8px;
 
         .range-slider-double__label {
             display: flex;
