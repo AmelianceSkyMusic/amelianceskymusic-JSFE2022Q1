@@ -36,8 +36,10 @@
         justify-content: end;
         align-items: center;
         margin-left: auto;
-        width: 10%;
+        width: 20%;
+		gap: 8px;
     }
+
 }
 
 .header__logo {
@@ -49,6 +51,9 @@
     .button__cart-count {
         line-height: 0;
     }
+}
+#button-theme {
+	width: 32px;
 }
 
 
@@ -67,8 +72,7 @@
         .container {
             align-items: center;
         }
-        background-image: linear-gradient(180deg, rgba(46, 46, 46, 1), rgba(46, 46, 46, 0.7) 100%),
-                            url("./assets/img/cover-image.jpg");
+        background-image: var(--main-bg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -112,24 +116,29 @@
         height: 24px;
         cursor: pointer;
         background: url("./assets/svg/clear.svg") no-repeat;
-        -webkit-filter: invert(35%) sepia(0%) saturate(0%) hue-rotate(211deg) brightness(100%) contrast(90%);
-                filter: invert(35%) sepia(0%) saturate(0%) hue-rotate(211deg) brightness(100%) contrast(90%);
+        -webkit-filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(163deg) brightness(95%) contrast(88%);
+                filter: invert(93%) sepia(0%) saturate(0%) hue-rotate(163deg) brightness(95%) contrast(88%);
         background-size: contain;
       }
 
-      .input-text {
-        border-radius: 10000px;
-        padding: 12px 24px;
-        width: 288px;
-        background: red;
-        border: 4px solid green;
-        background-origin: border-box;
-        // background-clip: padding-box, border-box;
-      }
+	.input-text {
+      	border-radius: 10000px;
+      	padding: 12px 14px 12px 18px;
+      	background: none;
+      	border: 2px solid var(--color-f1-1);
+	}
 
-      .input-text:focus {
-        outline: none !important;
-      }
+	.input-text:focus {
+		outline: none !important;
+	}
+
+	.dropdown-menu {
+		background: var(--color-fl-0);
+		border: none;
+		&:focus {
+			outline: none !important;
+		}
+	}
 
     .content {
         display: flex;
@@ -157,17 +166,30 @@
             flex-direction: column;
             gap: 16px;
         }
+		.filter__brand,
+		.filter__popularity,
+		.filter__size {
+			.checkbox-container {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+				.chackbox-item {
+					display: flex;
+					align-items: center;
+					gap: 8px;
+				}
+			}
+		}
 
-        .checkbox-container {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            .chackbox-item {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-        }
+
+		.filter__color {
+			.checkbox-container {
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+			}
+		}
+
     }
 }
 
@@ -192,19 +214,20 @@
     .footer__github-logo {
         justify-content: start;
         @media (max-width: $screen-md) {
-            justify-content: end;
+			justify-content: end;
 
         }
     }
     .footer__copyright {
-        align-items: center;
+		align-items: center;
         @media (max-width: $screen-md) {
-            order: -1;
+			order: -1;
 
         }
     }
+
     .footer__rsschool-logo {
-        justify-content: end;
+		justify-content: end;
         @media (max-width: $screen-md) {
             justify-content: start;
 
@@ -212,10 +235,16 @@
     }
 
     .github-logo{
-        @include bgImgSVG("github-logo.svg", 136px, 48px);
+        @include bgImgSVG("github-logo.svg", 68px, 24px);
     }
 
     .rsschool-logo{
-        @include bgImgSVG("rsschool-logo.svg", 136px, 48px);
+		@include bgImgSVG("rsschool-logo.svg", 68px, 24px);
     }
+
+	a:active,
+	a:hover,
+	a {
+		text-decoration: none;
+	}
 }
