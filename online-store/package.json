@@ -11,7 +11,7 @@
     "serve": "webpack serve",
     "dev": "webpack --mode=development --watch",
     "predeploy": "npm run build",
-    "gh-pages": "gh-pages -d dist -e online-store-part1",
+    "gh-pages": "gh-pages -d dist -e online-store",
     "build": "webpack --mode=production --node-env=production",
     "start": "webpack serve"
   },

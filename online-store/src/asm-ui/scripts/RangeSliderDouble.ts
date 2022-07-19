@@ -23,7 +23,6 @@ export class RangeSliderDouble {
 	label2?: boolean;
 	step?: number[];
 	siderComponent$: HTMLElement;
-
 	slider1$: HTMLInputElement;
 	slider2$: HTMLInputElement;
 	labels$: HTMLSpanElement;

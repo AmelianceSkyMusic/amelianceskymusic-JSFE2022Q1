@@ -4,14 +4,13 @@
 // >                             MIXINS                             <
 // >----------------------------------------------------------------<
 
-@mixin wh($w: auto, $h: auto) { // @include wh(10px, 10px);
+@mixin wh($w: auto, $h: auto) { // ex: @include wh(10px, 10px);
     width: $w;
     height: $h;
 }
 
-@mixin bgImgSVG($img, $w: auto, $h: auto) { // @include bgImgSVG("img.svg", 10px, 10px);
+@mixin bgImgSVG($img, $w: auto, $h: auto) { // ex: @include bgImgSVG("img.svg", 10px, 10px);
     @include wh($w, $h);
-    // background-image: url($path-assets-svg + $img);
 	background: var(--color-f1-1);
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
@@ -21,4 +20,9 @@
 	&:hover {
 		background: var(--color-f1-2);
 	}
+}
+
+@mixin bgImgSVGStatic($img, $w: auto, $h: auto) { // ex: @include bgImgSVGStatic("img.svg", 10px, 10px);
+    @include wh($w, $h);
+    background-image: url($path-assets-svg + $img);
 }
