@@ -143,7 +143,6 @@ export default class App {
 		cartCount$.innerText = '0';
 		this.cart.forEach(elem => {
 			const card$ = document.querySelector(`#card-${elem}`) as HTMLDivElement;
-			console.log(card$);
 			if (card$) {
 				const cardInCart$ = card$.querySelector('.card__in-cart') as HTMLParagraphElement;
 				const buttonPlus$ = card$.querySelector('.card__button-plus') as HTMLButtonElement;
