@@ -6,8 +6,8 @@ interface IRangeSliderDoubleObj {
 	labelPostfix1?: string,
 	labelPrefix2?: string,
 	labelPostfix2?: string,
-	label1?: boolean,
-	label2?: boolean,
+	shouldShowlabel1?: boolean,
+	shouldShowlabel2?: boolean,
 	step?: number[];
 }
 
@@ -19,8 +19,8 @@ export class RangeSliderDouble {
 	labelPostfix1?: string;
 	labelPrefix2?: string;
 	labelPostfix2?: string;
-	label1?: boolean;
-	label2?: boolean;
+	shouldShowlabel1?: boolean;
+	shouldShowlabel2?: boolean;
 	step?: number[];
 	siderComponent$: HTMLElement;
 	slider1$: HTMLInputElement;
@@ -40,8 +40,8 @@ export class RangeSliderDouble {
 			labelPostfix1 = '',
 			labelPrefix2 = '',
 			labelPostfix2 = '',
-			label1 = true,
-			label2 = true,
+			shouldShowlabel1 = true,
+			shouldShowlabel2 = true,
 			step = []
 		}: IRangeSliderDoubleObj) {
 
@@ -52,8 +52,8 @@ export class RangeSliderDouble {
 		this.labelPostfix1 = labelPostfix1;
 		this.labelPrefix2 = labelPrefix2;
 		this.labelPostfix2 = labelPostfix2;
-		this.label1 = label1;
-		this.label2 = label2;
+		this.shouldShowlabel1 = shouldShowlabel1;
+		this.shouldShowlabel2 = shouldShowlabel2;
 		this.step = step;
 
 		this.siderComponent$ = siderComponent$;
@@ -68,7 +68,7 @@ export class RangeSliderDouble {
 	}
 
 	getSliderColor() {
-		const rgbaSliderTrackColor: string = window.getComputedStyle(this.sliderTrack$).backgroundColor;
+		const rgbaSliderTrackColor = window.getComputedStyle(this.sliderTrack$).backgroundColor;
 		this.rgbaSliderTrackColorsArray = rgbaSliderTrackColor.split(',').map((elem): number => parseInt(elem.replace(/^\D+/g, '')));
 		if (this.rgbaSliderTrackColorsArray.length <= 3) this.rgbaSliderTrackColorsArray.push(1);
 	}
@@ -99,19 +99,19 @@ export class RangeSliderDouble {
 		slider1$.dataset.max = (range[1] - minGap).toString();
 		slider2$.dataset.min = (range[0] + minGap).toString();
 
-		if (!this.label1 && !this.label2) {
+		if (!this.shouldShowlabel1 && !this.shouldShowlabel2) {
 			labels$.style.display = 'none';
-		} else if (!this.label1) {
+		} else if (!this.shouldShowlabel1) {
 			label1$.style.visibility = 'hidden';
 			label1$.style.userSelect = 'none';
-		} else if (!this.label2) {
+		} else if (!this.shouldShowlabel2) {
 			label2$.style.visibility = 'hidden';
 			label2$.style.userSelect = 'none';
 		}
 
 		const fillColor = (): void => {
-			const percent1: number = Math.trunc((+slider1$.value - range[0]) * 100 / (range[1] - range[0]));
-			const percent2: number = Math.trunc((+slider2$.value - range[0]) * 100 / (range[1] - range[0]));
+			const percent1 = Math.trunc((+slider1$.value - range[0]) * 100 / (range[1] - range[0]));
+			const percent2 = Math.trunc((+slider2$.value - range[0]) * 100 / (range[1] - range[0]));
 
 			const linearGradient = `linear-gradient(to right, rgba(0, 0, 0, 0) ${percent1}%, rgba(${r}, ${g}, ${b}, ${a}) ${percent1}%,
 									rgba(${r}, ${g}, ${b}, ${a}) ${percent2}%, rgba(0, 0, 0, 0) ${percent2}%)`;
