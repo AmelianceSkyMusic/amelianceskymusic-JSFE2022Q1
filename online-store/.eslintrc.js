@@ -34,7 +34,7 @@ module.exports = {
 			'error',
 			'always'
 		],
-		'max-len': ['warn', 200],
+		'max-len': ['warn', 160],
 		'@typescript-eslint/no-explicit-any': 2,
 	},
 	'overrides': [
