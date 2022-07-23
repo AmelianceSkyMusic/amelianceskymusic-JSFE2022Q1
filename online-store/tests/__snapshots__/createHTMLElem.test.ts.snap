@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createHTMLElem should be render 1`] = `
+<div
+  class="test__class"
+  id="test-id"
+>
+  some test text
+</div>
+`;
