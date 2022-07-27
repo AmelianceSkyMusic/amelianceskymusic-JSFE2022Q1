@@ -1,0 +1,17 @@
+/node_modules
+/dist
+.vscode
+
+#amelianceskymusic own modules
+*.-asm-*
+-asm-*
+__-asm-*
+
+*._legacy*
+_legacy*
+
+*._backup*
+_backup*
+
+*._temp*
+_temp*
