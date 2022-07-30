@@ -22,7 +22,7 @@
 	"rules": {
 		"prettier/prettier": "error",
 		"import/prefer-default-export": "off",
-		"max-lines-per-function": ["error", 15],
+		"max-lines-per-function": ["error", 20],
 		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
 	}
 }
