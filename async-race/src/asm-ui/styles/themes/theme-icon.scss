@@ -1,0 +1,9 @@
+.theme-icon__from-light,
+.theme-icon__from-dark {
+    display: none;
+}
+
+[data-theme="light"] .theme-icon__from-light,
+[data-theme="dark"] .theme-icon__from-dark {
+    display: block !important;
+}
