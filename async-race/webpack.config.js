@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const isProduction = process.env.NODE_ENV == 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 const stylesHandler = MiniCssExtractPlugin.loader;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const EslintWebpackPlugin = require('eslint-webpack-plugin');
@@ -10,7 +10,7 @@ const EslintWebpackPlugin = require('eslint-webpack-plugin');
 const generateFilename = (ext) => (isProduction ? `[name].[hash].${ext}` : `[name].${ext}`);
 const setEslintWebpackPlugin = () =>
   !isProduction
-    ? [new EslintWebpackPlugin({ extensions: ['ts', 'js'] })]
+    ? []
     : [new EslintWebpackPlugin({ extensions: ['ts', 'js'] })];
 
 const config = {
@@ -34,6 +34,7 @@ const config = {
         open: 'chrome',
         host: 'localhost',
         hot: false,
+        port: 3000,
       },
 
   plugins: [
