@@ -1,0 +1,52 @@
+@use "../_globals/" as *;
+
+.footer {
+	background: var(--color-bg-0);
+    .row {
+        @media (max-width: $screen-md) {
+            row-gap: var(--col-gap);
+        }
+    }
+    .col {
+        display: flex;
+        justify-content: center;
+    }
+    .footer__github-logo {
+        justify-content: start;
+        @media (max-width: $screen-md) {
+			justify-content: end;
+
+        }
+    }
+    .footer__copyright {
+		align-items: center;
+		text-align: center;
+        @media (max-width: $screen-md) {
+			order: -1;
+
+        }
+		// a:active,
+		// a:hover,
+		// a {
+		// 	text-decoration: none;
+		// }
+    }
+
+    .footer__rsschool-logo {
+		justify-content: end;
+        @media (max-width: $screen-md) {
+            justify-content: start;
+
+        }
+    }
+
+    .github-logo{
+        @include bgImgSVG("github-logo.svg", 68px, 24px);
+    }
+
+    .rsschool-logo{
+		@include bgImgSVG("rsschool-logo.svg", 68px, 24px);
+    }
+
+
+}
