@@ -20,6 +20,9 @@
 		"prettier"
 	],
 	"rules": {
-		"prettier/prettier": "error"
+		"prettier/prettier": "error",
+		"import/prefer-default-export": "off",
+		"max-lines-per-function": ["error", 15],
+		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
 	}
 }
