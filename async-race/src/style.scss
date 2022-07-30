@@ -2,4 +2,63 @@
 // >                            IMPORT                              <
 // >----------------------------------------------------------------<
 
+@use "./asm-ui/styles/_globals/" as *;
 @use "./asm-ui/styles/" as *;
+@use "./styles/" as *;
+
+
+
+
+// >----------------------------------------------------------------<
+// >                             HEADER                             <
+// >----------------------------------------------------------------<
+
+.header {
+	background: var(--color-bg-0);
+    .container {
+		// padding-top: calc(var(--col-gap) / 2);
+	    padding-bottom: 0;
+		@media (max-width: $screen-md) {
+			padding-top: var(--col-gap);
+		}
+		.row {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: var(--col-gap);
+		}
+		.menu {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-left: auto;
+		}
+    }
+}
+
+
+// >----------------------------------------------------------------<
+// >                              MAIN                              <
+// >----------------------------------------------------------------<
+
+.main {
+	.container {
+	    padding-top: var(--col-gap);
+	    padding-bottom: var(--col-gap);
+	}
+}
+
+
+
+// >----------------------------------------------------------------<
+// >                             FOOTER                             <
+// >----------------------------------------------------------------<
+.footer {
+    .container {
+	    padding-top: 0;
+	    // padding-bottom: calc(var(--col-gap) / 2);
+		@media (max-width: $screen-md) {
+			padding-bottom: var(--col-gap);
+		}
+    }
+}
