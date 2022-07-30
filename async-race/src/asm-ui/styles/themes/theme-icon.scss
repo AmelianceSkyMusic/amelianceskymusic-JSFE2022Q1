@@ -1,9 +1,9 @@
-.theme-icon__from-light,
-.theme-icon__from-dark {
+.theme-button__icon-from-light,
+.theme-button__icon-from-dark {
     display: none;
 }
 
-[data-theme="light"] .theme-icon__from-light,
-[data-theme="dark"] .theme-icon__from-dark {
+[data-theme="light"] .theme-button__icon-from-light,
+[data-theme="dark"] .theme-button__icon-from-dark {
     display: block !important;
 }

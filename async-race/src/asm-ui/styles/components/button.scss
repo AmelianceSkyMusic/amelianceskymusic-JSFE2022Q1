@@ -1,0 +1,41 @@
+@use "button__variables" as *;
+
+
+
+
+.button {
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 16px;
+	color: var(--color__button);
+	background: var(--background__button);
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+			color: var(--color__button_hover);
+			background: var(--background__button_hover);
+            transition: color var(--time-1) var(--transition-type-2);
+        }
+
+    }
+	&:active {
+        color: var(--color__button_active);
+		background: var(--background__button_active);
+        transition: 0s;
+	}
+
+	&:disabled,
+    &.disabled,
+    &[data-is-disabled="true"] {
+		color: var(--color__button_disabled);
+		background: var(--background__button_disabled);
+		opacity: 60%;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
