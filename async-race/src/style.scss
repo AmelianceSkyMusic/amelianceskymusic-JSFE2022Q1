@@ -23,15 +23,25 @@
 		}
 		.row {
 			display: flex;
-			justify-content: center;
 			align-items: center;
-			gap: var(--col-gap);
+			@media (max-width: $screen-sm) {
+				gap: 16px;
+			}
+		}
+		.logo {
+			@media (max-width: $screen-sm) {
+				text-align: center;
+			}
 		}
 		.menu {
 			display: flex;
-			justify-content: space-between;
+			justify-content: end;
 			align-items: center;
-			margin-left: auto;
+			gap: min(16px, var(--col-gap));
+			@media (max-width: $screen-sm) {
+				justify-content: center;
+			}
+			// margin-left: auto;
 		}
     }
 }
