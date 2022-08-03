@@ -2,7 +2,6 @@ import { createHTMLElem } from '../../../../asm-scripts';
 import { THTMLParam } from '../../../types/types';
 import { renderCarsCount } from './renderCarsCount';
 import { renderCreateCar } from './renderCreateCar';
-import { renderPaginationButtons } from './renderPaginationButtons';
 import { renderRaceButtons } from './renderRaceButtons';
 
 export const renderGarageOptions = async (elem$: THTMLParam) => {
@@ -11,7 +10,6 @@ export const renderGarageOptions = async (elem$: THTMLParam) => {
   });
 
   await renderCarsCount(garageOptions$);
-  renderRaceButtons(garageOptions$);
   renderCreateCar(garageOptions$);
-  renderPaginationButtons(garageOptions$);
+  renderRaceButtons(garageOptions$);
 };

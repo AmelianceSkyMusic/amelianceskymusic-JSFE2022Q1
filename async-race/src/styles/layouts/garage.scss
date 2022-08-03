@@ -5,6 +5,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: calc( var(--col-gap) / 2);
+
 		.options__cars-count {
 			display: flex;
 			gap: calc( var(--col-gap) / 2);
@@ -49,22 +50,29 @@
 			}
 		}
 	}
+
 	.box {
 		padding-top: 24px;
 	}
 
 	.controls {
 		display: flex;
-		justify-content: start;
+		justify-content: space-between;
 		align-items: center;
 		gap: calc( var(--col-gap) / 2);
 
-		.controls__cars-props,
+		.controls__cars-props {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: calc( var(--col-gap) / 2);
+		}
+
 		.controls__cars-action {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			gap: calc( var(--col-gap) / 4);
+			gap: calc( var(--col-gap) / 2);
 		}
 	}
 

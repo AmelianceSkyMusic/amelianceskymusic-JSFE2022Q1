@@ -2,6 +2,7 @@ import { createHTMLElem } from '../../../../asm-scripts';
 import API from '../../../API';
 import { THTMLParam } from '../../../types/types';
 import { add100RandomCars } from '../../garageController/add100RandomCars';
+import { renderPaginationButtons } from './renderPaginationButtons';
 
 export const renderCarsCount = async (elem$: THTMLParam) => {
   const carsCount = await API.getCarsCount();
@@ -17,6 +18,8 @@ export const renderCarsCount = async (elem$: THTMLParam) => {
   const buttonGenerateCars$ = createHTMLElem(optionsCarsCount$, 'button', {
     class: 'button button-sm',
   }, '+100');
+
+  renderPaginationButtons(optionsCarsCount$);
 
   buttonGenerateCars$.addEventListener('click', add100RandomCars);
 };

@@ -12,5 +12,5 @@ export const renderRaceButtons = async (elem$: THTMLParam) => {
 
   const raceButtonsReset = createHTMLElem(optionsRaceButtons$, 'h4', {
     class: 'button button-sm race-buttons__reset',
-  }, 'RESET');
+  }, 'STOP');
 };

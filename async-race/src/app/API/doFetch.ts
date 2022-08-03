@@ -18,9 +18,8 @@ export const doFetch = async (request: string, method = 'GET', headers = {}, bod
     data = await response.json();
 
     count = response.headers.get('X-Total-Count');
-    console.log('count', count);
   } catch (error) {
-    console.log(error);
+    throw new Error();
   }
 
   return { data, count };
