@@ -1,0 +1,17 @@
+import { createHTMLElem } from '../../../../asm-scripts';
+import { THTMLParam } from '../../../types/types';
+import { renderCarsCount } from './renderCarsCount';
+import { renderCreateCar } from './renderCreateCar';
+import { renderPaginationButtons } from './renderPaginationButtons';
+import { renderRaceButtons } from './renderRaceButtons';
+
+export const renderGarageOptions = async (elem$: THTMLParam) => {
+  const garageOptions$ = createHTMLElem(elem$, 'section', {
+    class: 'garage__options options',
+  });
+
+  await renderCarsCount(garageOptions$);
+  renderRaceButtons(garageOptions$);
+  renderCreateCar(garageOptions$);
+  renderPaginationButtons(garageOptions$);
+};
