@@ -1,26 +1,24 @@
 @use "../_globals/" as *;
-
 .car {
+	$car-width: 80px;
+	$car-height: 50px;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
-	width: 100px;
-	height: 60px;
-	// display: flex;
-	// justify-content: end;
-	// align-items: end;
+	width:	$car-width;
+	height: $car-height;
 	.back {
 		grid-column-start: 1;
 		grid-row-start: 1;
-		@include bgImgSVG("cars/back-18.svg", 100px, 60px);
-		background: magenta;
+		@include bgImgSVG("cars/mersedes-back.svg",	$car-width, $car-height);
+		background: var(--color-a2-1);
 		-webkit-mask-position: bottom right;
 		mask-position: bottom right;
 	}
 	.front {
 		grid-column-start: 1;
 		grid-row-start: 1;
-		@include bgImgSVGStatic("cars/front-18.svg", 100px, 60px);
+		@include bgImgSVGStatic("cars/mersedes-front.svg",	$car-width, $car-height);
 		background-position: bottom right;
 		z-index: 1;
 	}

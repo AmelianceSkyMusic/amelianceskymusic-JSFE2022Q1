@@ -7,20 +7,15 @@
 @mixin bgImgSVG($img, $w: auto, $h: auto) { // ex: @include bgImgSVG("img.svg", 10px, 10px);
 	width: $w;
     height: $h;
-	// background: var(--color-f1-1);
-	// transition: background 0.2s ease-in-out;
 	-webkit-mask-size: contain;
 	mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-image: url($path-assets-svg + $img);
     mask-image: url($path-assets-svg + $img);
-	// &:hover {
-	// 	background: var(--color-f1-2);
-	// }
 }
 
-@mixin imgLinkSVG($img, $w: auto, $h: auto) { // ex: @include bgImgSVG("img.svg", 10px, 10px);
+@mixin imgLinkSVG($img, $w: auto, $h: auto) {
 	width: $w;
     height: $h;
 	background: var(--color-f1-1);
@@ -39,7 +34,7 @@
 @mixin bgImgSVGStatic($img, $w: auto, $h: auto) { // ex: @include bgImgSVGStatic("img.svg", 10px, 10px);
 	width: $w;
     height: $h;
-    background: url($path-assets-svg + $img);
+    background-image: url($path-assets-svg + $img);
 	background-size: contain;
 	background-repeat: no-repeat;
 }
