@@ -2,7 +2,7 @@ export const carsTemplateData = {
   brands: [
     'Audi',
     'BMW',
-    'Сitroen',
+    'Citroen',
     'Fiat',
     'Ford',
     'Honda',
@@ -15,7 +15,7 @@ export const carsTemplateData = {
     'Mitsubishi',
     'Peugeot',
     'Pontiac',
-    'Porche',
+    'Porsche',
     'Suzuki',
     'Tesla',
     'Volkswagen',
