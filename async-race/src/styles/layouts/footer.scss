@@ -3,7 +3,7 @@
 .footer {
 	background: var(--color-bg-0);
     .row {
-        @media (max-width: $screen-md) {
+        @media (max-width: $screen-xs) {
             row-gap: var(--col-gap);
         }
     }
@@ -13,39 +13,47 @@
     }
     .footer__github-logo {
         justify-content: start;
-        @media (max-width: $screen-md) {
+        @media (max-width: $screen-xs) {
 			justify-content: end;
-
         }
     }
     .footer__copyright {
 		align-items: center;
 		text-align: center;
-        @media (max-width: $screen-md) {
+        @media (max-width: $screen-xs) {
 			order: -1;
-
         }
-		// a:active,
-		// a:hover,
-		// a {
-		// 	text-decoration: none;
-		// }
+		.link {
+			@media (max-width: $screen-md) {
+				font-size: 8px;
+			}
+		}
+		a:active,
+		a:hover,
+		a {
+			text-decoration: none;
+		}
     }
 
     .footer__rsschool-logo {
 		justify-content: end;
-        @media (max-width: $screen-md) {
+        @media (max-width: $screen-xs) {
             justify-content: start;
-
         }
     }
 
     .github-logo{
-        @include bgImgSVG("github-logo.svg", 68px, 24px);
+        @include imgLinkSVG("github-logo.svg", 68px, 24px);
+		@media (max-width: $screen-md) {
+			@include imgLinkSVG("github-logo.svg", 34px, 12px);
+        }
     }
 
     .rsschool-logo{
-		@include bgImgSVG("rsschool-logo.svg", 68px, 24px);
+		@include imgLinkSVG("rsschool-logo.svg", 68px, 24px);
+		@media (max-width: $screen-md) {
+			@include imgLinkSVG("rsschool-logo.svg", 34px, 12px);
+        }
     }
 
 
