@@ -31,10 +31,9 @@ const config = {
   devServer: isProduction
     ? {}
     : {
-        open: 'chrome',
         host: 'localhost',
         hot: false,
-        port: 3000,
+        port: 8080,
       },
 
   plugins: [
