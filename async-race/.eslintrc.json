@@ -6,8 +6,7 @@
 	"extends": [
 		"airbnb-base",
 		"airbnb-typescript/base",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:prettier/recommended"
+		"plugin:@typescript-eslint/recommended"
 	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
@@ -16,11 +15,10 @@
 		"project": ["tsconfig.json"]
 	},
 	"plugins": [
-		"@typescript-eslint",
-		"prettier"
+		"@typescript-eslint"
 	],
 	"rules": {
-		"prettier/prettier": "error",
+		"max-len": ["error", { "code": 160 }],
 		"import/prefer-default-export": "off",
 		"max-lines-per-function": ["error", 40],
 		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
