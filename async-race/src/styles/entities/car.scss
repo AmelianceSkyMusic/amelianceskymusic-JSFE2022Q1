@@ -1,0 +1,27 @@
+@use "../_globals/" as *;
+
+.car {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	width: 100px;
+	height: 60px;
+	// display: flex;
+	// justify-content: end;
+	// align-items: end;
+	.back {
+		grid-column-start: 1;
+		grid-row-start: 1;
+		@include bgImgSVG("cars/back-18.svg", 100px, 60px);
+		background: magenta;
+		-webkit-mask-position: bottom right;
+		mask-position: bottom right;
+	}
+	.front {
+		grid-column-start: 1;
+		grid-row-start: 1;
+		@include bgImgSVGStatic("cars/front-18.svg", 100px, 60px);
+		background-position: bottom right;
+		z-index: 1;
+	}
+}
