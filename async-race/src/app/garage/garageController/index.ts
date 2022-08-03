@@ -1,0 +1,1 @@
+export { garageController } from './garageController';

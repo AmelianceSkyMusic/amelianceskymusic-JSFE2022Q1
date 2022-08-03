@@ -1,0 +1,1 @@
+export { garageModel } from './garageModel';
