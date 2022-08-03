@@ -1,12 +1,14 @@
-type TObjStrElem = { [key: string]: string };
-type TCallback = (callback: TObjStrElem) => void;
+import { IStore } from '../types/interfaces';
+import { TCars } from '../types/types';
 
-export const observer = (initData: TObjStrElem = {}) => {
+type TCallback = (callback: IStore) => void;
+
+export const observer = (initData: IStore = {}) => {
   const data = initData;
   const subscribers = new Set<TCallback>();
 
   return {
-    updateSettings(key: string, value: string) {
+    updateSettings(key: string, value: string | TCars) {
       data[key] = value;
       this.notify();
     },
