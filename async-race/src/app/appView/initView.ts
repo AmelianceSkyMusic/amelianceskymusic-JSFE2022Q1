@@ -5,12 +5,20 @@ export const initView = () => {
 
   const bodyContainer$ = createHTMLElem(fragment$, 'div', { class: 'body__container' });
   const header$ = createHTMLElem(bodyContainer$, 'div', { class: 'header' });
-  createHTMLElem(header$, 'div', { class: 'container' });
+  const headerContainer$ = createHTMLElem(header$, 'div', { class: 'container' });
+  createHTMLElem(headerContainer$, 'div', { class: 'row' });
+
   const main$ = createHTMLElem(bodyContainer$, 'div', { class: 'main' });
-  createHTMLElem(main$, 'div', { class: 'container' });
+  const mainContainer$ = createHTMLElem(main$, 'div', { class: 'container' });
+  createHTMLElem(mainContainer$, 'div', { class: 'row' });
+
   const footer$ = createHTMLElem(bodyContainer$, 'div', { class: 'footer' });
-  createHTMLElem(footer$, 'div', { class: 'container' });
+  const footerContainer$ = createHTMLElem(footer$, 'div', { class: 'container' });
+  createHTMLElem(footerContainer$, 'div', { class: 'row' });
 
   const body$ = document.querySelector('body') as HTMLElement;
+
+  body$.classList.add('scroll');
+
   body$.prepend(fragment$);
 };
