@@ -7,11 +7,11 @@ export const renderPaginationButtons = async (elem$: THTMLParam) => {
   });
 
   const paginationButtonPrev$ = createHTMLElem(optionsPaginationButtons$, 'button', {
-    class: 'button button-sm pagination-button__prev',
+    class: 'button-sm button-icon-sm pagination-button__prev',
   }, '←');
 
   const paginationButtonNext$ = createHTMLElem(optionsPaginationButtons$, 'button', {
-    class: 'button button-sm pagination-button__next',
+    class: 'button-sm button-icon-sm pagination-button__next',
   }, '→');
 
   paginationButtonPrev$.addEventListener('click', () => { console.log('←'); });
