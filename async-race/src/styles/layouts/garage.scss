@@ -1,10 +1,14 @@
 .garage {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 
 	.garage__options {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		gap: calc( var(--col-gap) / 2);
+		margin-bottom: 16px;
 
 		.options__cars-count {
 			display: flex;
@@ -52,7 +56,9 @@
 	}
 
 	.box {
-		padding-top: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
 	}
 
 	.controls {
