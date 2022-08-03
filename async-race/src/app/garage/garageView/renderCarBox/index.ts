@@ -1,0 +1,1 @@
+export { renderCarBox } from './renderCarBox';
