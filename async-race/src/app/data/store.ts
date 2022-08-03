@@ -1,3 +1,7 @@
 import { observer } from '../utils/observer';
 
-export const STORE = observer();
+const STORE = observer();
+STORE.updateSettings('pageNumber', 1);
+STORE.updateSettings('carsLimitPerPage', 7);
+
+export { STORE };
