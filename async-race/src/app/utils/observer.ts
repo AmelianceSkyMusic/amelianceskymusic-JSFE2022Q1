@@ -8,7 +8,7 @@ export const observer = (initData: IStore = {}) => {
   const subscribers = new Set<TCallback>();
 
   return {
-    updateSettings(key: string, value: string | TCars) {
+    updateSettings(key: string, value: string | number | TCars) {
       data[key] = value;
       this.notify();
     },
@@ -23,6 +23,14 @@ export const observer = (initData: IStore = {}) => {
 
     removeSubscriber(callback: TCallback) {
       subscribers.delete(callback);
+    },
+
+    setValue(key: string, value: string | number | TCars) {
+      data[key] = value;
+    },
+
+    getValue(key: string) {
+      return data[key];
     },
 
     getData() {
