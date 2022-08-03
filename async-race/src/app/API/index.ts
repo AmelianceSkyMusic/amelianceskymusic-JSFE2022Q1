@@ -1,36 +1,38 @@
-// import API file with this line: import * as API from '../../API';
+import { getCarsCount } from './cars/getCarsCount';
+import { getCars } from './cars/getCars';
+import { getCar } from './cars/getCar';
 
-import { getCarsCount } from './getCarsCount';
-import { getCars } from './getCars';
-import { getCar } from './getCar';
+import { createCar } from './cars/createCar';
+import { updateCar } from './cars/updateCar';
+import { deleteCar } from './cars/deleteCar';
 
-import { createCar } from './createCar';
-import { updateCar } from './updateCar';
-import { deleteCar } from './deleteCar';
+import { startCarSEngine } from './engine/startCarSEngine';
+import { stopCarSEngine } from './engine/stopCarSEngine';
+import { switchCarSEngineToDriveMode } from './engine/switchCarSEngineToDriveMode';
 
-import { startCarSEngine } from './startCarSEngine';
-import { stopCarSEngine } from './stopCarSEngine';
-import { switchCarSEngineToDriveMode } from './switchCarSEngineToDriveMode';
+import { getWinners } from './winners/getWinners';
+import { getWinner } from './winners/getWinner';
 
-import { getWinners } from './getWinners';
-import { getWinner } from './getWinner';
-
-import { createWinner } from './createWinner';
-import { updateWinner } from './updateWinner';
-import { deleteWinner } from './deleteWinner';
+import { createWinner } from './winners/createWinner';
+import { updateWinner } from './winners/updateWinner';
+import { deleteWinner } from './winners/deleteWinner';
 
 export default {
   getCarsCount,
   getCars,
   getCar,
+
   createCar,
   updateCar,
   deleteCar,
+
   startCarSEngine,
   stopCarSEngine,
   switchCarSEngineToDriveMode,
+
   getWinners,
   getWinner,
+
   createWinner,
   updateWinner,
   deleteWinner,
