@@ -11,8 +11,6 @@ export const doFetch = async (request: string, method = 'GET', headers = {}, bod
   if (Object.keys(body).length > 0) fetchParams.body = JSON.stringify(body);
 
   try {
-    console.log(serverUrl + request, fetchParams);
-
     const response = await fetch(serverUrl + request, fetchParams);
     if (response.status === 404) console.log('get 404');
     data = await response.json();
