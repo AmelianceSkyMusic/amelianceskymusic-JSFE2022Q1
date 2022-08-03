@@ -1,6 +1,8 @@
+import { TCars } from '../types/types';
+
 export const doFetch = async (request: string, method = 'GET', headers = {}, body = {}) => {
   const serverUrl = 'http://localhost:3000/';
-  let data: { [key: string]: string | number }[] = [];
+  let data: TCars = [];
   let count;
 
   const fetchParams: { [key: string]: string | number | { [key: string]: string | number } } = {};
@@ -14,10 +16,9 @@ export const doFetch = async (request: string, method = 'GET', headers = {}, bod
     const response = await fetch(serverUrl + request, fetchParams);
     if (response.status === 404) console.log('get 404');
     data = await response.json();
-    // console.log('objjjjj---', resultArr);
-    // resultArr = result.map((item) => item);
 
     count = response.headers.get('X-Total-Count');
+    console.log('count', count);
   } catch (error) {
     console.log(error);
   }
