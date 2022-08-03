@@ -4,7 +4,7 @@ export function createHTMLElem(
   params?: {
     class?: string;
     id?: string;
-    atribut?: string;
+    attributes?: string;
   },
   text = '',
 ): HTMLElement {
@@ -16,9 +16,9 @@ export function createHTMLElem(
   if (params?.id) {
     element$.setAttribute('id', params.id);
   }
-  if (params?.atribut) {
-    const atributes = params?.atribut.split(' ');
-    atributes.forEach((atribut) => {
+  if (params?.attributes) {
+    const attributesArr = params?.attributes.split(' ');
+    attributesArr.forEach((atribut) => {
       const atributName = atribut.split('=')[0];
       const atributValue = atribut.split('=')[1].slice(1, -1);
       element$.setAttribute(atributName, atributValue);
