@@ -1,6 +1,6 @@
 import { observer } from './observer';
 
 export const Store = observer({
-  page: 1,
-  lilmit: 7,
+  pageNumber: 1,
+  carsLimitPerPage: 7,
 });
