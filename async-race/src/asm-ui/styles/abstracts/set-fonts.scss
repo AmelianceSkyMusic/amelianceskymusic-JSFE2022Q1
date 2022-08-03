@@ -56,7 +56,7 @@
 
     @include setTypoElem(h3, $font-family__secondary, 16px, $font-weight__bold, 140%, 0);
 
-    @include setTypoElem(h4, $font-family__secondary, 14px, $font-weight__bold, 140%, 0);
+    @include setTypoElem(h4, $font-family__secondary, 14px, $font-weight__bold, 100%, 0);
 
     // @include setTypoElem(h5, $font-family__secondary, 12px, $font-weight__bold, 140%, 0);
 
@@ -74,7 +74,9 @@
 
     // @include setTypoElem(ct, $font-family__secondary, px, $font-weight__bold, 100%, 0);
 
-    @include setTypoElem(button, $font-family__secondary, 16px, $font-weight__bold, 140%, 0);
+    @include setTypoElem(button, $font-family__secondary, 16px, $font-weight__bold, 100%, 0);
+    @include setTypoElem(button-sm, $font-family__secondary, 12px, $font-weight__bold, 100%, 0);
+    @include setTypoElem(button-lg, $font-family__secondary, 16px, $font-weight__bold, 100%, 0);
 
     // @include setTypoElem(ov, $font-family__secondary, px, $font-weight__bold, 100%, 0);
 
@@ -83,7 +85,7 @@
     @media (max-width: $screen-lg) {
         @include setTypoElem(h2, $font-family__secondary, 18px, $font-weight__bold, 140%, 0);
         @include setTypoElem(h3, $font-family__secondary, 14px, $font-weight__bold, 140%, 0);
-        @include setTypoElem(h4, $font-family__secondary, 12px, $font-weight__bold, 140%, 0);
+        @include setTypoElem(h4, $font-family__secondary, 12px, $font-weight__bold, 100%, 0);
         @include setTypoElem(p1, $font-family__secondary, 12px, $font-weight__regular, 140%, 0);
     }
 }
@@ -109,6 +111,8 @@ $setTypo-elements: (
     // p3,
     // ct,
     button,
+    button-sm,
+    button-lg,
     // ov,
     link,
 );

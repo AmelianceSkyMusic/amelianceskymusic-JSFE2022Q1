@@ -4,25 +4,42 @@
 // >                             MIXINS                             <
 // >----------------------------------------------------------------<
 
-@mixin wh($w: auto, $h: auto) { // ex: @include wh(10px, 10px);
-    width: $w;
+@mixin bgImgSVG($img, $w: auto, $h: auto) { // ex: @include bgImgSVG("img.svg", 10px, 10px);
+	width: $w;
     height: $h;
+	// background: var(--color-f1-1);
+	// transition: background 0.2s ease-in-out;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url($path-assets-svg + $img);
+    mask-image: url($path-assets-svg + $img);
+	// &:hover {
+	// 	background: var(--color-f1-2);
+	// }
 }
 
-@mixin bgImgSVG($img, $w: auto, $h: auto) { // ex: @include bgImgSVG("img.svg", 10px, 10px);
-    @include wh($w, $h);
+@mixin imgLinkSVG($img, $w: auto, $h: auto) { // ex: @include bgImgSVG("img.svg", 10px, 10px);
+	width: $w;
+    height: $h;
 	background: var(--color-f1-1);
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-image: url($path-assets-svg + $img);
-    -webkit-mask-image: url($path-assets-svg + $img);
 	transition: background 0.2s ease-in-out;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url($path-assets-svg + $img);
+    mask-image: url($path-assets-svg + $img);
 	&:hover {
 		background: var(--color-f1-2);
 	}
 }
 
 @mixin bgImgSVGStatic($img, $w: auto, $h: auto) { // ex: @include bgImgSVGStatic("img.svg", 10px, 10px);
-    @include wh($w, $h);
-    background-image: url($path-assets-svg + $img);
+	width: $w;
+    height: $h;
+    background: url($path-assets-svg + $img);
+	background-size: contain;
+	background-repeat: no-repeat;
 }

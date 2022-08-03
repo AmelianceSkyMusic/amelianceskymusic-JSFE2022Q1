@@ -2,15 +2,15 @@
 
 
 
-.button {
+.button-sm {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 8px 12px;
+	padding: 4px 6px;
 	color: var(--color__button);
 	background: var(--background__button);
 	border: none;
-	border-radius: 8px;
+	border-radius: 4px;
 	cursor: pointer;
 
     @media (hover: hover) {
