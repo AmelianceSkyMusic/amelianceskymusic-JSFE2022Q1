@@ -1,0 +1,74 @@
+.garage {
+
+	.garage__options {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: calc( var(--col-gap) / 2);
+		.options__cars-count {
+			display: flex;
+			gap: calc( var(--col-gap) / 2);
+			justify-content: center;
+			align-items: center;
+		}
+
+		.options__race-buttons{
+			display: flex;
+			gap: calc( var(--col-gap) / 2);
+			justify-content: center;
+			align-items: center;
+		}
+
+		.options__create-car {
+			display: flex;
+			gap: calc( var(--col-gap) / 2);
+			justify-content: center;
+			align-items: center;
+		}
+		.create-car__inputs {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.options__pagination-buttons {
+			display: flex;
+			gap: calc( var(--col-gap) / 2);
+			justify-content: center;
+			align-items: center;
+		}
+
+		.create-car__color {
+			&::-webkit-color-swatch {
+				border-radius: 0 4px 4px 0;
+				border-left: none;
+			}
+			&::-moz-color-swatch {
+				border-radius: 0 4px 4px 0;
+				border-left: none;
+			}
+		}
+	}
+	.box {
+		padding-top: 24px;
+	}
+
+	.controls {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: calc( var(--col-gap) / 2);
+
+		.controls__cars-props,
+		.controls__cars-action {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: calc( var(--col-gap) / 4);
+		}
+	}
+
+	.track {
+		border-bottom: 2px solid var(--color-bg-2);
+	}
+}
