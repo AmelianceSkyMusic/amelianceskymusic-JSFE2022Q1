@@ -2,14 +2,21 @@ import { IStore } from '../types/interfaces';
 import { TCars } from '../types/types';
 
 type TCallback = (callback: IStore) => void;
+type TKey = string;
+type TValue = string | number | TCars;
 
 export const observer = (initData: IStore = {}) => {
-  const data = initData;
+  let data = initData;
   const subscribers = new Set<TCallback>();
 
   return {
-    updateSettings(key: string, value: string | number | TCars) {
+    updateSettingsKey(key: TKey, value: TValue) {
       data[key] = value;
+      this.notify();
+    },
+
+    updateSettings(settingsObj: { [key: TKey]: TValue }) {
+      data = { ...data, ...settingsObj };
       this.notify();
     },
 
@@ -25,7 +32,7 @@ export const observer = (initData: IStore = {}) => {
       subscribers.delete(callback);
     },
 
-    setValue(key: string, value: string | number | TCars) {
+    setValue(key: TKey, value: TValue) {
       data[key] = value;
     },
 
