@@ -1,11 +1,11 @@
 import { createHTMLElem } from '../../../../asm-scripts';
-import { THTMLParam } from '../../../types/types';
+import { TCar, THTMLParam } from '../../../types/types';
 import { renderTrackControls } from './renderTrackControls';
 import { renderTrack } from './renderTrack';
 
-export const renderCarBox = (elem$: THTMLParam) => {
+export const renderCarBox = (elem$: THTMLParam, carObj: TCar) => {
   const box$ = createHTMLElem(elem$, 'div', { class: 'box' });
 
-  renderTrackControls(box$);
-  renderTrack(box$);
+  renderTrackControls(box$, carObj);
+  renderTrack(box$, carObj);
 };

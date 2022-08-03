@@ -1,7 +1,7 @@
 import { createHTMLElem } from '../../../../../asm-scripts';
-import { THTMLParam } from '../../../../types/types';
+import { TCar, THTMLParam } from '../../../../types/types';
 
-export const renderCarsProps = (elem$: THTMLParam) => {
+export const renderCarsProps = (elem$: THTMLParam, carObj: TCar) => {
   const controlsCarsProps$ = createHTMLElem(elem$, 'div', {
     class: 'controls__cars-props',
   });
@@ -14,5 +14,5 @@ export const renderCarsProps = (elem$: THTMLParam) => {
   }, '✎');
   const carsPropCarTitle = createHTMLElem(controlsCarsProps$, 'h3', {
     class: 'h4 cars-prop__car-title',
-  }, 'Title');
+  }, `${carObj.name}`);
 };

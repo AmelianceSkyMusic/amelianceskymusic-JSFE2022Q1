@@ -1,5 +1,7 @@
 import { createHTMLElem } from '../../../../asm-scripts';
 import { THTMLParam } from '../../../types/types';
+import { getNextCarPage } from '../../garageController/getNextCarPage';
+import { getPrevCarPage } from '../../garageController/getPrevCarPage';
 
 export const renderPaginationButtons = async (elem$: THTMLParam) => {
   const optionsPaginationButtons$ = createHTMLElem(elem$, 'div', {
@@ -14,6 +16,6 @@ export const renderPaginationButtons = async (elem$: THTMLParam) => {
     class: 'button-sm button-icon-sm pagination-button__next',
   }, '→');
 
-  paginationButtonPrev$.addEventListener('click', () => { console.log('←'); });
-  paginationButtonNext$.addEventListener('click', () => { console.log('←'); });
+  paginationButtonPrev$.addEventListener('click', getPrevCarPage);
+  paginationButtonNext$.addEventListener('click', getNextCarPage);
 };
