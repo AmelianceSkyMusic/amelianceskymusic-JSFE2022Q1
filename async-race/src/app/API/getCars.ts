@@ -4,7 +4,7 @@ export const getCars = async (pageNumber: number, carsLimitPerPage?: number) => 
   const url = 'garage';
   const queryParams = [];
 
-  if (pageNumber > 0) queryParams.push(`_id=${pageNumber}`);
+  if (pageNumber > 0) queryParams.push(`_page=${pageNumber}`);
   if (carsLimitPerPage && carsLimitPerPage > 0) {
     queryParams.push(`_limit=${carsLimitPerPage}`);
   }
