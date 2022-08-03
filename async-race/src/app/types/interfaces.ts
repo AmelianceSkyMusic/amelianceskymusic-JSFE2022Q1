@@ -1,5 +1,5 @@
 import { TCars } from './types';
 
 export interface IStore {
-  [key: string]: string | TCars;
+  [key: string]: string | number | TCars;
 }

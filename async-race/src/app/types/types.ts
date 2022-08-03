@@ -1,3 +1,5 @@
 export type THTMLParam = HTMLElement | DocumentFragment;
 
-export type TCars = { [key: string]: string | number }[];
+export type TCar = { [key: string]: string | number };
+
+export type TCars = TCar[];
