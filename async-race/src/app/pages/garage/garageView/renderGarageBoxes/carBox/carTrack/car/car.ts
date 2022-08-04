@@ -1,7 +1,7 @@
 import { createHTMLElem } from '../../../../../../../../asm-scripts';
 import { TCar, THTMLParam } from '../../../../../../../types/types';
 
-export const car = (elem$: THTMLParam, carObj: TCar) => {
+export const car = (carObj: TCar, elem$: THTMLParam) => {
   const carName = ((carObj.name).toString().toLowerCase().split(' '))[0];
 
   const car$ = createHTMLElem(elem$, 'div', { class: 'car' });

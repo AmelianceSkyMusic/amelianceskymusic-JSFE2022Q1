@@ -1,13 +1,12 @@
-import { getCars } from '../../../API/cars/getCars';
-import { getCarsCount } from '../../../API/cars/getCarsCount';
+import API from '../../../API';
 import { Store } from '../../../store/Store';
 
 export const updateModel = async () => {
   const pageNumber = +Store.getValue('pageNumber');
   const carsLimitPerPage = +Store.getValue('carsLimitPerPage');
 
-  const cars = await getCars(pageNumber, carsLimitPerPage);
-  const carsCount = Number(await getCarsCount());
+  const cars = await API.getCars(pageNumber, carsLimitPerPage);
+  const carsCount = Number(await API.getCarsCount());
 
   Store.setValue('pagesCount', Math.ceil(Number(carsCount) / carsLimitPerPage));
 

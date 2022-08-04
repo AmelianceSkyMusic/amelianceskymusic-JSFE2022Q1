@@ -10,8 +10,8 @@ export const buttonGenerateCars = (elem$: THTMLParam) => {
 
   buttonGenerateCars$.addEventListener('click', () => {
     buttonGenerateCars$.disabled = true;
-    setTimeout(() => {
-      add100RandomCars();
+    setTimeout(async () => {
+      await add100RandomCars();
       updateModel();
     }, 0);
   });

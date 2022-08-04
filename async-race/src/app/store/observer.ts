@@ -40,7 +40,7 @@ export const observer = (initData: IStore = {}) => {
       return data[key];
     },
 
-    getData() {
+    get data() {
       return data;
     },
   };

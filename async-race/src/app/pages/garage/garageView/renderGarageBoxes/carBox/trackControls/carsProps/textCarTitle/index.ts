@@ -1,0 +1,1 @@
+export { textCarTitle } from './textCarTitle';

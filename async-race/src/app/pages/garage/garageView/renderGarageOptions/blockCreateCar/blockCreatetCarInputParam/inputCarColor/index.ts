@@ -1,0 +1,1 @@
+export { inputCarColor } from './inputCarColor';

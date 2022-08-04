@@ -1,8 +1,8 @@
 import { createHTMLElem } from '../../../../../../../../asm-scripts';
 import { THTMLParam } from '../../../../../../../types/types';
 
-export const inputColor = async (elem$: THTMLParam) => {
+export const inputCarModel = async (elem$: THTMLParam) => {
   createHTMLElem(elem$, 'input', {
-    class: 'input-color create-car__color', attributes: 'type="color" value="#65b6cb"',
-  }) as HTMLInputElement;
+    class: 'p2 create-car__models', attributes: 'type="text" maxlength="20"',
+  });
 };

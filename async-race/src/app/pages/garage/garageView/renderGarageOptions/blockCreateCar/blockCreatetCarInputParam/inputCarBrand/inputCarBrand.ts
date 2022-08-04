@@ -2,7 +2,7 @@ import { createHTMLElem } from '../../../../../../../../asm-scripts';
 import { carsTemplateData } from '../../../../../../../data/cars';
 import { THTMLParam } from '../../../../../../../types/types';
 
-export const inputBrand = async (elem$: THTMLParam) => {
+export const inputCarBrand = async (elem$: THTMLParam) => {
   const selectBrands$ = createHTMLElem(elem$, 'select', {
     class: 'p2 create-car__brands',
   }) as HTMLSelectElement;

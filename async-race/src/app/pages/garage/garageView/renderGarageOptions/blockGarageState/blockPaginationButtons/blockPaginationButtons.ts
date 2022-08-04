@@ -11,6 +11,6 @@ export const blockPaginationButtons = async (store: IStore, elem$: THTMLParam) =
   });
 
   textPaginationLabel(store, optionsPaginationButtons$);
-  buttonPaginationNext(store, optionsPaginationButtons$);
   buttonPaginationPrev(store, optionsPaginationButtons$);
+  buttonPaginationNext(store, optionsPaginationButtons$);
 };
