@@ -1,13 +1,5 @@
 import { createHTMLElem } from '../../../asm-scripts';
 import { addChangeThemeListener } from '../../../asm-ui/scripts';
-import { createCar } from '../../API/cars/createCar';
-import { deleteCar } from '../../API/cars/deleteCar';
-import { getCar } from '../../API/cars/getCar';
-import { getCars } from '../../API/cars/getCars';
-import { startCarSEngine } from '../../API/engine/startCarSEngine';
-import { switchCarSEngineToDriveMode } from '../../API/engine/switchCarSEngineToDriveMode';
-import { updateCar } from '../../API/cars/updateCar';
-import { Store } from '../../store/Store';
 import { THTMLParam } from '../../types/types';
 
 const renderLogo = (elem$: THTMLParam) => {
@@ -33,14 +25,8 @@ const renderMunu = (elem$: THTMLParam) => {
   );
   renderThemeButton(menu$);
 
-  buttonGarage$.addEventListener('click', async () => {
-    const cars = await getCars(7);
-    Store.updateSettings('cars', cars);
-  });
-  buttonWinners$.addEventListener('click', async () => {
-    const result = await switchCarSEngineToDriveMode(1);
-    console.log('stopped:', result);
-  });
+  buttonGarage$.addEventListener('click', async () => console.log('garage'));
+  buttonWinners$.addEventListener('click', async () => console.log('winners'));
 };
 
 export const renderHeader = () => {

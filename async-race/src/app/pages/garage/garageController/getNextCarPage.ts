@@ -12,5 +12,5 @@ export const getNextCarPage = async () => {
 
   const cars = await getCars(pageNumber, carsLimitPerPage);
 
-  Store.updateSettings('cars', cars);
+  Store.updateSettings({ cars });
 };

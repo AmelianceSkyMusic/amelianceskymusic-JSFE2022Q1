@@ -7,9 +7,12 @@ export const updateModel = async () => {
   const carsLimitPerPage = +Store.getValue('carsLimitPerPage');
 
   const cars = await getCars(pageNumber, carsLimitPerPage);
-  const carsCount = await getCarsCount();
+  const carsCount = Number(await getCarsCount());
 
   Store.setValue('pagesCount', Math.ceil(Number(carsCount) / carsLimitPerPage));
 
-  Store.updateSettings('cars', cars);
+  Store.updateSettings({
+    cars,
+    carsCount,
+  });
 };
