@@ -1,0 +1,1 @@
+export { textPaginationLabel } from './textPaginationLabel';

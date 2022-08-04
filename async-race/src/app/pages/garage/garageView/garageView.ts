@@ -1,6 +1,6 @@
 import { createHTMLElem } from '../../../../asm-scripts';
 import { IStore } from '../../../types/interfaces';
-import { renderGarageCars } from './renderGarageCars';
+import { renderGarageBoxes } from './renderGarageBoxes';
 import { renderGarageOptions } from './renderGarageOptions';
 
 export const garageView = async (store: IStore) => {
@@ -9,7 +9,7 @@ export const garageView = async (store: IStore) => {
   const garage$ = createHTMLElem(fragment$, 'div', { class: 'garage col-12' });
 
   await renderGarageOptions(store, garage$);
-  renderGarageCars(store, garage$);
+  renderGarageBoxes(store, garage$);
 
   const mainContainer$ = document.querySelector('.main .container .row') as HTMLElement;
   mainContainer$.innerHTML = '';

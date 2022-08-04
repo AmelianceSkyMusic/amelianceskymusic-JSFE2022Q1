@@ -1,0 +1,1 @@
+export { carsProps } from './carsProps';

@@ -1,0 +1,1 @@
+export { renderGarageBoxes } from './renderGarageBoxes';

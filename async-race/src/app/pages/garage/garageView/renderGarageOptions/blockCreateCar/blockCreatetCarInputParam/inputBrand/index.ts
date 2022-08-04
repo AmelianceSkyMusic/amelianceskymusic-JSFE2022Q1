@@ -1,0 +1,1 @@
+export { inputBrand } from './inputBrand';

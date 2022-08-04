@@ -1,0 +1,1 @@
+export { textCarsCount } from './textCarsCount';

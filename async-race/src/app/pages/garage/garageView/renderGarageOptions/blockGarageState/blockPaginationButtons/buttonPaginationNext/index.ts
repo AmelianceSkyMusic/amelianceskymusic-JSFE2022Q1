@@ -1,0 +1,1 @@
+export { buttonPaginationNext } from './buttonPaginationNext';

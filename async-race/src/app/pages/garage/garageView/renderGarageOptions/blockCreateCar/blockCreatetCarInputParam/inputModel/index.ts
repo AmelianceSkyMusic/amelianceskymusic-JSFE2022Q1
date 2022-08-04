@@ -1,0 +1,1 @@
+export { inputModel } from './inputModel';

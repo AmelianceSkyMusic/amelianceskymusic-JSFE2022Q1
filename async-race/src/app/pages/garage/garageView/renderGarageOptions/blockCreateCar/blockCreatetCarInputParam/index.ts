@@ -1,0 +1,1 @@
+export { blockCreatetCarInputParam } from './blockCreatetCarInputParam';

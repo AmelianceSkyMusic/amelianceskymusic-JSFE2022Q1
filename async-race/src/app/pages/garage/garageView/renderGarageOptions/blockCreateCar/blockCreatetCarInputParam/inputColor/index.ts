@@ -1,0 +1,1 @@
+export { inputColor } from './inputColor';
