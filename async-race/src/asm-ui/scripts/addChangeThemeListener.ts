@@ -13,9 +13,8 @@ const toogleTheme = () => {
 };
 
 export const addChangeThemeListener = (element: HTMLElement) => {
-  const storedTheme =
-    localStorage.getItem('theme') ||
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const storedTheme = localStorage.getItem('theme')
+    || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
   if (storedTheme) document.documentElement.setAttribute('data-theme', storedTheme);
 

@@ -1,5 +1,6 @@
 import { createHTMLElem } from '../../../../asm-scripts';
 import { IStore } from '../../../types/interfaces';
+import { disableStopButton } from './disableBoxTrackControls/disableStopButton';
 import { renderGarageBoxes } from './renderGarageBoxes';
 import { renderGarageOptions } from './renderGarageOptions';
 
@@ -15,4 +16,6 @@ export const garageView = async (store: IStore) => {
   mainContainer$.innerHTML = '';
 
   mainContainer$.prepend(fragment$);
+
+  disableStopButton();
 };

@@ -8,7 +8,7 @@ export const buttonPaginationNext = async (store: IStore, elem$: THTMLParam) => 
     class: 'button-sm button-icon-sm pagination-button__next',
   }, '→') as HTMLButtonElement;
 
-  if (store.pageNumber <= 1) {
+  if (store.pageNumber < store.pagesCount) {
     paginationButtonNext$.disabled = false;
   } else if (store.pageNumber >= store.pagesCount) {
     paginationButtonNext$.disabled = true;

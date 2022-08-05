@@ -17,10 +17,11 @@ export function createHTMLElem(
     element$.setAttribute('id', params.id);
   }
   if (params?.attributes) {
-    const attributesArr = params?.attributes.split(' ');
+    const attributesArr = params?.attributes.split('" ');
     attributesArr.forEach((atribut) => {
       const atributName = atribut.split('=')[0];
-      const atributValue = atribut.split('=')[1].slice(1, -1);
+      const atributValue = atribut.split('=')[1].replace(/"/g, '');
+
       element$.setAttribute(atributName, atributValue);
     });
   }

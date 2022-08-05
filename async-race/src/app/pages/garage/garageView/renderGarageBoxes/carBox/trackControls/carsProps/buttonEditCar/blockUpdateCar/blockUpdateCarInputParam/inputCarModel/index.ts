@@ -1,0 +1,1 @@
+export { inputCarModel } from './inputCarModel';

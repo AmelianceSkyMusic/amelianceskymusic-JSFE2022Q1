@@ -1,5 +1,5 @@
+import { ICar } from './interfaces';
+
 export type THTMLParam = HTMLElement | DocumentFragment;
 
-export type TCar = { [key: string]: string | number };
-
-export type TCars = TCar[];
+export type TCars = ICar[];

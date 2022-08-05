@@ -1,6 +1,9 @@
 import { doFetch } from '../doFetch';
 
-export const createCar = async ({ name, color }: { name: string; color: string }) => {
+export const createCar = async (
+  { name, color }:
+  { name: string; color: string },
+) => {
   const url = 'garage';
 
   const method = 'POST';

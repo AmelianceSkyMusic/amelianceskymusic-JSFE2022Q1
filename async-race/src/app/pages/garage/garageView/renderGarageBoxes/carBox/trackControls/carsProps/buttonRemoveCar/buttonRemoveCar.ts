@@ -1,10 +1,11 @@
 import { createHTMLElem } from '../../../../../../../../../asm-scripts';
 import API from '../../../../../../../../API';
 import { Store } from '../../../../../../../../store/Store';
-import { TCar, THTMLParam } from '../../../../../../../../types/types';
+import { ICar } from '../../../../../../../../types/interfaces';
+import { THTMLParam } from '../../../../../../../../types/types';
 import { updateModel } from '../../../../../../garageModel/updateModel';
 
-export const buttonRemoveCar = (elem$: THTMLParam, carObj: TCar) => {
+export const buttonRemoveCar = (elem$: THTMLParam, carObj: ICar) => {
   createHTMLElem(elem$, 'button', {
     class: 'button-sm button-icon-sm cars-prop_car-remove-button',
   }, '🗙')
