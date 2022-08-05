@@ -1,3 +1,9 @@
+
+%display-flex-center-center {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 .garage {
 	display: flex;
 	flex-direction: column;
@@ -11,36 +17,27 @@
 		margin-bottom: 16px;
 
 		.options__cars-count {
-			display: flex;
+			@extend %display-flex-center-center;
 			gap: calc( var(--col-gap) / 2);
-			justify-content: center;
-			align-items: center;
 		}
 
-		.options__race-buttons{
-			display: flex;
+		.options__race-buttons {
+			@extend %display-flex-center-center;
 			gap: calc( var(--col-gap) / 2);
-			justify-content: center;
-			align-items: center;
 		}
 
 		.options__create-car {
-			display: flex;
+			@extend %display-flex-center-center;
 			gap: calc( var(--col-gap) / 2);
-			justify-content: center;
-			align-items: center;
 		}
+
 		.create-car__inputs {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@extend %display-flex-center-center;
 		}
 
 		.options__pagination-buttons {
-			display: flex;
+			@extend %display-flex-center-center;
 			gap: calc( var(--col-gap) / 2);
-			justify-content: center;
-			align-items: center;
 		}
 
 		.create-car__color {
@@ -67,18 +64,35 @@
 		align-items: center;
 		gap: calc( var(--col-gap) / 2);
 
+
 		.controls__cars-props {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@extend %display-flex-center-center;
 			gap: calc( var(--col-gap) / 2);
 		}
 
 		.controls__cars-action {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@extend %display-flex-center-center;
 			gap: calc( var(--col-gap) / 2);
+		}
+
+		.cars-prop_update {
+			@extend %display-flex-center-center;
+			gap: calc( var(--col-gap) / 2);
+		}
+
+		.cars-update-input {
+			@extend %display-flex-center-center;
+		}
+
+		.cars-update-input__color {
+			&::-webkit-color-swatch {
+				border-radius: 0 4px 4px 0;
+				border-left: none;
+			}
+			&::-moz-color-swatch {
+				border-radius: 0 4px 4px 0;
+				border-left: none;
+			}
 		}
 	}
 
