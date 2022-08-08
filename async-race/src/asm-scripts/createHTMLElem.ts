@@ -1,10 +1,20 @@
+/**
+ * Function for create HTML element
+ * @function
+ * @param {domelement} parent — parent HTMLElement | DocumentFragment
+ * @param {string} elementType
+ * @param {object} params - class, id, attributes
+ * @param {string} text - text
+ * @returns {domelement}
+ */
+
 export function createHTMLElem(
   parent: HTMLElement | DocumentFragment,
   elementType: string,
   params?: {
     class?: string;
     id?: string;
-    attributes?: string;
+    attributes?: string[];
   },
   text = '',
 ): HTMLElement {
@@ -17,10 +27,9 @@ export function createHTMLElem(
     element$.setAttribute('id', params.id);
   }
   if (params?.attributes) {
-    const attributesArr = params?.attributes.split('" ');
-    attributesArr.forEach((atribut) => {
+    params.attributes.forEach((atribut) => {
       const atributName = atribut.split('=')[0];
-      const atributValue = atribut.split('=')[1].replace(/"/g, '');
+      const atributValue = (atribut.split('=')[1] || '').replaceAll('"', '');
 
       element$.setAttribute(atributName, atributValue);
     });
