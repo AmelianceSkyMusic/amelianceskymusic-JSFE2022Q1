@@ -1,25 +1,46 @@
 @use "../_globals/" as *;
+
+$car-width: 80px;
+$car-height: 50px;
+
 .car {
-	$car-width: 80px;
-	$car-height: 50px;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
 	width:	$car-width;
 	height: $car-height;
+	will-change: transform;
 	.back {
-		grid-column-start: 1;
+		z-index: 2;
 		grid-row-start: 1;
-		@include bgImgSVG("cars/mersedes-back.svg",	$car-width, $car-height);
+		grid-column-start: 1;
 		background: var(--color-a2-1);
+		@include bgImgSVG("cars/mersedes-back.svg",	$car-width, $car-height);
 		-webkit-mask-position: bottom right;
 		mask-position: bottom right;
 	}
 	.front {
-		grid-column-start: 1;
+		z-index: 3;
 		grid-row-start: 1;
-		@include bgImgSVGStatic("cars/mersedes-front.svg",	$car-width, $car-height);
+		grid-column-start: 1;
 		background-position: bottom right;
+		@include bgImgSVGStatic("cars/mersedes-front.svg",	$car-width, $car-height);
+	}
+	.smoke {
 		z-index: 1;
+		grid-row-start: 1;
+		grid-column-start: 1;
+		transform: translate3d(34px, -14px, 0px);
+		// background-position: bottom right;
+		// @include bgImgStatic("gif/smoke.gif",	$car-width, $car-height);
+		width:	$car-width;
+		height: $car-height;
+		opacity: 70%;
+		display: none;
+		pointer-events: none;
+	}
+
+	&.show-smoke > .smoke{
+		display: block;
 	}
 }
