@@ -9,7 +9,7 @@ export const inputCarBrand = async (elem$: THTMLParam) => {
 
   carsTemplateData.brands.forEach((brand) => {
     createHTMLElem(selectBrands$, 'option', {
-      attributes: `value="${brand}"`,
+      attributes: [`value="${brand}"`],
     }, `${brand}`);
   });
 };

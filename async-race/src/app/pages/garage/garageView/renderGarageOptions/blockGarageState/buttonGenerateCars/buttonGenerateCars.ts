@@ -5,7 +5,7 @@ import { updateModel } from '../../../../garageModel/updateModel';
 
 export const buttonGenerateCars = (elem$: THTMLParam) => {
   const buttonGenerateCars$ = createHTMLElem(elem$, 'button', {
-    class: 'button button-sm',
+    class: 'button button-sm state__add-cars',
   }, '+100') as HTMLButtonElement;
 
   buttonGenerateCars$.addEventListener('click', () => {

@@ -7,7 +7,7 @@ import { updateModel } from '../../../../garageModel/updateModel';
 export const buttonCreate = async (elem$: THTMLParam) => {
   const carButtonCreate$ = createHTMLElem(elem$, 'button', {
     class: 'button button-sm create-car__create',
-  }, 'create');
+  }, 'CREATE');
 
   carButtonCreate$.addEventListener('click', async () => {
     const createButtonModelTemp$ = document.querySelector(

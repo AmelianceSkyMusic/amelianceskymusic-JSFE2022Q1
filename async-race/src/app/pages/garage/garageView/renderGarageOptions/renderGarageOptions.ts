@@ -5,12 +5,12 @@ import { blockGarageState } from './blockGarageState';
 import { blockCreateCar } from './blockCreateCar';
 import { blockRaceButtons } from './blockRaceButtons';
 
-export const renderGarageOptions = async (store: IStore, elem$: THTMLParam) => {
+export const renderGarageOptions = async (elem$: THTMLParam, store: IStore) => {
   const garageOptions$ = createHTMLElem(elem$, 'section', {
     class: 'garage__options options',
   });
 
-  await blockGarageState(store, garageOptions$);
+  await blockGarageState(garageOptions$, store);
   blockCreateCar(garageOptions$);
-  blockRaceButtons(garageOptions$);
+  blockRaceButtons(garageOptions$, store);
 };

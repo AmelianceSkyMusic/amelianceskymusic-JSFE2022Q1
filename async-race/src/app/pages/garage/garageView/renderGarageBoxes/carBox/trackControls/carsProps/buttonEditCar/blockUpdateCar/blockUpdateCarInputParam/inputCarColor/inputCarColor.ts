@@ -5,6 +5,6 @@ import { THTMLParam } from '../../../../../../../../../../../types/types';
 export const inputCarColor = async (elem$: THTMLParam, carObj: ICar) => {
   createHTMLElem(elem$, 'input', {
     class: 'input-color cars-update-input__color',
-    attributes: `type="color" value="${carObj.color}"`,
+    attributes: ['type="color"', `value="${carObj.color}"`],
   }) as HTMLInputElement;
 };

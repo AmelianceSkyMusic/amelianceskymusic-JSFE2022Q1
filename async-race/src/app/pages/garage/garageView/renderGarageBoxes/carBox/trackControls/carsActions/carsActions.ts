@@ -1,14 +1,12 @@
 import { createHTMLElem } from '../../../../../../../../asm-scripts';
+import { ICar } from '../../../../../../../types/interfaces';
 import { THTMLParam } from '../../../../../../../types/types';
+import { runCar } from './runCar';
+import { stopCar } from './stopCar';
 
-export const carsActions = (elem$: THTMLParam) => {
+export const carsActions = (elem$: THTMLParam, carObj: ICar) => {
   const controlsCarsAction$ = createHTMLElem(elem$, 'div', { class: 'controls__cars-action' });
 
-  const controlsRunButton$ = createHTMLElem(controlsCarsAction$, 'button', {
-    class: 'button-sm button-icon-sm controls_run-button',
-  }, '▶');
-
-  const controlsStopButton$ = createHTMLElem(controlsCarsAction$, 'button', {
-    class: 'button-sm button-icon-sm controls_stop-button',
-  }, '■');
+  stopCar(controlsCarsAction$, carObj.id);
+  runCar(controlsCarsAction$, carObj.id);
 };

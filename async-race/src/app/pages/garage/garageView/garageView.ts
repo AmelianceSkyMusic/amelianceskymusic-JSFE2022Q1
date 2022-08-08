@@ -1,5 +1,6 @@
 import { createHTMLElem } from '../../../../asm-scripts';
 import { IStore } from '../../../types/interfaces';
+import { disableStopAllButton } from './disableBoxTrackControls/disableStopAllButton';
 import { disableStopButton } from './disableBoxTrackControls/disableStopButton';
 import { renderGarageBoxes } from './renderGarageBoxes';
 import { renderGarageOptions } from './renderGarageOptions';
@@ -9,7 +10,7 @@ export const garageView = async (store: IStore) => {
 
   const garage$ = createHTMLElem(fragment$, 'div', { class: 'garage col-12' });
 
-  await renderGarageOptions(store, garage$);
+  await renderGarageOptions(garage$, store);
   renderGarageBoxes(store, garage$);
 
   const mainContainer$ = document.querySelector('.main .container .row') as HTMLElement;
@@ -18,4 +19,5 @@ export const garageView = async (store: IStore) => {
   mainContainer$.prepend(fragment$);
 
   disableStopButton();
+  disableStopAllButton();
 };

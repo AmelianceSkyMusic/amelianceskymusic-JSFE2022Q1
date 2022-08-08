@@ -8,7 +8,7 @@ export const renderFooter = () => {
   });
   createHTMLElem(footerGithubLogo$, 'a', {
     class: 'link github-logo',
-    attributes: 'target="_blank" href="https://github.com/AmelianceSkyMusic"',
+    attributes: ['target="_blank"', 'href="https://github.com/AmelianceSkyMusic"'],
   });
   const footerCopyrigh$ = createHTMLElem(fragment$, 'div', {
     class: 'footer__copyright col col-8 col-sm-12',
@@ -18,7 +18,7 @@ export const renderFooter = () => {
     'a',
     {
       class: 'link',
-      attributes: 'target="_blank" href="https://dribbble.com/rsayuaie"',
+      attributes: ['target="_blank"', 'href="https://dribbble.com/rsayuaie"'],
     },
     '2022 © Designed by AmelianceSkyMusic',
   );
@@ -27,7 +27,7 @@ export const renderFooter = () => {
   });
   createHTMLElem(footerRsschoolLogo$, 'a', {
     class: 'link rsschool-logo',
-    attributes: 'target="_blank" href="https://rs.school/js/"',
+    attributes: ['target="_blank"', 'href="https://rs.school/js/"'],
   });
   const footerContainer$ = document.querySelector('.footer .container .row') as HTMLElement;
   footerContainer$.prepend(fragment$);

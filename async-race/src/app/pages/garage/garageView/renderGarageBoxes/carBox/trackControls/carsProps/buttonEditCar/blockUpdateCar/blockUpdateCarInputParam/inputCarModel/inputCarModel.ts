@@ -9,6 +9,6 @@ export const inputCarModel = async (elem$: THTMLParam, carObj: ICar) => {
 
   createHTMLElem(elem$, 'input', {
     class: 'p2 cars-update-input__model',
-    attributes: `type="text" maxlength="20" value="${carModel}"`,
+    attributes: ['type="text"', 'maxlength="20"', `value="${carModel}"`],
   });
 };

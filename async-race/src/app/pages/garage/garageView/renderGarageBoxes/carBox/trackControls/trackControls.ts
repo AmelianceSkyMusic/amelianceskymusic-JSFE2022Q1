@@ -8,5 +8,5 @@ export const trackControls = (elem$: THTMLParam, carObj: ICar) => {
   const controls$ = createHTMLElem(elem$, 'div', { class: 'controls' });
 
   carsProps(controls$, carObj);
-  carsActions(controls$);
+  carsActions(controls$, carObj);
 };
