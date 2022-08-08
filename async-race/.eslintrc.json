@@ -1,7 +1,7 @@
 {
 	"env": {
 		"browser": true,
-		"es2021": true
+		"es2022": true
 	},
 	"extends": [
 		"airbnb-base",
@@ -18,7 +18,7 @@
 		"@typescript-eslint"
 	],
 	"rules": {
-		"max-len": ["error", { "code": 160 }],
+		"max-len": ["error", 100, 2],
 		"import/prefer-default-export": "off",
 		"max-lines-per-function": ["error", 40],
 		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
