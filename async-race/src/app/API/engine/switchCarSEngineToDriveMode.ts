@@ -10,5 +10,5 @@ export const switchCarSEngineToDriveMode = async (id: number) => {
 
   const result = await doFetch(request, method);
 
-  return result.data;
+  return { success: result.data.success };
 };
