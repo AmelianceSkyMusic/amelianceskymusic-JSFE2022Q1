@@ -5,12 +5,12 @@ import { buttonPaginationNext } from './buttonPaginationNext';
 import { buttonPaginationPrev } from './buttonPaginationPrev';
 import { textPaginationLabel } from './textPaginationLabel';
 
-export const blockPaginationButtons = async (store: IStore, elem$: THTMLParam) => {
+export const blockPaginationButtons = async (elem$: THTMLParam, store: IStore) => {
   const optionsPaginationButtons$ = createHTMLElem(elem$, 'div', {
     class: 'options__pagination-buttons',
   });
 
-  textPaginationLabel(store, optionsPaginationButtons$);
-  buttonPaginationPrev(store, optionsPaginationButtons$);
-  buttonPaginationNext(store, optionsPaginationButtons$);
+  textPaginationLabel(optionsPaginationButtons$, store);
+  buttonPaginationPrev(optionsPaginationButtons$, store);
+  buttonPaginationNext(optionsPaginationButtons$, store);
 };

@@ -3,7 +3,7 @@ import { IStore } from '../../../../../../../types/interfaces';
 import { THTMLParam } from '../../../../../../../types/types';
 import { getPrevCarPage } from '../../../../../garageController/getPrevCarPage';
 
-export const buttonPaginationPrev = async (store: IStore, elem$: THTMLParam) => {
+export const buttonPaginationPrev = async (elem$: THTMLParam, store: IStore) => {
   const paginationButtonPrev$ = createHTMLElem(elem$, 'button', {
     class: 'button-sm button-icon-sm pagination-button__prev',
   }, '←') as HTMLButtonElement;
