@@ -10,6 +10,7 @@ $car-height: 50px;
 	width:	$car-width;
 	height: $car-height;
 	will-change: transform;
+	position: relative;
 	.back {
 		z-index: 2;
 		grid-row-start: 1;
@@ -28,9 +29,10 @@ $car-height: 50px;
 	}
 	.smoke {
 		z-index: 1;
-		grid-row-start: 1;
-		grid-column-start: 1;
-		transform: translate3d(34px, -14px, 0px);
+		position: absolute;
+		// transform: translate3d(34px, -14px, 0px);
+		top: -14px;
+		right: -34px;
 		// background-position: bottom right;
 		// @include bgImgStatic("gif/smoke.gif",	$car-width, $car-height);
 		width:	$car-width;
