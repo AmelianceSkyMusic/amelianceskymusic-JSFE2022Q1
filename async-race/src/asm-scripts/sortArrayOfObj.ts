@@ -1,4 +1,4 @@
-export function sortArrayOfObj<T>(array: T[], key: keyof T, type: string): T[] {
+export function sortArrayOfObj<T>(array: T[], key: keyof T, type: 'num' | 'str' = 'num'): T[] {
   const arr: T[] = [...array];
   if (key) {
     arr.sort((a: T, b: T): number => {
