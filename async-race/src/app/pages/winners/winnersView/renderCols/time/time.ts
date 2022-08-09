@@ -9,14 +9,14 @@ export const time = async (elem$: THTMLParam, store: IStore) => {
   const headingContainer$ = createHTMLElem(time$, 'div', { class: 'heading__container' });
   createHTMLElem(headingContainer$, 'h4', { class: 'h4 winners__time-heading' }, 'TIME');
   let buttonLabel = '↕';
-  if (store.winnersSort !== 'id') buttonLabel = store.winnersSortOrder !== 'ASC' ? '↑' : '↓';
+  if (store.winnersSort !== 'id') buttonLabel = store.winnersSortOrder !== 'DESC' ? '↓' : '↑';
   if (store.winnersSort !== 'time') buttonLabel = '↕';
   const timeSort$ = createHTMLElem(headingContainer$, 'button', {
     class: 'button-sm button-icon-sm winners__time-sorting-btn',
   }, buttonLabel);
 
   timeSort$.addEventListener('click', () => {
-    const sortOrder = store.winnersSortOrder !== 'ASC' ? 'ASC' : 'DESC';
+    const sortOrder = store.winnersSortOrder !== 'DESC' ? 'DESC' : 'ASC';
     WinStore.updateSettings({ winnersSort: 'time', winnersSortOrder: sortOrder });
     updateWinnersModel();
   });
