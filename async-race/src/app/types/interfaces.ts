@@ -1,5 +1,5 @@
 export interface IStore {
-  [key: string]: string | number | ICar[] | IEngine
+  [key: string]: string | number | ICar[] | IWinner[] | IEngine
 }
 
 export interface ICar {
@@ -12,4 +12,10 @@ export interface IEngine {
   distance?: number
   velocity?: number
   success?: boolean
+}
+
+export interface IWinner {
+  id: number
+  wins: number
+  time: number
 }

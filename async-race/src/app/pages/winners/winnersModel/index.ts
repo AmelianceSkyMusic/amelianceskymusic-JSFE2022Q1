@@ -1,0 +1,1 @@
+export { winnersModel } from './winnersModel';

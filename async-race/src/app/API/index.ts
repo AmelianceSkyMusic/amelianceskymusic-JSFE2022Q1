@@ -10,6 +10,7 @@ import { startCarSEngine } from './engine/startCarSEngine';
 import { stopCarSEngine } from './engine/stopCarSEngine';
 import { switchCarSEngineToDriveMode } from './engine/switchCarSEngineToDriveMode';
 
+import { getWinnersCount } from './winners/getWinnersCount';
 import { getWinners } from './winners/getWinners';
 import { getWinner } from './winners/getWinner';
 
@@ -18,6 +19,7 @@ import { updateWinner } from './winners/updateWinner';
 import { deleteWinner } from './winners/deleteWinner';
 
 export default {
+  getWinnersCount,
   getCarsCount,
   getCars,
   getCar,

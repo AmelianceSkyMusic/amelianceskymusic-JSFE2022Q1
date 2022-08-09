@@ -16,17 +16,33 @@ const renderThemeButton = (elem$: THTMLParam) => {
 
 const renderMunu = (elem$: THTMLParam) => {
   const menu$ = createHTMLElem(elem$, 'div', { class: 'menu col-6 col-sm-12' });
-  const buttonGarage$ = createHTMLElem(menu$, 'button', { class: 'button menu__garage' }, 'garage');
+  const buttonGarage$ = createHTMLElem(menu$, 'button', {
+    class: 'button menu__garage active',
+  }, 'GARAGE');
   const buttonWinners$ = createHTMLElem(
     menu$,
     'button',
     { class: 'button menu__winners' },
-    'winners',
+    'WINNERS',
   );
   renderThemeButton(menu$);
 
-  buttonGarage$.addEventListener('click', async () => console.log('garage'));
-  buttonWinners$.addEventListener('click', async () => console.log('winners'));
+  buttonGarage$.addEventListener('click', () => {
+    buttonGarage$.classList.add('active');
+    buttonWinners$.classList.remove('active');
+    const garage$ = document.querySelector('.garage');
+    garage$?.classList.add('show');
+    const winners$ = document.querySelector('.winners');
+    winners$?.classList.remove('show');
+  });
+  buttonWinners$.addEventListener('click', () => {
+    buttonGarage$.classList.remove('active');
+    buttonWinners$.classList.add('active');
+    const garage$ = document.querySelector('.garage');
+    garage$?.classList.remove('show');
+    const winners$ = document.querySelector('.winners');
+    winners$?.classList.add('show');
+  });
 };
 
 export const renderHeader = () => {

@@ -5,7 +5,15 @@
 	align-items: center;
 }
 .garage {
-	display: flex;
+
+	display: none;
+	user-select: none;
+	pointer-events: none;
+	&.show {
+		pointer-events: auto;
+		user-select: auto;
+		display: flex;
+	}
 	flex-direction: column;
 	gap: 16px;
 

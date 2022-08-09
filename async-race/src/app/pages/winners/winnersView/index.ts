@@ -1,0 +1,1 @@
+export { winnersView } from './winnersView';

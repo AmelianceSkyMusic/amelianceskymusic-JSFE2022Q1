@@ -1,0 +1,44 @@
+.winners {
+	display: none;
+	user-select: none;
+	pointer-events: none;
+	.winners__heading {
+		padding-bottom: 32px;
+	}
+	&.show {
+		pointer-events: auto;
+		user-select: auto;
+		display: flex;
+	}
+
+	.winners__table {
+		display: flex;
+		justify-content: center;
+	}
+	.winners__col,
+	.winners__col-container {
+		display: flex;
+		flex-direction: column;
+		.сell {
+			display: flex;
+			align-items: center;
+			height: 50px;
+		}
+		.car {
+			transform: scale(50%) translateX(-50%);
+		}
+	}
+	.winners__pagination {
+		justify-content: end;
+		align-items: start;
+		gap: calc( var(--col-gap) / 2);
+	}
+	.winners-pagination__counter {
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		line-height: 100%;
+		height: 20px;
+	}
+}
