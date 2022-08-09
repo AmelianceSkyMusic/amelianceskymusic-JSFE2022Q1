@@ -41,4 +41,14 @@
 		line-height: 100%;
 		height: 20px;
 	}
+	.heading__container {
+		display: flex;
+		align-items: start;
+		gap: calc( var(--col-gap) / 2);
+		.button-sm {
+			font-size: 8px;
+			height: 14px;
+			width: 14px
+		}
+	}
 }
