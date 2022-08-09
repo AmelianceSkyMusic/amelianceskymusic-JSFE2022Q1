@@ -7,7 +7,7 @@ import { blockRaceButtons } from './blockRaceButtons';
 
 export const renderGarageOptions = async (elem$: THTMLParam, store: IStore) => {
   const garageOptions$ = createHTMLElem(elem$, 'section', {
-    class: 'garage__options options',
+    class: 'garage__options row options',
   });
 
   await blockGarageState(garageOptions$, store);

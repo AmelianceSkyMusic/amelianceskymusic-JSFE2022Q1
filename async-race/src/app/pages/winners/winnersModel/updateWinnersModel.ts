@@ -1,5 +1,4 @@
 import API from '../../../API';
-import { Store } from '../../../store/Store';
 import { WinStore } from '../../../store/WinStore';
 
 export const updateWinnersModel = async () => {

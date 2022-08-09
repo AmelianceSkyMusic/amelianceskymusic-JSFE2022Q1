@@ -1,8 +1,10 @@
 import { createHTMLElem } from '../../../../../../../../../asm-scripts';
 import API from '../../../../../../../../API';
 import { Store } from '../../../../../../../../store/Store';
+import { WinStore } from '../../../../../../../../store/WinStore';
 import { ICar } from '../../../../../../../../types/interfaces';
 import { THTMLParam } from '../../../../../../../../types/types';
+import { updateWinnersModel } from '../../../../../../../winners/winnersModel/updateWinnersModel';
 import { updateModel } from '../../../../../../garageModel/updateModel';
 
 export const buttonRemoveCar = (elem$: THTMLParam, carObj: ICar) => {
@@ -22,7 +24,16 @@ export const buttonRemoveCar = (elem$: THTMLParam, carObj: ICar) => {
           if (pageNumber < 1) pageNumber = 1;
           Store.updateSettings({ pageNumber });
         }
+        await API.deleteWinner(+carObj.id);
+        const winnersCount = Number(await API.getWinnersCount());
+        if (!(winnersCount % 10)) {
+          let winnersPageNumber = +Store.getValue('winnersPageNumber');
+          winnersPageNumber -= 1;
+          if (winnersPageNumber < 1) winnersPageNumber = 1;
+          WinStore.updateSettings({ winnersPageNumber });
+        }
         updateModel();
+        updateWinnersModel();
       }, 0);
     });
 };
