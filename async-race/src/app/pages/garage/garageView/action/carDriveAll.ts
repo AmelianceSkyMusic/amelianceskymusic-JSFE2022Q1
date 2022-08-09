@@ -1,6 +1,7 @@
 import API from '../../../../API';
 import { ICar } from '../../../../types/interfaces';
 import { enableStopAllButton } from '../enableBoxTrackControls/enableStopAllButton';
+import { enableWinnersPageButton } from '../enableBoxTrackControls/enableWinnersPageButton';
 import Animations from './Animations';
 import { setWinner } from './setWinner';
 
@@ -33,6 +34,7 @@ export const carDriveAll = async (cars: ICar[]) => {
     velocity: carRaceParam.velocity as number,
     distance: carRaceParam.distance as number,
   }));
+  enableWinnersPageButton();
 
   const carsElemAnimationPack = raceParams.map(
     (raceParam, i) => startRaceAnimaton(raceParam, i, cars),

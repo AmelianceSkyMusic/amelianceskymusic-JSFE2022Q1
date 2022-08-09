@@ -14,6 +14,7 @@ import {
 } from '../../../disableBoxTrackControls/disablePaginationPrevButton';
 import { disableRaceAllButton } from '../../../disableBoxTrackControls/disableRaceAllButton';
 import { disableRaceButton } from '../../../disableBoxTrackControls/disableRaceButton';
+import { disableWinnersPageButton } from '../../../disableBoxTrackControls/disableWinnersPageButton';
 
 export const buttonRace = async (elem$: THTMLParam, store: IStore) => {
   createHTMLElem(elem$, 'button', {
@@ -21,6 +22,7 @@ export const buttonRace = async (elem$: THTMLParam, store: IStore) => {
   }, 'RACE')
     .addEventListener('click', () => {
       const cars = store.cars as ICar[];
+      disableWinnersPageButton();
       disableAdd100Button();
       disableCreateButton();
       disablePaginationPrevButton();
