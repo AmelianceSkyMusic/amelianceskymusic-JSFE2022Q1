@@ -10,7 +10,7 @@ export const renderAlert = (content$: DocumentFragment) => {
 
 export const renderWinnerAlert = (winnerName: string, winnerTime: number, winnerId: number) => {
   const fragment$: DocumentFragment = new DocumentFragment();
-  // const alertContainer$ = createHTMLElem(fragment$, 'div', { class: 'alert__container' });
+
   const confettiAnimationContainer$ = createHTMLElem(fragment$, 'div', {
     class: 'confetti-animation-container',
   });

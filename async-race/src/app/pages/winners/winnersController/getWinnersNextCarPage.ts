@@ -1,5 +1,4 @@
 import API from '../../../API';
-import { getCars } from '../../../API/cars/getCars';
 import { WinStore } from '../../../store/WinStore';
 
 export const getWinnersNextCarPage = async () => {

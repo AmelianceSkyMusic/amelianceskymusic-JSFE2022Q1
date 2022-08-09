@@ -1,4 +1,3 @@
-// import { LottiePlayer } from '@lottiefiles/lottie-player';
 import Lottie from 'lottie-web';
 import { createHTMLElem } from '../../../../../../../../asm-scripts';
 import { ICar } from '../../../../../../../types/interfaces';

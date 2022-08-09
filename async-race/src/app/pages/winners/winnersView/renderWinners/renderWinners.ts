@@ -12,8 +12,6 @@ import { time } from '../renderCols/time/time';
 import { wins } from '../renderCols/wins/wins';
 
 export const renderWinners = async (elem$: THTMLParam, store: IStore) => {
-  console.log(store);
-
   createHTMLElem(elem$, 'h2', {
     class: 'h2 winners__heading col-6',
   }, `WINNERS: ${store.winnersCount}`);
