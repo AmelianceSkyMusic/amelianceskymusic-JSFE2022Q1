@@ -10,11 +10,12 @@
     "coveraging": "jest --coverage --watch",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
+    "build-watch": "webpack --mode=production --node-env=production --watch",
     "watch": "webpack --watch",
     "serve": "webpack serve",
     "dev": "webpack --mode=development --watch",
     "predeploy": "npm run build",
-    "gh-pages": "gh-pages -d dist -e online-store",
+    "gh-pages": "gh-pages -d dist -e async-race",
     "build": "webpack --mode=production --node-env=production",
     "start": "webpack serve"
   },
