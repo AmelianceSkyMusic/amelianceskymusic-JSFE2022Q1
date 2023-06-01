@@ -14,7 +14,7 @@ git checkout migration-newip-to-ts
 
 3. Go to the project folder
 `
-cd. migration-newip-to-ts
+cd migration-newip-to-ts
 `
 
 4. Install the dependencies
